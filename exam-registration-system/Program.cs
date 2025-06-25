@@ -17,7 +17,7 @@ namespace exam_registration_system
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new UnitRegDetailForm());
+            Application.Run(new RegListForm());
         }
     }
 }

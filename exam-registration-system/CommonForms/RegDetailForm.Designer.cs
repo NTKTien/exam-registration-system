@@ -69,7 +69,7 @@
             // 
             // panelHeader
             // 
-            this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(230)))), ((int)(((byte)(246)))));
+            this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(190)))), ((int)(((byte)(230)))));
             this.panelHeader.BorderColor = System.Drawing.Color.Gray;
             this.panelHeader.BorderThickness = 1;
             this.panelHeader.Controls.Add(this.labelDetailReg);
