@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             this.pnlContainer = new System.Windows.Forms.Panel();
-            this.btnCreateInvoice = new Guna.UI2.WinForms.Guna2Button();
-            this.btnConfirmPayment = new Guna.UI2.WinForms.Guna2Button();
             this.grpInformation = new System.Windows.Forms.GroupBox();
+            this.tbTransactionID = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnConfirmPayment = new Guna.UI2.WinForms.Guna2Button();
+            this.lbTransactionID = new System.Windows.Forms.Label();
             this.tbTotalCost = new Guna.UI2.WinForms.Guna2TextBox();
             this.lbTotalCost = new System.Windows.Forms.Label();
             this.tbCertificateType = new Guna.UI2.WinForms.Guna2TextBox();
@@ -46,13 +47,12 @@
             this.lbCustomerName = new System.Windows.Forms.Label();
             this.grpSearch = new System.Windows.Forms.GroupBox();
             this.btnSearch = new Guna.UI2.WinForms.Guna2Button();
-            this.tbRegistrationCode = new Guna.UI2.WinForms.Guna2TextBox();
             this.lbRegistrationCode = new System.Windows.Forms.Label();
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.btnExit = new Guna.UI2.WinForms.Guna2Button();
             this.lbHeader = new System.Windows.Forms.Label();
-            this.lbTransactionID = new System.Windows.Forms.Label();
-            this.tbTransactionID = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnCreateInvoice = new Guna.UI2.WinForms.Guna2Button();
+            this.cmbUnpaidRegistrationID = new System.Windows.Forms.ComboBox();
             this.pnlContainer.SuspendLayout();
             this.grpInformation.SuspendLayout();
             this.grpSearch.SuspendLayout();
@@ -72,44 +72,6 @@
             this.pnlContainer.Padding = new System.Windows.Forms.Padding(16);
             this.pnlContainer.Size = new System.Drawing.Size(880, 410);
             this.pnlContainer.TabIndex = 0;
-            // 
-            // btnCreateInvoice
-            // 
-            this.btnCreateInvoice.BorderColor = System.Drawing.Color.DarkSlateGray;
-            this.btnCreateInvoice.BorderRadius = 8;
-            this.btnCreateInvoice.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnCreateInvoice.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnCreateInvoice.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnCreateInvoice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnCreateInvoice.Enabled = false;
-            this.btnCreateInvoice.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnCreateInvoice.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
-            this.btnCreateInvoice.ForeColor = System.Drawing.Color.Black;
-            this.btnCreateInvoice.Location = new System.Drawing.Point(365, 360);
-            this.btnCreateInvoice.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCreateInvoice.Name = "btnCreateInvoice";
-            this.btnCreateInvoice.Size = new System.Drawing.Size(150, 32);
-            this.btnCreateInvoice.TabIndex = 3;
-            this.btnCreateInvoice.Text = "📋 Tạo hóa đơn";
-            // 
-            // btnConfirmPayment
-            // 
-            this.btnConfirmPayment.BorderColor = System.Drawing.Color.DarkSlateGray;
-            this.btnConfirmPayment.BorderRadius = 8;
-            this.btnConfirmPayment.BorderThickness = 1;
-            this.btnConfirmPayment.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnConfirmPayment.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnConfirmPayment.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnConfirmPayment.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnConfirmPayment.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
-            this.btnConfirmPayment.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btnConfirmPayment.ForeColor = System.Drawing.Color.White;
-            this.btnConfirmPayment.Location = new System.Drawing.Point(625, 200);
-            this.btnConfirmPayment.Margin = new System.Windows.Forms.Padding(2);
-            this.btnConfirmPayment.Name = "btnConfirmPayment";
-            this.btnConfirmPayment.Size = new System.Drawing.Size(125, 32);
-            this.btnConfirmPayment.TabIndex = 2;
-            this.btnConfirmPayment.Text = "Xác nhận thanh toán";
             // 
             // grpInformation
             // 
@@ -138,6 +100,56 @@
             this.grpInformation.TabStop = false;
             this.grpInformation.Text = "Thông tin thanh toán";
             // 
+            // tbTransactionID
+            // 
+            this.tbTransactionID.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbTransactionID.DefaultText = "PTHT123";
+            this.tbTransactionID.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbTransactionID.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbTransactionID.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbTransactionID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbTransactionID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbTransactionID.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.tbTransactionID.ForeColor = System.Drawing.Color.Black;
+            this.tbTransactionID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbTransactionID.Location = new System.Drawing.Point(550, 148);
+            this.tbTransactionID.Name = "tbTransactionID";
+            this.tbTransactionID.PlaceholderText = "";
+            this.tbTransactionID.SelectedText = "";
+            this.tbTransactionID.Size = new System.Drawing.Size(274, 33);
+            this.tbTransactionID.TabIndex = 17;
+            // 
+            // btnConfirmPayment
+            // 
+            this.btnConfirmPayment.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.btnConfirmPayment.BorderRadius = 8;
+            this.btnConfirmPayment.BorderThickness = 1;
+            this.btnConfirmPayment.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnConfirmPayment.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnConfirmPayment.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnConfirmPayment.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnConfirmPayment.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
+            this.btnConfirmPayment.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnConfirmPayment.ForeColor = System.Drawing.Color.White;
+            this.btnConfirmPayment.Location = new System.Drawing.Point(625, 200);
+            this.btnConfirmPayment.Margin = new System.Windows.Forms.Padding(2);
+            this.btnConfirmPayment.Name = "btnConfirmPayment";
+            this.btnConfirmPayment.Size = new System.Drawing.Size(125, 32);
+            this.btnConfirmPayment.TabIndex = 2;
+            this.btnConfirmPayment.Text = "Xác nhận thanh toán";
+            // 
+            // lbTransactionID
+            // 
+            this.lbTransactionID.AutoSize = true;
+            this.lbTransactionID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.lbTransactionID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.lbTransactionID.Location = new System.Drawing.Point(550, 110);
+            this.lbTransactionID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbTransactionID.Name = "lbTransactionID";
+            this.lbTransactionID.Size = new System.Drawing.Size(113, 21);
+            this.lbTransactionID.TabIndex = 16;
+            this.lbTransactionID.Text = "Mã giao dịch:";
+            // 
             // tbTotalCost
             // 
             this.tbTotalCost.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -152,6 +164,7 @@
             this.tbTotalCost.ForeColor = System.Drawing.Color.RoyalBlue;
             this.tbTotalCost.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbTotalCost.Location = new System.Drawing.Point(550, 68);
+            this.tbTotalCost.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbTotalCost.Name = "tbTotalCost";
             this.tbTotalCost.PlaceholderText = "";
             this.tbTotalCost.ReadOnly = true;
@@ -333,8 +346,8 @@
             // 
             // grpSearch
             // 
+            this.grpSearch.Controls.Add(this.cmbUnpaidRegistrationID);
             this.grpSearch.Controls.Add(this.btnSearch);
-            this.grpSearch.Controls.Add(this.tbRegistrationCode);
             this.grpSearch.Controls.Add(this.lbRegistrationCode);
             this.grpSearch.Dock = System.Windows.Forms.DockStyle.Top;
             this.grpSearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
@@ -346,7 +359,7 @@
             this.grpSearch.Size = new System.Drawing.Size(848, 80);
             this.grpSearch.TabIndex = 0;
             this.grpSearch.TabStop = false;
-            this.grpSearch.Text = "Tìm kiếm phiếu đăng ký";
+            this.grpSearch.Text = "Chọn phiếu đăng ký chưa thanh toán";
             // 
             // btnSearch
             // 
@@ -363,26 +376,7 @@
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(110, 31);
             this.btnSearch.TabIndex = 1;
-            this.btnSearch.Text = "Tìm kiếm";
-            // 
-            // tbRegistrationCode
-            // 
-            this.tbRegistrationCode.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbRegistrationCode.DefaultText = "DV001";
-            this.tbRegistrationCode.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbRegistrationCode.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbRegistrationCode.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbRegistrationCode.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbRegistrationCode.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbRegistrationCode.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.tbRegistrationCode.ForeColor = System.Drawing.Color.Black;
-            this.tbRegistrationCode.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbRegistrationCode.Location = new System.Drawing.Point(190, 33);
-            this.tbRegistrationCode.Name = "tbRegistrationCode";
-            this.tbRegistrationCode.PlaceholderText = "";
-            this.tbRegistrationCode.SelectedText = "";
-            this.tbRegistrationCode.Size = new System.Drawing.Size(200, 29);
-            this.tbRegistrationCode.TabIndex = 4;
+            this.btnSearch.Text = "Chọn";
             // 
             // lbRegistrationCode
             // 
@@ -434,40 +428,40 @@
             this.lbHeader.Location = new System.Drawing.Point(3, 4);
             this.lbHeader.Margin = new System.Windows.Forms.Padding(2);
             this.lbHeader.Name = "lbHeader";
-            this.lbHeader.Size = new System.Drawing.Size(110, 23);
+            this.lbHeader.Size = new System.Drawing.Size(160, 23);
             this.lbHeader.TabIndex = 0;
-            this.lbHeader.Text = "THANH TOÁN";
+            this.lbHeader.Text = "THANH TOÁN ĐƠN VỊ";
             // 
-            // lbTransactionID
+            // btnCreateInvoice
             // 
-            this.lbTransactionID.AutoSize = true;
-            this.lbTransactionID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.lbTransactionID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.lbTransactionID.Location = new System.Drawing.Point(550, 110);
-            this.lbTransactionID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbTransactionID.Name = "lbTransactionID";
-            this.lbTransactionID.Size = new System.Drawing.Size(113, 21);
-            this.lbTransactionID.TabIndex = 16;
-            this.lbTransactionID.Text = "Mã giao dịch:";
+            this.btnCreateInvoice.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.btnCreateInvoice.BorderRadius = 8;
+            this.btnCreateInvoice.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnCreateInvoice.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnCreateInvoice.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCreateInvoice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnCreateInvoice.Enabled = false;
+            this.btnCreateInvoice.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnCreateInvoice.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
+            this.btnCreateInvoice.ForeColor = System.Drawing.Color.Black;
+            this.btnCreateInvoice.Location = new System.Drawing.Point(365, 360);
+            this.btnCreateInvoice.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCreateInvoice.Name = "btnCreateInvoice";
+            this.btnCreateInvoice.Size = new System.Drawing.Size(150, 32);
+            this.btnCreateInvoice.TabIndex = 3;
+            this.btnCreateInvoice.Text = "📋 Tạo hóa đơn";
             // 
-            // tbTransactionID
+            // cmbUnpaidRegistrationID
             // 
-            this.tbTransactionID.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbTransactionID.DefaultText = "PTHT123";
-            this.tbTransactionID.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbTransactionID.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbTransactionID.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbTransactionID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbTransactionID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbTransactionID.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.tbTransactionID.ForeColor = System.Drawing.Color.Black;
-            this.tbTransactionID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbTransactionID.Location = new System.Drawing.Point(550, 148);
-            this.tbTransactionID.Name = "tbTransactionID";
-            this.tbTransactionID.PlaceholderText = "";
-            this.tbTransactionID.SelectedText = "";
-            this.tbTransactionID.Size = new System.Drawing.Size(274, 33);
-            this.tbTransactionID.TabIndex = 17;
+            this.cmbUnpaidRegistrationID.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.cmbUnpaidRegistrationID.FormattingEnabled = true;
+            this.cmbUnpaidRegistrationID.Items.AddRange(new object[] {
+            "DV001",
+            "DV002"});
+            this.cmbUnpaidRegistrationID.Location = new System.Drawing.Point(190, 33);
+            this.cmbUnpaidRegistrationID.Name = "cmbUnpaidRegistrationID";
+            this.cmbUnpaidRegistrationID.Size = new System.Drawing.Size(200, 25);
+            this.cmbUnpaidRegistrationID.TabIndex = 4;
             // 
             // OrganizationPayment
             // 
@@ -501,7 +495,6 @@
         private System.Windows.Forms.Label lbHeader;
         private System.Windows.Forms.GroupBox grpSearch;
         private System.Windows.Forms.Label lbRegistrationCode;
-        private Guna.UI2.WinForms.Guna2TextBox tbRegistrationCode;
         private Guna.UI2.WinForms.Guna2Button btnSearch;
         private System.Windows.Forms.GroupBox grpInformation;
         private System.Windows.Forms.Label lbCustomerName;
@@ -517,8 +510,9 @@
         private Guna.UI2.WinForms.Guna2TextBox tbTotalCost;
         private System.Windows.Forms.Label lbTotalCost;
         private Guna.UI2.WinForms.Guna2Button btnConfirmPayment;
-        private Guna.UI2.WinForms.Guna2Button btnCreateInvoice;
         private System.Windows.Forms.Label lbTransactionID;
         private Guna.UI2.WinForms.Guna2TextBox tbTransactionID;
+        private Guna.UI2.WinForms.Guna2Button btnCreateInvoice;
+        private System.Windows.Forms.ComboBox cmbUnpaidRegistrationID;
     }
 }
