@@ -65,11 +65,17 @@
     <Compile Include="CommonForms\RegulationsView.Designer.cs">
       <DependentUpon>RegulationsView.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForms\NVKT\Form1.cs">
+    <Compile Include="MainForms\NVKT\OrganizationPayment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForms\NVKT\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="MainForms\NVKT\OrganizationPayment.Designer.cs">
+      <DependentUpon>OrganizationPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForms\NVKT\OriginalPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForms\NVKT\OriginalPayment.Designer.cs">
+      <DependentUpon>OriginalPayment.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -85,6 +91,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CommonForms\RegulationsView.resx">
       <DependentUpon>RegulationsView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForms\NVKT\OrganizationPayment.resx">
+      <DependentUpon>OrganizationPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForms\NVKT\OriginalPayment.resx">
+      <DependentUpon>OriginalPayment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
