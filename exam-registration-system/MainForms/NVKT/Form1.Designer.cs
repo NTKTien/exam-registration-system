@@ -340,6 +340,7 @@
             this.groupBoxSearch.TabIndex = 0;
             this.groupBoxSearch.TabStop = false;
             this.groupBoxSearch.Text = "Tìm kiếm phiếu đăng ký";
+            this.groupBoxSearch.Enter += new System.EventHandler(this.groupBoxSearch_Enter);
             // 
             // labelRegistrationCode
             // 
@@ -421,7 +422,7 @@
             this.lbHeader.TabIndex = 0;
             this.lbHeader.Text = "THANH TOÁN";
             // 
-            // OriginalPayment
+            // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
@@ -432,7 +433,7 @@
             this.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.Name = "OriginalPayment";
+            this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PaymentManagementForm";
             this.panelContent.ResumeLayout(false);

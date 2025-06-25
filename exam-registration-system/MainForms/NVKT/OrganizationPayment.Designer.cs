@@ -1,6 +1,6 @@
 ﻿namespace exam_registration_system.MainForms.NVKT
 {
-    partial class OriginalPayment
+    partial class OrganizationPayment
     {
         /// <summary>
         /// Required designer variable.
@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.pnlContainer = new System.Windows.Forms.Panel();
+            this.btnCreateInvoice = new Guna.UI2.WinForms.Guna2Button();
             this.btnConfirmPayment = new Guna.UI2.WinForms.Guna2Button();
             this.grpInformation = new System.Windows.Forms.GroupBox();
             this.tbTotalCost = new Guna.UI2.WinForms.Guna2TextBox();
@@ -50,7 +51,8 @@
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.btnExit = new Guna.UI2.WinForms.Guna2Button();
             this.lbHeader = new System.Windows.Forms.Label();
-            this.btnCreateInvoice = new Guna.UI2.WinForms.Guna2Button();
+            this.lbTransactionID = new System.Windows.Forms.Label();
+            this.tbTransactionID = new Guna.UI2.WinForms.Guna2TextBox();
             this.pnlContainer.SuspendLayout();
             this.grpInformation.SuspendLayout();
             this.grpSearch.SuspendLayout();
@@ -71,6 +73,25 @@
             this.pnlContainer.Size = new System.Drawing.Size(880, 410);
             this.pnlContainer.TabIndex = 0;
             // 
+            // btnCreateInvoice
+            // 
+            this.btnCreateInvoice.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.btnCreateInvoice.BorderRadius = 8;
+            this.btnCreateInvoice.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnCreateInvoice.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnCreateInvoice.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCreateInvoice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnCreateInvoice.Enabled = false;
+            this.btnCreateInvoice.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnCreateInvoice.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
+            this.btnCreateInvoice.ForeColor = System.Drawing.Color.Black;
+            this.btnCreateInvoice.Location = new System.Drawing.Point(365, 360);
+            this.btnCreateInvoice.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCreateInvoice.Name = "btnCreateInvoice";
+            this.btnCreateInvoice.Size = new System.Drawing.Size(150, 32);
+            this.btnCreateInvoice.TabIndex = 3;
+            this.btnCreateInvoice.Text = "📋 Tạo hóa đơn";
+            // 
             // btnConfirmPayment
             // 
             this.btnConfirmPayment.BorderColor = System.Drawing.Color.DarkSlateGray;
@@ -83,7 +104,7 @@
             this.btnConfirmPayment.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
             this.btnConfirmPayment.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnConfirmPayment.ForeColor = System.Drawing.Color.White;
-            this.btnConfirmPayment.Location = new System.Drawing.Point(620, 130);
+            this.btnConfirmPayment.Location = new System.Drawing.Point(625, 200);
             this.btnConfirmPayment.Margin = new System.Windows.Forms.Padding(2);
             this.btnConfirmPayment.Name = "btnConfirmPayment";
             this.btnConfirmPayment.Size = new System.Drawing.Size(125, 32);
@@ -92,8 +113,10 @@
             // 
             // grpInformation
             // 
-            this.grpInformation.Controls.Add(this.tbTotalCost);
+            this.grpInformation.Controls.Add(this.tbTransactionID);
             this.grpInformation.Controls.Add(this.btnConfirmPayment);
+            this.grpInformation.Controls.Add(this.lbTransactionID);
+            this.grpInformation.Controls.Add(this.tbTotalCost);
             this.grpInformation.Controls.Add(this.lbTotalCost);
             this.grpInformation.Controls.Add(this.tbCertificateType);
             this.grpInformation.Controls.Add(this.tbStatus);
@@ -118,7 +141,7 @@
             // tbTotalCost
             // 
             this.tbTotalCost.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbTotalCost.DefaultText = "1.200.000";
+            this.tbTotalCost.DefaultText = "10.800.000";
             this.tbTotalCost.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.tbTotalCost.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.tbTotalCost.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -128,8 +151,7 @@
             this.tbTotalCost.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbTotalCost.ForeColor = System.Drawing.Color.RoyalBlue;
             this.tbTotalCost.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbTotalCost.Location = new System.Drawing.Point(550, 78);
-            this.tbTotalCost.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbTotalCost.Location = new System.Drawing.Point(550, 68);
             this.tbTotalCost.Name = "tbTotalCost";
             this.tbTotalCost.PlaceholderText = "";
             this.tbTotalCost.ReadOnly = true;
@@ -142,7 +164,7 @@
             this.lbTotalCost.AutoSize = true;
             this.lbTotalCost.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.lbTotalCost.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.lbTotalCost.Location = new System.Drawing.Point(550, 40);
+            this.lbTotalCost.Location = new System.Drawing.Point(550, 30);
             this.lbTotalCost.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbTotalCost.Name = "lbTotalCost";
             this.lbTotalCost.Size = new System.Drawing.Size(109, 21);
@@ -232,7 +254,7 @@
             // tbCustomerName
             // 
             this.tbCustomerName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbCustomerName.DefaultText = "Nguyễn Văn A";
+            this.tbCustomerName.DefaultText = "Trường ABC";
             this.tbCustomerName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.tbCustomerName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.tbCustomerName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -346,7 +368,7 @@
             // tbRegistrationCode
             // 
             this.tbRegistrationCode.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbRegistrationCode.DefaultText = "TD001";
+            this.tbRegistrationCode.DefaultText = "DV001";
             this.tbRegistrationCode.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.tbRegistrationCode.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.tbRegistrationCode.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -416,26 +438,38 @@
             this.lbHeader.TabIndex = 0;
             this.lbHeader.Text = "THANH TOÁN";
             // 
-            // btnCreateInvoice
+            // lbTransactionID
             // 
-            this.btnCreateInvoice.BorderColor = System.Drawing.Color.DarkSlateGray;
-            this.btnCreateInvoice.BorderRadius = 8;
-            this.btnCreateInvoice.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnCreateInvoice.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnCreateInvoice.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnCreateInvoice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnCreateInvoice.Enabled = false;
-            this.btnCreateInvoice.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnCreateInvoice.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
-            this.btnCreateInvoice.ForeColor = System.Drawing.Color.Black;
-            this.btnCreateInvoice.Location = new System.Drawing.Point(365, 360);
-            this.btnCreateInvoice.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCreateInvoice.Name = "btnCreateInvoice";
-            this.btnCreateInvoice.Size = new System.Drawing.Size(150, 32);
-            this.btnCreateInvoice.TabIndex = 4;
-            this.btnCreateInvoice.Text = "📋 Tạo hóa đơn";
+            this.lbTransactionID.AutoSize = true;
+            this.lbTransactionID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.lbTransactionID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.lbTransactionID.Location = new System.Drawing.Point(550, 110);
+            this.lbTransactionID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbTransactionID.Name = "lbTransactionID";
+            this.lbTransactionID.Size = new System.Drawing.Size(113, 21);
+            this.lbTransactionID.TabIndex = 16;
+            this.lbTransactionID.Text = "Mã giao dịch:";
             // 
-            // OriginalPayment
+            // tbTransactionID
+            // 
+            this.tbTransactionID.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbTransactionID.DefaultText = "PTHT123";
+            this.tbTransactionID.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbTransactionID.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbTransactionID.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbTransactionID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbTransactionID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbTransactionID.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.tbTransactionID.ForeColor = System.Drawing.Color.Black;
+            this.tbTransactionID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbTransactionID.Location = new System.Drawing.Point(550, 148);
+            this.tbTransactionID.Name = "tbTransactionID";
+            this.tbTransactionID.PlaceholderText = "";
+            this.tbTransactionID.SelectedText = "";
+            this.tbTransactionID.Size = new System.Drawing.Size(274, 33);
+            this.tbTransactionID.TabIndex = 17;
+            // 
+            // OrganizationPayment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
@@ -446,7 +480,7 @@
             this.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.Name = "OriginalPayment";
+            this.Name = "OrganizationPayment";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PaymentManagementForm";
             this.pnlContainer.ResumeLayout(false);
@@ -484,5 +518,7 @@
         private System.Windows.Forms.Label lbTotalCost;
         private Guna.UI2.WinForms.Guna2Button btnConfirmPayment;
         private Guna.UI2.WinForms.Guna2Button btnCreateInvoice;
+        private System.Windows.Forms.Label lbTransactionID;
+        private Guna.UI2.WinForms.Guna2TextBox tbTransactionID;
     }
 }

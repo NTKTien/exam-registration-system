@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace exam_registration_system.MainForms.NVKT
 {
-    public partial class Form1 : Form
+    public partial class OrganizationPayment : Form
     {
-        public Form1()
+        public OrganizationPayment()
         {
             InitializeComponent();
-        }
-
-        private void groupBoxSearch_Enter(object sender, EventArgs e)
-        {
-
         }
     }
 }
