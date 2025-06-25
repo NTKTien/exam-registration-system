@@ -28,14 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlContainer = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnDownload = new Guna.UI2.WinForms.Guna2Button();
+            this.btnSearch = new Guna.UI2.WinForms.Guna2Button();
+            this.tbSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.dgvRegulations = new Guna.UI2.WinForms.Guna2DataGridView();
             this.RegulationID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RegulationContent = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pnlNavigation = new Guna.UI2.WinForms.Guna2Panel();
+            this.pnlCategory = new Guna.UI2.WinForms.Guna2Panel();
             this.btnRefundPolicy = new Guna.UI2.WinForms.Guna2Button();
             this.btnSpecialHandling = new Guna.UI2.WinForms.Guna2Button();
             this.btnExtensionRules = new Guna.UI2.WinForms.Guna2Button();
@@ -43,13 +46,10 @@
             this.btnRegistrationRules = new Guna.UI2.WinForms.Guna2Button();
             this.lbHeader = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.pnlHeader = new Guna.UI2.WinForms.Guna2Panel();
-            this.tbSearch = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btnSearch = new Guna.UI2.WinForms.Guna2Button();
-            this.btnDownload = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnExit = new Guna.UI2.WinForms.Guna2Button();
             this.pnlContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegulations)).BeginInit();
-            this.pnlNavigation.SuspendLayout();
+            this.pnlCategory.SuspendLayout();
             this.pnlHeader.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,47 +59,96 @@
             this.pnlContainer.Controls.Add(this.btnSearch);
             this.pnlContainer.Controls.Add(this.tbSearch);
             this.pnlContainer.Controls.Add(this.dgvRegulations);
-            this.pnlContainer.Controls.Add(this.pnlNavigation);
+            this.pnlContainer.Controls.Add(this.pnlCategory);
             this.pnlContainer.Controls.Add(this.lbHeader);
             this.pnlContainer.Controls.Add(this.pnlHeader);
             this.pnlContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlContainer.Location = new System.Drawing.Point(0, 0);
-            this.pnlContainer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlContainer.Margin = new System.Windows.Forms.Padding(2);
             this.pnlContainer.Name = "pnlContainer";
             this.pnlContainer.Size = new System.Drawing.Size(880, 440);
             this.pnlContainer.TabIndex = 0;
             // 
+            // btnDownload
+            // 
+            this.btnDownload.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.btnDownload.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDownload.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDownload.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDownload.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDownload.FillColor = System.Drawing.Color.LimeGreen;
+            this.btnDownload.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDownload.ForeColor = System.Drawing.Color.White;
+            this.btnDownload.Location = new System.Drawing.Point(40, 90);
+            this.btnDownload.Name = "btnDownload";
+            this.btnDownload.Size = new System.Drawing.Size(100, 30);
+            this.btnDownload.TabIndex = 6;
+            this.btnDownload.Text = "↓ Tải xuống";
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSearch.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.Location = new System.Drawing.Point(760, 90);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(80, 30);
+            this.btnSearch.TabIndex = 5;
+            this.btnSearch.Text = "Tìm kiếm";
+            // 
+            // tbSearch
+            // 
+            this.tbSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbSearch.DefaultText = "";
+            this.tbSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tbSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbSearch.Location = new System.Drawing.Point(560, 90);
+            this.tbSearch.Name = "tbSearch";
+            this.tbSearch.PlaceholderText = "";
+            this.tbSearch.SelectedText = "";
+            this.tbSearch.Size = new System.Drawing.Size(200, 30);
+            this.tbSearch.TabIndex = 4;
+            // 
             // dgvRegulations
             // 
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
-            this.dgvRegulations.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgvRegulations.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvRegulations.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvRegulations.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(247)))), ((int)(((byte)(250)))));
             this.dgvRegulations.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvRegulations.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvRegulations.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRegulations.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvRegulations.ColumnHeadersHeight = 30;
             this.dgvRegulations.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.RegulationID,
             this.RegulationContent});
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvRegulations.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRegulations.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvRegulations.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(247)))), ((int)(((byte)(250)))));
             this.dgvRegulations.Location = new System.Drawing.Point(40, 140);
-            this.dgvRegulations.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvRegulations.Margin = new System.Windows.Forms.Padding(2);
             this.dgvRegulations.Name = "dgvRegulations";
             this.dgvRegulations.RowHeadersVisible = false;
             this.dgvRegulations.RowHeadersWidth = 51;
@@ -147,20 +196,20 @@
             this.RegulationContent.Name = "RegulationContent";
             this.RegulationContent.ReadOnly = true;
             // 
-            // pnlNavigation
+            // pnlCategory
             // 
-            this.pnlNavigation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.pnlNavigation.Controls.Add(this.btnRefundPolicy);
-            this.pnlNavigation.Controls.Add(this.btnSpecialHandling);
-            this.pnlNavigation.Controls.Add(this.btnExtensionRules);
-            this.pnlNavigation.Controls.Add(this.btnPaymentRules);
-            this.pnlNavigation.Controls.Add(this.btnRegistrationRules);
-            this.pnlNavigation.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlNavigation.Location = new System.Drawing.Point(0, 40);
-            this.pnlNavigation.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pnlNavigation.Name = "pnlNavigation";
-            this.pnlNavigation.Size = new System.Drawing.Size(880, 40);
-            this.pnlNavigation.TabIndex = 2;
+            this.pnlCategory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.pnlCategory.Controls.Add(this.btnRefundPolicy);
+            this.pnlCategory.Controls.Add(this.btnSpecialHandling);
+            this.pnlCategory.Controls.Add(this.btnExtensionRules);
+            this.pnlCategory.Controls.Add(this.btnPaymentRules);
+            this.pnlCategory.Controls.Add(this.btnRegistrationRules);
+            this.pnlCategory.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlCategory.Location = new System.Drawing.Point(0, 30);
+            this.pnlCategory.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlCategory.Name = "pnlCategory";
+            this.pnlCategory.Size = new System.Drawing.Size(880, 40);
+            this.pnlCategory.TabIndex = 2;
             // 
             // btnRefundPolicy
             // 
@@ -175,7 +224,7 @@
             this.btnRefundPolicy.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(196)))), ((int)(((byte)(15)))));
             this.btnRefundPolicy.HoverState.ForeColor = System.Drawing.Color.White;
             this.btnRefundPolicy.Location = new System.Drawing.Point(712, 4);
-            this.btnRefundPolicy.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRefundPolicy.Margin = new System.Windows.Forms.Padding(2);
             this.btnRefundPolicy.Name = "btnRefundPolicy";
             this.btnRefundPolicy.Size = new System.Drawing.Size(160, 32);
             this.btnRefundPolicy.TabIndex = 5;
@@ -196,7 +245,7 @@
             this.btnSpecialHandling.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(196)))), ((int)(((byte)(15)))));
             this.btnSpecialHandling.HoverState.ForeColor = System.Drawing.Color.White;
             this.btnSpecialHandling.Location = new System.Drawing.Point(536, 4);
-            this.btnSpecialHandling.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSpecialHandling.Margin = new System.Windows.Forms.Padding(2);
             this.btnSpecialHandling.Name = "btnSpecialHandling";
             this.btnSpecialHandling.Size = new System.Drawing.Size(160, 32);
             this.btnSpecialHandling.TabIndex = 4;
@@ -215,7 +264,7 @@
             this.btnExtensionRules.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(196)))), ((int)(((byte)(15)))));
             this.btnExtensionRules.HoverState.ForeColor = System.Drawing.Color.White;
             this.btnExtensionRules.Location = new System.Drawing.Point(360, 4);
-            this.btnExtensionRules.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnExtensionRules.Margin = new System.Windows.Forms.Padding(2);
             this.btnExtensionRules.Name = "btnExtensionRules";
             this.btnExtensionRules.Size = new System.Drawing.Size(160, 32);
             this.btnExtensionRules.TabIndex = 3;
@@ -234,7 +283,7 @@
             this.btnPaymentRules.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(196)))), ((int)(((byte)(15)))));
             this.btnPaymentRules.HoverState.ForeColor = System.Drawing.Color.White;
             this.btnPaymentRules.Location = new System.Drawing.Point(184, 4);
-            this.btnPaymentRules.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPaymentRules.Margin = new System.Windows.Forms.Padding(2);
             this.btnPaymentRules.Name = "btnPaymentRules";
             this.btnPaymentRules.Size = new System.Drawing.Size(160, 32);
             this.btnPaymentRules.TabIndex = 3;
@@ -253,7 +302,7 @@
             this.btnRegistrationRules.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(196)))), ((int)(((byte)(15)))));
             this.btnRegistrationRules.HoverState.ForeColor = System.Drawing.Color.White;
             this.btnRegistrationRules.Location = new System.Drawing.Point(8, 4);
-            this.btnRegistrationRules.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRegistrationRules.Margin = new System.Windows.Forms.Padding(2);
             this.btnRegistrationRules.Name = "btnRegistrationRules";
             this.btnRegistrationRules.Size = new System.Drawing.Size(160, 32);
             this.btnRegistrationRules.TabIndex = 1;
@@ -262,91 +311,44 @@
             // lbHeader
             // 
             this.lbHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
-            this.lbHeader.Font = new System.Drawing.Font("Segoe UI", 14.5F, System.Drawing.FontStyle.Bold);
+            this.lbHeader.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.lbHeader.ForeColor = System.Drawing.Color.White;
-            this.lbHeader.Location = new System.Drawing.Point(6, 6);
-            this.lbHeader.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lbHeader.Location = new System.Drawing.Point(8, 5);
+            this.lbHeader.Margin = new System.Windows.Forms.Padding(2);
             this.lbHeader.Name = "lbHeader";
-            this.lbHeader.Size = new System.Drawing.Size(98, 27);
+            this.lbHeader.Size = new System.Drawing.Size(68, 19);
             this.lbHeader.TabIndex = 1;
             this.lbHeader.Text = "QUY ĐỊNH";
             // 
             // pnlHeader
             // 
             this.pnlHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
-            this.pnlHeader.Controls.Add(this.guna2Button1);
+            this.pnlHeader.Controls.Add(this.btnExit);
             this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlHeader.Location = new System.Drawing.Point(0, 0);
-            this.pnlHeader.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlHeader.Margin = new System.Windows.Forms.Padding(2);
             this.pnlHeader.Name = "pnlHeader";
-            this.pnlHeader.Size = new System.Drawing.Size(880, 40);
+            this.pnlHeader.Size = new System.Drawing.Size(880, 30);
             this.pnlHeader.TabIndex = 0;
             // 
-            // tbSearch
+            // btnExit
             // 
-            this.tbSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbSearch.DefaultText = "";
-            this.tbSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.tbSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbSearch.Location = new System.Drawing.Point(560, 90);
-            this.tbSearch.Name = "tbSearch";
-            this.tbSearch.PlaceholderText = "";
-            this.tbSearch.SelectedText = "";
-            this.tbSearch.Size = new System.Drawing.Size(200, 30);
-            this.tbSearch.TabIndex = 4;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnSearch.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(760, 90);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(80, 30);
-            this.btnSearch.TabIndex = 5;
-            this.btnSearch.Text = "Tìm kiếm";
-            // 
-            // btnDownload
-            // 
-            this.btnDownload.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.btnDownload.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnDownload.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnDownload.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnDownload.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnDownload.FillColor = System.Drawing.Color.LimeGreen;
-            this.btnDownload.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDownload.ForeColor = System.Drawing.Color.White;
-            this.btnDownload.Location = new System.Drawing.Point(40, 90);
-            this.btnDownload.Name = "btnDownload";
-            this.btnDownload.Size = new System.Drawing.Size(100, 30);
-            this.btnDownload.TabIndex = 6;
-            this.btnDownload.Text = "↓ Tải xuống";
-            // 
-            // guna2Button1
-            // 
-            this.guna2Button1.BorderColor = System.Drawing.Color.White;
-            this.guna2Button1.BorderRadius = 5;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.Red;
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(845, 5);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(30, 30);
-            this.guna2Button1.TabIndex = 0;
-            this.guna2Button1.Text = "❌";
+            this.btnExit.AutoRoundedCorners = true;
+            this.btnExit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnExit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnExit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnExit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnExit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnExit.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
+            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnExit.ForeColor = System.Drawing.Color.White;
+            this.btnExit.ImageSize = new System.Drawing.Size(50, 50);
+            this.btnExit.Location = new System.Drawing.Point(843, 0);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(2);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(37, 30);
+            this.btnExit.TabIndex = 1;
+            this.btnExit.Text = "✕";
             // 
             // RegulationsView
             // 
@@ -355,14 +357,14 @@
             this.ClientSize = new System.Drawing.Size(880, 440);
             this.Controls.Add(this.pnlContainer);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "RegulationsView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegulationsView";
             this.pnlContainer.ResumeLayout(false);
             this.pnlContainer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegulations)).EndInit();
-            this.pnlNavigation.ResumeLayout(false);
+            this.pnlCategory.ResumeLayout(false);
             this.pnlHeader.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -372,7 +374,7 @@
 
         private Guna.UI2.WinForms.Guna2Panel pnlContainer;
         private Guna.UI2.WinForms.Guna2Panel pnlHeader;
-        private Guna.UI2.WinForms.Guna2Panel pnlNavigation;
+        private Guna.UI2.WinForms.Guna2Panel pnlCategory;
         private Guna.UI2.WinForms.Guna2HtmlLabel lbHeader;
         private Guna.UI2.WinForms.Guna2Button btnRegistrationRules;
         private Guna.UI2.WinForms.Guna2Button btnPaymentRules;
@@ -385,6 +387,6 @@
         private Guna.UI2.WinForms.Guna2TextBox tbSearch;
         private Guna.UI2.WinForms.Guna2Button btnSearch;
         private Guna.UI2.WinForms.Guna2Button btnDownload;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button btnExit;
     }
 }
