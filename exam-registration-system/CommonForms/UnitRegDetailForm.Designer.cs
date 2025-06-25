@@ -43,7 +43,9 @@
             this.labelInforHeader = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.tbUnit = new Guna.UI2.WinForms.Guna2TextBox();
+            this.tbBirth = new Guna.UI2.WinForms.Guna2TextBox();
             this.labelUnitName = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.labelBirth = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.labelInforRegHeader = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.labelTypeReg = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.labelRegDate = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -52,16 +54,14 @@
             this.tbRegDate = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbRegCode = new Guna.UI2.WinForms.Guna2TextBox();
             this.panelInforReg = new Guna.UI2.WinForms.Guna2Panel();
+            this.tbExamDate = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lableExamDate = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.labelStatus = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.tbStatus = new Guna.UI2.WinForms.Guna2TextBox();
             this.panelContent = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.labelDetailReg = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.panelHeader = new Guna.UI2.WinForms.Guna2Panel();
-            this.labelBirth = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.tbBirth = new Guna.UI2.WinForms.Guna2TextBox();
-            this.tbExamDate = new Guna.UI2.WinForms.Guna2TextBox();
-            this.lableExamDate = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.tbStatus = new Guna.UI2.WinForms.Guna2TextBox();
-            this.labelStatus = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel2.SuspendLayout();
             this.panelInforReg.SuspendLayout();
             this.panelContent.SuspendLayout();
@@ -296,6 +296,24 @@
             this.tbUnit.Size = new System.Drawing.Size(200, 30);
             this.tbUnit.TabIndex = 3;
             // 
+            // tbBirth
+            // 
+            this.tbBirth.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbBirth.DefaultText = "";
+            this.tbBirth.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbBirth.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbBirth.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbBirth.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbBirth.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbBirth.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tbBirth.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbBirth.Location = new System.Drawing.Point(496, 46);
+            this.tbBirth.Name = "tbBirth";
+            this.tbBirth.PlaceholderText = "";
+            this.tbBirth.SelectedText = "";
+            this.tbBirth.Size = new System.Drawing.Size(200, 30);
+            this.tbBirth.TabIndex = 3;
+            // 
             // labelUnitName
             // 
             this.labelUnitName.BackColor = System.Drawing.Color.Transparent;
@@ -305,6 +323,16 @@
             this.labelUnitName.Size = new System.Drawing.Size(95, 27);
             this.labelUnitName.TabIndex = 2;
             this.labelUnitName.Text = "Tên đơn vị:";
+            // 
+            // labelBirth
+            // 
+            this.labelBirth.BackColor = System.Drawing.Color.Transparent;
+            this.labelBirth.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBirth.Location = new System.Drawing.Point(346, 50);
+            this.labelBirth.Name = "labelBirth";
+            this.labelBirth.Size = new System.Drawing.Size(91, 27);
+            this.labelBirth.TabIndex = 2;
+            this.labelBirth.Text = "Ngày sinh:";
             // 
             // labelInforRegHeader
             // 
@@ -428,6 +456,63 @@
             this.panelInforReg.Size = new System.Drawing.Size(711, 201);
             this.panelInforReg.TabIndex = 1;
             // 
+            // tbExamDate
+            // 
+            this.tbExamDate.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbExamDate.DefaultText = "";
+            this.tbExamDate.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbExamDate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbExamDate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbExamDate.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbExamDate.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbExamDate.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tbExamDate.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbExamDate.Location = new System.Drawing.Point(122, 146);
+            this.tbExamDate.Name = "tbExamDate";
+            this.tbExamDate.PlaceholderText = "";
+            this.tbExamDate.SelectedText = "";
+            this.tbExamDate.Size = new System.Drawing.Size(200, 30);
+            this.tbExamDate.TabIndex = 7;
+            // 
+            // lableExamDate
+            // 
+            this.lableExamDate.AutoSize = false;
+            this.lableExamDate.BackColor = System.Drawing.Color.Transparent;
+            this.lableExamDate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lableExamDate.Location = new System.Drawing.Point(11, 146);
+            this.lableExamDate.Name = "lableExamDate";
+            this.lableExamDate.Size = new System.Drawing.Size(93, 28);
+            this.lableExamDate.TabIndex = 6;
+            this.lableExamDate.Text = "Ngày thi:";
+            // 
+            // labelStatus
+            // 
+            this.labelStatus.BackColor = System.Drawing.Color.Transparent;
+            this.labelStatus.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelStatus.Location = new System.Drawing.Point(346, 99);
+            this.labelStatus.Name = "labelStatus";
+            this.labelStatus.Size = new System.Drawing.Size(133, 27);
+            this.labelStatus.TabIndex = 2;
+            this.labelStatus.Text = "Trạng thái xử lí:";
+            // 
+            // tbStatus
+            // 
+            this.tbStatus.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbStatus.DefaultText = "";
+            this.tbStatus.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbStatus.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbStatus.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbStatus.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbStatus.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbStatus.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tbStatus.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbStatus.Location = new System.Drawing.Point(496, 99);
+            this.tbStatus.Name = "tbStatus";
+            this.tbStatus.PlaceholderText = "";
+            this.tbStatus.SelectedText = "";
+            this.tbStatus.Size = new System.Drawing.Size(200, 30);
+            this.tbStatus.TabIndex = 3;
+            // 
             // panelContent
             // 
             this.panelContent.BorderColor = System.Drawing.Color.Gray;
@@ -481,91 +566,6 @@
             this.panelHeader.Name = "panelHeader";
             this.panelHeader.Size = new System.Drawing.Size(760, 59);
             this.panelHeader.TabIndex = 3;
-            // 
-            // labelBirth
-            // 
-            this.labelBirth.BackColor = System.Drawing.Color.Transparent;
-            this.labelBirth.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBirth.Location = new System.Drawing.Point(346, 50);
-            this.labelBirth.Name = "labelBirth";
-            this.labelBirth.Size = new System.Drawing.Size(91, 27);
-            this.labelBirth.TabIndex = 2;
-            this.labelBirth.Text = "Ngày sinh:";
-            // 
-            // tbBirth
-            // 
-            this.tbBirth.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbBirth.DefaultText = "";
-            this.tbBirth.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbBirth.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbBirth.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbBirth.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbBirth.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbBirth.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.tbBirth.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbBirth.Location = new System.Drawing.Point(496, 46);
-            this.tbBirth.Name = "tbBirth";
-            this.tbBirth.PlaceholderText = "";
-            this.tbBirth.SelectedText = "";
-            this.tbBirth.Size = new System.Drawing.Size(200, 30);
-            this.tbBirth.TabIndex = 3;
-            // 
-            // tbExamDate
-            // 
-            this.tbExamDate.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbExamDate.DefaultText = "";
-            this.tbExamDate.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbExamDate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbExamDate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbExamDate.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbExamDate.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbExamDate.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.tbExamDate.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbExamDate.Location = new System.Drawing.Point(122, 146);
-            this.tbExamDate.Name = "tbExamDate";
-            this.tbExamDate.PlaceholderText = "";
-            this.tbExamDate.SelectedText = "";
-            this.tbExamDate.Size = new System.Drawing.Size(200, 30);
-            this.tbExamDate.TabIndex = 7;
-            // 
-            // lableExamDate
-            // 
-            this.lableExamDate.AutoSize = false;
-            this.lableExamDate.BackColor = System.Drawing.Color.Transparent;
-            this.lableExamDate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lableExamDate.Location = new System.Drawing.Point(13, 135);
-            this.lableExamDate.Name = "lableExamDate";
-            this.lableExamDate.Size = new System.Drawing.Size(107, 47);
-            this.lableExamDate.TabIndex = 6;
-            this.lableExamDate.Text = "Ngày mong muốn thi:";
-            // 
-            // tbStatus
-            // 
-            this.tbStatus.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbStatus.DefaultText = "";
-            this.tbStatus.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbStatus.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbStatus.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbStatus.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbStatus.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbStatus.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.tbStatus.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbStatus.Location = new System.Drawing.Point(496, 99);
-            this.tbStatus.Name = "tbStatus";
-            this.tbStatus.PlaceholderText = "";
-            this.tbStatus.SelectedText = "";
-            this.tbStatus.Size = new System.Drawing.Size(200, 30);
-            this.tbStatus.TabIndex = 3;
-            // 
-            // labelStatus
-            // 
-            this.labelStatus.BackColor = System.Drawing.Color.Transparent;
-            this.labelStatus.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelStatus.Location = new System.Drawing.Point(346, 99);
-            this.labelStatus.Name = "labelStatus";
-            this.labelStatus.Size = new System.Drawing.Size(133, 27);
-            this.labelStatus.TabIndex = 2;
-            this.labelStatus.Text = "Trạng thái xử lí:";
             // 
             // UnitRegDetailForm
             // 

@@ -35,7 +35,6 @@
             this.panelHeader = new Guna.UI2.WinForms.Guna2Panel();
             this.labelDetailReg = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.panelContent = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.textSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.dgvRegList = new Guna.UI2.WinForms.Guna2DataGridView();
             this.codeReg = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,10 +44,11 @@
             this.customerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TypeCustomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.butSearch = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panelHeader.SuspendLayout();
             this.panelContent.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.butSearch)).BeginInit();
             this.SuspendLayout();
             // 
             // panelHeader
@@ -78,7 +78,7 @@
             // 
             this.panelContent.BorderColor = System.Drawing.Color.Gray;
             this.panelContent.BorderThickness = 1;
-            this.panelContent.Controls.Add(this.guna2PictureBox1);
+            this.panelContent.Controls.Add(this.butSearch);
             this.panelContent.Controls.Add(this.textSearch);
             this.panelContent.Controls.Add(this.dgvRegList);
             this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -86,19 +86,6 @@
             this.panelContent.Name = "panelContent";
             this.panelContent.Size = new System.Drawing.Size(933, 529);
             this.panelContent.TabIndex = 2;
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2PictureBox1.BackColor = System.Drawing.Color.White;
-            this.guna2PictureBox1.Image = global::exam_registration_system.Properties.Resources.search_icon;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(858, 28);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(35, 33);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox1.TabIndex = 61;
-            this.guna2PictureBox1.TabStop = false;
             // 
             // textSearch
             // 
@@ -132,7 +119,6 @@
             this.dgvRegList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvRegList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.None;
             this.dgvRegList.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.dgvRegList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvRegList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
@@ -267,6 +253,19 @@
             this.Status.ReadOnly = true;
             this.Status.Width = 130;
             // 
+            // butSearch
+            // 
+            this.butSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.butSearch.BackColor = System.Drawing.Color.White;
+            this.butSearch.Image = global::exam_registration_system.Properties.Resources.search_icon;
+            this.butSearch.ImageRotate = 0F;
+            this.butSearch.Location = new System.Drawing.Point(858, 28);
+            this.butSearch.Name = "butSearch";
+            this.butSearch.Size = new System.Drawing.Size(35, 33);
+            this.butSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.butSearch.TabIndex = 61;
+            this.butSearch.TabStop = false;
+            // 
             // RegListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -277,15 +276,15 @@
             this.Controls.Add(this.panelHeader);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "RegListForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegListForm";
             this.Load += new System.EventHandler(this.RegListForm_Load);
             this.panelHeader.ResumeLayout(false);
             this.panelContent.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.butSearch)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -295,7 +294,7 @@
         private Guna.UI2.WinForms.Guna2Panel panelHeader;
         private Guna.UI2.WinForms.Guna2HtmlLabel labelDetailReg;
         private Guna.UI2.WinForms.Guna2Panel panelContent;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private Guna.UI2.WinForms.Guna2PictureBox butSearch;
         private Guna.UI2.WinForms.Guna2TextBox textSearch;
         private Guna.UI2.WinForms.Guna2DataGridView dgvRegList;
         private System.Windows.Forms.DataGridViewTextBoxColumn codeReg;
