@@ -8,23 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace exam_registration_system.MainForms.NVKT
+namespace exam_registration_system
 {
-    public partial class CreateExtensionForm : Form
+    public partial class ViewListExtensionRequest : Form
     {
-        public CreateExtensionForm()
+        public ViewListExtensionRequest()
         {
             InitializeComponent();
-        }
-
-        private void labelInforHeader_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2Button1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void labelDetailReg_Click(object sender, EventArgs e)
@@ -37,7 +27,7 @@ namespace exam_registration_system.MainForms.NVKT
 
         }
 
-        private void guna2CheckBox1_CheckedChanged(object sender, EventArgs e)
+        private void guna2HtmlLabel1_Click(object sender, EventArgs e)
         {
 
         }
