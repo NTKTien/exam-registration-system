@@ -76,11 +76,29 @@
     <Compile Include="CommonForms\UnitRegDetailForm.Designer.cs">
       <DependentUpon>UnitRegDetailForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CommonForms\ViewExamSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommonForms\ViewExamSchedule.Designer.cs">
+      <DependentUpon>ViewExamSchedule.cs</DependentUpon>
+    </Compile>
     <Compile Include="CommonForms\viewListCandidate.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CommonForms\viewListCandidate.Designer.cs">
       <DependentUpon>viewListCandidate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForms\NVKT\CreateExtensionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForms\NVKT\CreateExtensionForm.Designer.cs">
+      <DependentUpon>CreateExtensionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForms\NVNL\ExtensionReceiveForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForms\NVNL\ExtensionReceiveForm.Designer.cs">
+      <DependentUpon>ExtensionReceiveForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForms\NVTN\createdRegForm.cs">
       <SubType>Form</SubType>
@@ -110,8 +128,17 @@
     <EmbeddedResource Include="CommonForms\UnitRegDetailForm.resx">
       <DependentUpon>UnitRegDetailForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CommonForms\ViewExamSchedule.resx">
+      <DependentUpon>ViewExamSchedule.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CommonForms\viewListCandidate.resx">
       <DependentUpon>viewListCandidate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForms\NVKT\CreateExtensionForm.resx">
+      <DependentUpon>CreateExtensionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForms\NVNL\ExtensionReceiveForm.resx">
+      <DependentUpon>ExtensionReceiveForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForms\NVTN\createdRegForm.resx">
       <DependentUpon>createdRegForm.cs</DependentUpon>
