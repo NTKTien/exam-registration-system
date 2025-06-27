@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -82,6 +82,30 @@
     <Compile Include="CommonForms\viewListCandidate.Designer.cs">
       <DependentUpon>viewListCandidate.cs</DependentUpon>
     </Compile>
+    <Compile Include="CommonForms\viewSpreadsheetForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommonForms\viewSpreadsheetForm.Designer.cs">
+      <DependentUpon>viewSpreadsheetForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForms\NVNL\chooseTypeCer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForms\NVNL\chooseTypeCer.Designer.cs">
+      <DependentUpon>chooseTypeCer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForms\NVNL\recordCertificateInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForms\NVNL\recordCertificateInfoForm.Designer.cs">
+      <DependentUpon>recordCertificateInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForms\NVNL\sendCerResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForms\NVNL\sendCerResult.Designer.cs">
+      <DependentUpon>sendCerResult.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForms\NVTN\createdRegForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +117,18 @@
     </Compile>
     <Compile Include="MainForms\NVTN\createdRegUnitForm.Designer.cs">
       <DependentUpon>createdRegUnitForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForms\NVTN\releaseCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForms\NVTN\releaseCard.Designer.cs">
+      <DependentUpon>releaseCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForms\NVTN\viewDetailCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForms\NVTN\viewDetailCard.Designer.cs">
+      <DependentUpon>viewDetailCard.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -113,11 +149,29 @@
     <EmbeddedResource Include="CommonForms\viewListCandidate.resx">
       <DependentUpon>viewListCandidate.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CommonForms\viewSpreadsheetForm.resx">
+      <DependentUpon>viewSpreadsheetForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForms\NVNL\chooseTypeCer.resx">
+      <DependentUpon>chooseTypeCer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForms\NVNL\recordCertificateInfoForm.resx">
+      <DependentUpon>recordCertificateInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForms\NVNL\sendCerResult.resx">
+      <DependentUpon>sendCerResult.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForms\NVTN\createdRegForm.resx">
       <DependentUpon>createdRegForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForms\NVTN\createdRegUnitForm.resx">
       <DependentUpon>createdRegUnitForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForms\NVTN\releaseCard.resx">
+      <DependentUpon>releaseCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForms\NVTN\viewDetailCard.resx">
+      <DependentUpon>viewDetailCard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
