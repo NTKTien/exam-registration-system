@@ -519,6 +519,53 @@
             this.butCancel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.butCancel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butCancel.ForeColor = System.Drawing.Color.White;
+            this.butCancel.Location = new System.Drawing.Point(632, 461);
+            this.butCancel.Name = "butCancel";
+            this.butCancel.Size = new System.Drawing.Size(102, 34);
+            this.butCancel.TabIndex = 7;
+            this.butCancel.Text = "Hủy";
+            // 
+            // butCreateReg
+            // 
+            this.butCreateReg.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.butCreateReg.BorderRadius = 5;
+            this.butCreateReg.BorderThickness = 1;
+            this.butCreateReg.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.butCreateReg.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.butCreateReg.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.butCreateReg.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.butCreateReg.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(117)))), ((int)(((byte)(185)))));
+            this.butCreateReg.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butCreateReg.ForeColor = System.Drawing.Color.White;
+            this.butCreateReg.Location = new System.Drawing.Point(509, 461);
+            this.butCreateReg.Name = "butCreateReg";
+            this.butCreateReg.Size = new System.Drawing.Size(102, 34);
+            this.butCreateReg.TabIndex = 7;
+            this.butCreateReg.Text = "Tạo phiếu";
+            // 
+            // labelDetailReg
+            // 
+            this.labelDetailReg.AutoSize = false;
+            this.labelDetailReg.BackColor = System.Drawing.Color.Transparent;
+            this.labelDetailReg.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDetailReg.Location = new System.Drawing.Point(138, 12);
+            this.labelDetailReg.Name = "labelDetailReg";
+            this.labelDetailReg.Size = new System.Drawing.Size(473, 32);
+            this.labelDetailReg.TabIndex = 0;
+            this.labelDetailReg.Text = "Đăng ký đánh giá năng lực - Khách hàng tự do";
+            // 
+            // panelHeader
+            // 
+            this.butCancel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.butCancel.BorderRadius = 5;
+            this.butCancel.BorderThickness = 1;
+            this.butCancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.butCancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.butCancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.butCancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.butCancel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.butCancel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butCancel.ForeColor = System.Drawing.Color.White;
             this.butCancel.Location = new System.Drawing.Point(699, 494);
             this.butCancel.Name = "butCancel";
             this.butCancel.Size = new System.Drawing.Size(102, 34);

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -39,7 +39,9 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -64,6 +66,48 @@
     <Compile Include="CommonForms\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="MainForms\NVTN\CertificatesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForms\NVTN\CertificatesForm.Designer.cs">
+      <DependentUpon>CertificatesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForms\NVTN\CertificatesUnitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForms\NVTN\CertificatesUnitForm.Designer.cs">
+      <DependentUpon>CertificatesUnitForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForms\NVTN\ListCertificatescsUnitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForms\NVTN\ListCertificatescsUnitForm.Designer.cs">
+      <DependentUpon>ListCertificatescsUnitForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForms\NVTN\view_exam_entry_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForms\NVTN\view_exam_entry_form.Designer.cs">
+      <DependentUpon>view_exam_entry_form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommonForms\RegulationsView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommonForms\RegulationsView.Designer.cs">
+      <DependentUpon>RegulationsView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForms\NVKT\OrganizationPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForms\NVKT\OrganizationPayment.Designer.cs">
+      <DependentUpon>OrganizationPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForms\NVKT\OriginalPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForms\NVKT\OriginalPayment.Designer.cs">
+      <DependentUpon>OriginalPayment.cs</DependentUpon>
+    </Compile>
     <Compile Include="CommonForms\RegDetailForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,11 +126,59 @@
     <Compile Include="CommonForms\UnitRegDetailForm.Designer.cs">
       <DependentUpon>UnitRegDetailForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CommonForms\ViewExamSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommonForms\ViewExamSchedule.Designer.cs">
+      <DependentUpon>ViewExamSchedule.cs</DependentUpon>
+    </Compile>
     <Compile Include="CommonForms\viewListCandidate.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CommonForms\viewListCandidate.Designer.cs">
       <DependentUpon>viewListCandidate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommonForms\viewSpreadsheetForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommonForms\viewSpreadsheetForm.Designer.cs">
+      <DependentUpon>viewSpreadsheetForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForms\NVKT\viewListExtensionRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForms\NVKT\viewListExtensionRequest.Designer.cs">
+      <DependentUpon>viewListExtensionRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForms\NVNL\chooseTypeCer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForms\NVNL\chooseTypeCer.Designer.cs">
+      <DependentUpon>chooseTypeCer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForms\NVNL\recordCertificateInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForms\NVNL\recordCertificateInfoForm.Designer.cs">
+      <DependentUpon>recordCertificateInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForms\NVNL\sendCerResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForms\NVNL\sendCerResult.Designer.cs">
+      <DependentUpon>sendCerResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForms\NVKT\CreateExtensionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForms\NVKT\CreateExtensionForm.Designer.cs">
+      <DependentUpon>CreateExtensionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForms\NVNL\ExtensionReceiveForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForms\NVNL\ExtensionReceiveForm.Designer.cs">
+      <DependentUpon>ExtensionReceiveForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForms\NVTN\createdRegForm.cs">
       <SubType>Form</SubType>
@@ -105,9 +197,25 @@
     </Compile>
     <Compile Include="MainForms\NVTN\HomeNVTNForm.Designer.cs">
       <DependentUpon>HomeNVTNForm.cs</DependentUpon>
+    <Compile Include="MainForms\NVTN\releaseCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForms\NVTN\releaseCard.Designer.cs">
+      <DependentUpon>releaseCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForms\NVTN\viewDetailCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForms\NVTN\viewDetailCard.Designer.cs">
+      <DependentUpon>viewDetailCard.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Utils\GlobalInfor.cs" />
     <Compile Include="Utils\OracleHelper.cs" />
     <EmbeddedResource Include="CommonForms\homeUC.resx">
@@ -115,6 +223,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CommonForms\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForms\NVTN\CertificatesForm.resx">
+      <DependentUpon>CertificatesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForms\NVTN\CertificatesUnitForm.resx">
+      <DependentUpon>CertificatesUnitForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForms\NVTN\ListCertificatescsUnitForm.resx">
+      <DependentUpon>ListCertificatescsUnitForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForms\NVTN\view_exam_entry_form.resx">
+      <DependentUpon>view_exam_entry_form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommonForms\RegulationsView.resx">
+      <DependentUpon>RegulationsView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForms\NVKT\OrganizationPayment.resx">
+      <DependentUpon>OrganizationPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForms\NVKT\OriginalPayment.resx">
+      <DependentUpon>OriginalPayment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CommonForms\RegDetailForm.resx">
       <DependentUpon>RegDetailForm.cs</DependentUpon>
@@ -125,8 +254,32 @@
     <EmbeddedResource Include="CommonForms\UnitRegDetailForm.resx">
       <DependentUpon>UnitRegDetailForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CommonForms\ViewExamSchedule.resx">
+      <DependentUpon>ViewExamSchedule.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CommonForms\viewListCandidate.resx">
       <DependentUpon>viewListCandidate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommonForms\viewSpreadsheetForm.resx">
+      <DependentUpon>viewSpreadsheetForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForms\NVKT\viewListExtensionRequest.resx">
+      <DependentUpon>viewListExtensionRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForms\NVNL\chooseTypeCer.resx">
+      <DependentUpon>chooseTypeCer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForms\NVNL\recordCertificateInfoForm.resx">
+      <DependentUpon>recordCertificateInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForms\NVNL\sendCerResult.resx">
+      <DependentUpon>sendCerResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForms\NVKT\CreateExtensionForm.resx">
+      <DependentUpon>CreateExtensionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForms\NVNL\ExtensionReceiveForm.resx">
+      <DependentUpon>ExtensionReceiveForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForms\NVTN\createdRegForm.resx">
       <DependentUpon>createdRegForm.cs</DependentUpon>
@@ -136,11 +289,16 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainForms\NVTN\HomeNVTNForm.resx">
       <DependentUpon>HomeNVTNForm.cs</DependentUpon>
+    <EmbeddedResource Include="MainForms\NVTN\releaseCard.resx">
+      <DependentUpon>releaseCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForms\NVTN\viewDetailCard.resx">
+      <DependentUpon>viewDetailCard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -165,7 +323,43 @@
     <None Include="Resources\logo_icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\search_icon.png" />
+    <None Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ổ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\509591040_2313086389208626_706091563171852892_n.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChatGPT Image 22_03_46 28 thg 6, 2025.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngtree-white-rectangle-with-rounded-corner-gray-png-image_10946804.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChatGPT Image 22_25_51 28 thg 6, 2025.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backgroud.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\key.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\homePage_image.png" />
