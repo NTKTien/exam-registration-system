@@ -197,6 +197,7 @@
     </Compile>
     <Compile Include="MainForms\NVTN\HomeNVTNForm.Designer.cs">
       <DependentUpon>HomeNVTNForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForms\NVTN\releaseCard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -289,6 +290,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainForms\NVTN\HomeNVTNForm.resx">
       <DependentUpon>HomeNVTNForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForms\NVTN\releaseCard.resx">
       <DependentUpon>releaseCard.cs</DependentUpon>
     </EmbeddedResource>
