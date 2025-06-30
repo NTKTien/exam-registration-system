@@ -40,6 +40,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -57,6 +58,24 @@
     </Compile>
     <Compile Include="CommonForms\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommonForms\RegulationsView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommonForms\RegulationsView.Designer.cs">
+      <DependentUpon>RegulationsView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForms\NVKT\OrganizationPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForms\NVKT\OrganizationPayment.Designer.cs">
+      <DependentUpon>OrganizationPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForms\NVKT\OriginalPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForms\NVKT\OriginalPayment.Designer.cs">
+      <DependentUpon>OriginalPayment.cs</DependentUpon>
     </Compile>
     <Compile Include="CommonForms\RegDetailForm.cs">
       <SubType>Form</SubType>
@@ -156,10 +175,24 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Utils\GlobalInfor.cs" />
     <Compile Include="Utils\OracleHelper.cs" />
     <EmbeddedResource Include="CommonForms\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommonForms\RegulationsView.resx">
+      <DependentUpon>RegulationsView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForms\NVKT\OrganizationPayment.resx">
+      <DependentUpon>OrganizationPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForms\NVKT\OriginalPayment.resx">
+      <DependentUpon>OriginalPayment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CommonForms\RegDetailForm.resx">
       <DependentUpon>RegDetailForm.cs</DependentUpon>
@@ -211,8 +244,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -235,7 +268,9 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <None Include="Resources\search_icon.png" />
+    <Folder Include="MainForms\NVNL\" />
+    <Folder Include="MainForms\NVTN\" />
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
