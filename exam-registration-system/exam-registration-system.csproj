@@ -60,12 +60,6 @@
     <Compile Include="CommonForms\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="MainForms\NVTN\CertificatesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -309,7 +303,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\logo.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\images.png" />
   </ItemGroup>
@@ -333,6 +329,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ChatGPT Image 22_25_51 28 thg 6, 2025.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backgroud.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\key.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

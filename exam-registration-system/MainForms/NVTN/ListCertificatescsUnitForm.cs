@@ -21,5 +21,10 @@ namespace exam_registration_system.MainForms.NVTN
         {
 
         }
+
+        private void butSearch_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

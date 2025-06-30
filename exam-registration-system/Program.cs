@@ -1,4 +1,6 @@
 ﻿using exam_registration_system.CommonForms;
+using exam_registration_system.MainForms.NVKT;
+using exam_registration_system.MainForms.NVNL;
 using exam_registration_system.MainForms.NVTN;
 using System;
 using System.Collections.Generic;
@@ -18,7 +20,7 @@ namespace exam_registration_system
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Login());
+            Application.Run(new Login());
         }
     }
 }

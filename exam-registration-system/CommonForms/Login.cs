@@ -20,11 +20,7 @@ namespace exam_registration_system.CommonForms
 
         private void Login_Load(object sender, EventArgs e)
         {
-            // Bo tròn PictureBox avatar
-            System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath();
-            int radius = pictureBox1.Width; // đảm bảo pictureBox1 là hình vuông
-            path.AddEllipse(0, 0, radius, radius);
-            pictureBox1.Region = new Region(path);
+            
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -102,6 +98,11 @@ namespace exam_registration_system.CommonForms
         }
 
         private void guna2Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }
