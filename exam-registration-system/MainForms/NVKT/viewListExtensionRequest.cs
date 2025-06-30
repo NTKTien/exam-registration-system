@@ -16,5 +16,15 @@ namespace exam_registration_system.MainForms.NVKT
         {
             InitializeComponent();
         }
+
+        private void viewListExtensionRequest_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
