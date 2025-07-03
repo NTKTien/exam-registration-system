@@ -66,5 +66,10 @@ namespace exam_registration_system.CommonForms
         {
 
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

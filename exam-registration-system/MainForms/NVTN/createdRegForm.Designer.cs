@@ -58,9 +58,8 @@
             this.cmbTypeDGNL = new Guna.UI2.WinForms.Guna2ComboBox();
             this.tbCalenderEx = new Guna.UI2.WinForms.Guna2TextBox();
             this.panelContent = new Guna.UI2.WinForms.Guna2Panel();
-            this.butCancel = new Guna.UI2.WinForms.Guna2Button();
-            this.butCreateReg = new Guna.UI2.WinForms.Guna2Button();
             this.labelDetailReg = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.butCreateReg = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel2.SuspendLayout();
             this.panelInforReg.SuspendLayout();
             this.panelContent.SuspendLayout();
@@ -345,12 +344,12 @@
             this.guna2Panel2.Controls.Add(this.labelSex);
             this.guna2Panel2.Controls.Add(this.labelInforHeader);
             this.guna2Panel2.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.guna2Panel2.Location = new System.Drawing.Point(90, 59);
+            this.guna2Panel2.Location = new System.Drawing.Point(91, 93);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.ShadowDecoration.BorderRadius = 15;
             this.guna2Panel2.ShadowDecoration.Depth = 10;
             this.guna2Panel2.ShadowDecoration.Enabled = true;
-            this.guna2Panel2.Size = new System.Drawing.Size(711, 229);
+            this.guna2Panel2.Size = new System.Drawing.Size(711, 242);
             this.guna2Panel2.TabIndex = 0;
             // 
             // guna2CustomRadioButton2
@@ -432,7 +431,7 @@
             this.panelInforReg.Controls.Add(this.tbRegCode);
             this.panelInforReg.CustomBorderColor = System.Drawing.Color.Silver;
             this.panelInforReg.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.panelInforReg.Location = new System.Drawing.Point(90, 317);
+            this.panelInforReg.Location = new System.Drawing.Point(91, 381);
             this.panelInforReg.Name = "panelInforReg";
             this.panelInforReg.ShadowDecoration.BorderRadius = 15;
             this.panelInforReg.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -458,6 +457,7 @@
             this.butSelectCalenderEx.Size = new System.Drawing.Size(102, 34);
             this.butSelectCalenderEx.TabIndex = 7;
             this.butSelectCalenderEx.Text = "Chọn lịch thi";
+            this.butSelectCalenderEx.Click += new System.EventHandler(this.butSelectCalenderEx_Click);
             // 
             // cmbTypeDGNL
             // 
@@ -497,116 +497,50 @@
             this.panelContent.BorderColor = System.Drawing.Color.Gray;
             this.panelContent.BorderThickness = 1;
             this.panelContent.Controls.Add(this.labelDetailReg);
-            this.panelContent.Controls.Add(this.butCancel);
             this.panelContent.Controls.Add(this.butCreateReg);
             this.panelContent.Controls.Add(this.panelInforReg);
             this.panelContent.Controls.Add(this.guna2Panel2);
             this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContent.Location = new System.Drawing.Point(0, 0);
             this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(897, 544);
+            this.panelContent.Size = new System.Drawing.Size(897, 672);
             this.panelContent.TabIndex = 4;
             // 
-            // butCancel
-            // 
-            this.butCancel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.butCancel.BorderRadius = 5;
-            this.butCancel.BorderThickness = 1;
-            this.butCancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.butCancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.butCancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.butCancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.butCancel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.butCancel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butCancel.ForeColor = System.Drawing.Color.White;
-            this.butCancel.Location = new System.Drawing.Point(632, 461);
-            this.butCancel.Name = "butCancel";
-            this.butCancel.Size = new System.Drawing.Size(102, 34);
-            this.butCancel.TabIndex = 7;
-            this.butCancel.Text = "Hủy";
-            // 
-            // butCreateReg
-            // 
-            this.butCreateReg.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.butCreateReg.BorderRadius = 5;
-            this.butCreateReg.BorderThickness = 1;
-            this.butCreateReg.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.butCreateReg.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.butCreateReg.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.butCreateReg.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.butCreateReg.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(117)))), ((int)(((byte)(185)))));
-            this.butCreateReg.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butCreateReg.ForeColor = System.Drawing.Color.White;
-            this.butCreateReg.Location = new System.Drawing.Point(509, 461);
-            this.butCreateReg.Name = "butCreateReg";
-            this.butCreateReg.Size = new System.Drawing.Size(102, 34);
-            this.butCreateReg.TabIndex = 7;
-            this.butCreateReg.Text = "Tạo phiếu";
-            // 
             // labelDetailReg
             // 
             this.labelDetailReg.AutoSize = false;
             this.labelDetailReg.BackColor = System.Drawing.Color.Transparent;
             this.labelDetailReg.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDetailReg.Location = new System.Drawing.Point(138, 12);
-            this.labelDetailReg.Name = "labelDetailReg";
-            this.labelDetailReg.Size = new System.Drawing.Size(473, 32);
-            this.labelDetailReg.TabIndex = 0;
-            this.labelDetailReg.Text = "Đăng ký đánh giá năng lực - Khách hàng tự do";
-            // 
-            // panelHeader
-            // 
-            this.butCancel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.butCancel.BorderRadius = 5;
-            this.butCancel.BorderThickness = 1;
-            this.butCancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.butCancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.butCancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.butCancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.butCancel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.butCancel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butCancel.ForeColor = System.Drawing.Color.White;
-            this.butCancel.Location = new System.Drawing.Point(699, 494);
-            this.butCancel.Name = "butCancel";
-            this.butCancel.Size = new System.Drawing.Size(102, 34);
-            this.butCancel.TabIndex = 7;
-            this.butCancel.Text = "Hủy";
-            // 
-            // butCreateReg
-            // 
-            this.butCreateReg.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.butCreateReg.BorderRadius = 5;
-            this.butCreateReg.BorderThickness = 1;
-            this.butCreateReg.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.butCreateReg.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.butCreateReg.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.butCreateReg.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.butCreateReg.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(117)))), ((int)(((byte)(185)))));
-            this.butCreateReg.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butCreateReg.ForeColor = System.Drawing.Color.White;
-            this.butCreateReg.Location = new System.Drawing.Point(576, 494);
-            this.butCreateReg.Name = "butCreateReg";
-            this.butCreateReg.Size = new System.Drawing.Size(102, 34);
-            this.butCreateReg.TabIndex = 7;
-            this.butCreateReg.Text = "Tạo phiếu";
-            // 
-            // labelDetailReg
-            // 
-            this.labelDetailReg.AutoSize = false;
-            this.labelDetailReg.BackColor = System.Drawing.Color.Transparent;
-            this.labelDetailReg.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDetailReg.Location = new System.Drawing.Point(218, 12);
+            this.labelDetailReg.Location = new System.Drawing.Point(210, 24);
             this.labelDetailReg.Name = "labelDetailReg";
             this.labelDetailReg.Size = new System.Drawing.Size(473, 32);
             this.labelDetailReg.TabIndex = 8;
             this.labelDetailReg.Text = "Đăng ký đánh giá năng lực - Khách hàng tự do";
+            // 
+            // butCreateReg
+            // 
+            this.butCreateReg.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.butCreateReg.BorderRadius = 5;
+            this.butCreateReg.BorderThickness = 1;
+            this.butCreateReg.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.butCreateReg.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.butCreateReg.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.butCreateReg.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.butCreateReg.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(117)))), ((int)(((byte)(185)))));
+            this.butCreateReg.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butCreateReg.ForeColor = System.Drawing.Color.White;
+            this.butCreateReg.Location = new System.Drawing.Point(700, 569);
+            this.butCreateReg.Name = "butCreateReg";
+            this.butCreateReg.Size = new System.Drawing.Size(102, 34);
+            this.butCreateReg.TabIndex = 7;
+            this.butCreateReg.Text = "Tạo phiếu";
             // 
             // createdRegForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(247)))), ((int)(((byte)(250)))));
-            this.ClientSize = new System.Drawing.Size(897, 544);
+            this.ClientSize = new System.Drawing.Size(897, 672);
             this.Controls.Add(this.panelContent);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -656,7 +590,6 @@
         private Guna.UI2.WinForms.Guna2Button butSelectCalenderEx;
         private Guna.UI2.WinForms.Guna2TextBox tbCalenderEx;
         private Guna.UI2.WinForms.Guna2Button butCreateReg;
-        private Guna.UI2.WinForms.Guna2Button butCancel;
         private Guna.UI2.WinForms.Guna2HtmlLabel labelDetailReg;
     }
 }

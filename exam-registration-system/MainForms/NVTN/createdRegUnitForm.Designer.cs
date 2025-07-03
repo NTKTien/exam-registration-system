@@ -31,7 +31,6 @@
             this.panelContent = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.butCancel = new Guna.UI2.WinForms.Guna2Button();
             this.butCreateReg = new Guna.UI2.WinForms.Guna2Button();
             this.panelInforReg = new Guna.UI2.WinForms.Guna2Panel();
             this.butSelectCalenderEx = new Guna.UI2.WinForms.Guna2Button();
@@ -65,29 +64,27 @@
             this.labelRadioMan = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.labelSex = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.labelInforHeader = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.panelHeader = new Guna.UI2.WinForms.Guna2Panel();
             this.labelDetailReg = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.panelContent.SuspendLayout();
             this.panelInforReg.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
-            this.panelHeader.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelContent
             // 
             this.panelContent.BorderColor = System.Drawing.Color.Gray;
             this.panelContent.BorderThickness = 1;
+            this.panelContent.Controls.Add(this.labelDetailReg);
             this.panelContent.Controls.Add(this.guna2Button2);
             this.panelContent.Controls.Add(this.guna2Button1);
-            this.panelContent.Controls.Add(this.butCancel);
             this.panelContent.Controls.Add(this.butCreateReg);
             this.panelContent.Controls.Add(this.panelInforReg);
             this.panelContent.Controls.Add(this.guna2HtmlLabel2);
             this.panelContent.Controls.Add(this.guna2Panel2);
             this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContent.Location = new System.Drawing.Point(0, 59);
+            this.panelContent.Location = new System.Drawing.Point(0, 0);
             this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(760, 613);
+            this.panelContent.Size = new System.Drawing.Size(897, 672);
             this.panelContent.TabIndex = 5;
             // 
             // guna2Button2
@@ -102,11 +99,12 @@
             this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Location = new System.Drawing.Point(389, 333);
+            this.guna2Button2.Location = new System.Drawing.Point(459, 382);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.Size = new System.Drawing.Size(116, 34);
             this.guna2Button2.TabIndex = 9;
             this.guna2Button2.Text = "xem danh sách";
+            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // guna2Button1
             // 
@@ -120,29 +118,11 @@
             this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(251, 333);
+            this.guna2Button1.Location = new System.Drawing.Point(321, 382);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(114, 34);
             this.guna2Button1.TabIndex = 9;
             this.guna2Button1.Text = "chọn file excel";
-            // 
-            // butCancel
-            // 
-            this.butCancel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.butCancel.BorderRadius = 5;
-            this.butCancel.BorderThickness = 1;
-            this.butCancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.butCancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.butCancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.butCancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.butCancel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.butCancel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butCancel.ForeColor = System.Drawing.Color.White;
-            this.butCancel.Location = new System.Drawing.Point(632, 567);
-            this.butCancel.Name = "butCancel";
-            this.butCancel.Size = new System.Drawing.Size(102, 34);
-            this.butCancel.TabIndex = 7;
-            this.butCancel.Text = "Hủy";
             // 
             // butCreateReg
             // 
@@ -156,7 +136,7 @@
             this.butCreateReg.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(117)))), ((int)(((byte)(185)))));
             this.butCreateReg.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butCreateReg.ForeColor = System.Drawing.Color.White;
-            this.butCreateReg.Location = new System.Drawing.Point(509, 567);
+            this.butCreateReg.Location = new System.Drawing.Point(702, 614);
             this.butCreateReg.Name = "butCreateReg";
             this.butCreateReg.Size = new System.Drawing.Size(102, 34);
             this.butCreateReg.TabIndex = 7;
@@ -179,7 +159,7 @@
             this.panelInforReg.Controls.Add(this.tbRegCode);
             this.panelInforReg.CustomBorderColor = System.Drawing.Color.Silver;
             this.panelInforReg.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.panelInforReg.Location = new System.Drawing.Point(23, 390);
+            this.panelInforReg.Location = new System.Drawing.Point(93, 439);
             this.panelInforReg.Name = "panelInforReg";
             this.panelInforReg.ShadowDecoration.BorderRadius = 15;
             this.panelInforReg.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -205,6 +185,7 @@
             this.butSelectCalenderEx.Size = new System.Drawing.Size(102, 34);
             this.butSelectCalenderEx.TabIndex = 9;
             this.butSelectCalenderEx.Text = "Chọn lịch thi";
+            this.butSelectCalenderEx.Click += new System.EventHandler(this.butSelectCalenderEx_Click);
             // 
             // tbCalenderEx
             // 
@@ -319,7 +300,7 @@
             // 
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel2.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(23, 335);
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(93, 384);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
             this.guna2HtmlLabel2.Size = new System.Drawing.Size(209, 27);
             this.guna2HtmlLabel2.TabIndex = 2;
@@ -352,7 +333,7 @@
             this.guna2Panel2.Controls.Add(this.labelSex);
             this.guna2Panel2.Controls.Add(this.labelInforHeader);
             this.guna2Panel2.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.guna2Panel2.Location = new System.Drawing.Point(23, 26);
+            this.guna2Panel2.Location = new System.Drawing.Point(93, 75);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.ShadowDecoration.BorderRadius = 15;
             this.guna2Panel2.ShadowDecoration.Depth = 10;
@@ -628,27 +609,15 @@
             this.labelInforHeader.TabIndex = 2;
             this.labelInforHeader.Text = "Thông tin khách hàng đăng ký";
             // 
-            // panelHeader
-            // 
-            this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(190)))), ((int)(((byte)(230)))));
-            this.panelHeader.BorderColor = System.Drawing.Color.Gray;
-            this.panelHeader.BorderThickness = 1;
-            this.panelHeader.Controls.Add(this.labelDetailReg);
-            this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelHeader.Location = new System.Drawing.Point(0, 0);
-            this.panelHeader.Name = "panelHeader";
-            this.panelHeader.Size = new System.Drawing.Size(760, 59);
-            this.panelHeader.TabIndex = 4;
-            // 
             // labelDetailReg
             // 
             this.labelDetailReg.AutoSize = false;
             this.labelDetailReg.BackColor = System.Drawing.Color.Transparent;
             this.labelDetailReg.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDetailReg.Location = new System.Drawing.Point(179, 12);
+            this.labelDetailReg.Location = new System.Drawing.Point(251, 14);
             this.labelDetailReg.Name = "labelDetailReg";
             this.labelDetailReg.Size = new System.Drawing.Size(368, 32);
-            this.labelDetailReg.TabIndex = 0;
+            this.labelDetailReg.TabIndex = 10;
             this.labelDetailReg.Text = "Đăng ký đánh giá năng lực - Đơn vị\r\n";
             // 
             // createdRegUnitForm
@@ -656,9 +625,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(247)))), ((int)(((byte)(250)))));
-            this.ClientSize = new System.Drawing.Size(760, 672);
+            this.ClientSize = new System.Drawing.Size(897, 672);
             this.Controls.Add(this.panelContent);
-            this.Controls.Add(this.panelHeader);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -671,14 +639,12 @@
             this.panelInforReg.PerformLayout();
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
-            this.panelHeader.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private Guna.UI2.WinForms.Guna2Panel panelContent;
-        private Guna.UI2.WinForms.Guna2Button butCancel;
         private Guna.UI2.WinForms.Guna2Button butCreateReg;
         private Guna.UI2.WinForms.Guna2Panel panelInforReg;
         private Guna.UI2.WinForms.Guna2ComboBox cmbTypeDGNL;
@@ -714,7 +680,6 @@
         private Guna.UI2.WinForms.Guna2TextBox tbCalenderEx;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
-        private Guna.UI2.WinForms.Guna2Panel panelHeader;
         private Guna.UI2.WinForms.Guna2HtmlLabel labelDetailReg;
     }
 }

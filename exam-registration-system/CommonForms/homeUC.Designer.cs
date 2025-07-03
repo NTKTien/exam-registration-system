@@ -49,7 +49,7 @@
             this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContent.Location = new System.Drawing.Point(0, 0);
             this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(895, 544);
+            this.panelContent.Size = new System.Drawing.Size(897, 672);
             this.panelContent.TabIndex = 0;
             // 
             // tableLayoutPanel1
@@ -75,7 +75,7 @@
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(636, 37);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(638, 37);
             this.tableLayoutPanel1.TabIndex = 38;
             // 
             // labelRole
@@ -109,7 +109,7 @@
             this.textLoginDate.PlaceholderText = "";
             this.textLoginDate.ReadOnly = true;
             this.textLoginDate.SelectedText = "";
-            this.textLoginDate.Size = new System.Drawing.Size(173, 29);
+            this.textLoginDate.Size = new System.Drawing.Size(175, 29);
             this.textLoginDate.TabIndex = 33;
             this.textLoginDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -188,10 +188,10 @@
             this.homeImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(242)))), ((int)(((byte)(251)))));
             this.homeImg.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.homeImg.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.homeImg.Image = global::exam_registration_system.Properties.Resources.homePage_image1;
+            this.homeImg.Image = global::exam_registration_system.Properties.Resources.homePage_img;
             this.homeImg.Location = new System.Drawing.Point(0, 0);
             this.homeImg.Name = "homeImg";
-            this.homeImg.Size = new System.Drawing.Size(895, 544);
+            this.homeImg.Size = new System.Drawing.Size(897, 672);
             this.homeImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.homeImg.TabIndex = 2;
             this.homeImg.TabStop = false;
@@ -202,9 +202,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.Controls.Add(this.panelContent);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "homeUC";
-            this.Size = new System.Drawing.Size(895, 544);
+            this.Size = new System.Drawing.Size(897, 672);
             this.panelContent.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.homeImg)).EndInit();

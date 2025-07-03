@@ -66,6 +66,48 @@
     <Compile Include="CommonForms\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="CommonForms\ViewExamScheduleMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CommonForms\ViewExamScheduleMenu.Designer.cs">
+      <DependentUpon>ViewExamScheduleMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForms\NVKT\CreateExtensionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForms\NVKT\CreateExtensionForm.Designer.cs">
+      <DependentUpon>CreateExtensionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForms\NVKT\HomeNVKTForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForms\NVKT\HomeNVKTForm.Designer.cs">
+      <DependentUpon>HomeNVKTForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForms\NVKT\OrganizationPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForms\NVKT\OrganizationPayment.Designer.cs">
+      <DependentUpon>OrganizationPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForms\NVKT\OriginalPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForms\NVKT\OriginalPayment.Designer.cs">
+      <DependentUpon>OriginalPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForms\NVKT\viewListExtensionRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForms\NVKT\viewListExtensionRequest.Designer.cs">
+      <DependentUpon>viewListExtensionRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForms\NVNL\HomeNVNLForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForms\NVNL\HomeNVNLForm.Designer.cs">
+      <DependentUpon>HomeNVNLForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForms\NVTN\CertificatesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,18 +137,6 @@
     </Compile>
     <Compile Include="CommonForms\RegulationsView.Designer.cs">
       <DependentUpon>RegulationsView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MainForms\NVKT\OrganizationPayment.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MainForms\NVKT\OrganizationPayment.Designer.cs">
-      <DependentUpon>OrganizationPayment.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MainForms\NVKT\OriginalPayment.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MainForms\NVKT\OriginalPayment.Designer.cs">
-      <DependentUpon>OriginalPayment.cs</DependentUpon>
     </Compile>
     <Compile Include="CommonForms\RegDetailForm.cs">
       <SubType>Form</SubType>
@@ -144,12 +174,6 @@
     <Compile Include="CommonForms\viewSpreadsheetForm.Designer.cs">
       <DependentUpon>viewSpreadsheetForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForms\NVKT\viewListExtensionRequest.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MainForms\NVKT\viewListExtensionRequest.Designer.cs">
-      <DependentUpon>viewListExtensionRequest.cs</DependentUpon>
-    </Compile>
     <Compile Include="MainForms\NVNL\chooseTypeCer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,12 +191,6 @@
     </Compile>
     <Compile Include="MainForms\NVNL\sendCerResult.Designer.cs">
       <DependentUpon>sendCerResult.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MainForms\NVKT\CreateExtensionForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MainForms\NVKT\CreateExtensionForm.Designer.cs">
-      <DependentUpon>CreateExtensionForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForms\NVNL\ExtensionReceiveForm.cs">
       <SubType>Form</SubType>
@@ -225,6 +243,27 @@
     <EmbeddedResource Include="CommonForms\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CommonForms\ViewExamScheduleMenu.resx">
+      <DependentUpon>ViewExamScheduleMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForms\NVKT\CreateExtensionForm.resx">
+      <DependentUpon>CreateExtensionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForms\NVKT\HomeNVKTForm.resx">
+      <DependentUpon>HomeNVKTForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForms\NVKT\OrganizationPayment.resx">
+      <DependentUpon>OrganizationPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForms\NVKT\OriginalPayment.resx">
+      <DependentUpon>OriginalPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForms\NVKT\viewListExtensionRequest.resx">
+      <DependentUpon>viewListExtensionRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForms\NVNL\HomeNVNLForm.resx">
+      <DependentUpon>HomeNVNLForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForms\NVTN\CertificatesForm.resx">
       <DependentUpon>CertificatesForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -239,12 +278,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CommonForms\RegulationsView.resx">
       <DependentUpon>RegulationsView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainForms\NVKT\OrganizationPayment.resx">
-      <DependentUpon>OrganizationPayment.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainForms\NVKT\OriginalPayment.resx">
-      <DependentUpon>OriginalPayment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CommonForms\RegDetailForm.resx">
       <DependentUpon>RegDetailForm.cs</DependentUpon>
@@ -264,9 +297,6 @@
     <EmbeddedResource Include="CommonForms\viewSpreadsheetForm.resx">
       <DependentUpon>viewSpreadsheetForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForms\NVKT\viewListExtensionRequest.resx">
-      <DependentUpon>viewListExtensionRequest.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="MainForms\NVNL\chooseTypeCer.resx">
       <DependentUpon>chooseTypeCer.cs</DependentUpon>
     </EmbeddedResource>
@@ -275,9 +305,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainForms\NVNL\sendCerResult.resx">
       <DependentUpon>sendCerResult.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainForms\NVKT\CreateExtensionForm.resx">
-      <DependentUpon>CreateExtensionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForms\NVNL\ExtensionReceiveForm.resx">
       <DependentUpon>ExtensionReceiveForm.cs</DependentUpon>
@@ -374,6 +401,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\home_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\homePage_img.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

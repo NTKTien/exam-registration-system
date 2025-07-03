@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace exam_registration_system.CommonForms
 {
-    public partial class viewListCandidate : Form
+    public partial class ViewExamScheduleMenu : UserControl
     {
-        public viewListCandidate()
+        public ViewExamScheduleMenu()
         {
             InitializeComponent();
-        }
-
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

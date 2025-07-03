@@ -25,7 +25,7 @@ namespace exam_registration_system.MainForms.NVTN
             if (menuExpand == false)
             {
                 menuContainer.Height += 10;
-                if (menuContainer.Height >= 185)
+                if (menuContainer.Height >= 505)
                 {
                     menuTransaction.Stop();
                     menuExpand = true;
@@ -59,21 +59,116 @@ namespace exam_registration_system.MainForms.NVTN
             ButHome_Click(ButHome, EventArgs.Empty);
         }
 
-        private void butProfile_Click(object sender, EventArgs e)
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            foreach (Control ctrl in panelContent.Controls)
+            {
+                if (ctrl is Form frm)
+                {
+                    frm.Dispose();
+                }
+                else if (ctrl is IDisposable d)
+                {
+                    d.Dispose();
+                }
+            }
+
+            Application.Exit();
+        }
+
+        private void butCreFreeReg_Click(object sender, EventArgs e)
         {
             panelContent.Controls.Clear();
             createdRegForm frm = new createdRegForm();
-            frm.TopLevel = false; 
+            frm.TopLevel = false;
             frm.FormBorderStyle = FormBorderStyle.None;
             frm.Dock = DockStyle.Fill;
             panelContent.Controls.Add(frm);
             frm.Show();
         }
 
-        private void butRegisteredCourse_Click(object sender, EventArgs e)
+        private void butCreUnitReg_Click(object sender, EventArgs e)
+        {
+            panelContent.Controls.Clear();
+            createdRegUnitForm frm = new createdRegUnitForm();
+            frm.TopLevel = false;
+            frm.FormBorderStyle = FormBorderStyle.None;
+            frm.Dock = DockStyle.Fill;
+            panelContent.Controls.Add(frm);
+            frm.Show();
+        }
+
+        private void butReleasePDT_Click(object sender, EventArgs e)
+        {
+            panelContent.Controls.Clear();
+            releaseCard frm = new releaseCard();
+            frm.TopLevel = false;
+            frm.FormBorderStyle = FormBorderStyle.None;
+            frm.Dock = DockStyle.Fill;
+            panelContent.Controls.Add(frm);
+            frm.Show();
+        }
+
+        private void butViewCalendar_Click(object sender, EventArgs e)
+        {
+            panelContent.Controls.Clear();
+            ViewExamScheduleMenu home = new ViewExamScheduleMenu();
+            panelContent.Controls.Add(home);
+        }
+
+        private void butViewReg_Click(object sender, EventArgs e)
         {
             panelContent.Controls.Clear();
             RegListForm frm = new RegListForm();
+            frm.TopLevel = false;
+            frm.FormBorderStyle = FormBorderStyle.None;
+            frm.Dock = DockStyle.Fill;
+            panelContent.Controls.Add(frm);
+            frm.Show();
+        }
+
+        private void butViewPDT_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void butViewBT_Click(object sender, EventArgs e)
+        {
+            panelContent.Controls.Clear();
+            viewSpreadsheetForm frm = new viewSpreadsheetForm();
+            frm.TopLevel = false;
+            frm.FormBorderStyle = FormBorderStyle.None;
+            frm.Dock = DockStyle.Fill;
+            panelContent.Controls.Add(frm);
+            frm.Show();
+        }
+
+        private void butViewRegulation_Click(object sender, EventArgs e)
+        {
+            panelContent.Controls.Clear();
+            RegulationsView frm = new RegulationsView();
+            frm.TopLevel = false;
+            frm.FormBorderStyle = FormBorderStyle.None;
+            frm.Dock = DockStyle.Fill;
+            panelContent.Controls.Add(frm);
+            frm.Show();
+        }
+
+        private void butReleaseCertificateDV_Click(object sender, EventArgs e)
+        {
+            panelContent.Controls.Clear();
+            CertificatesUnitForm frm = new CertificatesUnitForm();
+            frm.TopLevel = false;
+            frm.FormBorderStyle = FormBorderStyle.None;
+            frm.Dock = DockStyle.Fill;
+            panelContent.Controls.Add(frm);
+            frm.Show();
+        }
+
+        private void butReleaseCertificateCN_Click(object sender, EventArgs e)
+        {
+            panelContent.Controls.Clear();
+            CertificatesForm frm = new CertificatesForm();
             frm.TopLevel = false;
             frm.FormBorderStyle = FormBorderStyle.None;
             frm.Dock = DockStyle.Fill;

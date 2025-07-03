@@ -1,13 +1,13 @@
 ﻿namespace exam_registration_system.CommonForms
 {
-    partial class ViewExamSchedule
+    partial class ViewExamScheduleMenu
     {
-        /// <summary>
+        /// <summary> 
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
+        /// <summary> 
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -20,10 +20,10 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+        #region Component Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
+        /// <summary> 
+        /// Required method for Designer support - do not modify 
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
@@ -41,8 +41,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.labelDetailReg = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.btnExit = new Guna.UI2.WinForms.Guna2Button();
+            this.labelDetailReg = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel3.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
@@ -53,7 +53,6 @@
             // 
             this.guna2Panel3.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel3.BorderColor = System.Drawing.Color.Black;
-            this.guna2Panel3.BorderThickness = 1;
             this.guna2Panel3.Controls.Add(this.guna2Panel4);
             this.guna2Panel3.Controls.Add(this.guna2Panel1);
             this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -63,9 +62,8 @@
             this.guna2Panel3.ShadowDecoration.BorderRadius = 15;
             this.guna2Panel3.ShadowDecoration.Depth = 10;
             this.guna2Panel3.ShadowDecoration.Enabled = true;
-            this.guna2Panel3.Size = new System.Drawing.Size(915, 458);
-            this.guna2Panel3.TabIndex = 5;
-            this.guna2Panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel3_Paint);
+            this.guna2Panel3.Size = new System.Drawing.Size(897, 618);
+            this.guna2Panel3.TabIndex = 7;
             // 
             // guna2Panel4
             // 
@@ -82,7 +80,7 @@
             this.guna2Panel4.ShadowDecoration.BorderRadius = 15;
             this.guna2Panel4.ShadowDecoration.Depth = 5;
             this.guna2Panel4.ShadowDecoration.Enabled = true;
-            this.guna2Panel4.Size = new System.Drawing.Size(607, 404);
+            this.guna2Panel4.Size = new System.Drawing.Size(577, 573);
             this.guna2Panel4.TabIndex = 15;
             // 
             // labelInforHeader
@@ -94,7 +92,6 @@
             this.labelInforHeader.Size = new System.Drawing.Size(155, 27);
             this.labelInforHeader.TabIndex = 2;
             this.labelInforHeader.Text = "Danh sách lịch thi";
-            this.labelInforHeader.Click += new System.EventHandler(this.labelInforHeader_Click);
             // 
             // guna2Panel1
             // 
@@ -111,7 +108,7 @@
             this.guna2Panel1.Controls.Add(this.label2);
             this.guna2Panel1.Controls.Add(this.label3);
             this.guna2Panel1.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.guna2Panel1.Location = new System.Drawing.Point(10, 21);
+            this.guna2Panel1.Location = new System.Drawing.Point(22, 21);
             this.guna2Panel1.Margin = new System.Windows.Forms.Padding(22, 24, 22, 24);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Padding = new System.Windows.Forms.Padding(22, 24, 22, 24);
@@ -176,7 +173,6 @@
             this.guna2Button1.Size = new System.Drawing.Size(94, 29);
             this.guna2Button1.TabIndex = 8;
             this.guna2Button1.Text = "Tìm kiếm";
-            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // guna2DateTimePicker1
             // 
@@ -214,7 +210,6 @@
             this.label1.Size = new System.Drawing.Size(83, 25);
             this.label1.TabIndex = 6;
             this.label1.Text = "Ngày thi";
-            this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // label2
             // 
@@ -226,7 +221,6 @@
             this.label2.Size = new System.Drawing.Size(78, 25);
             this.label2.TabIndex = 7;
             this.label2.Text = "Môn thi";
-            this.label2.Click += new System.EventHandler(this.label2_Click_1);
             // 
             // label3
             // 
@@ -241,9 +235,8 @@
             // 
             // guna2Panel2
             // 
-            this.guna2Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
+            this.guna2Panel2.BackColor = System.Drawing.SystemColors.Control;
             this.guna2Panel2.BorderColor = System.Drawing.Color.Black;
-            this.guna2Panel2.BorderThickness = 1;
             this.guna2Panel2.Controls.Add(this.btnExit);
             this.guna2Panel2.Controls.Add(this.labelDetailReg);
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -251,21 +244,8 @@
             this.guna2Panel2.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Padding = new System.Windows.Forms.Padding(15, 16, 15, 16);
-            this.guna2Panel2.Size = new System.Drawing.Size(915, 54);
-            this.guna2Panel2.TabIndex = 1;
-            this.guna2Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel2_Paint);
-            // 
-            // labelDetailReg
-            // 
-            this.labelDetailReg.AutoSize = false;
-            this.labelDetailReg.BackColor = System.Drawing.Color.Transparent;
-            this.labelDetailReg.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDetailReg.ForeColor = System.Drawing.Color.White;
-            this.labelDetailReg.Location = new System.Drawing.Point(345, 12);
-            this.labelDetailReg.Name = "labelDetailReg";
-            this.labelDetailReg.Size = new System.Drawing.Size(189, 36);
-            this.labelDetailReg.TabIndex = 1;
-            this.labelDetailReg.Text = "Danh sách lịch thi";
+            this.guna2Panel2.Size = new System.Drawing.Size(897, 54);
+            this.guna2Panel2.TabIndex = 6;
             // 
             // btnExit
             // 
@@ -284,20 +264,28 @@
             this.btnExit.Size = new System.Drawing.Size(37, 30);
             this.btnExit.TabIndex = 3;
             this.btnExit.Text = "✕";
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // ViewExamSchedule
+            // labelDetailReg
+            // 
+            this.labelDetailReg.AutoSize = false;
+            this.labelDetailReg.BackColor = System.Drawing.Color.Transparent;
+            this.labelDetailReg.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDetailReg.ForeColor = System.Drawing.Color.Black;
+            this.labelDetailReg.Location = new System.Drawing.Point(345, 12);
+            this.labelDetailReg.Name = "labelDetailReg";
+            this.labelDetailReg.Size = new System.Drawing.Size(189, 36);
+            this.labelDetailReg.TabIndex = 1;
+            this.labelDetailReg.Text = "Danh sách lịch thi";
+            // 
+            // ViewExamScheduleMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(915, 512);
             this.Controls.Add(this.guna2Panel3);
             this.Controls.Add(this.guna2Panel2);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "ViewExamSchedule";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ViewExamSchedule";
+            this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Name = "ViewExamScheduleMenu";
+            this.Size = new System.Drawing.Size(897, 672);
             this.guna2Panel3.ResumeLayout(false);
             this.guna2Panel4.ResumeLayout(false);
             this.guna2Panel4.PerformLayout();
@@ -309,20 +297,21 @@
         }
 
         #endregion
+
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
         private Guna.UI2.WinForms.Guna2HtmlLabel labelInforHeader;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
-        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
         private Guna.UI2.WinForms.Guna2ComboBox cbxTypeCer;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
-        private Guna.UI2.WinForms.Guna2HtmlLabel labelDetailReg;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2Button btnExit;
+        private Guna.UI2.WinForms.Guna2HtmlLabel labelDetailReg;
     }
 }

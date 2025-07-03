@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelContent = new Guna.UI2.WinForms.Guna2Panel();
-            this.butSearch = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.butCreateReg = new Guna.UI2.WinForms.Guna2Button();
+            this.labelDetailReg = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.textSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.dgvRegList = new Guna.UI2.WinForms.Guna2DataGridView();
             this.codeReg = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,9 +44,7 @@
             this.customerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TypeCustomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.labelDetailReg = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.panelContent.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.butSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,31 +52,48 @@
             // 
             this.panelContent.BorderColor = System.Drawing.Color.Gray;
             this.panelContent.BorderThickness = 1;
+            this.panelContent.Controls.Add(this.butCreateReg);
             this.panelContent.Controls.Add(this.labelDetailReg);
-            this.panelContent.Controls.Add(this.butSearch);
             this.panelContent.Controls.Add(this.textSearch);
             this.panelContent.Controls.Add(this.dgvRegList);
             this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContent.Location = new System.Drawing.Point(0, 0);
             this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(897, 544);
+            this.panelContent.Size = new System.Drawing.Size(897, 672);
             this.panelContent.TabIndex = 2;
             // 
-            // butSearch
+            // butCreateReg
             // 
-            this.butSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.butSearch.BackColor = System.Drawing.Color.White;
-            this.butSearch.ImageRotate = 0F;
-            this.butSearch.Location = new System.Drawing.Point(299, 61);
-            this.butSearch.Name = "butSearch";
-            this.butSearch.Size = new System.Drawing.Size(35, 33);
-            this.butSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.butSearch.TabIndex = 61;
-            this.butSearch.TabStop = false;
+            this.butCreateReg.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.butCreateReg.BorderRadius = 5;
+            this.butCreateReg.BorderThickness = 1;
+            this.butCreateReg.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.butCreateReg.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.butCreateReg.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.butCreateReg.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.butCreateReg.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(117)))), ((int)(((byte)(185)))));
+            this.butCreateReg.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butCreateReg.ForeColor = System.Drawing.Color.White;
+            this.butCreateReg.Location = new System.Drawing.Point(345, 78);
+            this.butCreateReg.Name = "butCreateReg";
+            this.butCreateReg.Size = new System.Drawing.Size(88, 33);
+            this.butCreateReg.TabIndex = 23;
+            this.butCreateReg.Text = "Tra cứu ";
+            // 
+            // labelDetailReg
+            // 
+            this.labelDetailReg.AutoSize = false;
+            this.labelDetailReg.BackColor = System.Drawing.Color.Transparent;
+            this.labelDetailReg.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDetailReg.Location = new System.Drawing.Point(231, 12);
+            this.labelDetailReg.Name = "labelDetailReg";
+            this.labelDetailReg.Size = new System.Drawing.Size(446, 32);
+            this.labelDetailReg.TabIndex = 62;
+            this.labelDetailReg.Text = "Danh sách phiếu đăng ký đánh giá năng lực";
             // 
             // textSearch
             // 
-            this.textSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textSearch.BorderColor = System.Drawing.Color.DimGray;
             this.textSearch.BorderRadius = 5;
             this.textSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textSearch.DefaultText = "";
@@ -89,7 +105,7 @@
             this.textSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.textSearch.ForeColor = System.Drawing.Color.Black;
             this.textSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textSearch.Location = new System.Drawing.Point(17, 60);
+            this.textSearch.Location = new System.Drawing.Point(17, 76);
             this.textSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textSearch.Name = "textSearch";
             this.textSearch.PlaceholderText = "Nhập thông tin phiếu đăng kí để tìm kiếm";
@@ -103,19 +119,19 @@
             this.dgvRegList.AllowUserToDeleteRows = false;
             this.dgvRegList.AllowUserToResizeColumns = false;
             this.dgvRegList.AllowUserToResizeRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            this.dgvRegList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgvRegList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvRegList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.None;
             this.dgvRegList.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.dgvRegList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvRegList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRegList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvRegList.ColumnHeadersHeight = 50;
             this.dgvRegList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvRegList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -126,32 +142,32 @@
             this.customerName,
             this.TypeCustomer,
             this.Status});
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvRegList.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvRegList.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvRegList.GridColor = System.Drawing.Color.Black;
-            this.dgvRegList.Location = new System.Drawing.Point(17, 110);
+            this.dgvRegList.Location = new System.Drawing.Point(17, 125);
             this.dgvRegList.Margin = new System.Windows.Forms.Padding(2);
             this.dgvRegList.Name = "dgvRegList";
             this.dgvRegList.ReadOnly = true;
             this.dgvRegList.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvRegList.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRegList.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvRegList.RowHeadersVisible = false;
             this.dgvRegList.RowHeadersWidth = 51;
             this.dgvRegList.RowTemplate.Height = 24;
-            this.dgvRegList.Size = new System.Drawing.Size(863, 411);
+            this.dgvRegList.Size = new System.Drawing.Size(863, 522);
             this.dgvRegList.TabIndex = 59;
             this.dgvRegList.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvRegList.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -241,23 +257,12 @@
             this.Status.ReadOnly = true;
             this.Status.Width = 130;
             // 
-            // labelDetailReg
-            // 
-            this.labelDetailReg.AutoSize = false;
-            this.labelDetailReg.BackColor = System.Drawing.Color.Transparent;
-            this.labelDetailReg.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDetailReg.Location = new System.Drawing.Point(231, 12);
-            this.labelDetailReg.Name = "labelDetailReg";
-            this.labelDetailReg.Size = new System.Drawing.Size(446, 32);
-            this.labelDetailReg.TabIndex = 62;
-            this.labelDetailReg.Text = "Danh sách phiếu đăng ký đánh giá năng lực";
-            // 
             // RegListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(247)))), ((int)(((byte)(250)))));
-            this.ClientSize = new System.Drawing.Size(897, 544);
+            this.ClientSize = new System.Drawing.Size(897, 672);
             this.Controls.Add(this.panelContent);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -267,7 +272,6 @@
             this.Text = "RegListForm";
             this.Load += new System.EventHandler(this.RegListForm_Load);
             this.panelContent.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.butSearch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegList)).EndInit();
             this.ResumeLayout(false);
 
@@ -275,7 +279,6 @@
 
         #endregion
         private Guna.UI2.WinForms.Guna2Panel panelContent;
-        private Guna.UI2.WinForms.Guna2PictureBox butSearch;
         private Guna.UI2.WinForms.Guna2TextBox textSearch;
         private Guna.UI2.WinForms.Guna2DataGridView dgvRegList;
         private System.Windows.Forms.DataGridViewTextBoxColumn codeReg;
@@ -286,5 +289,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TypeCustomer;
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
         private Guna.UI2.WinForms.Guna2HtmlLabel labelDetailReg;
+        private Guna.UI2.WinForms.Guna2Button butCreateReg;
     }
 }

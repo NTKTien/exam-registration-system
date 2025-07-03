@@ -48,9 +48,9 @@
             this.btnSearch = new Guna.UI2.WinForms.Guna2Button();
             this.tbRegistrationID = new Guna.UI2.WinForms.Guna2TextBox();
             this.lbRegistrationID = new System.Windows.Forms.Label();
-            this.pnlHeader = new System.Windows.Forms.Panel();
-            this.btnExit = new Guna.UI2.WinForms.Guna2Button();
             this.lbHeader = new System.Windows.Forms.Label();
+            this.btnExit = new Guna.UI2.WinForms.Guna2Button();
+            this.pnlHeader = new System.Windows.Forms.Panel();
             this.pnlContainer.SuspendLayout();
             this.grpInformation.SuspendLayout();
             this.grpSearch.SuspendLayout();
@@ -393,17 +393,16 @@
             this.lbRegistrationID.TabIndex = 3;
             this.lbRegistrationID.Text = "Mã phiếu đăng ký:";
             // 
-            // pnlHeader
+            // lbHeader
             // 
-            this.pnlHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
-            this.pnlHeader.Controls.Add(this.btnExit);
-            this.pnlHeader.Controls.Add(this.lbHeader);
-            this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlHeader.Location = new System.Drawing.Point(0, 0);
-            this.pnlHeader.Margin = new System.Windows.Forms.Padding(2);
-            this.pnlHeader.Name = "pnlHeader";
-            this.pnlHeader.Size = new System.Drawing.Size(880, 30);
-            this.pnlHeader.TabIndex = 1;
+            this.lbHeader.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.lbHeader.ForeColor = System.Drawing.Color.White;
+            this.lbHeader.Location = new System.Drawing.Point(3, 4);
+            this.lbHeader.Margin = new System.Windows.Forms.Padding(2);
+            this.lbHeader.Name = "lbHeader";
+            this.lbHeader.Size = new System.Drawing.Size(110, 23);
+            this.lbHeader.TabIndex = 0;
+            this.lbHeader.Text = "THANH TOÁN";
             // 
             // btnExit
             // 
@@ -424,16 +423,17 @@
             this.btnExit.TabIndex = 0;
             this.btnExit.Text = "✕";
             // 
-            // lbHeader
+            // pnlHeader
             // 
-            this.lbHeader.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.lbHeader.ForeColor = System.Drawing.Color.White;
-            this.lbHeader.Location = new System.Drawing.Point(3, 4);
-            this.lbHeader.Margin = new System.Windows.Forms.Padding(2);
-            this.lbHeader.Name = "lbHeader";
-            this.lbHeader.Size = new System.Drawing.Size(110, 23);
-            this.lbHeader.TabIndex = 0;
-            this.lbHeader.Text = "THANH TOÁN";
+            this.pnlHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
+            this.pnlHeader.Controls.Add(this.btnExit);
+            this.pnlHeader.Controls.Add(this.lbHeader);
+            this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlHeader.Location = new System.Drawing.Point(0, 0);
+            this.pnlHeader.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlHeader.Name = "pnlHeader";
+            this.pnlHeader.Size = new System.Drawing.Size(880, 30);
+            this.pnlHeader.TabIndex = 1;
             // 
             // OriginalPayment
             // 
@@ -462,8 +462,6 @@
         #endregion
 
         private System.Windows.Forms.Panel pnlContainer;
-        private System.Windows.Forms.Panel pnlHeader;
-        private Guna.UI2.WinForms.Guna2Button btnExit;
         private System.Windows.Forms.Label lbHeader;
         private System.Windows.Forms.GroupBox grpSearch;
         private System.Windows.Forms.Label lbRegistrationID;
@@ -484,5 +482,7 @@
         private System.Windows.Forms.Label lbTotalCost;
         private Guna.UI2.WinForms.Guna2Button btnConfirmPayment;
         private Guna.UI2.WinForms.Guna2Button btnCreateInvoice;
+        private Guna.UI2.WinForms.Guna2Button btnExit;
+        private System.Windows.Forms.Panel pnlHeader;
     }
 }

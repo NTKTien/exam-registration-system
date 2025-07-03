@@ -16,5 +16,6 @@ namespace exam_registration_system.MainForms.NVTN
         {
             InitializeComponent();
         }
+
     }
 }

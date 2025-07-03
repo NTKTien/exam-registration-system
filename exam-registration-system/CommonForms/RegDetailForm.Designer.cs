@@ -32,6 +32,10 @@
             this.labelDetailReg = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.panelContent = new Guna.UI2.WinForms.Guna2Panel();
             this.panelInforReg = new Guna.UI2.WinForms.Guna2Panel();
+            this.tbExamShift = new Guna.UI2.WinForms.Guna2TextBox();
+            this.labelExamShift = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.tbExamDate = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lableExamDate = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.labelInforRegHeader = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.labelTypeReg = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.labelStatus = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -57,10 +61,7 @@
             this.labelSDT = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.labelSex = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.labelInforHeader = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.tbExamDate = new Guna.UI2.WinForms.Guna2TextBox();
-            this.lableExamDate = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.labelExamShift = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.tbExamShift = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnExit = new Guna.UI2.WinForms.Guna2Button();
             this.panelHeader.SuspendLayout();
             this.panelContent.SuspendLayout();
             this.panelInforReg.SuspendLayout();
@@ -72,8 +73,10 @@
             this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(190)))), ((int)(((byte)(230)))));
             this.panelHeader.BorderColor = System.Drawing.Color.Gray;
             this.panelHeader.BorderThickness = 1;
+            this.panelHeader.Controls.Add(this.btnExit);
             this.panelHeader.Controls.Add(this.labelDetailReg);
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelHeader.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
             this.panelHeader.Name = "panelHeader";
             this.panelHeader.Size = new System.Drawing.Size(760, 59);
@@ -131,6 +134,62 @@
             this.panelInforReg.ShadowDecoration.Enabled = true;
             this.panelInforReg.Size = new System.Drawing.Size(711, 198);
             this.panelInforReg.TabIndex = 1;
+            // 
+            // tbExamShift
+            // 
+            this.tbExamShift.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbExamShift.DefaultText = "";
+            this.tbExamShift.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbExamShift.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbExamShift.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbExamShift.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbExamShift.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbExamShift.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tbExamShift.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbExamShift.Location = new System.Drawing.Point(493, 144);
+            this.tbExamShift.Name = "tbExamShift";
+            this.tbExamShift.PlaceholderText = "";
+            this.tbExamShift.SelectedText = "";
+            this.tbExamShift.Size = new System.Drawing.Size(200, 30);
+            this.tbExamShift.TabIndex = 5;
+            // 
+            // labelExamShift
+            // 
+            this.labelExamShift.BackColor = System.Drawing.Color.Transparent;
+            this.labelExamShift.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelExamShift.Location = new System.Drawing.Point(343, 144);
+            this.labelExamShift.Name = "labelExamShift";
+            this.labelExamShift.Size = new System.Drawing.Size(56, 27);
+            this.labelExamShift.TabIndex = 4;
+            this.labelExamShift.Text = "Ca thi:";
+            // 
+            // tbExamDate
+            // 
+            this.tbExamDate.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbExamDate.DefaultText = "";
+            this.tbExamDate.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbExamDate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbExamDate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbExamDate.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbExamDate.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbExamDate.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tbExamDate.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbExamDate.Location = new System.Drawing.Point(115, 144);
+            this.tbExamDate.Name = "tbExamDate";
+            this.tbExamDate.PlaceholderText = "";
+            this.tbExamDate.SelectedText = "";
+            this.tbExamDate.Size = new System.Drawing.Size(200, 30);
+            this.tbExamDate.TabIndex = 5;
+            // 
+            // lableExamDate
+            // 
+            this.lableExamDate.BackColor = System.Drawing.Color.Transparent;
+            this.lableExamDate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lableExamDate.Location = new System.Drawing.Point(15, 144);
+            this.lableExamDate.Name = "lableExamDate";
+            this.lableExamDate.Size = new System.Drawing.Size(78, 27);
+            this.lableExamDate.TabIndex = 4;
+            this.lableExamDate.Text = "Ngày thi:";
             // 
             // labelInforRegHeader
             // 
@@ -490,61 +549,23 @@
             this.labelInforHeader.TabIndex = 2;
             this.labelInforHeader.Text = "Thông tin khách hàng đăng ký";
             // 
-            // tbExamDate
+            // btnExit
             // 
-            this.tbExamDate.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbExamDate.DefaultText = "";
-            this.tbExamDate.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbExamDate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbExamDate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbExamDate.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbExamDate.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbExamDate.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.tbExamDate.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbExamDate.Location = new System.Drawing.Point(115, 144);
-            this.tbExamDate.Name = "tbExamDate";
-            this.tbExamDate.PlaceholderText = "";
-            this.tbExamDate.SelectedText = "";
-            this.tbExamDate.Size = new System.Drawing.Size(200, 30);
-            this.tbExamDate.TabIndex = 5;
-            // 
-            // lableExamDate
-            // 
-            this.lableExamDate.BackColor = System.Drawing.Color.Transparent;
-            this.lableExamDate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lableExamDate.Location = new System.Drawing.Point(15, 144);
-            this.lableExamDate.Name = "lableExamDate";
-            this.lableExamDate.Size = new System.Drawing.Size(78, 27);
-            this.lableExamDate.TabIndex = 4;
-            this.lableExamDate.Text = "Ngày thi:";
-            // 
-            // labelExamShift
-            // 
-            this.labelExamShift.BackColor = System.Drawing.Color.Transparent;
-            this.labelExamShift.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelExamShift.Location = new System.Drawing.Point(343, 144);
-            this.labelExamShift.Name = "labelExamShift";
-            this.labelExamShift.Size = new System.Drawing.Size(56, 27);
-            this.labelExamShift.TabIndex = 4;
-            this.labelExamShift.Text = "Ca thi:";
-            // 
-            // tbExamShift
-            // 
-            this.tbExamShift.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbExamShift.DefaultText = "";
-            this.tbExamShift.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbExamShift.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbExamShift.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbExamShift.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbExamShift.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbExamShift.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.tbExamShift.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbExamShift.Location = new System.Drawing.Point(493, 144);
-            this.tbExamShift.Name = "tbExamShift";
-            this.tbExamShift.PlaceholderText = "";
-            this.tbExamShift.SelectedText = "";
-            this.tbExamShift.Size = new System.Drawing.Size(200, 30);
-            this.tbExamShift.TabIndex = 5;
+            this.btnExit.BackColor = System.Drawing.Color.Transparent;
+            this.btnExit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnExit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnExit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnExit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnExit.FillColor = System.Drawing.Color.Transparent;
+            this.btnExit.Font = new System.Drawing.Font("Segoe UI Black", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.ForeColor = System.Drawing.Color.Red;
+            this.btnExit.ImageSize = new System.Drawing.Size(50, 50);
+            this.btnExit.Location = new System.Drawing.Point(721, 2);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(2);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(37, 30);
+            this.btnExit.TabIndex = 3;
+            this.btnExit.Text = "✕";
             // 
             // RegDetailForm
             // 
@@ -605,5 +626,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel labelExamShift;
         private Guna.UI2.WinForms.Guna2TextBox tbExamDate;
         private Guna.UI2.WinForms.Guna2HtmlLabel lableExamDate;
+        private Guna.UI2.WinForms.Guna2Button btnExit;
     }
 }

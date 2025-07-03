@@ -1,4 +1,5 @@
-﻿using System;
+﻿using exam_registration_system.CommonForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,5 +18,10 @@ namespace exam_registration_system.MainForms.NVTN
             InitializeComponent();
         }
 
+        private void butSelectCalenderEx_Click(object sender, EventArgs e)
+        {
+            ViewExamSchedule frm = new ViewExamSchedule();
+            frm.Show();
+        }
     }
 }
