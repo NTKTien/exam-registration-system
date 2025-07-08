@@ -236,7 +236,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Utils\GlobalInfor.cs" />
-    <Compile Include="Utils\OracleHelper.cs" />
+    <Compile Include="Utils\SQLserverHelper.cs" />
     <EmbeddedResource Include="CommonForms\homeUC.resx">
       <DependentUpon>homeUC.cs</DependentUpon>
     </EmbeddedResource>

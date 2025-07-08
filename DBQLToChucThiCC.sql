@@ -141,9 +141,9 @@ CREATE TABLE BangTinh (
 -- Tạo bảng Quy định
 CREATE TABLE QuyDinh (
 	MaQD CHAR(5),
-	DoiTuong VARCHAR(20) CHECK (DoiTuong IN ('LichDGNL', 'HoaDonThanhToan', 'PhieuGiaHan')),
-	NoiDung TEXT,
-	GiaTri INT
+	DoiTuong VARCHAR(20) CHECK (DoiTuong IN ('DK', 'TT', 'GH', 'DB', 'HT')),
+	NoiDung NVARCHAR(MAX),
+	GiaTri DECIMAL(10,2)
 )
 
 -- INSERT DATA
@@ -291,15 +291,8 @@ INSERT INTO BangTinh (MaBT, KetQua, ThoiGianNhanCC, ThoiGianGiaoCC, TrangThai, M
 ('BT009', N'Không đạt', '2025-07-15 17:00:00', NULL, N'Quá hạn', 'PDT09', 'NV009'),
 ('BT010', N'Đạt', '2025-07-15 18:00:00', '2025-07-17 18:00:00', N'Đã giao', 'PDT10', 'NV010');
 
----- Insert into QuyDinh (10 rows)
---INSERT INTO QuyDinh (MaQD, DoiTuong, NoiDung, GiaTri) VALUES
---('QD001', 'LichDGNL', N'Số lượng thí sinh tối đa mỗi ca', 50),
---('QD002', 'HoaDonThanhToan', N'Giảm giá cho thí sinh đăng ký sớm', 100000),
---('QD003', 'PhieuGiaHan', N'Phí gia hạn chứng chỉ', 500000),
---('QD004', 'LichDGNL', N'Số ca thi tối đa mỗi ngày', 4),
---('QD005', 'HoaDonThanhToan', N'Tổng tiền tối đa mỗi phiếu', 2000000),
---('QD006', 'PhieuGiaHan', N'Thời hạn gia hạn tối đa (ngày)', 30),
---('QD007', 'LichDGNL', N'Thời gian bắt đầu ca 1', 8),
---('QD008', 'HoaDonThanhToan', N'Phí dịch vụ bổ sung', 50000),
---('QD009', 'LichDGNL', N'Số lượng phòng thi tối đa', 20),
---('QD010', 'PhieuGiaHan', N'Số lần gia hạn tối đa', 2);
+-- Insert into QuyDinh (10 rows)
+INSERT INTO QuyDinh (MaQD, DoiTuong, NoiDung, GiaTri) VALUES
+('QD001', 'TT', N'Số lượng thí sinh tối thiểu để trợ giá cho đơn vị là 20', 20),
+('QD002', 'TT', N'Đơn vị có số lượng thí sinh vượt ngưỡng tối thiểu được trợ giá 10%', 0.1),
+('QD003', 'TT', N'Thời gian đến hạn thanh toán là 3 ngày kể từ ngày đăng ký. Sau thời gian trên, các phiếu đăng ký chưa được thanh toán sẽ bị hủy.', 3);

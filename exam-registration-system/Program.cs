@@ -20,6 +20,7 @@ namespace exam_registration_system
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            SqlServerHelper.SetConnection("sa", "001393Mgct@@");
             Application.Run(new HomeNVTNForm());
         }
     }
