@@ -16,5 +16,17 @@ namespace exam_registration_system.MainForms.NVNL
         {
             InitializeComponent();
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void sendCerResult_Load(object sender, EventArgs e)
+        {
+            lbDateSend.Padding = new Padding(2);
+            
+          
+        }
     }
 }

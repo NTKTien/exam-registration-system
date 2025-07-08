@@ -401,5 +401,10 @@ namespace exam_registration_system.MainForms.NVKT
         {
 
         }
+
+        private void lbHeader_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

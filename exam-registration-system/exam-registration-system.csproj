@@ -254,12 +254,6 @@
     <Compile Include="CommonForms\viewSpreadsheetForm.Designer.cs">
       <DependentUpon>viewSpreadsheetForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForms\NVNL\chooseTypeCer.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MainForms\NVNL\chooseTypeCer.Designer.cs">
-      <DependentUpon>chooseTypeCer.cs</DependentUpon>
-    </Compile>
     <Compile Include="MainForms\NVNL\recordCertificateInfoForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -376,9 +370,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CommonForms\viewSpreadsheetForm.resx">
       <DependentUpon>viewSpreadsheetForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainForms\NVNL\chooseTypeCer.resx">
-      <DependentUpon>chooseTypeCer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForms\NVNL\recordCertificateInfoForm.resx">
       <DependentUpon>recordCertificateInfoForm.cs</DependentUpon>

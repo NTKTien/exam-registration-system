@@ -55,7 +55,7 @@
             this.tbRegistrationID = new Guna.UI2.WinForms.Guna2TextBox();
             this.lbRegistrationID = new System.Windows.Forms.Label();
             this.lbHeader = new System.Windows.Forms.Label();
-            this.btnExit = new Guna.UI2.WinForms.Guna2Button();
+            //this.btnExit = new Guna.UI2.WinForms.Guna2Button();
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.pnlContainer.SuspendLayout();
             this.grpPaymentInfo.SuspendLayout();
@@ -100,30 +100,7 @@
             // 
             // grpPaymentInfo
             // 
-            this.grpInformation.Controls.Add(this.tbTotalCost);
-            this.grpInformation.Controls.Add(this.btnConfirmPayment);
-            this.grpInformation.Controls.Add(this.lbTotalCost);
-            this.grpInformation.Controls.Add(this.tbCertificateType);
-            this.grpInformation.Controls.Add(this.tbStatus);
-            this.grpInformation.Controls.Add(this.tbExpiryDate);
-            this.grpInformation.Controls.Add(this.tbRegistrationDate);
-            this.grpInformation.Controls.Add(this.tbCustomerName);
-            this.grpInformation.Controls.Add(this.lbStatus);
-            this.grpInformation.Controls.Add(this.lbCertificateType);
-            this.grpInformation.Controls.Add(this.lbExpiryDate);
-            this.grpInformation.Controls.Add(this.lbRegistrationDate);
-            this.grpInformation.Controls.Add(this.lbCustomerName);
-            this.grpInformation.Dock = System.Windows.Forms.DockStyle.Top;
-            this.grpInformation.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.grpInformation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.grpInformation.Location = new System.Drawing.Point(24, 144);
-            this.grpInformation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.grpInformation.Name = "grpInformation";
-            this.grpInformation.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.grpInformation.Size = new System.Drawing.Size(1272, 375);
-            this.grpInformation.TabIndex = 1;
-            this.grpInformation.TabStop = false;
-            this.grpInformation.Text = "Thông tin thanh toán";
+           
             // 
             // tbFinalAmount
             // 
@@ -519,21 +496,7 @@
             // 
             // btnExit
             // 
-            this.btnExit.AutoRoundedCorners = true;
-            this.btnExit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnExit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnExit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnExit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnExit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnExit.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
-            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnExit.ForeColor = System.Drawing.Color.White;
-            this.btnExit.ImageSize = new System.Drawing.Size(50, 50);
-            this.btnExit.Location = new System.Drawing.Point(1264, 0);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(56, 45);
-            this.btnExit.TabIndex = 0;
-            this.btnExit.Text = "✕";
+            
             // 
             // pnlHeader
             // 

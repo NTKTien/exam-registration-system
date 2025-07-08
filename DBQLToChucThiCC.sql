@@ -29,8 +29,7 @@ CREATE TABLE DSThiSinh (
 	SoDienThoai CHAR(10),
 	Email NVARCHAR(100),
 	TGDuThiMongMuon TEXT,
-	PRIMARY KEY (MaDS, MaTS),
-	CONSTRAINT UQ_MaDS UNIQUE (MaDS)
+	PRIMARY KEY (MaDS, MaTS)
 );
 
 -- Tạo bảng Danh Sách phòng thi
@@ -70,11 +69,12 @@ CREATE TABLE PhieuDangKy (
     NgayLap DATETIME,
     TrangThaiThanhToan NVARCHAR(20) CHECK (TrangThaiThanhToan IN (N'Đã thanh toán', N'Chưa thanh toán')),
 	MaDS CHAR(5),
-	FOREIGN KEY(MaDS) REFERENCES DSThiSinh(MaDS),
+	--FOREIGN KEY(MaDS) REFERENCES DSThiSinh(MaDS),
 	MaLT CHAR(5),
 	TenDonVi NVARCHAR(100) DEFAULT NULL,  -- UPDATE 7/7
 	FOREIGN KEY(MaLT) REFERENCES LichDGNL(MaLT),
 	LoaiPDK NVARCHAR(4) CHECK (LoaiPDK IN (N'KHĐV', N'KHTD')),
+	TrangThaiXuatPDT NVARCHAR(100) CHECK (TrangThaiXuatPDT IN (N'Đã xuất PDT', N'Chưa xuất PDT')), --UPDATE 8/7
 	LoaiCC VARCHAR(2) CHECK (LoaiCC IN (N'TA', N'TH'))
 );
 
@@ -165,12 +165,16 @@ INSERT INTO NhanVien (MaNV, HoTen, DiaChi, SoDienThoai, NgaySinh, Email, LoaiNV)
 -- Insert into DSThiSinh 
 INSERT INTO DSThiSinh (MaDS, MaTS, HoTen, GioiTinh, NgaySinh, SoDienThoai, Email, TGDuThiMongMuon) VALUES
 ('DS001', 'TS001', N'Nguyễn Thị Hoa', N'Nữ', '2000-02-15', '0981234567', 'hoa.nt@gmail.com', 'Sáng'),
+('DS001', 'TS002', N'Trần Huyền', N'Nữ', '2004-12-05', '0123321123', 'huyen.t@gmail.com', 'Sáng'),
+('DS001', 'TS003', N'Lê Quốc Nam', N'Nam', '1999-04-04', '0987789987', 'nam.lq@gmail.com', 'Sáng'),
+('DS001', 'TS004', N'Lý Hoàng Sơn', N'Nam', '2001-11-05', '0456654456', 'son.lh@gmail.com', 'Sáng'),
+('DS001', 'TS005', N'Nguyễn Lê Hưng', N'Nam', '1997-07-13', '0435543345', 'hung.nl@gmail.com', 'Sáng'),
 ('DS002', 'TS002', N'Trần Văn Hùng', N'Nam', '1999-06-20', '0918765432', 'hung.tv@gmail.com', 'Chiều'),
 ('DS003', 'TS003', N'Lê Thị Lan', N'Nữ', '2001-08-10', '0935678901', 'lan.lt@gmail.com', 'Sáng'),
 ('DS004', 'TS004', N'Phạm Minh Tuấn', N'Nam', '2000-12-05', '0902345678', 'tuan.pm@gmail.com', 'Tối'),
 ('DS005', 'TS005', N'Vũ Thị Ngọc', N'Nữ', '1998-04-22', '0976543210', 'ngoc.vt@gmail.com', 'Sáng'),
 ('DS006', 'TS006', N'Đỗ Văn Khánh', N'Nam', '1999-09-18', '0941234567', 'khanh.dv@gmail.com', 'Chiều'),
-('DS007', N'TS007', N'Bùi Thị Mai', N'Nữ', '2000-03-25', '0967891234', 'mai.bt@gmail.com', 'Sáng'),
+('DS007', 'TS007', N'Bùi Thị Mai', N'Nữ', '2000-03-25', '0967891234', 'mai.bt@gmail.com', 'Sáng'),
 ('DS008', 'TS008', N'Ngô Văn Long', N'Nam', '1999-07-30', '0952345678', 'long.nv@gmail.com', 'Tối'),
 ('DS009', 'TS009', N'Lý Thị Hương', N'Nữ', '2001-01-12', '0923456781', 'huong.lt@gmail.com', 'Chiều'),
 ('DS010', 'TS010', N'Hồ Minh Đức', N'Nam', '1998-11-05', '0915678902', 'duc.hm@gmail.com', 'Sáng');
@@ -215,17 +219,17 @@ INSERT INTO LichThi_NhanVien (MaLT, MaNV) VALUES
 ('LT010', 'NV010');
 
 -- Insert into PhieuDangKy 
-INSERT INTO PhieuDangKy (MaPDK, NgayLap, TrangThaiThanhToan, MaDS, MaLT, TenDonVi, LoaiPDK, LoaiCC) VALUES
-('PDK01', '2025-07-01 10:00:00', N'Đã thanh toán', 'DS001', 'LT001', N'Công ty ABC', N'KHĐV','TA'),
-('PDK02', '2025-07-02 14:00:00', N'Chưa thanh toán', 'DS002', 'LT002', NULL, N'KHTD','TA'),
-('PDK03', '2025-07-03 09:00:00', N'Đã thanh toán', 'DS003', 'LT003', N'Công ty XYZ', N'KHĐV','TA'),
-('PDK04', '2025-07-04 11:00:00', N'Chưa thanh toán', 'DS004', 'LT004', NULL, N'KHTD','TA'),
-('PDK05', '2025-07-05 15:00:00', N'Đã thanh toán', 'DS005', 'LT005', N'Công ty DEF', N'KHĐV','TA'),
-('PDK06', '2025-07-06 16:00:00', N'Chưa thanh toán', 'DS006', 'LT006', NULL, N'KHTD','TH'),
-('PDK07', '2025-07-07 10:00:00', N'Đã thanh toán', 'DS007', 'LT007', N'Công ty GHI', N'KHĐV','TH'),
-('PDK08', '2025-07-08 12:00:00', N'Chưa thanh toán', 'DS008', 'LT008', NULL, N'KHTD','TH'),
-('PDK09', '2025-07-09 14:00:00', N'Đã thanh toán', 'DS009', 'LT009', N'Công ty JKL', N'KHĐV','TH'),
-('PDK10', '2025-07-10 16:00:00', N'Chưa thanh toán', 'DS010', 'LT010', NULL, N'KHTD','TH');
+INSERT INTO PhieuDangKy (MaPDK, NgayLap, TrangThaiThanhToan, MaDS, MaLT, TenDonVi, LoaiPDK, TrangThaiXuatPDT, LoaiCC) VALUES
+('PDK01', '2025-07-01 10:00:00', N'Đã thanh toán', 'DS001', 'LT001', N'Công ty ABC', N'KHĐV', N'Đã xuất PDT','TA'),
+('PDK02', '2025-07-02 14:00:00', N'Chưa thanh toán', 'DS002', 'LT002', NULL, N'KHTD', N'Chưa xuất PDT','TA'),
+('PDK03', '2025-07-03 09:00:00', N'Đã thanh toán', 'DS003', 'LT003', NULL, N'KHĐV', N'Đã xuất PDT','TA'),
+('PDK04', '2025-07-04 11:00:00', N'Chưa thanh toán', 'DS004', 'LT004', NULL, N'KHTD', N'Chưa xuất PDT','TA'),
+('PDK05', '2025-07-05 15:00:00', N'Đã thanh toán', 'DS005', 'LT005', NULL, N'KHĐV', N'Đã xuất PDT','TA'),
+('PDK06', '2025-07-06 16:00:00', N'Chưa thanh toán', 'DS006', 'LT006', NULL, N'KHTD', N'Chưa xuất PDT','TH'),
+('PDK07', '2025-07-07 10:00:00', N'Đã thanh toán', 'DS007', 'LT007', NULL, N'KHĐV',N'Đã xuất PDT','TH'),
+('PDK08', '2025-07-08 12:00:00', N'Chưa thanh toán', 'DS008', 'LT008', NULL, N'KHTD', N'Chưa xuất PDT','TH'),
+('PDK09', '2025-07-09 14:00:00', N'Đã thanh toán', 'DS009', 'LT009', NULL, N'KHĐV',N'Đã xuất PDT','TH'),
+('PDK10', '2025-07-10 16:00:00', N'Chưa thanh toán', 'DS010', 'LT010', NULL, N'KHTD', N'Chưa xuất PDT','TH');
 
 -- Insert into TTNguoiDangKy
 INSERT INTO TTNguoiDangKy (MaNDK, CCCD, HoTen, GioiTinh, NgaySinh, SoDienThoai, DiaChi, MaPDK) VALUES
@@ -297,3 +301,139 @@ INSERT INTO QuyDinh (MaQD, DoiTuong, NoiDung, GiaTri) VALUES
 ('QD001', 'TT', N'Số lượng thí sinh tối thiểu để trợ giá cho đơn vị là 20', 20),
 ('QD002', 'TT', N'Đơn vị có số lượng thí sinh vượt ngưỡng tối thiểu được trợ giá 10%', 0.1),
 ('QD003', 'TT', N'Thời gian đến hạn thanh toán là 3 ngày kể từ ngày đăng ký. Sau thời gian trên, các phiếu đăng ký chưa được thanh toán sẽ bị hủy.', 3);
+
+
+-- PROCEDURE USE-CASE PHÁT HÀNH PHIẾU DỰ THI
+	-- Xem tất cả phiếu đăng ký
+	GO
+	CREATE  OR ALTER PROCEDURE XemTatCaPhieuDangKy 
+	AS
+	BEGIN
+		SELECT pdk.MaPDK, dsts.HoTen, dsts.Email, pdk.LoaiPDK, ldgnl.NgayThi, ldgnl.PhongThi, pdk.TrangThaiThanhToan, pdk.TrangThaiXuatPDT
+		FROM PhieuDangKy pdk JOIN DSThiSinh dsts ON pdk.MaDS = dsts.MaDS
+		JOIN LichDGNL ldgnl ON pdk.MaLT = ldgnl.MaLT
+	END;
+
+	-- Lọc phiếu đăng ký
+	GO
+	CREATE OR ALTER PROCEDURE LocPhieuDangKy
+		@MaPDK CHAR(5) = NULL,
+		@LoaiKyThi NVARCHAR(20) = NULL,
+		@TrangThaiXuatPDT NVARCHAR(20) = NULL
+	AS
+	BEGIN
+		SELECT 
+			pdk.MaPDK, 
+			dsts.HoTen, 
+			dsts.Email, 
+			pdk.LoaiPDK, 
+			ldgnl.NgayThi, 
+			ldgnl.PhongThi, 
+			pdk.TrangThaiThanhToan, 
+			pdk.TrangThaiXuatPDT
+		FROM 
+			PhieuDangKy pdk 
+			JOIN DSThiSinh dsts ON pdk.MaDS = dsts.MaDS
+			JOIN LichDGNL ldgnl ON pdk.MaLT = ldgnl.MaLT
+		WHERE 
+			(@MaPDK IS NULL OR pdk.MaPDK = @MaPDK)
+			AND (@LoaiKyThi IS NULL OR ldgnl.LoaiDGNL = @LoaiKyThi)
+			AND (@TrangThaiXuatPDT IS NULL OR pdk.TrangThaiXuatPDT = @TrangThaiXuatPDT)
+	END;
+
+
+	-- Xem Chi tiết Phiếu Đăng ký
+	GO
+	CREATE OR ALTER PROCEDURE XemPhieuDangKy
+		@MaPDK CHAR(5)
+	AS
+	BEGIN
+		SELECT 
+			ldgnl.Ngaythi,
+			CONCAT(N'Tòa ', pt.Toa, N', Tầng ', pt.Tang, N', Phòng ', ldgnl.PhongThi) AS DiaDiem,
+			ldgnl.Loaidgnl,
+			CASE 
+				WHEN pdk.TenDonVi IS NULL THEN dsts.HoTen
+				ELSE pdk.TenDonVi
+			END AS TenHienThi
+		FROM 
+		  PhieuDangKy pdk
+		  JOIN DSThiSinh dsts ON dsts.MaDS = pdk.MaDS
+		  JOIN LichDGNL ldgnl ON pdk.MaLT = ldgnl.MaLT
+		  JOIN DSPhongThi pt ON pt.MaPT = ldgnl.PhongThi 
+     
+		WHERE 
+			pdk.MaPDK = @MaPDK
+	END;
+
+	-- Xem Phiếu dự thi
+	GO
+	CREATE OR ALTER PROCEDURE XemPhieuDuThi
+		@MaPDK CHAR(5)
+	AS
+	BEGIN
+		SELECT 
+			pdt.MaPDT, 
+			pdt.ThoiGian, 
+			CONCAT(N'Tòa ', pt.Toa, N', Tầng ', pt.Tang, N', Phòng ', ldgnl.PhongThi) AS DiaDiem,
+			pdt.SBD, 
+			ldgnl.Loaidgnl, 
+			CASE 
+				WHEN pdk.TenDonVi IS NULL THEN dsts.HoTen
+				ELSE pdk.TenDonVi
+			END AS TenHienThi
+		FROM 
+			PhieuDuThi pdt
+			JOIN PhieuDangKy pdk ON pdt.MaPDK = pdk.MaPDK
+			JOIN DSThiSinh dsts ON pdk.MaDS = dsts.MaDS
+			JOIN LichDGNL ldgnl ON ldgnl.MaLT = pdk.MaLT
+			JOIN DSPhongThi pt ON pt.MaPT = ldgnl.PhongThi
+		WHERE 
+			pdk.MaPDK = @MaPDK
+	END;
+
+	-- Xuất Phiếu dự thi
+	GO
+	GO
+	CREATE OR ALTER PROCEDURE XuatPhieuDuThi
+		@MaPDK CHAR(5)
+	AS
+	BEGIN
+
+		DECLARE @MaPDT CHAR(5);
+		DECLARE @SBD CHAR(5);
+		DECLARE @NewID INT;
+
+		-- Tạo MaPDT tự động (PDT01, PDT02, ...)
+		SELECT @NewID = ISNULL(MAX(CAST(SUBSTRING(MaPDT, 4, 2) AS INT)), 0) + 1
+		FROM PhieuDuThi;
+		SET @MaPDT = 'PDT' + RIGHT('0' + CAST(@NewID AS VARCHAR(2)), 2);
+
+		-- Tạo SBD tự động (SBD01, SBD02, ...)
+		SELECT @NewID = ISNULL(MAX(CAST(SUBSTRING(SBD, 4, 2) AS INT)), 0) + 1
+		FROM PhieuDuThi;
+		SET @SBD = 'SBD' + RIGHT('0' + CAST(@NewID AS VARCHAR(2)), 2);
+
+		-- Thêm hàng vào PhieuDuThi
+		INSERT INTO PhieuDuThi (MaPDT, ThoiGian, DiaDiem, SBD, MaPDK)
+		SELECT 
+			@MaPDT,
+			ldgnl.NgayThi,
+			ldgnl.PhongThi,
+			@SBD,
+			pdk.MaPDK
+		FROM 
+			PhieuDangKy pdk
+			JOIN LichDGNL ldgnl ON pdk.MaLT = ldgnl.MaLT
+			JOIN DSPhongThi pt ON ldgnl.PhongThi = pt.MaPT
+		WHERE 
+			pdk.MaPDK = @MaPDK;
+
+		-- Cập nhật TrangThaiXuatPDT trong PhieuDangKy (nếu có)
+		UPDATE PhieuDangKy
+		SET TrangThaiXuatPDT = N'Đã xuất PDT'
+		WHERE MaPDK = @MaPDK;
+	END;
+	GO
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------

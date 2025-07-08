@@ -96,12 +96,17 @@ namespace exam_registration_system.MainForms.NVNL
         private void butRecordCertificate_Click(object sender, EventArgs e)
         {
             panelContent.Controls.Clear();
-            recordCertificateInfoForm frm = new recordCertificateInfoForm();
-            frm.TopLevel = false;
-            frm.FormBorderStyle = FormBorderStyle.None;
-            frm.Dock = DockStyle.Fill;
-            panelContent.Controls.Add(frm);
-            frm.Show();
+            recordCertificateInfoForm rci = new recordCertificateInfoForm();
+            rci.TopLevel = false;
+            rci.FormBorderStyle = FormBorderStyle.None;
+            rci.Dock = DockStyle.Fill;
+            panelContent.Controls.Add(rci);
+            rci.Show();
+        }
+
+        private void panelContent_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

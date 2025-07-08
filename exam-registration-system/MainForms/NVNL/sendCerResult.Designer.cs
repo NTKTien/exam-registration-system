@@ -28,11 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.panelHeader = new Guna.UI2.WinForms.Guna2Panel();
-            this.labelHeader = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DataGridViewInfoCand = new Guna.UI2.WinForms.Guna2DataGridView();
             this.DateTimePickerSendResult = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.lbDateSend = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -40,63 +38,40 @@
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnClose = new Guna.UI2.WinForms.Guna2Button();
-            this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewInfoCand)).BeginInit();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panelHeader
-            // 
-            this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(190)))), ((int)(((byte)(230)))));
-            this.panelHeader.BorderColor = System.Drawing.Color.Gray;
-            this.panelHeader.BorderThickness = 1;
-            this.panelHeader.Controls.Add(this.labelHeader);
-            this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelHeader.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.panelHeader.Location = new System.Drawing.Point(0, 0);
-            this.panelHeader.Name = "panelHeader";
-            this.panelHeader.Size = new System.Drawing.Size(800, 59);
-            this.panelHeader.TabIndex = 4;
-            // 
-            // labelHeader
-            // 
-            this.labelHeader.AutoSize = false;
-            this.labelHeader.BackColor = System.Drawing.Color.Transparent;
-            this.labelHeader.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHeader.Location = new System.Drawing.Point(304, 12);
-            this.labelHeader.Name = "labelHeader";
-            this.labelHeader.Size = new System.Drawing.Size(206, 32);
-            this.labelHeader.TabIndex = 1;
-            this.labelHeader.Text = "Thông báo kết quả";
-            // 
             // DataGridViewInfoCand
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.DataGridViewInfoCand.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGridViewInfoCand.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
+            this.DataGridViewInfoCand.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGridViewInfoCand.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.DataGridViewInfoCand.ColumnHeadersHeight = 4;
             this.DataGridViewInfoCand.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DataGridViewInfoCand.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGridViewInfoCand.DefaultCellStyle = dataGridViewCellStyle15;
             this.DataGridViewInfoCand.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.DataGridViewInfoCand.Location = new System.Drawing.Point(60, 19);
+            this.DataGridViewInfoCand.Location = new System.Drawing.Point(50, 29);
+            this.DataGridViewInfoCand.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.DataGridViewInfoCand.Name = "DataGridViewInfoCand";
             this.DataGridViewInfoCand.RowHeadersVisible = false;
-            this.DataGridViewInfoCand.Size = new System.Drawing.Size(589, 167);
+            this.DataGridViewInfoCand.RowHeadersWidth = 62;
+            this.DataGridViewInfoCand.Size = new System.Drawing.Size(664, 257);
             this.DataGridViewInfoCand.TabIndex = 5;
             this.DataGridViewInfoCand.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.DataGridViewInfoCand.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -123,24 +98,28 @@
             // DateTimePickerSendResult
             // 
             this.DateTimePickerSendResult.Checked = true;
-            this.DateTimePickerSendResult.FillColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.DateTimePickerSendResult.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.DateTimePickerSendResult.FillColor = System.Drawing.SystemColors.Control;
+            this.DateTimePickerSendResult.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Italic);
+            this.DateTimePickerSendResult.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.DateTimePickerSendResult.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.DateTimePickerSendResult.Location = new System.Drawing.Point(120, 13);
+            this.DateTimePickerSendResult.Location = new System.Drawing.Point(180, 20);
+            this.DateTimePickerSendResult.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.DateTimePickerSendResult.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.DateTimePickerSendResult.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.DateTimePickerSendResult.Name = "DateTimePickerSendResult";
-            this.DateTimePickerSendResult.Size = new System.Drawing.Size(200, 36);
+            this.DateTimePickerSendResult.Size = new System.Drawing.Size(300, 55);
             this.DateTimePickerSendResult.TabIndex = 6;
             this.DateTimePickerSendResult.Value = new System.DateTime(2025, 6, 27, 14, 31, 24, 922);
             // 
             // lbDateSend
             // 
             this.lbDateSend.BackColor = System.Drawing.Color.Transparent;
-            this.lbDateSend.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDateSend.Location = new System.Drawing.Point(20, 18);
+            this.lbDateSend.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.lbDateSend.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.lbDateSend.Location = new System.Drawing.Point(50, 32);
+            this.lbDateSend.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lbDateSend.Name = "lbDateSend";
-            this.lbDateSend.Size = new System.Drawing.Size(88, 27);
+            this.lbDateSend.Size = new System.Drawing.Size(99, 30);
             this.lbDateSend.TabIndex = 9;
             this.lbDateSend.Text = "Ngày hẹn:";
             // 
@@ -153,12 +132,13 @@
             this.btnConfirm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnConfirm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnConfirm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnConfirm.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.btnConfirm.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirm.FillColor = System.Drawing.Color.Green;
+            this.btnConfirm.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnConfirm.ForeColor = System.Drawing.Color.White;
-            this.btnConfirm.Location = new System.Drawing.Point(623, 404);
+            this.btnConfirm.Location = new System.Drawing.Point(653, 562);
+            this.btnConfirm.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(122, 34);
+            this.btnConfirm.Size = new System.Drawing.Size(183, 52);
             this.btnConfirm.TabIndex = 12;
             this.btnConfirm.Text = "Xác nhận";
             // 
@@ -170,13 +150,14 @@
             this.guna2Panel2.BorderThickness = 1;
             this.guna2Panel2.Controls.Add(this.lbDateSend);
             this.guna2Panel2.Controls.Add(this.DateTimePickerSendResult);
-            this.guna2Panel2.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.guna2Panel2.Location = new System.Drawing.Point(47, 77);
+            this.guna2Panel2.FillColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.guna2Panel2.Location = new System.Drawing.Point(70, 50);
+            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.ShadowDecoration.BorderRadius = 15;
             this.guna2Panel2.ShadowDecoration.Depth = 10;
             this.guna2Panel2.ShadowDecoration.Enabled = true;
-            this.guna2Panel2.Size = new System.Drawing.Size(711, 66);
+            this.guna2Panel2.Size = new System.Drawing.Size(766, 102);
             this.guna2Panel2.TabIndex = 13;
             // 
             // guna2Panel1
@@ -187,46 +168,50 @@
             this.guna2Panel1.BorderThickness = 1;
             this.guna2Panel1.Controls.Add(this.DataGridViewInfoCand);
             this.guna2Panel1.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.guna2Panel1.Location = new System.Drawing.Point(47, 169);
+            this.guna2Panel1.Location = new System.Drawing.Point(70, 195);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.ShadowDecoration.BorderRadius = 15;
             this.guna2Panel1.ShadowDecoration.Depth = 10;
             this.guna2Panel1.ShadowDecoration.Enabled = true;
-            this.guna2Panel1.Size = new System.Drawing.Size(711, 211);
+            this.guna2Panel1.Size = new System.Drawing.Size(766, 325);
             this.guna2Panel1.TabIndex = 14;
             // 
             // btnClose
             // 
-            this.btnClose.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.btnClose.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.btnClose.BorderRadius = 5;
             this.btnClose.BorderThickness = 1;
             this.btnClose.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnClose.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnClose.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnClose.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnClose.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.btnClose.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.btnClose.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(67, 404);
+            this.btnClose.Location = new System.Drawing.Point(70, 562);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(122, 34);
+            this.btnClose.Size = new System.Drawing.Size(164, 52);
             this.btnClose.TabIndex = 15;
-            this.btnClose.Text = "Quay lại";
+            this.btnClose.Text = "Đóng";
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // sendCerResult
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(897, 640);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.btnConfirm);
-            this.Controls.Add(this.panelHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "sendCerResult";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "sendCerResult";
-            this.panelHeader.ResumeLayout(false);
+            this.Load += new System.EventHandler(this.sendCerResult_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewInfoCand)).EndInit();
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
@@ -236,9 +221,6 @@
         }
 
         #endregion
-
-        private Guna.UI2.WinForms.Guna2Panel panelHeader;
-        private Guna.UI2.WinForms.Guna2HtmlLabel labelHeader;
         private Guna.UI2.WinForms.Guna2DataGridView DataGridViewInfoCand;
         private Guna.UI2.WinForms.Guna2DateTimePicker DateTimePickerSendResult;
         private Guna.UI2.WinForms.Guna2HtmlLabel lbDateSend;
