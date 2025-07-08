@@ -26,5 +26,10 @@ namespace exam_registration_system.MainForms.NVKT
         {
 
         }
+
+        private void labelDetailReg_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
