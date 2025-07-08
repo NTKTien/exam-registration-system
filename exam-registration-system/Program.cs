@@ -2,6 +2,7 @@
 using exam_registration_system.MainForms.NVKT;
 using exam_registration_system.MainForms.NVNL;
 using exam_registration_system.MainForms.NVTN;
+using PdfSharp.Drawing;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +22,8 @@ namespace exam_registration_system
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             SqlServerHelper.SetConnection("sa", "001393Mgct@@");
-            Application.Run(new HomeNVTNForm());
+            Application.Run(new HomeNVKTForm());
+            Console.WriteLine(typeof(XFontStyle).FullName);
         }
     }
 }

@@ -74,7 +74,8 @@ CREATE TABLE PhieuDangKy (
 	MaLT CHAR(5),
 	TenDonVi NVARCHAR(100) DEFAULT NULL,  -- UPDATE 7/7
 	FOREIGN KEY(MaLT) REFERENCES LichDGNL(MaLT),
-	LoaiPDK NVARCHAR(4) CHECK (LoaiPDK IN (N'KHĐV', N'KHTD'))  --UPDATE 7/7
+	LoaiPDK NVARCHAR(4) CHECK (LoaiPDK IN (N'KHĐV', N'KHTD')),
+	LoaiCC VARCHAR(2) CHECK (LoaiCC IN (N'TA', N'TH'))
 );
 
 -- Tạo bảng Thông tin người đăng ký
@@ -214,17 +215,17 @@ INSERT INTO LichThi_NhanVien (MaLT, MaNV) VALUES
 ('LT010', 'NV010');
 
 -- Insert into PhieuDangKy 
-INSERT INTO PhieuDangKy (MaPDK, NgayLap, TrangThaiThanhToan, MaDS, MaLT, TenDonVi, LoaiPDK) VALUES
-('PDK01', '2025-07-01 10:00:00', N'Đã thanh toán', 'DS001', 'LT001', N'Công ty ABC', N'KHĐV'),
-('PDK02', '2025-07-02 14:00:00', N'Chưa thanh toán', 'DS002', 'LT002', NULL, N'KHTD'),
-('PDK03', '2025-07-03 09:00:00', N'Đã thanh toán', 'DS003', 'LT003', N'Công ty XYZ', N'KHĐV'),
-('PDK04', '2025-07-04 11:00:00', N'Chưa thanh toán', 'DS004', 'LT004', NULL, N'KHTD'),
-('PDK05', '2025-07-05 15:00:00', N'Đã thanh toán', 'DS005', 'LT005', N'Công ty DEF', N'KHĐV'),
-('PDK06', '2025-07-06 16:00:00', N'Chưa thanh toán', 'DS006', 'LT006', NULL, N'KHTD'),
-('PDK07', '2025-07-07 10:00:00', N'Đã thanh toán', 'DS007', 'LT007', N'Công ty GHI', N'KHĐV'),
-('PDK08', '2025-07-08 12:00:00', N'Chưa thanh toán', 'DS008', 'LT008', NULL, N'KHTD'),
-('PDK09', '2025-07-09 14:00:00', N'Đã thanh toán', 'DS009', 'LT009', N'Công ty JKL', N'KHĐV'),
-('PDK10', '2025-07-10 16:00:00', N'Chưa thanh toán', 'DS010', 'LT010', NULL, N'KHTD');
+INSERT INTO PhieuDangKy (MaPDK, NgayLap, TrangThaiThanhToan, MaDS, MaLT, TenDonVi, LoaiPDK, LoaiCC) VALUES
+('PDK01', '2025-07-01 10:00:00', N'Đã thanh toán', 'DS001', 'LT001', N'Công ty ABC', N'KHĐV','TA'),
+('PDK02', '2025-07-02 14:00:00', N'Chưa thanh toán', 'DS002', 'LT002', NULL, N'KHTD','TA'),
+('PDK03', '2025-07-03 09:00:00', N'Đã thanh toán', 'DS003', 'LT003', N'Công ty XYZ', N'KHĐV','TA'),
+('PDK04', '2025-07-04 11:00:00', N'Chưa thanh toán', 'DS004', 'LT004', NULL, N'KHTD','TA'),
+('PDK05', '2025-07-05 15:00:00', N'Đã thanh toán', 'DS005', 'LT005', N'Công ty DEF', N'KHĐV','TA'),
+('PDK06', '2025-07-06 16:00:00', N'Chưa thanh toán', 'DS006', 'LT006', NULL, N'KHTD','TH'),
+('PDK07', '2025-07-07 10:00:00', N'Đã thanh toán', 'DS007', 'LT007', N'Công ty GHI', N'KHĐV','TH'),
+('PDK08', '2025-07-08 12:00:00', N'Chưa thanh toán', 'DS008', 'LT008', NULL, N'KHTD','TH'),
+('PDK09', '2025-07-09 14:00:00', N'Đã thanh toán', 'DS009', 'LT009', N'Công ty JKL', N'KHĐV','TH'),
+('PDK10', '2025-07-10 16:00:00', N'Chưa thanh toán', 'DS010', 'LT010', NULL, N'KHTD','TH');
 
 -- Insert into TTNguoiDangKy
 INSERT INTO TTNguoiDangKy (MaNDK, CCCD, HoTen, GioiTinh, NgaySinh, SoDienThoai, DiaChi, MaPDK) VALUES

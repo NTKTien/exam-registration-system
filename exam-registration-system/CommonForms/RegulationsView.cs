@@ -68,9 +68,8 @@ namespace exam_registration_system.CommonForms
 
                     dgvRegulations.Rows.Add(maQD, noiDung);
                 }
+                dgvRegulations.ClearSelection();
 
-                // Update header title
-                UpdateHeaderTitle(regulationType);
             }
             catch (Exception ex)
             {
@@ -79,31 +78,10 @@ namespace exam_registration_system.CommonForms
             }
         }
 
-        private void UpdateHeaderTitle(string regulationType)
-        {
-            string title = GetRegulationTypeTitle(regulationType);
-            lbHeader.Text = title;
-        }
-
-        private string GetRegulationTypeTitle(string regulationType)
-        {
-            switch (regulationType)
-            {
-                case "DK": return "QUY ĐỊNH ĐĂNG KÝ DỰ THI";
-                case "TT": return "QUY ĐỊNH THANH TOÁN";
-                case "GH": return "QUY ĐỊNH GIA HẠN";
-                case "DB": return "QUY ĐỊNH XỬ LÝ ĐẶC BIỆT";
-                case "HT": return "QUY ĐỊNH HOÀN TIỀN";
-                default: return "QUY ĐỊNH";
-            }
-        }
-
         private void SetActiveButton(Guna.UI2.WinForms.Guna2Button activeButton)
         {
-            // Reset all buttons
             ResetButtonStyles();
 
-            // Set active button style
             activeButton.FillColor = Color.FromArgb(241, 196, 15);
             activeButton.ForeColor = Color.White;
         }
@@ -158,10 +136,8 @@ namespace exam_registration_system.CommonForms
 
                 DataTable dt = SqlServerHelper.ExecuteQuery(sql, parameters);
 
-                // Clear existing data
                 dgvRegulations.Rows.Clear();
 
-                // Load search results
                 foreach (DataRow row in dt.Rows)
                 {
                     string maQD = row["MaQD"].ToString();
@@ -270,7 +246,7 @@ namespace exam_registration_system.CommonForms
         private void ExportToText(string fileName)
         {
             StringBuilder txt = new StringBuilder();
-            txt.AppendLine($"DANH SÁCH {GetRegulationTypeTitle(currentRegulationType)}");
+            txt.AppendLine($"DANH SÁCH QUY ĐỊNH");
             txt.AppendLine($"Ngày xuất: {DateTime.Now:dd/MM/yyyy HH:mm:ss}");
             txt.AppendLine(new string('=', 80));
 
