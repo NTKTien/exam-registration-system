@@ -1,4 +1,5 @@
-﻿using System;
+﻿using exam_registration_system.Business;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,19 +20,65 @@ namespace exam_registration_system.CommonForms
 
         private void RegListForm_Load(object sender, EventArgs e)
         {
-            // Tạo sẵn 10 dòng dữ liệu giả lập
-            for (int i = 1; i <= 100; i++)
+            LoadRegList();
+        }
+
+        private void LoadRegList()
+        {
+            DataTable dt = PhieuDangKyService.GetAllReg();
+            dgvRegList.DataSource = dt;
+        }
+
+        private void butDetailReg_Click(object sender, EventArgs e)
+        {
+            // Kiểm tra có dòng nào được chọn chưa
+            if (dgvRegList.CurrentRow != null)
             {
-                dgvRegList.Rows.Add(
-                    $"P{i:000}", // Mã phiếu: P001, P002,...
-                    DateTime.Today.AddDays(-i).ToShortDateString(), // Ngày lập
-                    i % 2 == 0 ? "Anh văn" : "Tin học", // Loại ĐGNL
-                    DateTime.Today.AddDays(i).ToShortDateString(), // Ngày dự thi
-                    $"Nguyễn Văn {Convert.ToChar(64 + i)}", // Tên khách hàng
-                    i % 2 == 0 ? "Đơn vị" : "Cá nhân", // Loại KH
-                    i % 3 == 0 ? "Đã thanh toán" : "Chưa thanh toán" // Trạng thái
-                );
+                // Lấy giá trị từ cột "Mã phiếu" (giả sử cột này là cột đầu tiên - index 0)
+                string RegistrationId = dgvRegList.CurrentRow.Cells["codeReg"].Value.ToString();
+
+                // Mở form chi tiết, truyền mã phiếu vào constructor
+                RegDetailForm formChiTiet = new RegDetailForm(RegistrationId);
+                formChiTiet.ShowDialog();
             }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn một phiếu đăng ký để xem chi tiết!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void butSearch_Click(object sender, EventArgs e)
+        {
+            string keyword = textSearch.Text.Trim().ToLower();
+
+            // Nếu trống thì load lại danh sách gốc
+            if (string.IsNullOrEmpty(keyword))
+            {
+                LoadRegList();
+                return;
+            }
+
+            // Lấy dữ liệu gốc từ DataSource (DataTable)
+            DataTable dt = dgvRegList.DataSource as DataTable;
+            if (dt == null) return;
+
+            // Clone cấu trúc bảng để tạo bảng kết quả
+            DataTable filteredTable = dt.Clone();
+
+            foreach (DataRow row in dt.Rows)
+            {
+                // Kiểm tra tất cả các ô trong hàng
+                foreach (var item in row.ItemArray)
+                {
+                    if (item.ToString().ToLower().Contains(keyword))
+                    {
+                        filteredTable.ImportRow(row);
+                        break; // Chỉ cần một ô khớp là đủ
+                    }
+                }
+            }
+
+            dgvRegList.DataSource = filteredTable;
         }
     }
 }

@@ -29,14 +29,12 @@
         private void InitializeComponent()
         {
             this.tbEmail = new Guna.UI2.WinForms.Guna2TextBox();
-            this.tbBirth = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbFullName = new Guna.UI2.WinForms.Guna2TextBox();
             this.labelEmail = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.labelInforRegHeader = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.labelTypeReg = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.labelAddress = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.labelRegCode = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.tbRegDate = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbSDT = new Guna.UI2.WinForms.Guna2TextBox();
             this.labelCCCD = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.labelBirth = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -48,8 +46,8 @@
             this.tbCCCD = new Guna.UI2.WinForms.Guna2TextBox();
             this.labelFullName = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2CustomRadioButton2 = new Guna.UI2.WinForms.Guna2CustomRadioButton();
-            this.guna2CustomRadioButton1 = new Guna.UI2.WinForms.Guna2CustomRadioButton();
+            this.radioButFemale = new Guna.UI2.WinForms.Guna2CustomRadioButton();
+            this.radioButMale = new Guna.UI2.WinForms.Guna2CustomRadioButton();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.labelRadioMan = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.labelSex = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -60,6 +58,8 @@
             this.panelContent = new Guna.UI2.WinForms.Guna2Panel();
             this.labelDetailReg = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.butCreateReg = new Guna.UI2.WinForms.Guna2Button();
+            this.dtpNgaySinh = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.dtpNgayDangKy = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.guna2Panel2.SuspendLayout();
             this.panelInforReg.SuspendLayout();
             this.panelContent.SuspendLayout();
@@ -82,24 +82,6 @@
             this.tbEmail.SelectedText = "";
             this.tbEmail.Size = new System.Drawing.Size(200, 30);
             this.tbEmail.TabIndex = 3;
-            // 
-            // tbBirth
-            // 
-            this.tbBirth.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbBirth.DefaultText = "";
-            this.tbBirth.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbBirth.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbBirth.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbBirth.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbBirth.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbBirth.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.tbBirth.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbBirth.Location = new System.Drawing.Point(493, 46);
-            this.tbBirth.Name = "tbBirth";
-            this.tbBirth.PlaceholderText = "";
-            this.tbBirth.SelectedText = "";
-            this.tbBirth.Size = new System.Drawing.Size(200, 30);
-            this.tbBirth.TabIndex = 3;
             // 
             // tbFullName
             // 
@@ -169,24 +151,6 @@
             this.labelRegCode.TabIndex = 2;
             this.labelRegCode.Text = "Mã phiếu:";
             // 
-            // tbRegDate
-            // 
-            this.tbRegDate.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbRegDate.DefaultText = "";
-            this.tbRegDate.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbRegDate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbRegDate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbRegDate.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbRegDate.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbRegDate.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.tbRegDate.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbRegDate.Location = new System.Drawing.Point(493, 55);
-            this.tbRegDate.Name = "tbRegDate";
-            this.tbRegDate.PlaceholderText = "";
-            this.tbRegDate.SelectedText = "";
-            this.tbRegDate.Size = new System.Drawing.Size(200, 30);
-            this.tbRegDate.TabIndex = 3;
-            // 
             // tbSDT
             // 
             this.tbSDT.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -204,6 +168,7 @@
             this.tbSDT.SelectedText = "";
             this.tbSDT.Size = new System.Drawing.Size(200, 30);
             this.tbSDT.TabIndex = 3;
+            this.tbSDT.Leave += new System.EventHandler(this.tbSDT_Leave);
             // 
             // labelCCCD
             // 
@@ -308,6 +273,7 @@
             this.tbCCCD.SelectedText = "";
             this.tbCCCD.Size = new System.Drawing.Size(200, 30);
             this.tbCCCD.TabIndex = 3;
+            this.tbCCCD.Leave += new System.EventHandler(this.tbCCCD_Leave);
             // 
             // labelFullName
             // 
@@ -325,14 +291,14 @@
             this.guna2Panel2.BorderColor = System.Drawing.Color.Silver;
             this.guna2Panel2.BorderRadius = 10;
             this.guna2Panel2.BorderThickness = 1;
-            this.guna2Panel2.Controls.Add(this.guna2CustomRadioButton2);
-            this.guna2Panel2.Controls.Add(this.guna2CustomRadioButton1);
+            this.guna2Panel2.Controls.Add(this.dtpNgaySinh);
+            this.guna2Panel2.Controls.Add(this.radioButFemale);
+            this.guna2Panel2.Controls.Add(this.radioButMale);
             this.guna2Panel2.Controls.Add(this.tbAddress);
             this.guna2Panel2.Controls.Add(this.tbCCCD);
             this.guna2Panel2.Controls.Add(this.labelFullName);
             this.guna2Panel2.Controls.Add(this.tbEmail);
             this.guna2Panel2.Controls.Add(this.tbSDT);
-            this.guna2Panel2.Controls.Add(this.tbBirth);
             this.guna2Panel2.Controls.Add(this.tbFullName);
             this.guna2Panel2.Controls.Add(this.labelEmail);
             this.guna2Panel2.Controls.Add(this.labelAddress);
@@ -352,37 +318,37 @@
             this.guna2Panel2.Size = new System.Drawing.Size(711, 242);
             this.guna2Panel2.TabIndex = 0;
             // 
-            // guna2CustomRadioButton2
+            // radioButFemale
             // 
-            this.guna2CustomRadioButton2.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CustomRadioButton2.CheckedState.BorderThickness = 0;
-            this.guna2CustomRadioButton2.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CustomRadioButton2.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.guna2CustomRadioButton2.Location = new System.Drawing.Point(204, 93);
-            this.guna2CustomRadioButton2.Name = "guna2CustomRadioButton2";
-            this.guna2CustomRadioButton2.Size = new System.Drawing.Size(16, 23);
-            this.guna2CustomRadioButton2.TabIndex = 4;
-            this.guna2CustomRadioButton2.Text = "RadioButMale";
-            this.guna2CustomRadioButton2.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2CustomRadioButton2.UncheckedState.BorderThickness = 2;
-            this.guna2CustomRadioButton2.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.guna2CustomRadioButton2.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.radioButFemale.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.radioButFemale.CheckedState.BorderThickness = 0;
+            this.radioButFemale.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.radioButFemale.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.radioButFemale.Location = new System.Drawing.Point(204, 93);
+            this.radioButFemale.Name = "radioButFemale";
+            this.radioButFemale.Size = new System.Drawing.Size(16, 23);
+            this.radioButFemale.TabIndex = 4;
+            this.radioButFemale.Text = "RadioButMale";
+            this.radioButFemale.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.radioButFemale.UncheckedState.BorderThickness = 2;
+            this.radioButFemale.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.radioButFemale.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
             // 
-            // guna2CustomRadioButton1
+            // radioButMale
             // 
-            this.guna2CustomRadioButton1.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CustomRadioButton1.CheckedState.BorderThickness = 0;
-            this.guna2CustomRadioButton1.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CustomRadioButton1.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.guna2CustomRadioButton1.Location = new System.Drawing.Point(115, 93);
-            this.guna2CustomRadioButton1.Name = "guna2CustomRadioButton1";
-            this.guna2CustomRadioButton1.Size = new System.Drawing.Size(16, 23);
-            this.guna2CustomRadioButton1.TabIndex = 4;
-            this.guna2CustomRadioButton1.Text = "RadioButMale";
-            this.guna2CustomRadioButton1.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2CustomRadioButton1.UncheckedState.BorderThickness = 2;
-            this.guna2CustomRadioButton1.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.guna2CustomRadioButton1.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.radioButMale.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.radioButMale.CheckedState.BorderThickness = 0;
+            this.radioButMale.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.radioButMale.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.radioButMale.Location = new System.Drawing.Point(115, 93);
+            this.radioButMale.Name = "radioButMale";
+            this.radioButMale.Size = new System.Drawing.Size(16, 23);
+            this.radioButMale.TabIndex = 4;
+            this.radioButMale.Text = "RadioButMale";
+            this.radioButMale.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.radioButMale.UncheckedState.BorderThickness = 2;
+            this.radioButMale.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.radioButMale.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
             // 
             // guna2HtmlLabel1
             // 
@@ -420,6 +386,7 @@
             this.panelInforReg.BorderColor = System.Drawing.Color.Silver;
             this.panelInforReg.BorderRadius = 10;
             this.panelInforReg.BorderThickness = 1;
+            this.panelInforReg.Controls.Add(this.dtpNgayDangKy);
             this.panelInforReg.Controls.Add(this.butSelectCalenderEx);
             this.panelInforReg.Controls.Add(this.cmbTypeDGNL);
             this.panelInforReg.Controls.Add(this.labelInforRegHeader);
@@ -427,7 +394,6 @@
             this.panelInforReg.Controls.Add(this.labelRegDate);
             this.panelInforReg.Controls.Add(this.tbCalenderEx);
             this.panelInforReg.Controls.Add(this.labelRegCode);
-            this.panelInforReg.Controls.Add(this.tbRegDate);
             this.panelInforReg.Controls.Add(this.tbRegCode);
             this.panelInforReg.CustomBorderColor = System.Drawing.Color.Silver;
             this.panelInforReg.FillColor = System.Drawing.Color.WhiteSmoke;
@@ -469,6 +435,9 @@
             this.cmbTypeDGNL.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cmbTypeDGNL.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cmbTypeDGNL.ItemHeight = 30;
+            this.cmbTypeDGNL.Items.AddRange(new object[] {
+            "Tin học",
+            "Ngoại ngữ"});
             this.cmbTypeDGNL.Location = new System.Drawing.Point(115, 98);
             this.cmbTypeDGNL.Name = "cmbTypeDGNL";
             this.cmbTypeDGNL.Size = new System.Drawing.Size(200, 36);
@@ -482,14 +451,15 @@
             this.tbCalenderEx.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.tbCalenderEx.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tbCalenderEx.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbCalenderEx.Enabled = false;
             this.tbCalenderEx.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbCalenderEx.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tbCalenderEx.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbCalenderEx.Location = new System.Drawing.Point(493, 102);
+            this.tbCalenderEx.Location = new System.Drawing.Point(482, 101);
             this.tbCalenderEx.Name = "tbCalenderEx";
             this.tbCalenderEx.PlaceholderText = "";
             this.tbCalenderEx.SelectedText = "";
-            this.tbCalenderEx.Size = new System.Drawing.Size(200, 30);
+            this.tbCalenderEx.Size = new System.Drawing.Size(212, 30);
             this.tbCalenderEx.TabIndex = 3;
             // 
             // panelContent
@@ -534,6 +504,36 @@
             this.butCreateReg.Size = new System.Drawing.Size(102, 34);
             this.butCreateReg.TabIndex = 7;
             this.butCreateReg.Text = "Tạo phiếu";
+            this.butCreateReg.Click += new System.EventHandler(this.butCreateReg_Click);
+            // 
+            // dtpNgaySinh
+            // 
+            this.dtpNgaySinh.Checked = true;
+            this.dtpNgaySinh.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.dtpNgaySinh.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.dtpNgaySinh.Location = new System.Drawing.Point(493, 46);
+            this.dtpNgaySinh.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpNgaySinh.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpNgaySinh.Name = "dtpNgaySinh";
+            this.dtpNgaySinh.Size = new System.Drawing.Size(200, 30);
+            this.dtpNgaySinh.TabIndex = 5;
+            this.dtpNgaySinh.Value = new System.DateTime(2025, 7, 9, 19, 54, 45, 717);
+            // 
+            // dtpNgayDangKy
+            // 
+            this.dtpNgayDangKy.Checked = true;
+            this.dtpNgayDangKy.Enabled = false;
+            this.dtpNgayDangKy.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.dtpNgayDangKy.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtpNgayDangKy.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.dtpNgayDangKy.Location = new System.Drawing.Point(482, 55);
+            this.dtpNgayDangKy.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpNgayDangKy.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpNgayDangKy.Name = "dtpNgayDangKy";
+            this.dtpNgayDangKy.Size = new System.Drawing.Size(211, 30);
+            this.dtpNgayDangKy.TabIndex = 8;
+            this.dtpNgayDangKy.Value = new System.DateTime(2025, 7, 9, 20, 0, 52, 0);
             // 
             // createdRegForm
             // 
@@ -548,6 +548,7 @@
             this.Name = "createdRegForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "createdRegForm";
+            this.Load += new System.EventHandler(this.createdRegForm_Load);
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
             this.panelInforReg.ResumeLayout(false);
@@ -560,14 +561,12 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2TextBox tbEmail;
-        private Guna.UI2.WinForms.Guna2TextBox tbBirth;
         private Guna.UI2.WinForms.Guna2TextBox tbFullName;
         private Guna.UI2.WinForms.Guna2HtmlLabel labelEmail;
         private Guna.UI2.WinForms.Guna2HtmlLabel labelInforRegHeader;
         private Guna.UI2.WinForms.Guna2HtmlLabel labelTypeReg;
         private Guna.UI2.WinForms.Guna2HtmlLabel labelAddress;
         private Guna.UI2.WinForms.Guna2HtmlLabel labelRegCode;
-        private Guna.UI2.WinForms.Guna2TextBox tbRegDate;
         private Guna.UI2.WinForms.Guna2TextBox tbSDT;
         private Guna.UI2.WinForms.Guna2HtmlLabel labelCCCD;
         private Guna.UI2.WinForms.Guna2HtmlLabel labelBirth;
@@ -579,11 +578,11 @@
         private Guna.UI2.WinForms.Guna2TextBox tbCCCD;
         private Guna.UI2.WinForms.Guna2HtmlLabel labelFullName;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
-        private Guna.UI2.WinForms.Guna2CustomRadioButton guna2CustomRadioButton1;
+        private Guna.UI2.WinForms.Guna2CustomRadioButton radioButMale;
         private Guna.UI2.WinForms.Guna2HtmlLabel labelSex;
         private Guna.UI2.WinForms.Guna2Panel panelInforReg;
         private Guna.UI2.WinForms.Guna2Panel panelContent;
-        private Guna.UI2.WinForms.Guna2CustomRadioButton guna2CustomRadioButton2;
+        private Guna.UI2.WinForms.Guna2CustomRadioButton radioButFemale;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2HtmlLabel labelRadioMan;
         private Guna.UI2.WinForms.Guna2ComboBox cmbTypeDGNL;
@@ -591,5 +590,7 @@
         private Guna.UI2.WinForms.Guna2TextBox tbCalenderEx;
         private Guna.UI2.WinForms.Guna2Button butCreateReg;
         private Guna.UI2.WinForms.Guna2HtmlLabel labelDetailReg;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpNgaySinh;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpNgayDangKy;
     }
 }
