@@ -377,7 +377,7 @@ namespace exam_registration_system.MainForms.NVKT
             double signBoxHeight = 40;
             double signY = y + 10;
             double pageCenter = page.Width / 2.0;
-            double offset = 120; 
+            double offset = 120;
 
             // Người nộp tiền (trái)
             double signLeft = pageCenter - offset - signBoxWidth / 2;
@@ -395,16 +395,6 @@ namespace exam_registration_system.MainForms.NVKT
             string filePath = Path.Combine(folder, $"HoaDon_{maHD}_{maPDK}.pdf");
             doc.Save(filePath);
             Process.Start(new ProcessStartInfo(filePath) { UseShellExecute = true });
-        }
-
-        private void pnlHeader_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void lbHeader_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
