@@ -8,6 +8,7 @@ using PdfSharp.Drawing;
 using System.Diagnostics;
 using System.IO;
 using System.Drawing;
+using exam_registration_system.Business;
 
 namespace exam_registration_system.MainForms.NVKT
 {
@@ -89,81 +90,133 @@ namespace exam_registration_system.MainForms.NVKT
 
             string maPDK = tbRegistrationID.Text.Trim();
 
-            using (SqlConnection conn = new SqlConnection(GlobalInfo.ConnectionString))
+            DataTable regDT = PhieuDangKyService.GetRegistrationList(maPDK: maPDK);
+            if (regDT == null || regDT.Rows.Count == 0)
             {
-                string sql = @"
-                SELECT 
-                    pdk.MaPDK, 
-                    pdk.NgayLap, 
-                    pdk.TrangThaiThanhToan,
-                    pdk.LoaiPDK,
-                    pdk.LoaiCC,
-                    tt.HoTen,
-                    hd.MaHD,
-                    hd.TongTien, 
-                    hd.TroGia, 
-                    hd.ThanhTien
-                FROM PhieuDangKy pdk
-                LEFT JOIN TTNguoiDangKy tt ON tt.MaPDK = pdk.MaPDK
-                LEFT JOIN HoaDonThanhToan hd ON hd.MaPDK = pdk.MaPDK
-                WHERE pdk.MaPDK = @MaPDK";
-                SqlCommand cmd = new SqlCommand(sql, conn);
-                cmd.Parameters.AddWithValue("@MaPDK", maPDK);
+                MessageBox.Show("Không tìm thấy phiếu đăng ký!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ClearForm();
+                return;
+            }
 
+            DataRow regRow = regDT.Rows[0];
+            string loaiPDK = regRow["LoaiPDK"]?.ToString();
+            if (loaiPDK == "KHĐV")
+            {
+                MessageBox.Show("Vui lòng thực hiện thanh toán cho khách hàng đơn vị ở màn hình khác.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ClearForm();
+                return;
+            }
+
+            DateTime ngayLap = Convert.ToDateTime(regRow["NgayLap"]);
+            DateTime now = DateTime.Now.Date;
+            DateTime expiryDate = ngayLap.AddDays(3).Date;
+            DateTime cancelDate = ngayLap.AddDays(4).Date;
+
+            string currentStatus = regRow.Table.Columns.Contains("TrangThai") ? regRow["TrangThai"]?.ToString() : regRow["TrangThaiThanhToan"]?.ToString();
+
+            bool isExpired = now >= cancelDate;
+
+            if (isExpired && currentStatus != "Đã hủy" && currentStatus != "Đã thanh toán")
+            {
                 try
                 {
-                    conn.Open();
-                    using (SqlDataReader rd = cmd.ExecuteReader())
+                    bool updateStatus = PhieuDangKyService.UpdateRegistration(maPDK: maPDK, trangThai: "Đã hủy");
+                    if (updateStatus)
                     {
-                        if (rd.Read())
-                        {
-                            string loaiPDK = rd["LoaiPDK"]?.ToString();
-                            if (loaiPDK == "KHĐV")
-                            {
-                                MessageBox.Show("Vui lòng thực hiện thanh toán cho khách hàng đơn vị ở màn hình khác.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                ClearForm();
-                                return;
-                            }
-
-                            tbCustomerName.Text = rd["HoTen"]?.ToString();
-                            DateTime ngayLap = Convert.ToDateTime(rd["NgayLap"]);
-                            tbRegistrationDate.Text = ngayLap.ToString("dd/MM/yyyy");
-                            tbExpiryDate.Text = ngayLap.AddDays(3).ToString("dd/MM/yyyy");
-                            tbStatus.Text = rd["TrangThaiThanhToan"]?.ToString();
-
-                            string loaiCC = rd["LoaiCC"]?.ToString();
-                            if (loaiCC == "TA")
-                                tbCertificateType.Text = "Tiếng Anh";
-                            else if (loaiCC == "TH")
-                                tbCertificateType.Text = "Tin Học";
-                            else
-                                tbCertificateType.Text = "";
-
-                            // Lấy thông tin hóa đơn để xuất PDF
-                            currentMaHD = rd["MaHD"]?.ToString() ?? "";
-                            currentTongTien = rd["TongTien"] == DBNull.Value ? 0 : Convert.ToDecimal(rd["TongTien"]);
-                            currentTroGia = rd["TroGia"] == DBNull.Value ? 0 : Convert.ToDecimal(rd["TroGia"]);
-                            currentThanhTien = rd["ThanhTien"] == DBNull.Value ? currentTongTien - currentTroGia : Convert.ToDecimal(rd["ThanhTien"]);
-
-                            tbTotalCost.Text = currentTongTien.ToString("N0");
-                            tbSupportAmount.Text = currentTroGia.ToString("N0");
-                            tbFinalAmount.Text = currentThanhTien.ToString("N0");
-
-                            tbTotalCost.ForeColor = colorMoney;
-                            tbSupportAmount.ForeColor = colorSupport;
-                            tbFinalAmount.ForeColor = colorFinal;
-                        }
-                        else
-                        {
-                            MessageBox.Show("Không tìm thấy phiếu đăng ký!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            ClearForm();
-                        }
+                        tbStatus.Text = "Đã hủy";
+                        MessageBox.Show("Phiếu đăng ký này đã quá hạn thanh toán (quá 3 ngày kể từ ngày lập) nên đã được tự động chuyển sang trạng thái 'Đã hủy'.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không thể cập nhật trạng thái phiếu đăng ký sang 'Đã hủy'.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Lỗi truy vấn dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Lỗi cập nhật trạng thái phiếu đăng ký: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                currentStatus = "Đã hủy";
+            }
+
+            DataTable cusDT = CustomerService.GetRegistorList(maPDK: maPDK);
+            string tenKH = "";
+            if (cusDT != null && cusDT.Rows.Count > 0)
+                tenKH = cusDT.Rows[0]["HoTen"]?.ToString();
+
+            tbCustomerName.Text = tenKH;
+            tbRegistrationDate.Text = ngayLap.ToString("dd/MM/yyyy");
+            tbExpiryDate.Text = expiryDate.ToString("dd/MM/yyyy");
+            tbStatus.Text = currentStatus;
+            tbCertificateType.Text = regRow["LoaiCC"]?.ToString();
+
+            string loaiCC = regRow["LoaiCC"]?.ToString();
+
+            DataTable hdDT = InvoiceService.GetInvoiceList(maPDK: maPDK);
+            if (hdDT != null && hdDT.Rows.Count > 0)
+            {
+                DataRow hdRow = hdDT.Rows[0];
+                currentMaHD = hdRow["MaHD"]?.ToString() ?? "";
+                currentTongTien = hdRow["TongTien"] == DBNull.Value ? 0 : Convert.ToDecimal(hdRow["TongTien"]);
+                currentTroGia = hdRow["TroGia"] == DBNull.Value ? 0 : Convert.ToDecimal(hdRow["TroGia"]);
+                currentThanhTien = hdRow["ThanhTien"] == DBNull.Value ? currentTongTien - currentTroGia : Convert.ToDecimal(hdRow["ThanhTien"]);
+
+                try
+                {
+                    if (loaiCC == "Tin học")
+                    {
+                        currentTongTien = 1500000;
+                    }
+                    else if (loaiCC == "Ngoại ngữ")
+                    {
+                        currentTongTien = 1800000;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Loại chứng chỉ không hợp lệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        ClearChiPhiFields();
+                        return;
+                    }
+
+                    currentTroGia = 0;
+                    currentThanhTien = currentTongTien - currentTroGia;
+
+                    bool updateInvoice = InvoiceService.UpdateInvoice(
+                        maHD: currentMaHD,
+                        tongTien: currentTongTien,
+                        troGia: currentTroGia,
+                        thanhTien: currentThanhTien,
+                        maPDK: maPDK
+                    );
+
+                    if (!updateInvoice)
+                    {
+                        MessageBox.Show("Xảy ra lỗi khi tính toán hóa đơn!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi cập nhật dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                tbTotalCost.Text = currentTongTien.ToString("N0");
+                tbSupportAmount.Text = currentTroGia.ToString("N0");
+                tbFinalAmount.Text = currentThanhTien.ToString("N0");
+
+                tbTotalCost.ForeColor = colorMoney;
+                tbSupportAmount.ForeColor = colorSupport;
+                tbFinalAmount.ForeColor = colorFinal;
+            }
+            else
+            {
+                currentMaHD = "";
+                currentTongTien = 0;
+                currentTroGia = 0;
+                currentThanhTien = 0;
+                tbTotalCost.Text = "";
+                tbSupportAmount.Text = "";
+                tbFinalAmount.Text = "";
             }
         }
 
@@ -222,21 +275,13 @@ namespace exam_registration_system.MainForms.NVKT
                 return;
             }
 
-            using (SqlConnection conn = new SqlConnection(GlobalInfo.ConnectionString))
+            DialogResult result = MessageBox.Show("Chắc chắn xác nhận thanh toán cho phiếu đăng ký " + maPDK + "?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
             {
-                string update = @"
-                    UPDATE PhieuDangKy
-                    SET TrangThaiThanhToan = N'Đã thanh toán'
-                    WHERE MaPDK = @MaPDK
-                ";
-                SqlCommand cmd = new SqlCommand(update, conn);
-                cmd.Parameters.AddWithValue("@MaPDK", maPDK);
-
                 try
                 {
-                    conn.Open();
-                    int rows = cmd.ExecuteNonQuery();
-                    if (rows > 0)
+                    bool updatePDK = PhieuDangKyService.UpdateRegistration(maPDK: maPDK, trangThai: "Đã thanh toán");
+                    if (updatePDK)
                     {
                         tbStatus.Text = "Đã thanh toán";
                         MessageBox.Show("Thanh toán thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -377,7 +422,7 @@ namespace exam_registration_system.MainForms.NVKT
             double signBoxHeight = 40;
             double signY = y + 10;
             double pageCenter = page.Width / 2.0;
-            double offset = 120; 
+            double offset = 120;
 
             // Người nộp tiền (trái)
             double signLeft = pageCenter - offset - signBoxWidth / 2;
@@ -395,16 +440,6 @@ namespace exam_registration_system.MainForms.NVKT
             string filePath = Path.Combine(folder, $"HoaDon_{maHD}_{maPDK}.pdf");
             doc.Save(filePath);
             Process.Start(new ProcessStartInfo(filePath) { UseShellExecute = true });
-        }
-
-        private void pnlHeader_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void lbHeader_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
