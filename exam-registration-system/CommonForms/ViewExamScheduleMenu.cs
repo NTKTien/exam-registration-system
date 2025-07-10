@@ -1,4 +1,5 @@
-﻿using System;
+﻿using exam_registration_system.Business;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,15 @@ namespace exam_registration_system.CommonForms
         public ViewExamScheduleMenu()
         {
             InitializeComponent();
+            LoadAvailableSchedules();
+        }
+
+        private void LoadAvailableSchedules()
+        {
+            DataTable dt = ExamScheduleService.GetAllAvailableSchedules();
+            dgvExamSchedule.DataSource = dt;
         }
     }
+
+
 }

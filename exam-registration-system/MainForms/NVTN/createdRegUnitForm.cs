@@ -26,7 +26,14 @@ namespace exam_registration_system.MainForms.NVTN
 
         private void butSelectCalenderEx_Click(object sender, EventArgs e)
         {
-            ViewExamSchedule frm = new ViewExamSchedule();
+            if (cmbTypeDGNL.SelectedItem == null)
+            {
+                MessageBox.Show("Vui lòng chọn loại ĐGNL trước!", "Thiếu thông tin", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string loaiDGNL = cmbTypeDGNL.SelectedItem.ToString();
+            ViewExamSchedule frm = new ViewExamSchedule(loaiDGNL);
             frm.Show();
         }
     }

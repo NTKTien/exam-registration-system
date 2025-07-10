@@ -134,6 +134,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business\CustomerService.cs" />
+    <Compile Include="Business\ExamScheduleService.cs" />
+    <Compile Include="Business\PhieuDangKyService.cs" />
     <Compile Include="CommonForms\homeUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -152,6 +155,9 @@
     <Compile Include="CommonForms\ViewExamScheduleMenu.Designer.cs">
       <DependentUpon>ViewExamScheduleMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataAccess\CustomerInforDAO.cs" />
+    <Compile Include="DataAccess\ExamScheduleDAO.cs" />
+    <Compile Include="DataAccess\PhieuDangKyDAO.cs" />
     <Compile Include="MainForms\NVKT\CreateExtensionForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -476,6 +482,7 @@
   <ItemGroup>
     <None Include="Resources\homePage_img.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.ValueTuple.4.6.1\build\net471\System.ValueTuple.targets" Condition="Exists('..\packages\System.ValueTuple.4.6.1\build\net471\System.ValueTuple.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
