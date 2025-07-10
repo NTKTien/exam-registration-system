@@ -11,6 +11,11 @@ namespace exam_registration_system.Business
 {
     public class InvoiceService
     {
+        public static bool InsertInvoice(string maPDK, string maNV)
+        {
+            return InvoiceDAO.InsertHoaDon(maPDK, maNV);
+        }
+
         public static DataTable GetInvoiceList(
         string maHD = null,
         decimal? tongTienFrom = null,
@@ -28,5 +33,7 @@ namespace exam_registration_system.Business
         {
             return InvoiceDAO.CapNhatHoaDon(maHD, tongTien, troGia, thanhTien, maPDK, maNV);
         }
+
+
     }
 }

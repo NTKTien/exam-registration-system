@@ -15,7 +15,7 @@ namespace exam_registration_system.DataAccess
         {
             using (SqlConnection conn = new SqlConnection(GlobalInfo.ConnectionString))
             {
-                SqlCommand cmd = new SqlCommand("sp_GetAllExamScheduleByTypeCC", conn);
+                SqlCommand cmd = new SqlCommand("sp_GetAllExamSchedule", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@LoaiDGNL", loaiDGNL);
 

@@ -10,11 +10,11 @@ BEGIN
         P.NgayLap,
         P.LoaiCC,
         L.NgayThi,
-        D.HoTen,
+        T.HoTen,
         P.LoaiPDK,
         P.TrangThai
     FROM PhieuDangKy P
-    JOIN DSThiSinh D ON P.MaDS = D.MaDS
+    JOIN TTNguoiDangKy T ON P.MaPDK = T.MaPDK
     JOIN LichDGNL L ON P.MaLT = L.MaLT
 END;
 GO
@@ -58,19 +58,20 @@ GO
 
 --Lấy tất cả các lịch thi có còn trống (SLTSHienTai < SLTSToiDa)
 CREATE OR ALTER PROCEDURE sp_GetAllExamSchedule
- @LoaiDGNL NVARCHAR(20)
+    @LoaiDGNL NVARCHAR(20) = NULL
 AS
 BEGIN
     SELECT 
         MaLT, 
         NgayThi, 
         CaThi, 
-		PhongThi,
+        PhongThi,
         LoaiDGNL, 
         SLTSToiDa, 
         SLTSHienTai
     FROM LichDGNL
-	WHERE SLTSHienTai < SLTSToiDa AND LoaiDGNL = @LoaiDGNL
+    WHERE SLTSHienTai < SLTSToiDa
+      AND (@LoaiDGNL IS NULL OR LoaiDGNL = @LoaiDGNL)
 END;
 GO
 
@@ -104,19 +105,37 @@ BEGIN
 END;
 GO
 
--- Thêm phiếu đăng ký
+-- Thêm phiếu đăng ký và cập nhật SLTSHienTai của lịch thi
 CREATE OR ALTER PROCEDURE sp_InsertFreeReg
     @MaPDK CHAR(5),
     @NgayDangKy DATE,
     @LoaiDGNL NVARCHAR(50),
     @MaLichThi CHAR(5),
-	@LoaiPDK NVARCHAR(4)
+    @LoaiPDK NVARCHAR(4)
 AS
 BEGIN
-    INSERT INTO PhieuDangKy(MaPDK, NgayLap, TrangThai, LoaiCC, LoaiPDK, MaLT)
-    VALUES (@MaPDK, @NgayDangKy, N'Chưa thanh toán', @LoaiDGNL, @LoaiPDK, @MaLichThi)
+    BEGIN TRANSACTION;
+
+    BEGIN TRY
+        -- Thêm phiếu đăng ký
+        INSERT INTO PhieuDangKy(MaPDK, NgayLap, TrangThai, LoaiCC, LoaiPDK, MaLT)
+        VALUES (@MaPDK, @NgayDangKy, N'Chưa thanh toán', @LoaiDGNL, @LoaiPDK, @MaLichThi);
+
+        -- Cập nhật số lượng thí sinh hiện tại trong LichDGNL
+        UPDATE LichDGNL
+        SET SLTSHienTai = SLTSHienTai + 1
+        WHERE MaLT = @MaLichThi;
+
+        COMMIT;
+    END TRY
+    BEGIN CATCH
+        ROLLBACK;
+        -- Gợi ý: Thêm xử lý lỗi tại đây nếu cần (ví dụ: RAISERROR)
+        THROW;
+    END CATCH
 END;
 GO
+
 
 --Lấy mã phiếu đăng ký tiếp theo để hiển thị 
 CREATE OR ALTER PROCEDURE sp_GetNextMaPhieuDK
@@ -135,6 +154,31 @@ BEGIN
     SELECT 'PDK' + RIGHT('00' + CAST(@NextNumber AS VARCHAR(3)), 2) AS NextMaPDK;
 END;
 GO
+
+CREATE OR ALTER PROCEDURE sp_InsertInvoice
+    @MaPDK CHAR(5),
+    @MaNV CHAR(5)
+AS
+BEGIN
+    DECLARE @NewMaHD CHAR(5);
+    DECLARE @MaxMaHD INT;
+
+    -- Sinh mã HD mới dạng HD01, HD02,...
+    SELECT @MaxMaHD = MAX(CAST(SUBSTRING(MaHD, 3, LEN(MaHD) - 2) AS INT))
+    FROM HoaDonThanhToan;
+
+    IF @MaxMaHD IS NULL
+        SET @MaxMaHD = 0;
+
+    SET @NewMaHD = 'HD' + RIGHT('00' + CAST(@MaxMaHD + 1 AS VARCHAR), 2);
+
+    -- Thêm hóa đơn với 3 cột tiền là NULL
+    INSERT INTO HoaDonThanhToan (MaHD, TongTien, TroGia, ThanhTien, MaPDK, MaNV)
+    VALUES (@NewMaHD, NULL, NULL, NULL, @MaPDK, @MaNV);
+END;
+GO
+
+-----------------------Từ này trở lên không sửa, muốn sửa thì chỉ sửa ở dưới------------------------------------
 
 
 

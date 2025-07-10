@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.panelContent = new Guna.UI2.WinForms.Guna2Panel();
+            this.labelDetailReg = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.butCreateReg = new Guna.UI2.WinForms.Guna2Button();
             this.panelInforReg = new Guna.UI2.WinForms.Guna2Panel();
-            this.butSelectCalenderEx = new Guna.UI2.WinForms.Guna2Button();
             this.tbCalenderEx = new Guna.UI2.WinForms.Guna2TextBox();
             this.cmbTypeDGNL = new Guna.UI2.WinForms.Guna2ComboBox();
             this.labelInforRegHeader = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -64,7 +64,7 @@
             this.labelRadioMan = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.labelSex = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.labelInforHeader = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.labelDetailReg = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.butSelectCalenderEx = new Guna.UI2.WinForms.Guna2Button();
             this.panelContent.SuspendLayout();
             this.panelInforReg.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
@@ -86,6 +86,17 @@
             this.panelContent.Name = "panelContent";
             this.panelContent.Size = new System.Drawing.Size(897, 672);
             this.panelContent.TabIndex = 5;
+            // 
+            // labelDetailReg
+            // 
+            this.labelDetailReg.AutoSize = false;
+            this.labelDetailReg.BackColor = System.Drawing.Color.Transparent;
+            this.labelDetailReg.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDetailReg.Location = new System.Drawing.Point(251, 14);
+            this.labelDetailReg.Name = "labelDetailReg";
+            this.labelDetailReg.Size = new System.Drawing.Size(368, 32);
+            this.labelDetailReg.TabIndex = 10;
+            this.labelDetailReg.Text = "Đăng ký đánh giá năng lực - Đơn vị\r\n";
             // 
             // guna2Button2
             // 
@@ -167,25 +178,6 @@
             this.panelInforReg.ShadowDecoration.Enabled = true;
             this.panelInforReg.Size = new System.Drawing.Size(711, 156);
             this.panelInforReg.TabIndex = 1;
-            // 
-            // butSelectCalenderEx
-            // 
-            this.butSelectCalenderEx.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.butSelectCalenderEx.BorderRadius = 5;
-            this.butSelectCalenderEx.BorderThickness = 1;
-            this.butSelectCalenderEx.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.butSelectCalenderEx.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.butSelectCalenderEx.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.butSelectCalenderEx.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.butSelectCalenderEx.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.butSelectCalenderEx.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butSelectCalenderEx.ForeColor = System.Drawing.Color.White;
-            this.butSelectCalenderEx.Location = new System.Drawing.Point(344, 96);
-            this.butSelectCalenderEx.Name = "butSelectCalenderEx";
-            this.butSelectCalenderEx.Size = new System.Drawing.Size(102, 34);
-            this.butSelectCalenderEx.TabIndex = 9;
-            this.butSelectCalenderEx.Text = "Chọn lịch thi";
-            this.butSelectCalenderEx.Click += new System.EventHandler(this.butSelectCalenderEx_Click);
             // 
             // tbCalenderEx
             // 
@@ -609,16 +601,24 @@
             this.labelInforHeader.TabIndex = 2;
             this.labelInforHeader.Text = "Thông tin khách hàng đăng ký";
             // 
-            // labelDetailReg
+            // butSelectCalenderEx
             // 
-            this.labelDetailReg.AutoSize = false;
-            this.labelDetailReg.BackColor = System.Drawing.Color.Transparent;
-            this.labelDetailReg.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDetailReg.Location = new System.Drawing.Point(251, 14);
-            this.labelDetailReg.Name = "labelDetailReg";
-            this.labelDetailReg.Size = new System.Drawing.Size(368, 32);
-            this.labelDetailReg.TabIndex = 10;
-            this.labelDetailReg.Text = "Đăng ký đánh giá năng lực - Đơn vị\r\n";
+            this.butSelectCalenderEx.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.butSelectCalenderEx.BorderRadius = 5;
+            this.butSelectCalenderEx.BorderThickness = 1;
+            this.butSelectCalenderEx.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.butSelectCalenderEx.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.butSelectCalenderEx.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.butSelectCalenderEx.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.butSelectCalenderEx.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.butSelectCalenderEx.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butSelectCalenderEx.ForeColor = System.Drawing.Color.White;
+            this.butSelectCalenderEx.Location = new System.Drawing.Point(344, 96);
+            this.butSelectCalenderEx.Name = "butSelectCalenderEx";
+            this.butSelectCalenderEx.Size = new System.Drawing.Size(102, 34);
+            this.butSelectCalenderEx.TabIndex = 9;
+            this.butSelectCalenderEx.Text = "Chọn lịch thi";
+            this.butSelectCalenderEx.Click += new System.EventHandler(this.butSelectCalenderEx_Click);
             // 
             // createdRegUnitForm
             // 
@@ -676,10 +676,10 @@
         private Guna.UI2.WinForms.Guna2TextBox tbUnit;
         private Guna.UI2.WinForms.Guna2HtmlLabel labelUnitName;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private Guna.UI2.WinForms.Guna2Button butSelectCalenderEx;
         private Guna.UI2.WinForms.Guna2TextBox tbCalenderEx;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private Guna.UI2.WinForms.Guna2HtmlLabel labelDetailReg;
+        private Guna.UI2.WinForms.Guna2Button butSelectCalenderEx;
     }
 }
