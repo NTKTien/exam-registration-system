@@ -2,15 +2,8 @@
 {
     partial class OriginalPayment
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -22,10 +15,6 @@
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             this.pnlContainer = new System.Windows.Forms.Panel();
@@ -36,7 +25,6 @@
             this.tbSupportAmount = new Guna.UI2.WinForms.Guna2TextBox();
             this.lbSupportAmount = new System.Windows.Forms.Label();
             this.tbTotalCost = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btnConfirmPayment = new Guna.UI2.WinForms.Guna2Button();
             this.lbTotalCost = new System.Windows.Forms.Label();
             this.btnConfirmPayment = new Guna.UI2.WinForms.Guna2Button();
             this.grpCustomerInfo = new System.Windows.Forms.GroupBox();
@@ -55,7 +43,6 @@
             this.tbRegistrationID = new Guna.UI2.WinForms.Guna2TextBox();
             this.lbRegistrationID = new System.Windows.Forms.Label();
             this.lbHeader = new System.Windows.Forms.Label();
-            //this.btnExit = new Guna.UI2.WinForms.Guna2Button();
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.pnlContainer.SuspendLayout();
             this.grpPaymentInfo.SuspendLayout();
@@ -100,7 +87,21 @@
             // 
             // grpPaymentInfo
             // 
-           
+            this.grpPaymentInfo.Controls.Add(this.tbFinalAmount);
+            this.grpPaymentInfo.Controls.Add(this.lbFinalAmount);
+            this.grpPaymentInfo.Controls.Add(this.tbSupportAmount);
+            this.grpPaymentInfo.Controls.Add(this.lbSupportAmount);
+            this.grpPaymentInfo.Controls.Add(this.tbTotalCost);
+            this.grpPaymentInfo.Controls.Add(this.lbTotalCost);
+            this.grpPaymentInfo.Controls.Add(this.btnConfirmPayment);
+            this.grpPaymentInfo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.grpPaymentInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.grpPaymentInfo.Location = new System.Drawing.Point(454, 110);
+            this.grpPaymentInfo.Name = "grpPaymentInfo";
+            this.grpPaymentInfo.Size = new System.Drawing.Size(410, 330);
+            this.grpPaymentInfo.TabIndex = 2;
+            this.grpPaymentInfo.TabStop = false;
+            this.grpPaymentInfo.Text = "Thông tin thanh toán";
             // 
             // tbFinalAmount
             // 
@@ -183,9 +184,9 @@
             this.tbTotalCost.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(247)))), ((int)(((byte)(250)))));
             this.tbTotalCost.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.tbTotalCost.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbTotalCost.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.tbTotalCost.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbTotalCost.Location = new System.Drawing.Point(550, 78);
+            this.tbTotalCost.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.tbTotalCost.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.tbTotalCost.Location = new System.Drawing.Point(170, 55);
             this.tbTotalCost.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbTotalCost.Name = "tbTotalCost";
             this.tbTotalCost.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
@@ -280,9 +281,8 @@
             this.tbStatus.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(247)))), ((int)(((byte)(250)))));
             this.tbStatus.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.tbStatus.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.tbStatus.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbStatus.Location = new System.Drawing.Point(285, 237);
-            this.tbStatus.Margin = new System.Windows.Forms.Padding(6, 9, 6, 9);
+            this.tbStatus.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.tbStatus.Location = new System.Drawing.Point(170, 215);
             this.tbStatus.Name = "tbStatus";
             this.tbStatus.PlaceholderText = "";
             this.tbStatus.ReadOnly = true;
@@ -302,9 +302,8 @@
             this.tbExpiryDate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(247)))), ((int)(((byte)(250)))));
             this.tbExpiryDate.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.tbExpiryDate.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.tbExpiryDate.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbExpiryDate.Location = new System.Drawing.Point(285, 177);
-            this.tbExpiryDate.Margin = new System.Windows.Forms.Padding(6, 9, 6, 9);
+            this.tbExpiryDate.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.tbExpiryDate.Location = new System.Drawing.Point(170, 160);
             this.tbExpiryDate.Name = "tbExpiryDate";
             this.tbExpiryDate.PlaceholderText = "";
             this.tbExpiryDate.ReadOnly = true;
@@ -324,9 +323,8 @@
             this.tbRegistrationDate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(247)))), ((int)(((byte)(250)))));
             this.tbRegistrationDate.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.tbRegistrationDate.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.tbRegistrationDate.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbRegistrationDate.Location = new System.Drawing.Point(285, 117);
-            this.tbRegistrationDate.Margin = new System.Windows.Forms.Padding(6, 9, 6, 9);
+            this.tbRegistrationDate.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.tbRegistrationDate.Location = new System.Drawing.Point(170, 105);
             this.tbRegistrationDate.Name = "tbRegistrationDate";
             this.tbRegistrationDate.PlaceholderText = "";
             this.tbRegistrationDate.ReadOnly = true;
@@ -346,9 +344,8 @@
             this.tbCustomerName.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(247)))), ((int)(((byte)(250)))));
             this.tbCustomerName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.tbCustomerName.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.tbCustomerName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbCustomerName.Location = new System.Drawing.Point(285, 57);
-            this.tbCustomerName.Margin = new System.Windows.Forms.Padding(6, 9, 6, 9);
+            this.tbCustomerName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.tbCustomerName.Location = new System.Drawing.Point(170, 50);
             this.tbCustomerName.Name = "tbCustomerName";
             this.tbCustomerName.PlaceholderText = "";
             this.tbCustomerName.ReadOnly = true;
@@ -424,10 +421,11 @@
             this.grpSearch.Dock = System.Windows.Forms.DockStyle.Top;
             this.grpSearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.grpSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.grpSearch.Location = new System.Drawing.Point(24, 24);
+            this.grpSearch.Location = new System.Drawing.Point(16, 16);
+            this.grpSearch.Margin = new System.Windows.Forms.Padding(2);
             this.grpSearch.Name = "grpSearch";
-            this.grpSearch.Padding = new System.Windows.Forms.Padding(24, 24, 24, 24);
-            this.grpSearch.Size = new System.Drawing.Size(1272, 120);
+            this.grpSearch.Padding = new System.Windows.Forms.Padding(16);
+            this.grpSearch.Size = new System.Drawing.Size(848, 80);
             this.grpSearch.TabIndex = 0;
             this.grpSearch.TabStop = false;
             this.grpSearch.Text = "Tìm kiếm phiếu đăng ký";
@@ -444,9 +442,10 @@
             this.btnSearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(615, 48);
+            this.btnSearch.Location = new System.Drawing.Point(410, 32);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(165, 46);
+            this.btnSearch.Size = new System.Drawing.Size(110, 31);
             this.btnSearch.TabIndex = 1;
             this.btnSearch.Text = "Tìm kiếm";
             // 
@@ -461,13 +460,12 @@
             this.tbRegistrationID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.tbRegistrationID.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.tbRegistrationID.ForeColor = System.Drawing.Color.Black;
-            this.tbRegistrationID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbRegistrationID.Location = new System.Drawing.Point(285, 50);
-            this.tbRegistrationID.Margin = new System.Windows.Forms.Padding(6, 9, 6, 9);
+            this.tbRegistrationID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.tbRegistrationID.Location = new System.Drawing.Point(190, 33);
             this.tbRegistrationID.Name = "tbRegistrationID";
             this.tbRegistrationID.PlaceholderText = "";
             this.tbRegistrationID.SelectedText = "";
-            this.tbRegistrationID.Size = new System.Drawing.Size(300, 44);
+            this.tbRegistrationID.Size = new System.Drawing.Size(200, 29);
             this.tbRegistrationID.TabIndex = 4;
             // 
             // lbRegistrationID
@@ -475,9 +473,10 @@
             this.lbRegistrationID.AutoSize = true;
             this.lbRegistrationID.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.lbRegistrationID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.lbRegistrationID.Location = new System.Drawing.Point(60, 52);
+            this.lbRegistrationID.Location = new System.Drawing.Point(40, 35);
+            this.lbRegistrationID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbRegistrationID.Name = "lbRegistrationID";
-            this.lbRegistrationID.Size = new System.Drawing.Size(188, 28);
+            this.lbRegistrationID.Size = new System.Drawing.Size(133, 19);
             this.lbRegistrationID.TabIndex = 3;
             this.lbRegistrationID.Text = "Mã phiếu đăng ký:";
             // 
@@ -493,10 +492,7 @@
             this.lbHeader.Size = new System.Drawing.Size(880, 60);
             this.lbHeader.TabIndex = 0;
             this.lbHeader.Text = "THANH TOÁN";
-            // 
-            // btnExit
-            // 
-            
+            this.lbHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pnlHeader
             // 
@@ -504,14 +500,14 @@
             this.pnlHeader.Controls.Add(this.lbHeader);
             this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlHeader.Location = new System.Drawing.Point(0, 0);
+            this.pnlHeader.Margin = new System.Windows.Forms.Padding(2);
             this.pnlHeader.Name = "pnlHeader";
             this.pnlHeader.Size = new System.Drawing.Size(880, 60);
             this.pnlHeader.TabIndex = 1;
-            this.pnlHeader.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlHeader_Paint);
             // 
             // OriginalPayment
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(880, 660);
@@ -519,7 +515,7 @@
             this.Controls.Add(this.pnlHeader);
             this.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "OriginalPayment";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PaymentManagementForm";

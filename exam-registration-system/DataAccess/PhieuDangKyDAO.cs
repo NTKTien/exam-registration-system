@@ -77,5 +77,68 @@ namespace exam_registration_system.DataAccess
                 return result?.ToString();
             }
         }
+
+        public static DataTable TraCuuPDK(string maPDK = null, 
+                                                   DateTime? ngayLapFrom = null,
+                                                   DateTime? ngayLapTo = null,
+                                                   string trangThai = null,
+                                                   string maDS = null,
+                                                   string maLT = null,
+                                                   string tenDonVi = null,
+                                                   string loaiPDK = null,
+                                                   string loaiCC = null) {
+            using (SqlConnection conn = new SqlConnection(GlobalInfo.ConnectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("sp_TraCuuPDK", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@MaPDK", maPDK != null ? (object)maPDK : DBNull.Value);
+                    cmd.Parameters.AddWithValue("@NgayLapFrom", ngayLapFrom.HasValue ? (object)ngayLapFrom.Value : DBNull.Value);
+                    cmd.Parameters.AddWithValue("@NgayLapTo", ngayLapTo.HasValue ? (object)ngayLapTo.Value : DBNull.Value);
+                    cmd.Parameters.AddWithValue("@TrangThai", trangThai != null ? (object)trangThai : DBNull.Value);
+                    cmd.Parameters.AddWithValue("@MaDS", maDS != null ? (object)maDS : DBNull.Value);
+                    cmd.Parameters.AddWithValue("@MaLT", maLT != null ? (object)maLT : DBNull.Value);
+                    cmd.Parameters.AddWithValue("@TenDonVi", tenDonVi != null ? (object)tenDonVi : DBNull.Value);
+                    cmd.Parameters.AddWithValue("@LoaiPDK", loaiPDK != null ? (object)loaiPDK : DBNull.Value);
+                    cmd.Parameters.AddWithValue("@LoaiCC", loaiCC != null ? (object)loaiCC : DBNull.Value);
+
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    return dt;
+                }
+            }
+        }
+
+        public static bool CapNhatPDK(
+            string maPDK,
+            DateTime? ngayLap = null,
+            string trangThai = null,
+            string maDS = null,
+            string maLT = null,
+            string tenDonVi = null,
+            string loaiPDK = null,
+            string loaiCC = null)
+        {
+            using (SqlConnection conn = new SqlConnection(GlobalInfo.ConnectionString))
+            using (SqlCommand cmd = new SqlCommand("sp_CapNhatPDK", conn))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@MaPDK", maPDK);
+                cmd.Parameters.AddWithValue("@NgayLap", ngayLap.HasValue ? (object)ngayLap.Value : DBNull.Value);
+                cmd.Parameters.AddWithValue("@TrangThai", trangThai ?? (object)DBNull.Value);
+                cmd.Parameters.AddWithValue("@MaDS", maDS ?? (object)DBNull.Value);
+                cmd.Parameters.AddWithValue("@MaLT", maLT ?? (object)DBNull.Value);
+                cmd.Parameters.AddWithValue("@TenDonVi", tenDonVi ?? (object)DBNull.Value);
+                cmd.Parameters.AddWithValue("@LoaiPDK", loaiPDK ?? (object)DBNull.Value);
+                cmd.Parameters.AddWithValue("@LoaiCC", loaiCC ?? (object)DBNull.Value);
+
+                conn.Open();
+                return cmd.ExecuteNonQuery() > 0;
+            }
+        }
+
     }
 }

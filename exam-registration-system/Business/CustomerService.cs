@@ -20,5 +20,19 @@ namespace exam_registration_system.Business
         {
             return CustomerDAO.InsertCustomer(hoTen, gioiTinh, ngaySinh, cccd, sdt, email, diaChi, maPDK);
         }
+
+        public static DataTable GetRegistorList(
+            string maNDK = null,
+                string cccd = null,
+                string hoTen = null,
+                string gioiTinh = null,
+                DateTime? ngaySinhFrom = null,
+                DateTime? ngaySinhTo = null,
+                string soDienThoai = null,
+                string email = null,
+                string diaChi = null,
+                string maPDK = null) {
+            return CustomerDAO.TraCuuTTNguoiDangKy(maNDK, cccd, hoTen, gioiTinh, ngaySinhFrom, ngaySinhTo, soDienThoai, email, diaChi, maPDK);
+        }
     }
 }
