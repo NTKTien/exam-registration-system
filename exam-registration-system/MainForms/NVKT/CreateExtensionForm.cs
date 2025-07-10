@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Data;
-using System.Data.SqlClient;
 using System.Windows.Forms;
 using exam_registration_system.Utils;
+using exam_registration_system.Business;
 
 namespace exam_registration_system.MainForms.NVKT
 {
@@ -28,11 +28,10 @@ namespace exam_registration_system.MainForms.NVKT
                 return;
             }
 
-            // Set textboxes to read-only except for guna2TextBox1 (PhiGiaHan)
             tbFullName.ReadOnly = true;
             guna2TextBox2.ReadOnly = true;
             guna2TextBox3.ReadOnly = true;
-            guna2TextBox1.ReadOnly = false; // Allow editing for PhiGiaHan
+            guna2TextBox1.ReadOnly = false;
 
             LoadExtensionDetails();
         }
@@ -42,7 +41,7 @@ namespace exam_registration_system.MainForms.NVKT
             if (string.IsNullOrWhiteSpace(maPGH.Trim()))
                 return;
 
-            DataTable dt = ExecuteStoredProcedure("sp_GetExtensionDetails", new SqlParameter("@MaPGH", SqlDbType.Char, 5) { Value = maPGH });
+            DataTable dt = ExtensionFormService.GetExtensionDetails(maPGH);
 
             if (dt.Rows.Count > 0)
             {
@@ -51,27 +50,6 @@ namespace exam_registration_system.MainForms.NVKT
                 guna2TextBox2.Text = row["LoaiGH"]?.ToString().Trim() ?? "";
                 guna2TextBox3.Text = row["ThoiGian"] != DBNull.Value ? Convert.ToDateTime(row["ThoiGian"]).ToString("dd/MM/yyyy HH:mm") : "";
                 guna2TextBox1.Text = "";
-            }
-        }
-
-        private DataTable ExecuteStoredProcedure(string storedProcedureName, params SqlParameter[] parameters)
-        {
-            using (SqlConnection conn = new SqlConnection(GlobalInfo.ConnectionString))
-            {
-                conn.Open();
-                using (var cmd = new SqlCommand(storedProcedureName, conn))
-                {
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    if (parameters != null)
-                        cmd.Parameters.AddRange(parameters);
-
-                    using (var da = new SqlDataAdapter(cmd))
-                    {
-                        var dt = new DataTable();
-                        da.Fill(dt);
-                        return dt;
-                    }
-                }
             }
         }
 
@@ -84,17 +62,11 @@ namespace exam_registration_system.MainForms.NVKT
                 if (!decimal.TryParse(guna2TextBox1.Text, out phiGiaHan))
                     phiGiaHan = 0;
 
-                SqlParameter[] parameters = new SqlParameter[]
-                {
-                    new SqlParameter("@MaPGH", SqlDbType.Char, 5) { Value = formattedMaPGH },
-                    new SqlParameter("@PhiGiaHan", SqlDbType.Decimal) { Value = phiGiaHan },
-                };
-
-                ExecuteStoredProcedure("sp_SaveExtension", parameters);
+                ExtensionFormService.SaveExtension(formattedMaPGH, phiGiaHan);
                 MessageBox.Show("Lập phiếu thành công cho MaPGH: " + maPGH.Trim(), "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
-            catch (SqlException ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Lỗi khi lưu phiếu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -110,7 +82,7 @@ namespace exam_registration_system.MainForms.NVKT
             if (Xacnhan.Checked)
             {
                 guna2Button2.Enabled = true;
-                guna2Button2.FillColor = System.Drawing.Color.FromArgb(94, 148, 255); // Màu xanh chuẩn của Guna2
+                guna2Button2.FillColor = System.Drawing.Color.FromArgb(94, 148, 255);
             }
             else
             {
@@ -118,7 +90,5 @@ namespace exam_registration_system.MainForms.NVKT
                 guna2Button2.FillColor = System.Drawing.Color.DarkGray;
             }
         }
-
-
     }
 }

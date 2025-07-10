@@ -10,5 +10,15 @@ namespace exam_registration_system.Business
         {
             return ExtensionFormDAO.GetPendingExtensionForms();
         }
+        public static DataTable GetExtensionDetails(string maPGH)
+        {
+            return ExtensionFormDAO.GetExtensionDetails(maPGH);
+        }
+
+        public static void SaveExtension(string maPGH, decimal phiGiaHan)
+        {
+            ExtensionFormDAO.SaveExtension(maPGH, phiGiaHan);
+        }
+
     }
 }
