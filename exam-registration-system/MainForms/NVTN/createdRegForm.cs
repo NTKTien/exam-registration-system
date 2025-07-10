@@ -80,7 +80,10 @@ namespace exam_registration_system.MainForms.NVTN
             // Thêm khách hàng
             bool isCustomerOk = CustomerService.InsertCustomer(hoTen, gioiTinh, ngaySinh, cccd, sdt, email, diaChi, maPDK);
 
-            if (isCustomerOk && isRegOk)
+            // Thêm hóa đơn với mã nhân viên hardcode
+            bool isInvoiceOk = InvoiceService.InsertInvoice(maPDK, "NV001");
+
+            if (isCustomerOk && isRegOk && isInvoiceOk)
             {
                 MessageBox.Show("Tạo phiếu đăng ký thành công!", "Thành công");
 
@@ -93,6 +96,7 @@ namespace exam_registration_system.MainForms.NVTN
                 tbSDT.Clear();
                 tbEmail.Clear();
                 tbAddress.Clear();
+                tbCalenderEx.Clear();
 
                 tbRegCode.Text = PhieuDangKyService.GetNextMaPhieuDK();
                 dtpNgayDangKy.Value = DateTime.Today;

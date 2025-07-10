@@ -29,18 +29,17 @@
         private void InitializeComponent()
         {
             this.panelContent = new Guna.UI2.WinForms.Guna2Panel();
+            this.labelDetailReg = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.butCreateReg = new Guna.UI2.WinForms.Guna2Button();
             this.panelInforReg = new Guna.UI2.WinForms.Guna2Panel();
-            this.butSelectCalenderEx = new Guna.UI2.WinForms.Guna2Button();
             this.tbCalenderEx = new Guna.UI2.WinForms.Guna2TextBox();
             this.cmbTypeDGNL = new Guna.UI2.WinForms.Guna2ComboBox();
             this.labelInforRegHeader = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.labelTypeReg = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.labelRegDate = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.labelRegCode = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.tbRegDate = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbRegCode = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
@@ -53,7 +52,6 @@
             this.labelFullName = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.tbEmail = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbSDT = new Guna.UI2.WinForms.Guna2TextBox();
-            this.tbBirth = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbFullName = new Guna.UI2.WinForms.Guna2TextBox();
             this.labelEmail = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.labelAddress = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -64,7 +62,9 @@
             this.labelRadioMan = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.labelSex = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.labelInforHeader = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.labelDetailReg = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.butSelectCalenderEx = new Guna.UI2.WinForms.Guna2Button();
+            this.dtpNgaySinh = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.panelContent.SuspendLayout();
             this.panelInforReg.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
@@ -86,6 +86,17 @@
             this.panelContent.Name = "panelContent";
             this.panelContent.Size = new System.Drawing.Size(897, 672);
             this.panelContent.TabIndex = 5;
+            // 
+            // labelDetailReg
+            // 
+            this.labelDetailReg.AutoSize = false;
+            this.labelDetailReg.BackColor = System.Drawing.Color.Transparent;
+            this.labelDetailReg.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDetailReg.Location = new System.Drawing.Point(251, 14);
+            this.labelDetailReg.Name = "labelDetailReg";
+            this.labelDetailReg.Size = new System.Drawing.Size(368, 32);
+            this.labelDetailReg.TabIndex = 10;
+            this.labelDetailReg.Text = "Đăng ký đánh giá năng lực - Đơn vị\r\n";
             // 
             // guna2Button2
             // 
@@ -148,6 +159,7 @@
             this.panelInforReg.BorderColor = System.Drawing.Color.Silver;
             this.panelInforReg.BorderRadius = 10;
             this.panelInforReg.BorderThickness = 1;
+            this.panelInforReg.Controls.Add(this.guna2DateTimePicker1);
             this.panelInforReg.Controls.Add(this.butSelectCalenderEx);
             this.panelInforReg.Controls.Add(this.tbCalenderEx);
             this.panelInforReg.Controls.Add(this.cmbTypeDGNL);
@@ -155,7 +167,6 @@
             this.panelInforReg.Controls.Add(this.labelTypeReg);
             this.panelInforReg.Controls.Add(this.labelRegDate);
             this.panelInforReg.Controls.Add(this.labelRegCode);
-            this.panelInforReg.Controls.Add(this.tbRegDate);
             this.panelInforReg.Controls.Add(this.tbRegCode);
             this.panelInforReg.CustomBorderColor = System.Drawing.Color.Silver;
             this.panelInforReg.FillColor = System.Drawing.Color.WhiteSmoke;
@@ -167,25 +178,6 @@
             this.panelInforReg.ShadowDecoration.Enabled = true;
             this.panelInforReg.Size = new System.Drawing.Size(711, 156);
             this.panelInforReg.TabIndex = 1;
-            // 
-            // butSelectCalenderEx
-            // 
-            this.butSelectCalenderEx.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.butSelectCalenderEx.BorderRadius = 5;
-            this.butSelectCalenderEx.BorderThickness = 1;
-            this.butSelectCalenderEx.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.butSelectCalenderEx.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.butSelectCalenderEx.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.butSelectCalenderEx.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.butSelectCalenderEx.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.butSelectCalenderEx.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butSelectCalenderEx.ForeColor = System.Drawing.Color.White;
-            this.butSelectCalenderEx.Location = new System.Drawing.Point(344, 96);
-            this.butSelectCalenderEx.Name = "butSelectCalenderEx";
-            this.butSelectCalenderEx.Size = new System.Drawing.Size(102, 34);
-            this.butSelectCalenderEx.TabIndex = 9;
-            this.butSelectCalenderEx.Text = "Chọn lịch thi";
-            this.butSelectCalenderEx.Click += new System.EventHandler(this.butSelectCalenderEx_Click);
             // 
             // tbCalenderEx
             // 
@@ -260,24 +252,6 @@
             this.labelRegCode.TabIndex = 2;
             this.labelRegCode.Text = "Mã phiếu:";
             // 
-            // tbRegDate
-            // 
-            this.tbRegDate.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbRegDate.DefaultText = "";
-            this.tbRegDate.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbRegDate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbRegDate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbRegDate.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbRegDate.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbRegDate.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.tbRegDate.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbRegDate.Location = new System.Drawing.Point(493, 55);
-            this.tbRegDate.Name = "tbRegDate";
-            this.tbRegDate.PlaceholderText = "";
-            this.tbRegDate.SelectedText = "";
-            this.tbRegDate.Size = new System.Drawing.Size(200, 30);
-            this.tbRegDate.TabIndex = 3;
-            // 
             // tbRegCode
             // 
             this.tbRegCode.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -312,6 +286,7 @@
             this.guna2Panel2.BorderColor = System.Drawing.Color.Silver;
             this.guna2Panel2.BorderRadius = 10;
             this.guna2Panel2.BorderThickness = 1;
+            this.guna2Panel2.Controls.Add(this.dtpNgaySinh);
             this.guna2Panel2.Controls.Add(this.tbUnit);
             this.guna2Panel2.Controls.Add(this.labelUnitName);
             this.guna2Panel2.Controls.Add(this.guna2CustomRadioButton2);
@@ -321,7 +296,6 @@
             this.guna2Panel2.Controls.Add(this.labelFullName);
             this.guna2Panel2.Controls.Add(this.tbEmail);
             this.guna2Panel2.Controls.Add(this.tbSDT);
-            this.guna2Panel2.Controls.Add(this.tbBirth);
             this.guna2Panel2.Controls.Add(this.tbFullName);
             this.guna2Panel2.Controls.Add(this.labelEmail);
             this.guna2Panel2.Controls.Add(this.labelAddress);
@@ -483,24 +457,6 @@
             this.tbSDT.Size = new System.Drawing.Size(200, 30);
             this.tbSDT.TabIndex = 3;
             // 
-            // tbBirth
-            // 
-            this.tbBirth.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbBirth.DefaultText = "";
-            this.tbBirth.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbBirth.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbBirth.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbBirth.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbBirth.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbBirth.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.tbBirth.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbBirth.Location = new System.Drawing.Point(493, 46);
-            this.tbBirth.Name = "tbBirth";
-            this.tbBirth.PlaceholderText = "";
-            this.tbBirth.SelectedText = "";
-            this.tbBirth.Size = new System.Drawing.Size(200, 30);
-            this.tbBirth.TabIndex = 3;
-            // 
             // tbFullName
             // 
             this.tbFullName.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -609,16 +565,52 @@
             this.labelInforHeader.TabIndex = 2;
             this.labelInforHeader.Text = "Thông tin khách hàng đăng ký";
             // 
-            // labelDetailReg
+            // butSelectCalenderEx
             // 
-            this.labelDetailReg.AutoSize = false;
-            this.labelDetailReg.BackColor = System.Drawing.Color.Transparent;
-            this.labelDetailReg.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDetailReg.Location = new System.Drawing.Point(251, 14);
-            this.labelDetailReg.Name = "labelDetailReg";
-            this.labelDetailReg.Size = new System.Drawing.Size(368, 32);
-            this.labelDetailReg.TabIndex = 10;
-            this.labelDetailReg.Text = "Đăng ký đánh giá năng lực - Đơn vị\r\n";
+            this.butSelectCalenderEx.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.butSelectCalenderEx.BorderRadius = 5;
+            this.butSelectCalenderEx.BorderThickness = 1;
+            this.butSelectCalenderEx.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.butSelectCalenderEx.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.butSelectCalenderEx.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.butSelectCalenderEx.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.butSelectCalenderEx.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.butSelectCalenderEx.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butSelectCalenderEx.ForeColor = System.Drawing.Color.White;
+            this.butSelectCalenderEx.Location = new System.Drawing.Point(344, 96);
+            this.butSelectCalenderEx.Name = "butSelectCalenderEx";
+            this.butSelectCalenderEx.Size = new System.Drawing.Size(102, 34);
+            this.butSelectCalenderEx.TabIndex = 9;
+            this.butSelectCalenderEx.Text = "Chọn lịch thi";
+            this.butSelectCalenderEx.Click += new System.EventHandler(this.butSelectCalenderEx_Click);
+            // 
+            // dtpNgaySinh
+            // 
+            this.dtpNgaySinh.Checked = true;
+            this.dtpNgaySinh.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.dtpNgaySinh.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.dtpNgaySinh.Location = new System.Drawing.Point(493, 46);
+            this.dtpNgaySinh.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpNgaySinh.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpNgaySinh.Name = "dtpNgaySinh";
+            this.dtpNgaySinh.Size = new System.Drawing.Size(200, 30);
+            this.dtpNgaySinh.TabIndex = 7;
+            this.dtpNgaySinh.Value = new System.DateTime(2025, 7, 9, 19, 54, 45, 717);
+            // 
+            // guna2DateTimePicker1
+            // 
+            this.guna2DateTimePicker1.Checked = true;
+            this.guna2DateTimePicker1.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.guna2DateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.guna2DateTimePicker1.Location = new System.Drawing.Point(493, 55);
+            this.guna2DateTimePicker1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.guna2DateTimePicker1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.guna2DateTimePicker1.Name = "guna2DateTimePicker1";
+            this.guna2DateTimePicker1.Size = new System.Drawing.Size(200, 30);
+            this.guna2DateTimePicker1.TabIndex = 10;
+            this.guna2DateTimePicker1.Value = new System.DateTime(2025, 7, 9, 19, 54, 45, 717);
             // 
             // createdRegUnitForm
             // 
@@ -652,7 +644,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel labelTypeReg;
         private Guna.UI2.WinForms.Guna2HtmlLabel labelRegDate;
         private Guna.UI2.WinForms.Guna2HtmlLabel labelRegCode;
-        private Guna.UI2.WinForms.Guna2TextBox tbRegDate;
         private Guna.UI2.WinForms.Guna2TextBox tbRegCode;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2CustomRadioButton guna2CustomRadioButton2;
@@ -662,7 +653,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel labelFullName;
         private Guna.UI2.WinForms.Guna2TextBox tbEmail;
         private Guna.UI2.WinForms.Guna2TextBox tbSDT;
-        private Guna.UI2.WinForms.Guna2TextBox tbBirth;
         private Guna.UI2.WinForms.Guna2TextBox tbFullName;
         private Guna.UI2.WinForms.Guna2HtmlLabel labelEmail;
         private Guna.UI2.WinForms.Guna2HtmlLabel labelAddress;
@@ -676,10 +666,12 @@
         private Guna.UI2.WinForms.Guna2TextBox tbUnit;
         private Guna.UI2.WinForms.Guna2HtmlLabel labelUnitName;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private Guna.UI2.WinForms.Guna2Button butSelectCalenderEx;
         private Guna.UI2.WinForms.Guna2TextBox tbCalenderEx;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private Guna.UI2.WinForms.Guna2HtmlLabel labelDetailReg;
+        private Guna.UI2.WinForms.Guna2Button butSelectCalenderEx;
+        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpNgaySinh;
     }
 }

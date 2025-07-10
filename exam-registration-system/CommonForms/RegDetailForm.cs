@@ -49,7 +49,7 @@ namespace exam_registration_system.CommonForms
                 tbRegCode.Text = row["MaPDK"].ToString();
                 tbRegDate.Text = row["NgayLap"].ToString();
                 tbExamDate.Text = row["NgayThi"].ToString();
-                tbStatus.Text = row["TrangThaiThanhToan"].ToString();
+                tbStatus.Text = row["TrangThai"].ToString();
                 tbTypeReg.Text = row["LoaiCC"].ToString();
                 tbExamShift.Text = row["CaThi"].ToString();
             }

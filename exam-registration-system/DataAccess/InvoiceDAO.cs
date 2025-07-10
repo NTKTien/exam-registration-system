@@ -12,6 +12,20 @@ namespace exam_registration_system.DataAccess
 {
     public class InvoiceDAO
     {
+        public static bool InsertHoaDon(string maPDK, string maNV)
+        {
+            using (SqlConnection conn = new SqlConnection(GlobalInfo.ConnectionString))
+            using (SqlCommand cmd = new SqlCommand("sp_InsertInvoice", conn))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@MaPDK", maPDK);
+                cmd.Parameters.AddWithValue("@MaNV", maNV);
+
+                conn.Open();
+                return cmd.ExecuteNonQuery() > 0;
+            }
+        }
         public static DataTable TraCuuHoaDon(
         string maHD = null,
         decimal? tongTienFrom = null,

@@ -29,7 +29,7 @@ namespace exam_registration_system.CommonForms
             this.Close();
         }
 
-        private void LoadAvailableSchedules()
+        private void LoadAvailableSchedulesByTypeCC()
         {
             DataTable dt = ExamScheduleService.GetAllAvailableSchedulesByTypeCC(loaiDGNL);
             dgvExamSchedule.DataSource = dt;
@@ -42,7 +42,7 @@ namespace exam_registration_system.CommonForms
             // Nếu trống thì load lại danh sách gốc
             if (string.IsNullOrEmpty(keyword))
             {
-                LoadAvailableSchedules();
+                LoadAvailableSchedulesByTypeCC();
                 return;
             }
 
@@ -71,7 +71,7 @@ namespace exam_registration_system.CommonForms
 
         private void ViewExamSchedule_Load(object sender, EventArgs e)
         {
-            LoadAvailableSchedules();
+            LoadAvailableSchedulesByTypeCC();
         }
         // Ví dụ đơn giản
         private void label1_Click(object sender, EventArgs e) { }

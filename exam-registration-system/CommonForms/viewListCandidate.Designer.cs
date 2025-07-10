@@ -62,7 +62,7 @@
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
             this.panelHeader.Name = "panelHeader";
-            this.panelHeader.Size = new System.Drawing.Size(821, 53);
+            this.panelHeader.Size = new System.Drawing.Size(973, 53);
             this.panelHeader.TabIndex = 2;
             // 
             // btnExit
@@ -76,7 +76,7 @@
             this.btnExit.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.ForeColor = System.Drawing.Color.White;
             this.btnExit.ImageSize = new System.Drawing.Size(50, 50);
-            this.btnExit.Location = new System.Drawing.Point(781, 4);
+            this.btnExit.Location = new System.Drawing.Point(934, 2);
             this.btnExit.Margin = new System.Windows.Forms.Padding(2);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(37, 30);
@@ -90,7 +90,7 @@
             this.labelDetailReg.BackColor = System.Drawing.Color.Transparent;
             this.labelDetailReg.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDetailReg.ForeColor = System.Drawing.Color.White;
-            this.labelDetailReg.Location = new System.Drawing.Point(299, 12);
+            this.labelDetailReg.Location = new System.Drawing.Point(391, 12);
             this.labelDetailReg.Name = "labelDetailReg";
             this.labelDetailReg.Size = new System.Drawing.Size(187, 32);
             this.labelDetailReg.TabIndex = 0;
@@ -106,7 +106,7 @@
             this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContent.Location = new System.Drawing.Point(0, 53);
             this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(821, 535);
+            this.panelContent.Size = new System.Drawing.Size(973, 535);
             this.panelContent.TabIndex = 3;
             // 
             // butSearch
@@ -115,7 +115,7 @@
             this.butSearch.BackColor = System.Drawing.Color.White;
             this.butSearch.Image = global::exam_registration_system.Properties.Resources.search_icon;
             this.butSearch.ImageRotate = 0F;
-            this.butSearch.Location = new System.Drawing.Point(752, 27);
+            this.butSearch.Location = new System.Drawing.Point(905, 27);
             this.butSearch.Name = "butSearch";
             this.butSearch.Size = new System.Drawing.Size(35, 33);
             this.butSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -136,7 +136,7 @@
             this.textSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.textSearch.ForeColor = System.Drawing.Color.Black;
             this.textSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textSearch.Location = new System.Drawing.Point(470, 26);
+            this.textSearch.Location = new System.Drawing.Point(623, 26);
             this.textSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textSearch.Name = "textSearch";
             this.textSearch.PlaceholderText = "Nhập thông tin thí sinh để tìm kiếm";
@@ -182,7 +182,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvCandidateList.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvCandidateList.GridColor = System.Drawing.Color.Black;
-            this.dgvCandidateList.Location = new System.Drawing.Point(28, 80);
+            this.dgvCandidateList.Location = new System.Drawing.Point(22, 82);
             this.dgvCandidateList.Margin = new System.Windows.Forms.Padding(2);
             this.dgvCandidateList.Name = "dgvCandidateList";
             this.dgvCandidateList.ReadOnly = true;
@@ -198,7 +198,7 @@
             this.dgvCandidateList.RowHeadersVisible = false;
             this.dgvCandidateList.RowHeadersWidth = 51;
             this.dgvCandidateList.RowTemplate.Height = 24;
-            this.dgvCandidateList.Size = new System.Drawing.Size(762, 421);
+            this.dgvCandidateList.Size = new System.Drawing.Size(918, 421);
             this.dgvCandidateList.TabIndex = 59;
             this.dgvCandidateList.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvCandidateList.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -225,6 +225,7 @@
             // stt
             // 
             this.stt.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.stt.DataPropertyName = "STT";
             this.stt.FillWeight = 50F;
             this.stt.HeaderText = "STT";
             this.stt.MinimumWidth = 50;
@@ -235,6 +236,7 @@
             // FullName
             // 
             this.FullName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.FullName.DataPropertyName = "Họ tên";
             this.FullName.FillWeight = 140F;
             this.FullName.HeaderText = "Họ tên";
             this.FullName.MinimumWidth = 140;
@@ -245,6 +247,7 @@
             // sex
             // 
             this.sex.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.sex.DataPropertyName = "Giới tính";
             this.sex.HeaderText = "Giới tính";
             this.sex.MinimumWidth = 100;
             this.sex.Name = "sex";
@@ -254,6 +257,7 @@
             // birth
             // 
             this.birth.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.birth.DataPropertyName = "Ngày sinh";
             this.birth.FillWeight = 120F;
             this.birth.HeaderText = "Ngày sinh";
             this.birth.MinimumWidth = 120;
@@ -264,6 +268,7 @@
             // cccd
             // 
             this.cccd.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.cccd.DataPropertyName = "CCCD";
             this.cccd.HeaderText = "CCCD";
             this.cccd.MinimumWidth = 100;
             this.cccd.Name = "cccd";
@@ -273,6 +278,7 @@
             // sdt
             // 
             this.sdt.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.sdt.DataPropertyName = "Số điện thoại";
             this.sdt.FillWeight = 130F;
             this.sdt.HeaderText = "Số điện thoại";
             this.sdt.MinimumWidth = 130;
@@ -283,18 +289,19 @@
             // email
             // 
             this.email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.email.FillWeight = 120F;
+            this.email.DataPropertyName = "Email";
+            this.email.FillWeight = 175F;
             this.email.HeaderText = "Email";
-            this.email.MinimumWidth = 120;
+            this.email.MinimumWidth = 175;
             this.email.Name = "email";
             this.email.ReadOnly = true;
-            this.email.Width = 120;
+            this.email.Width = 175;
             // 
             // viewListCandidate
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(247)))), ((int)(((byte)(250)))));
-            this.ClientSize = new System.Drawing.Size(821, 588);
+            this.ClientSize = new System.Drawing.Size(973, 588);
             this.Controls.Add(this.panelContent);
             this.Controls.Add(this.panelHeader);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -319,6 +326,7 @@
         private Guna.UI2.WinForms.Guna2PictureBox butSearch;
         private Guna.UI2.WinForms.Guna2TextBox textSearch;
         private Guna.UI2.WinForms.Guna2DataGridView dgvCandidateList;
+        private Guna.UI2.WinForms.Guna2Button btnExit;
         private System.Windows.Forms.DataGridViewTextBoxColumn stt;
         private System.Windows.Forms.DataGridViewTextBoxColumn FullName;
         private System.Windows.Forms.DataGridViewTextBoxColumn sex;
@@ -326,6 +334,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cccd;
         private System.Windows.Forms.DataGridViewTextBoxColumn sdt;
         private System.Windows.Forms.DataGridViewTextBoxColumn email;
-        private Guna.UI2.WinForms.Guna2Button btnExit;
     }
 }

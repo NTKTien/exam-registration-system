@@ -34,12 +34,25 @@ namespace exam_registration_system.CommonForms
             // Kiểm tra có dòng nào được chọn chưa
             if (dgvRegList.CurrentRow != null)
             {
-                // Lấy giá trị từ cột "Mã phiếu" (giả sử cột này là cột đầu tiên - index 0)
-                string RegistrationId = dgvRegList.CurrentRow.Cells["codeReg"].Value.ToString();
+                // Lấy mã phiếu và loại PDK từ dòng được chọn
+                string registrationId = dgvRegList.CurrentRow.Cells["codeReg"].Value.ToString();
+                string loaiPDK = dgvRegList.CurrentRow.Cells["TypeCustomer"].Value.ToString(); // giả sử tên cột là "typeReg"
 
-                // Mở form chi tiết, truyền mã phiếu vào constructor
-                RegDetailForm formChiTiet = new RegDetailForm(RegistrationId);
-                formChiTiet.ShowDialog();
+                // Kiểm tra loại phiếu để hiển thị form phù hợp
+                if (loaiPDK == "KHTD")
+                {
+                    RegDetailForm formChiTiet = new RegDetailForm(registrationId);
+                    formChiTiet.ShowDialog();
+                }
+                else if (loaiPDK == "KHĐV")
+                {
+                    UnitRegDetailForm formChiTiet = new UnitRegDetailForm();
+                    formChiTiet.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Loại phiếu không hợp lệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             else
             {
