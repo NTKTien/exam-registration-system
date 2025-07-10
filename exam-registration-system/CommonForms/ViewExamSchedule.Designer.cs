@@ -1,4 +1,6 @@
-﻿namespace exam_registration_system.CommonForms
+﻿using System;
+
+namespace exam_registration_system.CommonForms
 {
     partial class ViewExamSchedule
     {
@@ -55,11 +57,17 @@
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnExit = new Guna.UI2.WinForms.Guna2Button();
             this.labelDetailReg = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            // Add missing control declarations
+            this.dgvExamSchedule = new System.Windows.Forms.DataGridView();
+            this.textSearch = new Guna.UI2.WinForms.Guna2TextBox();
+            this.butSearch = new Guna.UI2.WinForms.Guna2Button();
+            this.butSelect = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel3.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ExamScheduleList)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvExamSchedule)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Panel3
@@ -67,10 +75,8 @@
             this.guna2Panel3.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel3.BorderColor = System.Drawing.Color.Black;
             this.guna2Panel3.BorderThickness = 1;
-            this.guna2Panel3.Controls.Add(this.butSelect);
-            this.guna2Panel3.Controls.Add(this.dgvExamSchedule);
-            this.guna2Panel3.Controls.Add(this.butSearch);
-            this.guna2Panel3.Controls.Add(this.textSearch);
+            this.guna2Panel3.Controls.Add(this.guna2Panel4);
+            this.guna2Panel3.Controls.Add(this.guna2Panel1);
             this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel3.FillColor = System.Drawing.Color.WhiteSmoke;
             this.guna2Panel3.Location = new System.Drawing.Point(0, 68);
@@ -82,7 +88,7 @@
             this.guna2Panel3.Size = new System.Drawing.Size(1144, 572);
             this.guna2Panel3.TabIndex = 5;
             // 
-            // butSelect
+            // guna2Panel4
             // 
             this.guna2Panel4.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel4.BorderColor = System.Drawing.Color.Silver;
@@ -259,7 +265,7 @@
             this.labelInforHeader.Text = "Danh sách lịch thi";
             this.labelInforHeader.Click += new System.EventHandler(this.labelInforHeader_Click);
             // 
-            // dgvExamSchedule
+            // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel1.BorderColor = System.Drawing.Color.Silver;
@@ -382,10 +388,10 @@
             this.label1.Size = new System.Drawing.Size(105, 32);
             this.label1.TabIndex = 6;
             this.label1.Text = "Ngày thi";
-            this.label1.Click += new System.EventHandler(this.label1_Click_1);
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
-            // 
+            //
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.label2.Location = new System.Drawing.Point(28, 192);
@@ -440,7 +446,7 @@
             this.btnExit.Size = new System.Drawing.Size(46, 38);
             this.btnExit.TabIndex = 3;
             this.btnExit.Text = "✕";
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            this.labelInforHeader = new Guna.UI2.WinForms.Guna2HtmlLabel();
             // 
             // labelDetailReg
             // 
@@ -503,5 +509,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cccd;
         private System.Windows.Forms.DataGridViewTextBoxColumn sdt;
         private System.Windows.Forms.DataGridViewTextBoxColumn email;
+        private System.Windows.Forms.DataGridView dgvExamSchedule;
+        private Guna.UI2.WinForms.Guna2TextBox textSearch;
+        private Guna.UI2.WinForms.Guna2Button butSearch;
+        private Guna.UI2.WinForms.Guna2Button butSelect;
+        private Guna.UI2.WinForms.Guna2HtmlLabel labelInforHeader;
     }
 }

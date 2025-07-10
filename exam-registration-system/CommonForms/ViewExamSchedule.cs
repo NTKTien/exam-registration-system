@@ -73,7 +73,13 @@ namespace exam_registration_system.CommonForms
         {
             LoadAvailableSchedules();
         }
-
+        // Ví dụ đơn giản
+        private void label1_Click(object sender, EventArgs e) { }
+        private void label2_Click_1(object sender, EventArgs e) { }
+        private void labelInforHeader_Click(object sender, EventArgs e) { }
+        private void guna2Panel2_Paint(object sender, PaintEventArgs e) { }
+        private void guna2Button1_Click(object sender, EventArgs e) { }
+ 
         private void butSelect_Click(object sender, EventArgs e)
         {
             try
