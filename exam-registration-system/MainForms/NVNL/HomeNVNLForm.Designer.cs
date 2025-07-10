@@ -286,6 +286,7 @@
             this.butLogout.TabIndex = 6;
             this.butLogout.Text = " Đăng xuất";
             this.butLogout.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.butLogout.Click += new System.EventHandler(this.butLogout_Click);
             // 
             // panelContent
             // 
@@ -303,7 +304,7 @@
             // 
             // HomeNVNLForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1040, 723);
             this.Controls.Add(this.panelContent);
