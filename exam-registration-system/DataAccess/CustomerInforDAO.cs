@@ -47,5 +47,40 @@ namespace exam_registration_system.DataAccess
                 return cmd.ExecuteNonQuery() > 0;
             }
         }
+
+        public static DataTable TraCuuTTNguoiDangKy(
+                string maNDK = null,
+                string cccd = null,
+                string hoTen = null,
+                string gioiTinh = null,
+                DateTime? ngaySinhFrom = null,
+                DateTime? ngaySinhTo = null,
+                string soDienThoai = null,
+                string email = null,
+                string diaChi = null,
+                string maPDK = null) {
+            using (SqlConnection conn = new SqlConnection(GlobalInfo.ConnectionString))
+            using (SqlCommand cmd = new SqlCommand("sp_TraCuuTTNguoiDangKy", conn))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@MaNDK", maNDK ?? (object)DBNull.Value);
+                cmd.Parameters.AddWithValue("@CCCD", cccd ?? (object)DBNull.Value);
+                cmd.Parameters.AddWithValue("@HoTen", hoTen ?? (object)DBNull.Value);
+                cmd.Parameters.AddWithValue("@GioiTinh", gioiTinh ?? (object)DBNull.Value);
+                cmd.Parameters.AddWithValue("@NgaySinhFrom", ngaySinhFrom.HasValue ? (object)ngaySinhFrom.Value : DBNull.Value);
+                cmd.Parameters.AddWithValue("@NgaySinhTo", ngaySinhTo.HasValue ? (object)ngaySinhTo.Value : DBNull.Value);
+                cmd.Parameters.AddWithValue("@SoDienThoai", soDienThoai ?? (object)DBNull.Value);
+                cmd.Parameters.AddWithValue("@Email", email ?? (object)DBNull.Value);
+                cmd.Parameters.AddWithValue("@DiaChi", diaChi ?? (object)DBNull.Value);
+                cmd.Parameters.AddWithValue("@MaPDK", maPDK ?? (object)DBNull.Value);
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+            }
+        }
+
     }
 }

@@ -20,7 +20,7 @@ CREATE TABLE NhanVien (
 );
 
 -- Tạo bảng Danh Sách thí sinh
-CREATE TABLE DSThiSinh (
+CREATE TABLE ThiSinh (
 	MaDS CHAR(5),
 	MaTS CHAR(5),
 	HoTen NVARCHAR(100),
@@ -33,7 +33,7 @@ CREATE TABLE DSThiSinh (
 );
 
 -- Tạo bảng Danh Sách phòng thi
-CREATE TABLE DSPhongThi(
+CREATE TABLE PhongThi(
 	MaPT CHAR(4) PRIMARY KEY,
 	Tang INT,
 	Toa INT
@@ -50,7 +50,7 @@ CREATE TABLE LichDGNL(
 	SLTSHienTai INT 
 	CHECK ( SLTSHienTai >=0 ),
 	CHECK (SLTSHienTai <= SLTSToiDa ),
-	FOREIGN KEY (PhongThi) REFERENCES DSPhongThi(MaPT) 
+	FOREIGN KEY (PhongThi) REFERENCES PhongThi(MaPT) 
 	
 );
 
@@ -160,8 +160,8 @@ INSERT INTO NhanVien VALUES
 ('NV009', N'Tạ Thị I', N'303 Trần Hưng Đạo, Q5', '0950987654', '1994-09-13', 'tti@example.com', 'NL'),
 ('NV010', N'Vũ Văn K', N'404 Võ Thị Sáu, Q3', '0961236547', '1989-10-10', 'vvk@example.com', 'TN');
 
--- Dữ liệu cho bảng DSPhongThi
-INSERT INTO DSPhongThi VALUES
+-- Dữ liệu cho bảng PhongThi
+INSERT INTO PhongThi VALUES
 ('PT01', 1, 1),
 ('PT02', 1, 2),
 ('PT03', 2, 1),
@@ -186,8 +186,8 @@ INSERT INTO LichDGNL VALUES
 ('LT009', '2025-08-05 08:00:00', '3', 'PT09', N'Tin học', 20, 18),
 ('LT010', '2025-08-05 14:00:00', '4', 'PT10', N'Ngoại ngữ', 20, 20);
 
--- Dữ liệu cho bảng DSThiSinh
-INSERT INTO DSThiSinh VALUES
+-- Dữ liệu cho bảng ThiSinh
+INSERT INTO ThiSinh VALUES
 ('DS001', 'TS001', N'Lê Minh Tuấn', N'Nam', '2003-01-01', '0911000001', 'tuanlm@gmail.com', N'Sáng 1/8/2025'),
 ('DS001', 'TS002', N'Nguyễn Thị Hồng', N'Nữ', '2002-03-21', '0911000002', 'hongnt@gmail.com', N'Sáng 1/8/2025'),
 ('DS002', 'TS003', N'Phạm Văn Hùng', N'Nam', '2001-12-03', '0911000003', 'hungpv@gmail.com', N'Chiều 1/8/2025'),
@@ -214,16 +214,16 @@ INSERT INTO LichThi_NhanVien VALUES
 
 -- Dữ liệu cho bảng PhieuDangKy
 INSERT INTO PhieuDangKy VALUES
-('PDK01', '2025-07-01 09:00:00', N'Chưa thanh toán', 'DS001', 'LT001', N'Trường THPT A', N'KHĐV', N'Tin học'),
-('PDK02', '2025-07-01 09:10:00', N'Đã hủy', 'DS001', 'LT001', N'Trường THPT A', N'KHTD', N'Tin học'),
-('PDK03', '2025-07-02 10:00:00', N'Đã thanh toán', 'DS002', 'LT002', N'Trường THPT B', N'KHĐV', N'Ngoại ngữ'),
-('PDK04', '2025-07-02 10:20:00', N'Đã xuất PDT', 'DS002', 'LT002', N'Trường THPT B', N'KHTD', N'Ngoại ngữ'),
-('PDK05', '2025-07-03 11:00:00', N'Chưa thanh toán', 'DS003', 'LT003', N'Trường THPT C', N'KHĐV', N'Tin học'),
-('PDK06', '2025-07-03 11:30:00', N'Đã thanh toán', 'DS003', 'LT003', N'Trường THPT C', N'KHTD', N'Tin học'),
-('PDK07', '2025-07-04 12:00:00', N'Đã xuất PDT', 'DS004', 'LT004', N'Trường THPT D', N'KHĐV', N'Ngoại ngữ'),
-('PDK08', '2025-07-04 12:15:00', N'Đã hủy', 'DS004', 'LT004', N'Trường THPT D', N'KHTD', N'Ngoại ngữ'),
-('PDK09', '2025-07-05 15:00:00', N'Chưa thanh toán', 'DS005', 'LT005', N'Trường THPT E', N'KHĐV', N'Tin học'),
-('PDK10', '2025-07-05 15:30:00', N'Đã thanh toán', 'DS005', 'LT005', N'Trường THPT E', N'KHTD', N'Tin học');
+('PDK01', '2025-07-10 09:00:00', N'Chưa thanh toán', 'DS001', 'LT001', N'Trường THPT A', N'KHĐV', N'Tin học'),
+('PDK02', '2025-07-10 09:10:00', N'Chưa thanh toán', 'DS001', 'LT001', N'Trường THPT A', N'KHTD', N'Tin học'),
+('PDK03', '2025-07-10 10:00:00', N'Đã thanh toán', 'DS002', 'LT002', N'Trường THPT B', N'KHĐV', N'Ngoại ngữ'),
+('PDK04', '2025-07-10 10:20:00', N'Chưa thanh toán', 'DS002', 'LT002', N'Trường THPT B', N'KHTD', N'Ngoại ngữ'),
+('PDK05', '2025-07-10 11:00:00', N'Chưa thanh toán', 'DS003', 'LT003', N'Trường THPT C', N'KHĐV', N'Tin học'),
+('PDK06', '2025-07-10 11:30:00', N'Chưa thanh toán', 'DS003', 'LT003', N'Trường THPT C', N'KHTD', N'Tin học'),
+('PDK07', '2025-07-10 12:00:00', N'Đã xuất PDT', 'DS004', 'LT004', N'Trường THPT D', N'KHĐV', N'Ngoại ngữ'),
+('PDK08', '2025-07-10 12:15:00', N'Chưa thanh toán', 'DS004', 'LT004', N'Trường THPT D', N'KHTD', N'Ngoại ngữ'),
+('PDK09', '2025-07-10 15:00:00', N'Chưa thanh toán', 'DS005', 'LT005', N'Trường THPT E', N'KHĐV', N'Tin học'),
+('PDK10', '2025-07-10 15:30:00', N'Chưa thanh toán', 'DS005', 'LT005', N'Trường THPT E', N'KHTD', N'Tin học');
 
 -- Dữ liệu cho bảng TTNguoiDangKy
 INSERT INTO TTNguoiDangKy VALUES
