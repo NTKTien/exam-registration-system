@@ -1,4 +1,6 @@
-﻿-- Lấy toàn bộ danh sách phiếu đăng ký 
+﻿USE QLToChucThiCC;
+
+-- Lấy toàn bộ danh sách phiếu đăng ký 
 CREATE OR ALTER PROCEDURE P_GetAllReg
 AS
 BEGIN
@@ -125,3 +127,138 @@ BEGIN
     -- Trả kết quả dạng: PDK01, PDK02,...
     SELECT 'PDK' + RIGHT('00' + CAST(@NextNumber AS VARCHAR(3)), 2) AS NextMaPDK;
 END
+
+
+
+-- PROCEDURE USE-CASE PHÁT HÀNH PHIẾU DỰ THI
+	-- Xem tất cả phiếu đăng ký
+	GO
+	CREATE  OR ALTER PROCEDURE XemTatCaPhieuDangKy 
+	AS
+	BEGIN
+		SELECT pdk.MaPDK, dsts.HoTen, dsts.Email, pdk.LoaiPDK, ldgnl.NgayThi, ldgnl.PhongThi, pdk.TrangThaiThanhToan, pdk.TrangThai
+		FROM PhieuDangKy pdk JOIN DSThiSinh dsts ON pdk.MaDS = dsts.MaDS
+		JOIN LichDGNL ldgnl ON pdk.MaLT = ldgnl.MaLT
+	END;
+
+	-- Lọc phiếu đăng ký
+	GO
+	CREATE OR ALTER PROCEDURE LocPhieuDangKy
+		@MaPDK CHAR(5) = NULL,
+		@LoaiKyThi NVARCHAR(20) = NULL,
+		@TrangThai NVARCHAR(20) = NULL
+	AS
+	BEGIN
+		SELECT 
+			pdk.MaPDK, 
+			dsts.HoTen, 
+			dsts.Email, 
+			pdk.LoaiPDK, 
+			ldgnl.NgayThi, 
+			ldgnl.PhongThi, 
+			pdk.TrangThaiThanhToan, 
+			pdk.TrangThai
+		FROM 
+			PhieuDangKy pdk 
+			JOIN DSThiSinh dsts ON pdk.MaDS = dsts.MaDS
+			JOIN LichDGNL ldgnl ON pdk.MaLT = ldgnl.MaLT
+		WHERE 
+			(@MaPDK IS NULL OR pdk.MaPDK = @MaPDK)
+			AND (@LoaiKyThi IS NULL OR ldgnl.LoaiDGNL = @LoaiKyThi)
+			AND (@TrangThai IS NULL OR pdk.TrangThai = @TrangThai)
+	END;
+
+
+	-- Xem Chi tiết Phiếu Đăng ký
+	GO
+	CREATE OR ALTER PROCEDURE XemPhieuDangKy
+		@MaPDK CHAR(5)
+	AS
+	BEGIN
+		SELECT 
+			ldgnl.Ngaythi,
+			CONCAT(N'Tòa ', pt.Toa, N', Tầng ', pt.Tang, N', Phòng ', ldgnl.PhongThi) AS DiaDiem,
+			ldgnl.Loaidgnl,
+			CASE 
+				WHEN pdk.TenDonVi IS NULL THEN dsts.HoTen
+				ELSE pdk.TenDonVi
+			END AS TenHienThi
+		FROM 
+		  PhieuDangKy pdk
+		  JOIN DSThiSinh dsts ON dsts.MaDS = pdk.MaDS
+		  JOIN LichDGNL ldgnl ON pdk.MaLT = ldgnl.MaLT
+		  JOIN DSPhongThi pt ON pt.MaPT = ldgnl.PhongThi 
+     
+		WHERE 
+			pdk.MaPDK = @MaPDK
+	END;
+
+	-- Xem Phiếu dự thi
+	GO
+	CREATE OR ALTER PROCEDURE XemPhieuDuThi
+		@MaPDK CHAR(5)
+	AS
+	BEGIN
+		SELECT 
+			pdt.MaPDT, 
+			pdt.ThoiGian, 
+			CONCAT(N'Tòa ', pt.Toa, N', Tầng ', pt.Tang, N', Phòng ', ldgnl.PhongThi) AS DiaDiem,
+			pdt.SBD, 
+			ldgnl.Loaidgnl, 
+			CASE 
+				WHEN pdk.TenDonVi IS NULL THEN dsts.HoTen
+				ELSE pdk.TenDonVi
+			END AS TenHienThi
+		FROM 
+			PhieuDuThi pdt
+			JOIN PhieuDangKy pdk ON pdt.MaPDK = pdk.MaPDK
+			JOIN DSThiSinh dsts ON pdk.MaDS = dsts.MaDS
+			JOIN LichDGNL ldgnl ON ldgnl.MaLT = pdk.MaLT
+			JOIN DSPhongThi pt ON pt.MaPT = ldgnl.PhongThi
+		WHERE 
+			pdk.MaPDK = @MaPDK
+	END;
+
+	-- Xuất Phiếu dự thi
+	GO
+	GO
+	CREATE OR ALTER PROCEDURE XuatPhieuDuThi
+		@MaPDK CHAR(5)
+	AS
+	BEGIN
+
+		DECLARE @MaPDT CHAR(5);
+		DECLARE @SBD CHAR(5);
+		DECLARE @NewID INT;
+
+		-- Tạo MaPDT tự động (PDT01, PDT02, ...)
+		SELECT @NewID = ISNULL(MAX(CAST(SUBSTRING(MaPDT, 4, 2) AS INT)), 0) + 1
+		FROM PhieuDuThi;
+		SET @MaPDT = 'PDT' + RIGHT('0' + CAST(@NewID AS VARCHAR(2)), 2);
+
+		-- Tạo SBD tự động (SBD01, SBD02, ...)
+		SELECT @NewID = ISNULL(MAX(CAST(SUBSTRING(SBD, 4, 2) AS INT)), 0) + 1
+		FROM PhieuDuThi;
+		SET @SBD = 'SBD' + RIGHT('0' + CAST(@NewID AS VARCHAR(2)), 2);
+
+		-- Thêm hàng vào PhieuDuThi
+		INSERT INTO PhieuDuThi (MaPDT, ThoiGian, DiaDiem, SBD, MaPDK)
+		SELECT 
+			@MaPDT,
+			ldgnl.NgayThi,
+			ldgnl.PhongThi,
+			@SBD,
+			pdk.MaPDK
+		FROM 
+			PhieuDangKy pdk
+			JOIN LichDGNL ldgnl ON pdk.MaLT = ldgnl.MaLT
+			JOIN DSPhongThi pt ON ldgnl.PhongThi = pt.MaPT
+		WHERE 
+			pdk.MaPDK = @MaPDK;
+
+		-- Cập nhật TrangThaiXuatPDT trong PhieuDangKy (nếu có)
+		UPDATE PhieuDangKy
+		SET TrangThai = N'Đã xuất PDT'
+		WHERE MaPDK = @MaPDK;
+	END;
+GO
