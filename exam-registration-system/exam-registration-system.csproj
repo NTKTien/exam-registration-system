@@ -134,6 +134,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business\ExtensionFormService.cs" />
     <Compile Include="Business\CustomerService.cs" />
     <Compile Include="Business\ExamScheduleService.cs" />
     <Compile Include="Business\InvoiceService.cs" />
@@ -156,6 +157,7 @@
     <Compile Include="CommonForms\ViewExamScheduleMenu.Designer.cs">
       <DependentUpon>ViewExamScheduleMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataAccess\ExtensionFormDAO.cs" />
     <Compile Include="DataAccess\CustomerInforDAO.cs" />
     <Compile Include="DataAccess\ExamScheduleDAO.cs" />
     <Compile Include="DataAccess\InvoiceDAO.cs" />

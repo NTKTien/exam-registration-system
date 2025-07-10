@@ -20,8 +20,7 @@ namespace exam_registration_system.MainForms.NVKT
         {
             try
             {
-                string sql = "EXEC sp_GetPendingExtends";
-                originalDt = SqlServerHelper.ExecuteQuery(sql);
+                originalDt = Business.ExtensionFormService.GetPendingExtensionForms();
 
                 if (originalDt == null || originalDt.Rows.Count == 0)
                 {

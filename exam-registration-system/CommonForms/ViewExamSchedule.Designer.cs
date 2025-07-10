@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace exam_registration_system.CommonForms
+﻿namespace exam_registration_system.CommonForms
 {
     partial class ViewExamSchedule
     {
@@ -34,43 +32,24 @@ namespace exam_registration_system.CommonForms
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
-            this.ExamScheduleList = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.labelInforHeader = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.butSelect = new Guna.UI2.WinForms.Guna2Button();
+            this.dgvExamSchedule = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.code = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Examdate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Shift = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Room = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maxAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CurrentAmout = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.butSearch = new Guna.UI2.WinForms.Guna2Button();
+            this.textSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnExit = new Guna.UI2.WinForms.Guna2Button();
             this.labelDetailReg = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.dgvExamSchedule = new System.Windows.Forms.DataGridView();
-            this.textSearch = new Guna.UI2.WinForms.Guna2TextBox();
-            this.butSearch = new Guna.UI2.WinForms.Guna2Button();
-            this.butSelect = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.cbxTypeCer = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.btnSearch = new Guna.UI2.WinForms.Guna2Button();
-            this.dateFilter = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.stt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sex = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.birth = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cccd = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sdt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2Panel3.SuspendLayout();
-            this.guna2Panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ExamScheduleList)).BeginInit();
-            this.guna2Panel1.SuspendLayout();
-            this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvExamSchedule)).BeginInit();
+            this.guna2Panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2Panel3
@@ -78,49 +57,50 @@ namespace exam_registration_system.CommonForms
             this.guna2Panel3.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel3.BorderColor = System.Drawing.Color.Black;
             this.guna2Panel3.BorderThickness = 1;
-            this.guna2Panel3.Controls.Add(this.guna2Panel4);
-            this.guna2Panel3.Controls.Add(this.guna2Panel1);
+            this.guna2Panel3.Controls.Add(this.butSelect);
+            this.guna2Panel3.Controls.Add(this.dgvExamSchedule);
+            this.guna2Panel3.Controls.Add(this.butSearch);
+            this.guna2Panel3.Controls.Add(this.textSearch);
             this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel3.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.guna2Panel3.Location = new System.Drawing.Point(0, 68);
-            this.guna2Panel3.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2Panel3.Location = new System.Drawing.Point(0, 54);
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.ShadowDecoration.BorderRadius = 15;
             this.guna2Panel3.ShadowDecoration.Depth = 10;
             this.guna2Panel3.ShadowDecoration.Enabled = true;
-            this.guna2Panel3.Size = new System.Drawing.Size(1100, 653);
+            this.guna2Panel3.Size = new System.Drawing.Size(881, 491);
             this.guna2Panel3.TabIndex = 5;
             // 
-            // guna2Panel4
+            // butSelect
             // 
-            this.guna2Panel4.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Panel4.BorderColor = System.Drawing.Color.Silver;
-            this.guna2Panel4.BorderRadius = 28;
-            this.guna2Panel4.BorderThickness = 1;
-            this.guna2Panel4.Controls.Add(this.ExamScheduleList);
-            this.guna2Panel4.Controls.Add(this.labelInforHeader);
-            this.guna2Panel4.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.guna2Panel4.Location = new System.Drawing.Point(12, 117);
-            this.guna2Panel4.Margin = new System.Windows.Forms.Padding(28, 30, 28, 30);
-            this.guna2Panel4.Name = "guna2Panel4";
-            this.guna2Panel4.Padding = new System.Windows.Forms.Padding(28, 30, 28, 30);
-            this.guna2Panel4.ShadowDecoration.BorderRadius = 15;
-            this.guna2Panel4.ShadowDecoration.Depth = 5;
-            this.guna2Panel4.ShadowDecoration.Enabled = true;
-            this.guna2Panel4.Size = new System.Drawing.Size(1070, 605);
-            this.guna2Panel4.TabIndex = 15;
+            this.butSelect.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.butSelect.BorderRadius = 5;
+            this.butSelect.BorderThickness = 1;
+            this.butSelect.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.butSelect.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.butSelect.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.butSelect.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.butSelect.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(117)))), ((int)(((byte)(185)))));
+            this.butSelect.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butSelect.ForeColor = System.Drawing.Color.White;
+            this.butSelect.Location = new System.Drawing.Point(763, 446);
+            this.butSelect.Name = "butSelect";
+            this.butSelect.Size = new System.Drawing.Size(88, 33);
+            this.butSelect.TabIndex = 64;
+            this.butSelect.Text = "Chọn";
+            this.butSelect.Click += new System.EventHandler(this.butSelect_Click);
             // 
-            // ExamScheduleList
+            // dgvExamSchedule
             // 
-            this.ExamScheduleList.AllowUserToAddRows = false;
-            this.ExamScheduleList.AllowUserToDeleteRows = false;
-            this.ExamScheduleList.AllowUserToResizeColumns = false;
-            this.ExamScheduleList.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.ExamScheduleList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.ExamScheduleList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.None;
-            this.ExamScheduleList.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ExamScheduleList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvExamSchedule.AllowUserToAddRows = false;
+            this.dgvExamSchedule.AllowUserToDeleteRows = false;
+            this.dgvExamSchedule.AllowUserToResizeColumns = false;
+            this.dgvExamSchedule.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.dgvExamSchedule.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvExamSchedule.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.None;
+            this.dgvExamSchedule.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.dgvExamSchedule.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -128,31 +108,31 @@ namespace exam_registration_system.CommonForms
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ExamScheduleList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.ExamScheduleList.ColumnHeadersHeight = 50;
-            this.ExamScheduleList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.ExamScheduleList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.stt,
-            this.FullName,
-            this.sex,
-            this.birth,
-            this.cccd,
-            this.sdt,
-            this.email});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.dgvExamSchedule.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvExamSchedule.ColumnHeadersHeight = 50;
+            this.dgvExamSchedule.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dgvExamSchedule.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.code,
+            this.Examdate,
+            this.Shift,
+            this.Room,
+            this.type,
+            this.maxAmount,
+            this.CurrentAmout});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.ExamScheduleList.DefaultCellStyle = dataGridViewCellStyle3;
-            this.ExamScheduleList.GridColor = System.Drawing.Color.Black;
-            this.ExamScheduleList.Location = new System.Drawing.Point(55, 68);
-            this.ExamScheduleList.Margin = new System.Windows.Forms.Padding(2);
-            this.ExamScheduleList.Name = "ExamScheduleList";
-            this.ExamScheduleList.ReadOnly = true;
-            this.ExamScheduleList.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvExamSchedule.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvExamSchedule.GridColor = System.Drawing.Color.Black;
+            this.dgvExamSchedule.Location = new System.Drawing.Point(25, 86);
+            this.dgvExamSchedule.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvExamSchedule.Name = "dgvExamSchedule";
+            this.dgvExamSchedule.ReadOnly = true;
+            this.dgvExamSchedule.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -160,86 +140,149 @@ namespace exam_registration_system.CommonForms
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ExamScheduleList.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.ExamScheduleList.RowHeadersVisible = false;
-            this.ExamScheduleList.RowHeadersWidth = 51;
-            this.ExamScheduleList.RowTemplate.Height = 24;
-            this.ExamScheduleList.Size = new System.Drawing.Size(940, 453);
-            this.ExamScheduleList.TabIndex = 60;
-            this.ExamScheduleList.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.ExamScheduleList.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.ExamScheduleList.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.ExamScheduleList.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.ExamScheduleList.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.ExamScheduleList.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.ExamScheduleList.ThemeStyle.GridColor = System.Drawing.Color.Black;
-            this.ExamScheduleList.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.ExamScheduleList.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.ExamScheduleList.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExamScheduleList.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.ExamScheduleList.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.ExamScheduleList.ThemeStyle.HeaderStyle.Height = 50;
-            this.ExamScheduleList.ThemeStyle.ReadOnly = true;
-            this.ExamScheduleList.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.ExamScheduleList.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.ExamScheduleList.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExamScheduleList.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.ExamScheduleList.ThemeStyle.RowsStyle.Height = 24;
-            this.ExamScheduleList.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.ExamScheduleList.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvExamSchedule.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvExamSchedule.RowHeadersVisible = false;
+            this.dgvExamSchedule.RowHeadersWidth = 51;
+            this.dgvExamSchedule.RowTemplate.Height = 32;
+            this.dgvExamSchedule.Size = new System.Drawing.Size(834, 343);
+            this.dgvExamSchedule.TabIndex = 63;
+            this.dgvExamSchedule.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvExamSchedule.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dgvExamSchedule.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dgvExamSchedule.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dgvExamSchedule.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dgvExamSchedule.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.dgvExamSchedule.ThemeStyle.GridColor = System.Drawing.Color.Black;
+            this.dgvExamSchedule.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dgvExamSchedule.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvExamSchedule.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvExamSchedule.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dgvExamSchedule.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dgvExamSchedule.ThemeStyle.HeaderStyle.Height = 50;
+            this.dgvExamSchedule.ThemeStyle.ReadOnly = true;
+            this.dgvExamSchedule.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvExamSchedule.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvExamSchedule.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvExamSchedule.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvExamSchedule.ThemeStyle.RowsStyle.Height = 32;
+            this.dgvExamSchedule.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvExamSchedule.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
-            // labelInforHeader
+            // code
             // 
-            this.labelInforHeader.BackColor = System.Drawing.Color.Transparent;
-            this.labelInforHeader.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelInforHeader.Location = new System.Drawing.Point(20, 15);
-            this.labelInforHeader.Margin = new System.Windows.Forms.Padding(4);
-            this.labelInforHeader.Name = "labelInforHeader";
-            this.labelInforHeader.Size = new System.Drawing.Size(196, 34);
-            this.labelInforHeader.TabIndex = 2;
-            this.labelInforHeader.Text = "Danh sách lịch thi";
-            this.labelInforHeader.Click += new System.EventHandler(this.labelInforHeader_Click);
+            this.code.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.code.DataPropertyName = "MaLT";
+            this.code.HeaderText = "Mã Lịch thi";
+            this.code.MinimumWidth = 100;
+            this.code.Name = "code";
+            this.code.ReadOnly = true;
             // 
-            // guna2Panel1
+            // Examdate
             // 
-            this.guna2Panel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Panel1.BorderColor = System.Drawing.Color.Silver;
-            this.guna2Panel1.BorderRadius = 28;
-            this.guna2Panel1.BorderThickness = 1;
-            this.guna2Panel1.Controls.Add(this.btnSearch);
-            this.guna2Panel1.Controls.Add(this.guna2ComboBox1);
-            this.guna2Panel1.Controls.Add(this.guna2HtmlLabel1);
-            this.guna2Panel1.Controls.Add(this.cbxTypeCer);
-            this.guna2Panel1.Controls.Add(this.label3);
-            this.guna2Panel1.Controls.Add(this.label1);
-            this.guna2Panel1.Controls.Add(this.dateFilter);
-            this.guna2Panel1.Controls.Add(this.label2);
-            this.guna2Panel1.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.guna2Panel1.Location = new System.Drawing.Point(12, 17);
-            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(28, 30, 28, 30);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Padding = new System.Windows.Forms.Padding(28, 30, 28, 30);
-            this.guna2Panel1.ShadowDecoration.BorderRadius = 15;
-            this.guna2Panel1.ShadowDecoration.Depth = 5;
-            this.guna2Panel1.ShadowDecoration.Enabled = true;
-            this.guna2Panel1.Size = new System.Drawing.Size(1070, 91);
-            this.guna2Panel1.TabIndex = 7;
+            this.Examdate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Examdate.DataPropertyName = "NgayThi";
+            this.Examdate.FillWeight = 145F;
+            this.Examdate.HeaderText = "Ngày thi";
+            this.Examdate.MinimumWidth = 145;
+            this.Examdate.Name = "Examdate";
+            this.Examdate.ReadOnly = true;
+            this.Examdate.Width = 145;
             // 
-            // guna2HtmlLabel1
+            // Shift
             // 
-            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(10, 0);
-            this.guna2HtmlLabel1.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(183, 34);
-            this.guna2HtmlLabel1.TabIndex = 5;
-            this.guna2HtmlLabel1.Text = "Tìm kiếm lịch thi";
-            this.guna2HtmlLabel1.Click += new System.EventHandler(this.guna2HtmlLabel1_Click);
+            this.Shift.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Shift.DataPropertyName = "CaThi";
+            this.Shift.HeaderText = "Ca thi";
+            this.Shift.MinimumWidth = 100;
+            this.Shift.Name = "Shift";
+            this.Shift.ReadOnly = true;
+            // 
+            // Room
+            // 
+            this.Room.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Room.DataPropertyName = "PhongThi";
+            this.Room.HeaderText = "Phòng thi";
+            this.Room.MinimumWidth = 100;
+            this.Room.Name = "Room";
+            this.Room.ReadOnly = true;
+            // 
+            // type
+            // 
+            this.type.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.type.DataPropertyName = "LoaiDGNL";
+            this.type.FillWeight = 145F;
+            this.type.HeaderText = "Loai CC";
+            this.type.MinimumWidth = 145;
+            this.type.Name = "type";
+            this.type.ReadOnly = true;
+            this.type.Width = 145;
+            // 
+            // maxAmount
+            // 
+            this.maxAmount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.maxAmount.DataPropertyName = "SLTSToiDa";
+            this.maxAmount.FillWeight = 120F;
+            this.maxAmount.HeaderText = "SLTS tối đa";
+            this.maxAmount.MinimumWidth = 120;
+            this.maxAmount.Name = "maxAmount";
+            this.maxAmount.ReadOnly = true;
+            this.maxAmount.Width = 120;
+            // 
+            // CurrentAmout
+            // 
+            this.CurrentAmout.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.CurrentAmout.DataPropertyName = "SLTSHienTai";
+            this.CurrentAmout.FillWeight = 120F;
+            this.CurrentAmout.HeaderText = "SLTS hiện tại";
+            this.CurrentAmout.MinimumWidth = 120;
+            this.CurrentAmout.Name = "CurrentAmout";
+            this.CurrentAmout.ReadOnly = true;
+            this.CurrentAmout.Width = 120;
+            // 
+            // butSearch
+            // 
+            this.butSearch.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.butSearch.BorderRadius = 5;
+            this.butSearch.BorderThickness = 1;
+            this.butSearch.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.butSearch.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.butSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.butSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.butSearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(117)))), ((int)(((byte)(185)))));
+            this.butSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butSearch.ForeColor = System.Drawing.Color.White;
+            this.butSearch.Location = new System.Drawing.Point(302, 29);
+            this.butSearch.Name = "butSearch";
+            this.butSearch.Size = new System.Drawing.Size(88, 33);
+            this.butSearch.TabIndex = 61;
+            this.butSearch.Text = "Tra cứu ";
+            this.butSearch.Click += new System.EventHandler(this.butSearch_Click);
+            // 
+            // textSearch
+            // 
+            this.textSearch.BorderColor = System.Drawing.Color.DimGray;
+            this.textSearch.BorderRadius = 5;
+            this.textSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textSearch.DefaultText = "";
+            this.textSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.textSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.textSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.textSearch.ForeColor = System.Drawing.Color.Black;
+            this.textSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textSearch.Location = new System.Drawing.Point(25, 27);
+            this.textSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textSearch.Name = "textSearch";
+            this.textSearch.PlaceholderText = "Nhập thông tin  lịch thi để tìm kiếm";
+            this.textSearch.SelectedText = "";
+            this.textSearch.Size = new System.Drawing.Size(267, 39);
+            this.textSearch.TabIndex = 62;
             // 
             // guna2Panel2
             // 
-            this.guna2Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(190)))), ((int)(((byte)(230)))));
+            this.guna2Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
             this.guna2Panel2.BorderColor = System.Drawing.Color.Black;
             this.guna2Panel2.BorderThickness = 1;
             this.guna2Panel2.Controls.Add(this.btnExit);
@@ -248,10 +291,9 @@ namespace exam_registration_system.CommonForms
             this.guna2Panel2.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel2.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Padding = new System.Windows.Forms.Padding(19, 20, 19, 20);
-            this.guna2Panel2.Size = new System.Drawing.Size(1100, 68);
+            this.guna2Panel2.Padding = new System.Windows.Forms.Padding(15, 16, 15, 16);
+            this.guna2Panel2.Size = new System.Drawing.Size(881, 54);
             this.guna2Panel2.TabIndex = 1;
-            this.guna2Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel2_Paint);
             // 
             // btnExit
             // 
@@ -264,12 +306,13 @@ namespace exam_registration_system.CommonForms
             this.btnExit.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.ForeColor = System.Drawing.Color.White;
             this.btnExit.ImageSize = new System.Drawing.Size(50, 50);
-            this.btnExit.Location = new System.Drawing.Point(1092, 4);
+            this.btnExit.Location = new System.Drawing.Point(844, 0);
             this.btnExit.Margin = new System.Windows.Forms.Padding(2);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(46, 38);
+            this.btnExit.Size = new System.Drawing.Size(37, 30);
             this.btnExit.TabIndex = 3;
             this.btnExit.Text = "✕";
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // labelDetailReg
             // 
@@ -277,235 +320,17 @@ namespace exam_registration_system.CommonForms
             this.labelDetailReg.BackColor = System.Drawing.Color.Transparent;
             this.labelDetailReg.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDetailReg.ForeColor = System.Drawing.Color.White;
-            this.labelDetailReg.Location = new System.Drawing.Point(431, 15);
-            this.labelDetailReg.Margin = new System.Windows.Forms.Padding(4);
+            this.labelDetailReg.Location = new System.Drawing.Point(345, 12);
             this.labelDetailReg.Name = "labelDetailReg";
-            this.labelDetailReg.Size = new System.Drawing.Size(236, 45);
+            this.labelDetailReg.Size = new System.Drawing.Size(189, 36);
             this.labelDetailReg.TabIndex = 1;
             this.labelDetailReg.Text = "Danh sách lịch thi";
             // 
-            // dgvExamSchedule
-            // 
-            this.dgvExamSchedule.ColumnHeadersHeight = 29;
-            this.dgvExamSchedule.Location = new System.Drawing.Point(0, 0);
-            this.dgvExamSchedule.Name = "dgvExamSchedule";
-            this.dgvExamSchedule.RowHeadersWidth = 51;
-            this.dgvExamSchedule.Size = new System.Drawing.Size(240, 150);
-            this.dgvExamSchedule.TabIndex = 0;
-            // 
-            // textSearch
-            // 
-            this.textSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textSearch.DefaultText = "";
-            this.textSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.textSearch.Location = new System.Drawing.Point(0, 0);
-            this.textSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textSearch.Name = "textSearch";
-            this.textSearch.PlaceholderText = "";
-            this.textSearch.SelectedText = "";
-            this.textSearch.Size = new System.Drawing.Size(229, 48);
-            this.textSearch.TabIndex = 0;
-            // 
-            // butSearch
-            // 
-            this.butSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.butSearch.ForeColor = System.Drawing.Color.White;
-            this.butSearch.Location = new System.Drawing.Point(0, 0);
-            this.butSearch.Name = "butSearch";
-            this.butSearch.Size = new System.Drawing.Size(180, 45);
-            this.butSearch.TabIndex = 0;
-            // 
-            // butSelect
-            // 
-            this.butSelect.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.butSelect.ForeColor = System.Drawing.Color.White;
-            this.butSelect.Location = new System.Drawing.Point(0, 0);
-            this.butSelect.Name = "butSelect";
-            this.butSelect.Size = new System.Drawing.Size(180, 45);
-            this.butSelect.TabIndex = 0;
-            // 
-            // guna2ComboBox1
-            // 
-            this.guna2ComboBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ComboBox1.BorderRadius = 8;
-            this.guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.guna2ComboBox1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.guna2ComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.guna2ComboBox1.ItemHeight = 30;
-            this.guna2ComboBox1.Items.AddRange(new object[] {
-            "Ngoại ngữ",
-            "Tin học"});
-            this.guna2ComboBox1.Location = new System.Drawing.Point(770, 40);
-            this.guna2ComboBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2ComboBox1.Name = "guna2ComboBox1";
-            this.guna2ComboBox1.Size = new System.Drawing.Size(199, 36);
-            this.guna2ComboBox1.TabIndex = 67;
-            // 
-            // cbxTypeCer
-            // 
-            this.cbxTypeCer.BackColor = System.Drawing.Color.Transparent;
-            this.cbxTypeCer.BorderRadius = 8;
-            this.cbxTypeCer.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbxTypeCer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxTypeCer.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbxTypeCer.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbxTypeCer.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbxTypeCer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cbxTypeCer.ItemHeight = 30;
-            this.cbxTypeCer.Items.AddRange(new object[] {
-            "Ngoại ngữ",
-            "Tin học"});
-            this.cbxTypeCer.Location = new System.Drawing.Point(454, 40);
-            this.cbxTypeCer.Margin = new System.Windows.Forms.Padding(4);
-            this.cbxTypeCer.Name = "cbxTypeCer";
-            this.cbxTypeCer.Size = new System.Drawing.Size(187, 36);
-            this.cbxTypeCer.TabIndex = 66;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.btnSearch.BorderRadius = 12;
-            this.btnSearch.BorderThickness = 1;
-            this.btnSearch.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnSearch.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.btnSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(977, 40);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(4);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(83, 36);
-            this.btnSearch.TabIndex = 64;
-            this.btnSearch.Text = "Lọc";
-            // 
-            // dateFilter
-            // 
-            this.dateFilter.Animated = true;
-            this.dateFilter.AutoRoundedCorners = true;
-            this.dateFilter.Checked = true;
-            this.dateFilter.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.dateFilter.ForeColor = System.Drawing.Color.Cornsilk;
-            this.dateFilter.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dateFilter.Location = new System.Drawing.Point(118, 40);
-            this.dateFilter.Margin = new System.Windows.Forms.Padding(2);
-            this.dateFilter.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dateFilter.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dateFilter.Name = "dateFilter";
-            this.dateFilter.Size = new System.Drawing.Size(221, 36);
-            this.dateFilter.TabIndex = 61;
-            this.dateFilter.Value = new System.DateTime(2025, 6, 27, 14, 26, 39, 971);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.label1.Location = new System.Drawing.Point(4, 38);
-            this.label1.Margin = new System.Windows.Forms.Padding(0, 0, 48, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 32);
-            this.label1.TabIndex = 62;
-            this.label1.Text = "Ngày thi";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.label2.Location = new System.Drawing.Point(357, 38);
-            this.label2.Margin = new System.Windows.Forms.Padding(0, 0, 48, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(99, 32);
-            this.label2.TabIndex = 63;
-            this.label2.Text = "Môn thi";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.label3.Location = new System.Drawing.Point(663, 38);
-            this.label3.Margin = new System.Windows.Forms.Padding(0, 0, 48, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(110, 32);
-            this.label3.TabIndex = 65;
-            this.label3.Text = "Địa điểm";
-            // 
-            // stt
-            // 
-            this.stt.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.stt.FillWeight = 50F;
-            this.stt.HeaderText = "Mã LT";
-            this.stt.MinimumWidth = 50;
-            this.stt.Name = "stt";
-            this.stt.ReadOnly = true;
-            this.stt.Width = 130;
-            // 
-            // FullName
-            // 
-            this.FullName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.FullName.FillWeight = 140F;
-            this.FullName.HeaderText = "Ngày thi";
-            this.FullName.MinimumWidth = 140;
-            this.FullName.Name = "FullName";
-            this.FullName.ReadOnly = true;
-            this.FullName.Width = 170;
-            // 
-            // sex
-            // 
-            this.sex.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.sex.HeaderText = "ca thi";
-            this.sex.MinimumWidth = 100;
-            this.sex.Name = "sex";
-            this.sex.ReadOnly = true;
-            this.sex.Width = 125;
-            // 
-            // birth
-            // 
-            this.birth.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.birth.FillWeight = 120F;
-            this.birth.HeaderText = "phòng";
-            this.birth.MinimumWidth = 120;
-            this.birth.Name = "birth";
-            this.birth.ReadOnly = true;
-            this.birth.Width = 120;
-            // 
-            // cccd
-            // 
-            this.cccd.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.cccd.HeaderText = "môn thi";
-            this.cccd.MinimumWidth = 100;
-            this.cccd.Name = "cccd";
-            this.cccd.ReadOnly = true;
-            this.cccd.Width = 150;
-            // 
-            // sdt
-            // 
-            this.sdt.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.sdt.FillWeight = 130F;
-            this.sdt.HeaderText = "SL tối đa";
-            this.sdt.MinimumWidth = 130;
-            this.sdt.Name = "sdt";
-            this.sdt.ReadOnly = true;
-            this.sdt.Width = 130;
-            // 
-            // email
-            // 
-            this.email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.email.FillWeight = 120F;
-            this.email.HeaderText = "SL hiện tại";
-            this.email.MinimumWidth = 120;
-            this.email.Name = "email";
-            this.email.ReadOnly = true;
-            this.email.Width = 120;
-            // 
             // ViewExamSchedule
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1100, 721);
+            this.ClientSize = new System.Drawing.Size(881, 545);
             this.Controls.Add(this.guna2Panel3);
             this.Controls.Add(this.guna2Panel2);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -516,13 +341,8 @@ namespace exam_registration_system.CommonForms
             this.Text = "ViewExamSchedule";
             this.Load += new System.EventHandler(this.ViewExamSchedule_Load);
             this.guna2Panel3.ResumeLayout(false);
-            this.guna2Panel4.ResumeLayout(false);
-            this.guna2Panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ExamScheduleList)).EndInit();
-            this.guna2Panel1.ResumeLayout(false);
-            this.guna2Panel1.PerformLayout();
-            this.guna2Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvExamSchedule)).EndInit();
+            this.guna2Panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -530,30 +350,18 @@ namespace exam_registration_system.CommonForms
         #endregion
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
         private Guna.UI2.WinForms.Guna2HtmlLabel labelDetailReg;
         private Guna.UI2.WinForms.Guna2Button btnExit;
-        private Guna.UI2.WinForms.Guna2DataGridView ExamScheduleList;
-        private System.Windows.Forms.DataGridView dgvExamSchedule;
-        private Guna.UI2.WinForms.Guna2TextBox textSearch;
         private Guna.UI2.WinForms.Guna2Button butSearch;
+        private Guna.UI2.WinForms.Guna2TextBox textSearch;
+        private Guna.UI2.WinForms.Guna2DataGridView dgvExamSchedule;
         private Guna.UI2.WinForms.Guna2Button butSelect;
-        private Guna.UI2.WinForms.Guna2HtmlLabel labelInforHeader;
-        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
-        private Guna.UI2.WinForms.Guna2ComboBox cbxTypeCer;
-        private Guna.UI2.WinForms.Guna2Button btnSearch;
-        private Guna.UI2.WinForms.Guna2DateTimePicker dateFilter;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn stt;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FullName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sex;
-        private System.Windows.Forms.DataGridViewTextBoxColumn birth;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cccd;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sdt;
-        private System.Windows.Forms.DataGridViewTextBoxColumn email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn code;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Examdate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Shift;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Room;
+        private System.Windows.Forms.DataGridViewTextBoxColumn type;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maxAmount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CurrentAmout;
     }
 }
