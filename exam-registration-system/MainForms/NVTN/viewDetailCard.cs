@@ -18,14 +18,14 @@ namespace exam_registration_system.MainForms.NVTN
     public partial class viewDetailCard : Form
     {
         private string MaPDK;
-        private string TrangThaiXuatPDT;
+        private string TrangThai;
         private releaseCard parentForm;
 
-        public viewDetailCard(string maPDK, string trangThaiXuatPDT, releaseCard parent = null)
+        public viewDetailCard(string maPDK, string trangThai, releaseCard parent = null)
         {
             InitializeComponent();
             MaPDK = maPDK;
-            TrangThaiXuatPDT = trangThaiXuatPDT;
+            TrangThai = trangThai;
             parentForm = parent;
         }
 
@@ -53,7 +53,7 @@ namespace exam_registration_system.MainForms.NVTN
             
 
             // Gọi stored procedure dựa trên TrangThaiXuatPDT
-            if (TrangThaiXuatPDT == "Đã xuất PDT")
+            if (TrangThai == "Đã xuất PDT")
             {
                 LoadPhieuDuThi();
                 lbMaPDT.Visible = true;
@@ -62,7 +62,16 @@ namespace exam_registration_system.MainForms.NVTN
                 tbID.Visible = true;
                 btnIssueCard.Visible = false;
             }
-            else if (TrangThaiXuatPDT == "Chưa xuất PDT")
+            else if ((TrangThai == "Chưa thanh toán") || (TrangThai == "Đã huỷ"))
+            {
+                LoadPhieuDangKy();
+                lbMaPDT.Visible = false;
+                txtboxMaPDT.Visible = false;
+                lbID.Visible = false;
+                tbID.Visible = false;
+                btnIssueCard.Visible = false;
+            }
+            else if (TrangThai != "Đã thanh toán")
             {
                 LoadPhieuDangKy();
                 lbMaPDT.Visible = false;
@@ -73,17 +82,17 @@ namespace exam_registration_system.MainForms.NVTN
             }
             else
             {
-                MessageBox.Show("Trạng thái Xuất PDT không hợp lệ.", "Lỗi",
+                MessageBox.Show("Trạng thái không hợp lệ.", "Lỗi",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.Close();
             }
         }
 
-        private void LoadPhieuDuThi()
+        public void LoadPhieuDuThi()
         {
             try
             {
-                DataTable dt = viewDetailCardBS.GetPhieuDuThi(MaPDK);
+                DataTable dt = PhieuDuThiService.GetPhieuDuThi(MaPDK);
                 if (dt.Rows.Count > 0)
                 {
                     DataRow row = dt.Rows[0];
@@ -116,11 +125,11 @@ namespace exam_registration_system.MainForms.NVTN
             }
         }
 
-        private void LoadPhieuDangKy()
+        public void LoadPhieuDangKy()
         {
             try
             {
-                DataTable dt = viewDetailCardBS.GetPhieuDangKy(MaPDK);
+                DataTable dt = PhieuDangKyService.GetPhieuDangKy(MaPDK);
                 if (dt.Rows.Count > 0)
                 {
                     DataRow row = dt.Rows[0];
@@ -155,10 +164,10 @@ namespace exam_registration_system.MainForms.NVTN
         {
             try
             {
-                bool success = viewDetailCardBS.IssuePhieuDuThi(MaPDK);
+                bool success = PhieuDuThiService.IssuePhieuDuThi(MaPDK);
                 if (success)
                 {
-                    TrangThaiXuatPDT = "Đã xuất PDT";
+                    TrangThai = "Đã xuất PDT";
                     LoadPhieuDuThi();
                     lbMaPDT.Visible = true;
                     txtboxMaPDT.Visible = true;

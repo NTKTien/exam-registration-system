@@ -23,9 +23,23 @@ namespace exam_registration_system.MainForms.NVTN
         public releaseCard()
         {
             InitializeComponent();
+            InitializeComboBoxes();
             SetupDataGridView();
             LoadData();
 
+        }
+
+        private void InitializeComboBoxes()
+        {
+            // Thêm các giá trị cho cbxTypeCer (LoaiCC)
+            cbxTypeCer.Items.Clear();
+            cbxTypeCer.Items.AddRange(new string[] { "Tin học", "Ngoại ngữ" }); // Thay bằng danh sách thực tế từ cơ sở dữ liệu
+            cbxTypeCer.SelectedIndex = -1; // Không chọn mặc định
+
+            // Thêm các giá trị cho cbbStatus (TrangThai)
+            cbbStatus.Items.Clear();
+            cbbStatus.Items.AddRange(new string[] { "Chưa thanh toán", "Đã hủy", "Đã thanh toán", "Đã xuất PDT" }); // Thay bằng danh sách thực tế
+            cbbStatus.SelectedIndex = -1; // Không chọn mặc định
         }
 
         private void SetupDataGridView()
@@ -102,18 +116,24 @@ namespace exam_registration_system.MainForms.NVTN
                 DataGridViewRegList.Columns["NgayThi"].HeaderText = "Ngày Thi";
             if (DataGridViewRegList.Columns["PhongThi"] != null)
                 DataGridViewRegList.Columns["PhongThi"].HeaderText = "Phòng Thi";
-            if (DataGridViewRegList.Columns["TrangThaiThanhToan"] != null)
-                DataGridViewRegList.Columns["TrangThaiThanhToan"].HeaderText = "Thanh Toán";
-            if (DataGridViewRegList.Columns["TrangThaiXuatPDT"] != null)
-                DataGridViewRegList.Columns["TrangThaiXuatPDT"].HeaderText = "Xuất PDT";
+            if (DataGridViewRegList.Columns["TrangThai"] != null)
+                DataGridViewRegList.Columns["TrangThai"].HeaderText = "Trạng thái";
+            if (DataGridViewRegList.Columns["NgayLap"] != null)
+                DataGridViewRegList.Columns["NgayLap"].Visible = false;
         }
 
         public void LoadData()
         {
             try
             {
-                DataTable dt = ReleaseCardBS.GetAllRegistrations();
+                DataTable dt = PhieuDangKyService.GetAllReg();
                 DataGridViewRegList.DataSource = dt;
+                
+                if (DataGridViewRegList.Columns["NgayLap"] != null)
+                {
+                    DataGridViewRegList.Columns["NgayLap"].Visible = false;
+                }
+
                 SetColumnHeaders();
                 DataGridViewRegList.ColumnHeadersVisible = true;
                 AdjustDataGridViewSize();
@@ -133,10 +153,10 @@ namespace exam_registration_system.MainForms.NVTN
             {
                 DataGridViewRow row = DataGridViewRegList.Rows[e.RowIndex];
                 string maPDK = row.Cells["MaPDK"].Value?.ToString();
-                string trangThaiXuatPDT = row.Cells["TrangThaiXuatPDT"].Value?.ToString();
-                if (!string.IsNullOrEmpty(maPDK) && !string.IsNullOrEmpty(trangThaiXuatPDT))
+                string trangThai = row.Cells["TrangThai"].Value?.ToString();
+                if (!string.IsNullOrEmpty(maPDK) && !string.IsNullOrEmpty(trangThai))
                 {
-                    viewDetailCard detailForm = new viewDetailCard(maPDK, trangThaiXuatPDT, this);
+                    viewDetailCard detailForm = new viewDetailCard(maPDK, trangThai, this);
                     detailForm.ShowDialog();
                 }
                 else
@@ -181,10 +201,12 @@ namespace exam_registration_system.MainForms.NVTN
         {
             try
             {
-                DataTable dt = ReleaseCardBS.FilterRegistrations(
-                    tbID.Text,
-                    cbxTypeCer.SelectedItem?.ToString(),
-                    cbbStatus.SelectedItem?.ToString()
+
+                DataTable dt = PhieuDangKyService.FilterRegistrations(
+                   tbID.Text.Trim(),
+                   cbxTypeCer.SelectedItem?.ToString(),
+                   cbbStatus.SelectedItem?.ToString()
+
                 );
                 if (dt.Rows.Count == 0)
                 {
@@ -197,12 +219,17 @@ namespace exam_registration_system.MainForms.NVTN
                 SetColumnHeaders();
                 DataGridViewRegList.ColumnHeadersVisible = true;
                 AdjustDataGridViewSize();
+
+                cbxTypeCer.SelectedIndex = -1;
+                cbbStatus.SelectedIndex = -1;
+                tbID.Clear();
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error filtering data: {ex.Message}", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            
         }
 
         private void labelHeader_Click(object sender, EventArgs e)
@@ -212,7 +239,7 @@ namespace exam_registration_system.MainForms.NVTN
 
         private void releaseCard_Load(object sender, EventArgs e)
         {
-
+            LoadData();
         }
 
         private void btnReload_Click(object sender, EventArgs e)

@@ -6,16 +6,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
 namespace exam_registration_system.Business
 {
-    public class ReleaseCardBS
+    public class PhieuDuThiService
     {
-        public static DataTable GetAllRegistrations()
+        public static DataTable GetPhieuDuThi(string maPDK)
         {
             try
             {
-                return releaseCardDAO.GetAllRegistrations();
+                return PhieuDuThiDAO.GetPhieuDuThi(maPDK);
             }
             catch (Exception ex)
             {
@@ -23,11 +22,13 @@ namespace exam_registration_system.Business
             }
         }
 
-        public static DataTable FilterRegistrations(string maPDK, string loaiKyThi, string trangThaiXuatPDT)
+
+
+        public static bool IssuePhieuDuThi(string maPDK)
         {
             try
             {
-                return releaseCardDAO.FilterRegistrations(maPDK, loaiKyThi, trangThaiXuatPDT);
+                return PhieuDuThiDAO.IssuePhieuDuThi(maPDK);
             }
             catch (Exception ex)
             {

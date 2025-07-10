@@ -35,12 +35,12 @@
             this.btnExportSheet = new Guna.UI2.WinForms.Guna2Button();
             this.btnSendResult = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnConf = new Guna.UI2.WinForms.Guna2Button();
             this.panelHeader = new Guna.UI2.WinForms.Guna2Panel();
             this.labelHeader = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.lbTypeCer = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.cbxTypeCer = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.btnConf = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCandidates)).BeginInit();
             this.guna2Panel2.SuspendLayout();
             this.panelHeader.SuspendLayout();
@@ -71,7 +71,7 @@
             this.dataGridViewCandidates.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewCandidates.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dataGridViewCandidates.Location = new System.Drawing.Point(23, 22);
-            this.dataGridViewCandidates.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridViewCandidates.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridViewCandidates.Name = "dataGridViewCandidates";
             this.dataGridViewCandidates.RowHeadersVisible = false;
             this.dataGridViewCandidates.RowHeadersWidth = 62;
@@ -113,7 +113,7 @@
             this.btnExportSheet.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnExportSheet.ForeColor = System.Drawing.Color.White;
             this.btnExportSheet.Location = new System.Drawing.Point(268, 597);
-            this.btnExportSheet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnExportSheet.Margin = new System.Windows.Forms.Padding(4);
             this.btnExportSheet.Name = "btnExportSheet";
             this.btnExportSheet.Size = new System.Drawing.Size(250, 51);
             this.btnExportSheet.TabIndex = 10;
@@ -132,7 +132,7 @@
             this.btnSendResult.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnSendResult.ForeColor = System.Drawing.Color.White;
             this.btnSendResult.Location = new System.Drawing.Point(566, 597);
-            this.btnSendResult.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSendResult.Margin = new System.Windows.Forms.Padding(4);
             this.btnSendResult.Name = "btnSendResult";
             this.btnSendResult.Size = new System.Drawing.Size(281, 51);
             this.btnSendResult.TabIndex = 11;
@@ -149,13 +149,32 @@
             this.guna2Panel2.Controls.Add(this.dataGridViewCandidates);
             this.guna2Panel2.FillColor = System.Drawing.Color.WhiteSmoke;
             this.guna2Panel2.Location = new System.Drawing.Point(50, 226);
-            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.ShadowDecoration.BorderRadius = 15;
             this.guna2Panel2.ShadowDecoration.Depth = 10;
             this.guna2Panel2.ShadowDecoration.Enabled = true;
             this.guna2Panel2.Size = new System.Drawing.Size(797, 339);
             this.guna2Panel2.TabIndex = 12;
+            // 
+            // btnConf
+            // 
+            this.btnConf.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.btnConf.BorderRadius = 5;
+            this.btnConf.BorderThickness = 1;
+            this.btnConf.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnConf.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnConf.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnConf.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnConf.FillColor = System.Drawing.Color.Green;
+            this.btnConf.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnConf.ForeColor = System.Drawing.Color.White;
+            this.btnConf.Location = new System.Drawing.Point(593, 266);
+            this.btnConf.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnConf.Name = "btnConf";
+            this.btnConf.Size = new System.Drawing.Size(178, 51);
+            this.btnConf.TabIndex = 19;
+            this.btnConf.Text = "Xác nhận";
             // 
             // panelHeader
             // 
@@ -175,9 +194,9 @@
             this.labelHeader.BackColor = System.Drawing.Color.Transparent;
             this.labelHeader.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
             this.labelHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.labelHeader.Location = new System.Drawing.Point(158, 0);
+            this.labelHeader.Location = new System.Drawing.Point(268, 3);
             this.labelHeader.Name = "labelHeader";
-            this.labelHeader.Size = new System.Drawing.Size(574, 52);
+            this.labelHeader.Size = new System.Drawing.Size(393, 52);
             this.labelHeader.TabIndex = 1;
             this.labelHeader.Text = "Ghi nhận thông tin chứng chỉ";
             // 
@@ -207,7 +226,7 @@
             this.lbTypeCer.Location = new System.Drawing.Point(23, 32);
             this.lbTypeCer.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lbTypeCer.Name = "lbTypeCer";
-            this.lbTypeCer.Size = new System.Drawing.Size(146, 30);
+            this.lbTypeCer.Size = new System.Drawing.Size(98, 19);
             this.lbTypeCer.TabIndex = 8;
             this.lbTypeCer.Text = "Loại chứng chỉ:";
             // 
@@ -230,28 +249,10 @@
             this.cbxTypeCer.Size = new System.Drawing.Size(208, 36);
             this.cbxTypeCer.TabIndex = 9;
             // 
-            // btnConf
-            // 
-            this.btnConf.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.btnConf.BorderRadius = 5;
-            this.btnConf.BorderThickness = 1;
-            this.btnConf.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnConf.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnConf.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnConf.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnConf.FillColor = System.Drawing.Color.Green;
-            this.btnConf.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btnConf.ForeColor = System.Drawing.Color.White;
-            this.btnConf.Location = new System.Drawing.Point(593, 266);
-            this.btnConf.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnConf.Name = "btnConf";
-            this.btnConf.Size = new System.Drawing.Size(178, 51);
-            this.btnConf.TabIndex = 19;
-            this.btnConf.Text = "Xác nhận";
-            // 
             // recordCertificateInfoForm
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(897, 672);
             this.Controls.Add(this.btnSendResult);
             this.Controls.Add(this.guna2Panel1);
@@ -260,7 +261,7 @@
             this.Controls.Add(this.guna2Panel2);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "recordCertificateInfoForm";
             this.Text = "recordCertificateInfoForm";
             this.Load += new System.EventHandler(this.recordCertificateInfoForm_Load);
