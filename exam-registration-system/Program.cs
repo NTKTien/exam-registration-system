@@ -22,7 +22,7 @@ namespace exam_registration_system
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             SqlServerHelper.SetConnectionWindowsAuth();
-            Application.Run(new HomeNVKTForm());
+            Application.Run(new HomeNVTNForm());
             Console.WriteLine(typeof(XFontStyle).FullName);
         }
     }
