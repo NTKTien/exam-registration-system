@@ -106,6 +106,11 @@ namespace exam_registration_system.CommonForms
             }
 
         }
+
+        private void guna2HtmlLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
     
 }

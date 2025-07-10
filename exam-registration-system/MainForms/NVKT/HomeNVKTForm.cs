@@ -83,7 +83,7 @@ namespace exam_registration_system.MainForms.NVKT
         private void butExtend_Click(object sender, EventArgs e)
         {
             panelContent.Controls.Clear();
-            CreateExtensionForm frm = new CreateExtensionForm();
+            viewListExtensionRequest frm = new viewListExtensionRequest();
             frm.TopLevel = false;
             frm.FormBorderStyle = FormBorderStyle.None;
             frm.Dock = DockStyle.Fill;
