@@ -129,5 +129,10 @@ namespace exam_registration_system.MainForms.NVTN
                 tbCCCD.Focus(); // đưa con trỏ về lại ô này
             }
         }
+
+        private void panelContent_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

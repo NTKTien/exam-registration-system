@@ -1,4 +1,6 @@
-﻿using System;
+﻿using exam_registration_system.Business;
+using exam_registration_system.CommonForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using exam_registration_system.Utils;
+using System.Text.RegularExpressions;
 
 namespace exam_registration_system.MainForms.NVTN
 {
@@ -80,41 +83,29 @@ namespace exam_registration_system.MainForms.NVTN
         {
             try
             {
-                using (SqlConnection conn = new SqlConnection(GlobalInfo.ConnectionString))
+                DataTable dt = viewDetailCardBS.GetPhieuDuThi(MaPDK);
+                if (dt.Rows.Count > 0)
                 {
-                    conn.Open();
-                    using (SqlCommand cmd = new SqlCommand("XemPhieuDuThi", conn))
+                    DataRow row = dt.Rows[0];
+                    txtboxMaPDT.Text = row["MaPDT"]?.ToString();
+                    tbID.Text = row["SBD"]?.ToString();
+                    tbName.Text = row["TenHienThi"]?.ToString();
+                    tbType.Text = row["Loaidgnl"]?.ToString();
+                    tbLocation.Text = row["DiaDiem"]?.ToString();
+                    if (DateTime.TryParse(row["ThoiGian"]?.ToString(), out DateTime thoiGian))
                     {
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@MaPDK", MaPDK);
-
-                        using (SqlDataReader reader = cmd.ExecuteReader())
-                        {
-                            // Kiểm tra dữ liệu
-                            if (reader.Read())
-                            {
-                                txtboxMaPDT.Text = reader["MaPDT"]?.ToString();
-                                tbID.Text = reader["SBD"]?.ToString();
-                                tbName.Text = reader["TenHienThi"]?.ToString();
-                                tbType.Text = reader["Loaidgnl"]?.ToString();
-                                tbLocation.Text = reader["DiaDiem"]?.ToString();
-                                if (DateTime.TryParse(reader["ThoiGian"]?.ToString(), out DateTime thoiGian))
-                                {
-                                    DateTimePickerDate.Value = thoiGian;
-                                }
-                                else
-                                {
-                                    DateTimePickerDate.Value = DateTime.Now;
-                                }
-                            }
-                            else
-                            {
-                                MessageBox.Show("Không tìm thấy dữ liệu cho Phiếu Dự Thi.", "Cảnh báo",
-                                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                this.Close();
-                            }
-                        }
+                        DateTimePickerDate.Value = thoiGian;
                     }
+                    else
+                    {
+                        DateTimePickerDate.Value = DateTime.Now;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Không tìm thấy dữ liệu cho Phiếu Dự Thi.", "Cảnh báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    this.Close();
                 }
             }
             catch (Exception ex)
@@ -129,39 +120,27 @@ namespace exam_registration_system.MainForms.NVTN
         {
             try
             {
-                using (SqlConnection conn = new SqlConnection(GlobalInfo.ConnectionString))
+                DataTable dt = viewDetailCardBS.GetPhieuDangKy(MaPDK);
+                if (dt.Rows.Count > 0)
                 {
-                    conn.Open();
-                    using (SqlCommand cmd = new SqlCommand("XemPhieuDangKy", conn))
+                    DataRow row = dt.Rows[0];
+                    tbName.Text = row["TenHienThi"]?.ToString();
+                    tbType.Text = row["Loaidgnl"]?.ToString();
+                    tbLocation.Text = row["DiaDiem"]?.ToString();
+                    if (DateTime.TryParse(row["Ngaythi"]?.ToString(), out DateTime ngayThi))
                     {
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@MaPDK", MaPDK);
-
-                        using (SqlDataReader reader = cmd.ExecuteReader())
-                        {
-                            // Kiểm tra dữ liệu
-                            if (reader.Read())
-                            {
-                                tbName.Text = reader["TenHienThi"]?.ToString();
-                                tbType.Text = reader["Loaidgnl"]?.ToString();
-                                tbLocation.Text = reader["DiaDiem"]?.ToString();
-                                if (DateTime.TryParse(reader["Ngaythi"]?.ToString(), out DateTime ngayThi))
-                                {
-                                    DateTimePickerDate.Value = ngayThi;
-                                }
-                                else
-                                {
-                                    DateTimePickerDate.Value = DateTime.Now;
-                                }
-                            }
-                            else
-                            {
-                                MessageBox.Show("Không tìm thấy dữ liệu cho Phiếu Đăng Ký.", "Cảnh báo",
-                                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                this.Close();
-                            }
-                        }
+                        DateTimePickerDate.Value = ngayThi;
                     }
+                    else
+                    {
+                        DateTimePickerDate.Value = DateTime.Now;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Không tìm thấy dữ liệu cho Phiếu Đăng Ký.", "Cảnh báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    this.Close();
                 }
             }
             catch (Exception ex)
@@ -176,30 +155,18 @@ namespace exam_registration_system.MainForms.NVTN
         {
             try
             {
-                using (SqlConnection conn = new SqlConnection(GlobalInfo.ConnectionString))
+                bool success = viewDetailCardBS.IssuePhieuDuThi(MaPDK);
+                if (success)
                 {
-                    conn.Open();
-                    using (SqlCommand cmd = new SqlCommand("XuatPhieuDuThi", conn))
-                    {
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@MaPDK", MaPDK);
-
-                        // Thực thi stored procedure
-                        cmd.ExecuteNonQuery();
-
-                        // Cập nhật trạng thái và tải lại dữ liệu
-                        TrangThaiXuatPDT = "Đã xuất PDT";
-                        LoadPhieuDuThi();
-                        lbMaPDT.Visible = true;
-                        txtboxMaPDT.Visible = true;
-                        lbID.Visible = true;
-                        tbID.Visible = true;
-                        btnIssueCard.Visible = false;
-
-                        // Hiển thị thông báo thành công
-                        MessageBox.Show("Phát hành Phiếu Dự Thi thành công!", "Thành công",
-                            MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
+                    TrangThaiXuatPDT = "Đã xuất PDT";
+                    LoadPhieuDuThi();
+                    lbMaPDT.Visible = true;
+                    txtboxMaPDT.Visible = true;
+                    lbID.Visible = true;
+                    tbID.Visible = true;
+                    btnIssueCard.Visible = false;
+                    MessageBox.Show("Phát hành Phiếu Dự Thi thành công!", "Thành công",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)

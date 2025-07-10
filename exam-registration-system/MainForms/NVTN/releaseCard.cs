@@ -1,4 +1,6 @@
-﻿using System;
+﻿using exam_registration_system.Business;
+using exam_registration_system.CommonForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,6 +12,7 @@ using System.Threading.Tasks;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
 using exam_registration_system.Utils;
+using System.Text.RegularExpressions;
 
 
 namespace exam_registration_system.MainForms.NVTN
@@ -109,34 +112,11 @@ namespace exam_registration_system.MainForms.NVTN
         {
             try
             {
-
-                using (SqlConnection conn = new SqlConnection(GlobalInfo.ConnectionString))
-                {
-                    conn.Open();
-                    using (SqlCommand cmd = new SqlCommand("XemTatCaPhieuDangKy", conn))
-                    {
-                        cmd.CommandType = CommandType.StoredProcedure;
-
-                        // Create a DataTable to hold the results
-                        DataTable dt = new DataTable();
-                        using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
-                        {
-                            adapter.Fill(dt);
-                        }
-
-                        // Gán DataTable vào DataGridView
-                        DataGridViewRegList.DataSource = dt;
-
-                        // Đặt tên hiển thị cho các cột
-                        SetColumnHeaders();
-
-                        // Đảm bảo tiêu đề cột hiển thị
-                        DataGridViewRegList.ColumnHeadersVisible = true;
-
-                        // Điều chỉnh kích thước sau khi lọc dữ liệu
-                        AdjustDataGridViewSize();
-                    }
-                }
+                DataTable dt = ReleaseCardBS.GetAllRegistrations();
+                DataGridViewRegList.DataSource = dt;
+                SetColumnHeaders();
+                DataGridViewRegList.ColumnHeadersVisible = true;
+                AdjustDataGridViewSize();
             }
             catch (Exception ex)
             {
@@ -149,19 +129,13 @@ namespace exam_registration_system.MainForms.NVTN
 
         private void DataGridViewCardList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Kiểm tra xem có click vào hàng hợp lệ không
             if (e.RowIndex >= 0)
             {
-                // Lấy hàng được chọn
                 DataGridViewRow row = DataGridViewRegList.Rows[e.RowIndex];
-
-                // Lấy giá trị MaPDK và TrangThaiXuatPDT
                 string maPDK = row.Cells["MaPDK"].Value?.ToString();
                 string trangThaiXuatPDT = row.Cells["TrangThaiXuatPDT"].Value?.ToString();
-
                 if (!string.IsNullOrEmpty(maPDK) && !string.IsNullOrEmpty(trangThaiXuatPDT))
                 {
-                    // Mở form viewDetailCard và truyền MaPDK, TrangThaiXuatPDT
                     viewDetailCard detailForm = new viewDetailCard(maPDK, trangThaiXuatPDT, this);
                     detailForm.ShowDialog();
                 }
@@ -207,46 +181,22 @@ namespace exam_registration_system.MainForms.NVTN
         {
             try
             {
-                using (SqlConnection conn = new SqlConnection(GlobalInfo.ConnectionString))
+                DataTable dt = ReleaseCardBS.FilterRegistrations(
+                    tbID.Text,
+                    cbxTypeCer.SelectedItem?.ToString(),
+                    cbbStatus.SelectedItem?.ToString()
+                );
+                if (dt.Rows.Count == 0)
                 {
-                    conn.Open();
-                    using (SqlCommand cmd = new SqlCommand("LocPhieuDangKy", conn))
-                    {
-                        cmd.CommandType = CommandType.StoredProcedure;
-
-                        // Add parameters (NULL if empty or not selected)
-                        cmd.Parameters.AddWithValue("@MaPDK", string.IsNullOrWhiteSpace(tbID.Text) ? (object)DBNull.Value : (object)tbID.Text);
-                        cmd.Parameters.AddWithValue("@LoaiKyThi", cbxTypeCer.SelectedItem == null ? (object)DBNull.Value : (object)cbxTypeCer.SelectedItem.ToString());
-                        cmd.Parameters.AddWithValue("@TrangThaiXuatPDT", cbbStatus.SelectedItem == null ? (object)DBNull.Value : (object)cbbStatus.SelectedItem.ToString());
-                        // Create a DataTable to hold the results
-                        DataTable dt = new DataTable();
-                        using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
-                        {
-                            adapter.Fill(dt);
-                        }
-
-                        // Kiểm tra nếu không có dữ liệu
-                        if (dt.Rows.Count == 0)
-                        {
-                            MessageBox.Show("KHÔNG CÓ DỮ LIỆU NÀO THOẢ MÃN", "Thông báo",
-                                MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            DataGridViewRegList.DataSource = null; // Xóa dữ liệu cũ trong DataGridView
-                            return;
-                        }
-
-                        // Gán DataTable vào DataGridView
-                        DataGridViewRegList.DataSource = dt;
-
-                        // Đặt tên hiển thị cho các cột
-                        SetColumnHeaders();
-
-                        // Đảm bảo tiêu đề cột hiển thị
-                        DataGridViewRegList.ColumnHeadersVisible = true;
-
-                        // Điều chỉnh kích thước sau khi lọc dữ liệu
-                        AdjustDataGridViewSize();
-                    }
+                    MessageBox.Show("KHÔNG CÓ DỮ LIỆU NÀO THOẢ MÃN", "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    DataGridViewRegList.DataSource = null;
+                    return;
                 }
+                DataGridViewRegList.DataSource = dt;
+                SetColumnHeaders();
+                DataGridViewRegList.ColumnHeadersVisible = true;
+                AdjustDataGridViewSize();
             }
             catch (Exception ex)
             {
