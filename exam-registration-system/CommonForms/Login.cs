@@ -8,6 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Drawing2D;
+using exam_registration_system.MainForms.NVKT;
+using exam_registration_system.MainForms.NVNL;
+using exam_registration_system.MainForms.NVTN;
+using System.Data.SqlClient;
+using exam_registration_system.Business;
 
 namespace exam_registration_system.CommonForms
 {
@@ -16,16 +21,7 @@ namespace exam_registration_system.CommonForms
         public Login()
         {
             InitializeComponent();
-        }
-
-        private void Login_Load(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
+            tbPassword.UseSystemPasswordChar = true;
         }
 
         private void btnLogin_MouseEnter(object sender, EventArgs e)
@@ -36,11 +32,6 @@ namespace exam_registration_system.CommonForms
         private void btnLogin_MouseLeave(object sender, EventArgs e)
         {
             btnLogin.BackColor = ColorTranslator.FromHtml("#3498DB");
-        }
-
-        private void lblTitle_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void pnlUsername_Paint(object sender, PaintEventArgs e)
@@ -87,24 +78,53 @@ namespace exam_registration_system.CommonForms
             }
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void btnLogin_Click(object sender, EventArgs e)
         {
+            string username = tbUsername.Text.Trim();
+            string password = tbPassword.Text;
 
+            if (string.IsNullOrEmpty(username))
+            {
+                MessageBox.Show("Vui lòng nhập tên đăng nhập.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (string.IsNullOrEmpty(password))
+            {
+                MessageBox.Show("Vui lòng nhập mật khẩu.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string loaiNV = EmployeeService.CheckLogin(username);
+
+            if (loaiNV == null)
+            {
+                MessageBox.Show("Tài khoản hoặc mật khẩu sai, kiểm tra lại.", "Lỗi đăng nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            Form nextForm = null;
+            switch (loaiNV)
+            {
+                case "TN":
+                    nextForm = new HomeNVTNForm(username, loaiNV);
+                    break;
+                case "KT":
+                    nextForm = new HomeNVKTForm(username, loaiNV);
+                    break;
+                case "NL":
+                    nextForm = new HomeNVNLForm(username, loaiNV);
+                    break;
+                default:
+                    MessageBox.Show("Đăng nhập thất bại, kiểm tra lại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+            }
+            this.Hide();
+            nextForm.ShowDialog();
         }
 
-        private void pictureBox4_Click(object sender, EventArgs e)
+        private void btnExit_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
+            Application.Exit();
         }
     }
 }

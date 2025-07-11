@@ -376,6 +376,7 @@
             this.butLogout.TabIndex = 6;
             this.butLogout.Text = " Đăng xuất";
             this.butLogout.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.butLogout.Click += new System.EventHandler(this.butLogout_Click);
             // 
             // labelHeader
             // 

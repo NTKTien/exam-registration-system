@@ -30,165 +30,165 @@
         {
             this.components = new System.ComponentModel.Container();
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.pnlLogin = new Guna.UI2.WinForms.Guna2Panel();
+            this.ckbSavePassword = new System.Windows.Forms.CheckBox();
             this.pnlPassword = new System.Windows.Forms.Panel();
-            this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.tbPassword = new Guna.UI2.WinForms.Guna2TextBox();
+            this.picPassword = new System.Windows.Forms.PictureBox();
             this.pnlUsername = new System.Windows.Forms.Panel();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.tbUsername = new Guna.UI2.WinForms.Guna2TextBox();
+            this.picUsername = new System.Windows.Forms.PictureBox();
+            this.picUser = new System.Windows.Forms.PictureBox();
             this.btnLogin = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.guna2AnimateWindow2 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.picLogo = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.tbCMS = new System.Windows.Forms.TextBox();
+            this.pnlCMS = new System.Windows.Forms.Panel();
             this.pnlSidebar = new System.Windows.Forms.Panel();
-            this.guna2Panel1.SuspendLayout();
+            this.btnExit = new Guna.UI2.WinForms.Guna2Button();
+            this.pnlLogin.SuspendLayout();
             this.pnlPassword.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPassword)).BeginInit();
             this.pnlUsername.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picUsername)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picUser)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.pnlCMS.SuspendLayout();
             this.pnlSidebar.SuspendLayout();
             this.SuspendLayout();
             // 
-            // guna2Panel1
+            // pnlLogin
             // 
-            this.guna2Panel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Panel1.BorderColor = System.Drawing.Color.Silver;
-            this.guna2Panel1.BorderRadius = 10;
-            this.guna2Panel1.BorderThickness = 1;
-            this.guna2Panel1.Controls.Add(this.checkBox1);
-            this.guna2Panel1.Controls.Add(this.pnlPassword);
-            this.guna2Panel1.Controls.Add(this.pnlUsername);
-            this.guna2Panel1.Controls.Add(this.pictureBox1);
-            this.guna2Panel1.Controls.Add(this.btnLogin);
-            this.guna2Panel1.Controls.Add(this.lblTitle);
-            this.guna2Panel1.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.guna2Panel1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.guna2Panel1.Location = new System.Drawing.Point(352, 69);
-            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(2);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(353, 373);
-            this.guna2Panel1.TabIndex = 15;
+            this.pnlLogin.BackColor = System.Drawing.Color.Transparent;
+            this.pnlLogin.BorderColor = System.Drawing.Color.Silver;
+            this.pnlLogin.BorderRadius = 10;
+            this.pnlLogin.BorderThickness = 1;
+            this.pnlLogin.Controls.Add(this.ckbSavePassword);
+            this.pnlLogin.Controls.Add(this.pnlPassword);
+            this.pnlLogin.Controls.Add(this.pnlUsername);
+            this.pnlLogin.Controls.Add(this.picUser);
+            this.pnlLogin.Controls.Add(this.btnLogin);
+            this.pnlLogin.Controls.Add(this.lblTitle);
+            this.pnlLogin.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.pnlLogin.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.pnlLogin.Location = new System.Drawing.Point(352, 69);
+            this.pnlLogin.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlLogin.Name = "pnlLogin";
+            this.pnlLogin.Size = new System.Drawing.Size(353, 373);
+            this.pnlLogin.TabIndex = 15;
             // 
-            // checkBox1
+            // ckbSavePassword
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.checkBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.checkBox1.Location = new System.Drawing.Point(197, 220);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(105, 19);
-            this.checkBox1.TabIndex = 12;
-            this.checkBox1.Text = "Nhớ mật khẩu ";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.ckbSavePassword.AutoSize = true;
+            this.ckbSavePassword.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.ckbSavePassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.ckbSavePassword.Location = new System.Drawing.Point(197, 220);
+            this.ckbSavePassword.Margin = new System.Windows.Forms.Padding(2);
+            this.ckbSavePassword.Name = "ckbSavePassword";
+            this.ckbSavePassword.Size = new System.Drawing.Size(105, 19);
+            this.ckbSavePassword.TabIndex = 12;
+            this.ckbSavePassword.Text = "Nhớ mật khẩu ";
+            this.ckbSavePassword.UseVisualStyleBackColor = true;
             // 
             // pnlPassword
             // 
             this.pnlPassword.BackColor = System.Drawing.Color.White;
             this.pnlPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlPassword.Controls.Add(this.guna2TextBox2);
-            this.pnlPassword.Controls.Add(this.pictureBox3);
+            this.pnlPassword.Controls.Add(this.tbPassword);
+            this.pnlPassword.Controls.Add(this.picPassword);
             this.pnlPassword.Location = new System.Drawing.Point(59, 183);
             this.pnlPassword.Margin = new System.Windows.Forms.Padding(2);
             this.pnlPassword.Name = "pnlPassword";
             this.pnlPassword.Size = new System.Drawing.Size(233, 33);
             this.pnlPassword.TabIndex = 10;
             // 
-            // guna2TextBox2
+            // tbPassword
             // 
-            this.guna2TextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox2.DefaultText = "";
-            this.guna2TextBox2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox2.Location = new System.Drawing.Point(31, 5);
-            this.guna2TextBox2.Name = "guna2TextBox2";
-            this.guna2TextBox2.PlaceholderText = "Password";
-            this.guna2TextBox2.SelectedText = "";
-            this.guna2TextBox2.Size = new System.Drawing.Size(189, 23);
-            this.guna2TextBox2.TabIndex = 13;
-            this.guna2TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbPassword.DefaultText = "";
+            this.tbPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbPassword.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tbPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbPassword.Location = new System.Drawing.Point(31, 5);
+            this.tbPassword.Name = "tbPassword";
+            this.tbPassword.PlaceholderText = "Password";
+            this.tbPassword.SelectedText = "";
+            this.tbPassword.Size = new System.Drawing.Size(189, 23);
+            this.tbPassword.TabIndex = 13;
+            this.tbPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // pictureBox3
+            // picPassword
             // 
-            this.pictureBox3.Image = global::exam_registration_system.Properties.Resources.key;
-            this.pictureBox3.Location = new System.Drawing.Point(3, 5);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(23, 23);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 0;
-            this.pictureBox3.TabStop = false;
+            this.picPassword.Image = global::exam_registration_system.Properties.Resources.key;
+            this.picPassword.Location = new System.Drawing.Point(3, 5);
+            this.picPassword.Margin = new System.Windows.Forms.Padding(2);
+            this.picPassword.Name = "picPassword";
+            this.picPassword.Size = new System.Drawing.Size(23, 23);
+            this.picPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picPassword.TabIndex = 0;
+            this.picPassword.TabStop = false;
             // 
             // pnlUsername
             // 
             this.pnlUsername.BackColor = System.Drawing.Color.White;
             this.pnlUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlUsername.Controls.Add(this.guna2TextBox1);
-            this.pnlUsername.Controls.Add(this.pictureBox2);
+            this.pnlUsername.Controls.Add(this.tbUsername);
+            this.pnlUsername.Controls.Add(this.picUsername);
             this.pnlUsername.Location = new System.Drawing.Point(59, 135);
             this.pnlUsername.Margin = new System.Windows.Forms.Padding(2);
             this.pnlUsername.Name = "pnlUsername";
             this.pnlUsername.Size = new System.Drawing.Size(233, 33);
             this.pnlUsername.TabIndex = 9;
             // 
-            // guna2TextBox1
+            // tbUsername
             // 
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Location = new System.Drawing.Point(32, 5);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PlaceholderText = "Username";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.Size = new System.Drawing.Size(189, 23);
-            this.guna2TextBox1.TabIndex = 14;
-            this.guna2TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbUsername.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbUsername.DefaultText = "";
+            this.tbUsername.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbUsername.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbUsername.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbUsername.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbUsername.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbUsername.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tbUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbUsername.Location = new System.Drawing.Point(32, 5);
+            this.tbUsername.Name = "tbUsername";
+            this.tbUsername.PlaceholderText = "Username";
+            this.tbUsername.SelectedText = "";
+            this.tbUsername.Size = new System.Drawing.Size(189, 23);
+            this.tbUsername.TabIndex = 14;
+            this.tbUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // pictureBox2
+            // picUsername
             // 
-            this.pictureBox2.Image = global::exam_registration_system.Properties.Resources.user;
-            this.pictureBox2.Location = new System.Drawing.Point(4, 5);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(23, 23);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
+            this.picUsername.Image = global::exam_registration_system.Properties.Resources.user;
+            this.picUsername.Location = new System.Drawing.Point(4, 5);
+            this.picUsername.Margin = new System.Windows.Forms.Padding(2);
+            this.picUsername.Name = "picUsername";
+            this.picUsername.Size = new System.Drawing.Size(23, 23);
+            this.picUsername.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picUsername.TabIndex = 0;
+            this.picUsername.TabStop = false;
             // 
-            // pictureBox1
+            // picUser
             // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Image = global::exam_registration_system.Properties.Resources.user;
-            this.pictureBox1.Location = new System.Drawing.Point(149, 21);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(67, 67);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.picUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.picUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picUser.Image = global::exam_registration_system.Properties.Resources.user;
+            this.picUser.Location = new System.Drawing.Point(149, 21);
+            this.picUser.Margin = new System.Windows.Forms.Padding(2);
+            this.picUser.Name = "picUser";
+            this.picUser.Size = new System.Drawing.Size(67, 67);
+            this.picUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picUser.TabIndex = 8;
+            this.picUser.TabStop = false;
             // 
             // btnLogin
             // 
@@ -203,6 +203,7 @@
             this.btnLogin.TabIndex = 7;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // lblTitle
             // 
@@ -218,16 +219,16 @@
             this.lblTitle.Text = "LOGIN";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pictureBox4
+            // picLogo
             // 
-            this.pictureBox4.Image = global::exam_registration_system.Properties.Resources.logo;
-            this.pictureBox4.Location = new System.Drawing.Point(39, 100);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(167, 167);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 0;
-            this.pictureBox4.TabStop = false;
+            this.picLogo.Image = global::exam_registration_system.Properties.Resources.logo;
+            this.picLogo.Location = new System.Drawing.Point(39, 100);
+            this.picLogo.Margin = new System.Windows.Forms.Padding(2);
+            this.picLogo.Name = "picLogo";
+            this.picLogo.Size = new System.Drawing.Size(167, 167);
+            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picLogo.TabIndex = 0;
+            this.picLogo.TabStop = false;
             // 
             // pictureBox5
             // 
@@ -240,39 +241,39 @@
             this.pictureBox5.TabIndex = 1;
             this.pictureBox5.TabStop = false;
             // 
-            // textBox3
+            // tbCMS
             // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Cursor = System.Windows.Forms.Cursors.SizeAll;
-            this.textBox3.Enabled = false;
-            this.textBox3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.textBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.textBox3.Location = new System.Drawing.Point(33, 18);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(67, 29);
-            this.textBox3.TabIndex = 0;
-            this.textBox3.Text = "CMS";
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbCMS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbCMS.Cursor = System.Windows.Forms.Cursors.SizeAll;
+            this.tbCMS.Enabled = false;
+            this.tbCMS.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.tbCMS.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.tbCMS.Location = new System.Drawing.Point(33, 18);
+            this.tbCMS.Margin = new System.Windows.Forms.Padding(2);
+            this.tbCMS.Name = "tbCMS";
+            this.tbCMS.ReadOnly = true;
+            this.tbCMS.Size = new System.Drawing.Size(67, 29);
+            this.tbCMS.TabIndex = 0;
+            this.tbCMS.Text = "CMS";
+            this.tbCMS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // panel1
+            // pnlCMS
             // 
-            this.panel1.BackgroundImage = global::exam_registration_system.Properties.Resources.backgroud;
-            this.panel1.Controls.Add(this.pictureBox5);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Location = new System.Drawing.Point(53, 298);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(133, 67);
-            this.panel1.TabIndex = 1;
+            this.pnlCMS.BackgroundImage = global::exam_registration_system.Properties.Resources.backgroud;
+            this.pnlCMS.Controls.Add(this.pictureBox5);
+            this.pnlCMS.Controls.Add(this.tbCMS);
+            this.pnlCMS.Location = new System.Drawing.Point(53, 298);
+            this.pnlCMS.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlCMS.Name = "pnlCMS";
+            this.pnlCMS.Size = new System.Drawing.Size(133, 67);
+            this.pnlCMS.TabIndex = 1;
             // 
             // pnlSidebar
             // 
             this.pnlSidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(190)))), ((int)(((byte)(230)))));
             this.pnlSidebar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pnlSidebar.Controls.Add(this.panel1);
-            this.pnlSidebar.Controls.Add(this.pictureBox4);
+            this.pnlSidebar.Controls.Add(this.pnlCMS);
+            this.pnlSidebar.Controls.Add(this.picLogo);
             this.pnlSidebar.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlSidebar.Location = new System.Drawing.Point(0, 0);
             this.pnlSidebar.Margin = new System.Windows.Forms.Padding(2);
@@ -280,31 +281,51 @@
             this.pnlSidebar.Size = new System.Drawing.Size(252, 467);
             this.pnlSidebar.TabIndex = 14;
             // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.Color.Transparent;
+            this.btnExit.BorderRadius = 2;
+            this.btnExit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnExit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnExit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnExit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnExit.FillColor = System.Drawing.Color.Transparent;
+            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.ForeColor = System.Drawing.Color.Black;
+            this.btnExit.ImageSize = new System.Drawing.Size(50, 50);
+            this.btnExit.Location = new System.Drawing.Point(722, 0);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(2);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(37, 30);
+            this.btnExit.TabIndex = 3;
+            this.btnExit.Text = "✕";
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(247)))), ((int)(((byte)(250)))));
             this.ClientSize = new System.Drawing.Size(759, 467);
-            this.Controls.Add(this.guna2Panel1);
+            this.Controls.Add(this.btnExit);
+            this.Controls.Add(this.pnlLogin);
             this.Controls.Add(this.pnlSidebar);
             this.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
-            this.Load += new System.EventHandler(this.Login_Load);
-            this.guna2Panel1.ResumeLayout(false);
-            this.guna2Panel1.PerformLayout();
+            this.pnlLogin.ResumeLayout(false);
+            this.pnlLogin.PerformLayout();
             this.pnlPassword.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPassword)).EndInit();
             this.pnlUsername.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picUsername)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picUser)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnlCMS.ResumeLayout(false);
+            this.pnlCMS.PerformLayout();
             this.pnlSidebar.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -312,22 +333,23 @@
 
         #endregion
         private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private Guna.UI2.WinForms.Guna2Panel pnlLogin;
+        private System.Windows.Forms.CheckBox ckbSavePassword;
         private System.Windows.Forms.Panel pnlPassword;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private Guna.UI2.WinForms.Guna2TextBox tbPassword;
+        private System.Windows.Forms.PictureBox picPassword;
         private System.Windows.Forms.Panel pnlUsername;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private Guna.UI2.WinForms.Guna2TextBox tbUsername;
+        private System.Windows.Forms.PictureBox picUsername;
+        private System.Windows.Forms.PictureBox picUser;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Label lblTitle;
         private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow2;
-        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox picLogo;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox tbCMS;
+        private System.Windows.Forms.Panel pnlCMS;
         private System.Windows.Forms.Panel pnlSidebar;
+        private Guna.UI2.WinForms.Guna2Button btnExit;
     }
 }

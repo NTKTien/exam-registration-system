@@ -13,9 +13,16 @@ namespace exam_registration_system.MainForms.NVNL
 {
     public partial class HomeNVNLForm : Form
     {
-        public HomeNVNLForm()
+        private string username;
+        private string role;
+        public HomeNVNLForm(string username, string role)
         {
             InitializeComponent();
+            panelContent.Controls.Clear();
+            homeUC home = new homeUC(username, role);
+            panelContent.Controls.Add(home);
+            this.username = username;
+            this.role = role;
         }
 
         bool menuExpand = false;
@@ -67,7 +74,7 @@ namespace exam_registration_system.MainForms.NVNL
         private void ButHome_Click(object sender, EventArgs e)
         {
             panelContent.Controls.Clear();
-            homeUC home = new homeUC();
+            homeUC home = new homeUC(username, role);
             panelContent.Controls.Add(home);
         }
 
@@ -107,6 +114,13 @@ namespace exam_registration_system.MainForms.NVNL
         private void panelContent_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void butLogout_Click(object sender, EventArgs e)
+        {
+            Login LoginForm = new Login();
+            this.Hide();
+            LoginForm.Show();
         }
     }
 }

@@ -136,6 +136,7 @@
   <ItemGroup>
     <Compile Include="Business\ExtensionFormService.cs" />
     <Compile Include="Business\CustomerService.cs" />
+    <Compile Include="Business\EmployeeService.cs" />
     <Compile Include="Business\ExamScheduleService.cs" />
     <Compile Include="Business\InvoiceService.cs" />
     <Compile Include="Business\PhieuDangKyService.cs" />
@@ -160,6 +161,7 @@
     </Compile>
     <Compile Include="DataAccess\ExtensionFormDAO.cs" />
     <Compile Include="DataAccess\CustomerInforDAO.cs" />
+    <Compile Include="DataAccess\EmployeeDAO.cs" />
     <Compile Include="DataAccess\ExamScheduleDAO.cs" />
     <Compile Include="DataAccess\InvoiceDAO.cs" />
     <Compile Include="DataAccess\PhieuDangKyDAO.cs" />

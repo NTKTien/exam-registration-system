@@ -12,9 +12,22 @@ namespace exam_registration_system.CommonForms
 {
     public partial class homeUC : UserControl
     {
-        public homeUC()
+        private string username;
+        private string role;
+        public homeUC(string username, string role)
         {
             InitializeComponent();
+            this.username = username;
+            this.role = role;
+
+            InitializeData();
+        }
+
+        private void InitializeData()
+        {
+            textFullName.Text = username;
+            textRole.Text = role;
+            textLoginDate.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
         }
     }
 }

@@ -13,9 +13,16 @@ namespace exam_registration_system.MainForms.NVKT
 {
     public partial class HomeNVKTForm : Form
     {
-        public HomeNVKTForm()
+        private string username;
+        private string role;
+        public HomeNVKTForm(string username, string role)
         {
             InitializeComponent();
+            panelContent.Controls.Clear();
+            homeUC home = new homeUC(username, role);
+            panelContent.Controls.Add(home);
+            this.username = username;
+            this.role = role;
         }
         private void btnExit_Click(object sender, EventArgs e)
         {
@@ -65,7 +72,7 @@ namespace exam_registration_system.MainForms.NVKT
         private void ButHome_Click(object sender, EventArgs e)
         {
             panelContent.Controls.Clear();
-            homeUC home = new homeUC();
+            homeUC home = new homeUC(username, role);
             panelContent.Controls.Add(home);
         }
 
@@ -122,6 +129,13 @@ namespace exam_registration_system.MainForms.NVKT
             frm.Dock = DockStyle.Fill;
             panelContent.Controls.Add(frm);
             frm.Show();
+        }
+
+        private void butLogout_Click(object sender, EventArgs e)
+        {
+            Login LoginForm = new Login();
+            this.Hide();
+            LoginForm.Show();
         }
     }
 }
