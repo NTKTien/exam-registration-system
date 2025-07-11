@@ -664,4 +664,72 @@ BEGIN
       AND (@TGDuThiMongMuon IS NULL OR TGDuThiMongMuon LIKE N'%' + @TGDuThiMongMuon + N'%')
 END;
 GO
+---------- gia han 
+-- Xoá nếu đã tồn tại
+DROP PROCEDURE IF EXISTS sp_GetPendingExtends;
+GO
+-- Tạo procedure lay danh sach phieu gia han co trang thai "dang doi"
+CREATE PROCEDURE sp_GetPendingExtends
+AS
+BEGIN
+    SELECT 
+        MaPGH,
+        ThoiGian,
+        DiaDiem,
+        SBD,
+        PhiGiaHan,
+        MaPDK,
+        LoaiGH
+    FROM 
+        PhieuGiaHan
+    WHERE 
+        TrangThai = N'Đang đợi';
+END;
+GO
+-- lay chi tiet phieu gia han
+DROP PROCEDURE IF EXISTS sp_GetExtensionDetails;
+GO
+CREATE PROCEDURE sp_GetExtensionDetails
+    @MaPGH CHAR(5)
+AS
+BEGIN
+    SET NOCOUNT ON;
 
+    SELECT 
+        PDT.MaPDT AS MaPhieuDuThi,
+        PGH.LoaiGH,
+        PGH.ThoiGian
+    FROM PhieuGiaHan PGH
+    INNER JOIN PhieuDangKy PDK ON PGH.MaPDK = PDK.MaPDK
+    INNER JOIN PhieuDuThi PDT ON PDK.MaPDK = PDT.MaPDK
+    WHERE PGH.MaPGH = @MaPGH;
+END;
+GO
+-- cap nhat phieu gia han
+DROP PROCEDURE IF EXISTS sp_SaveExtension;
+GO
+ create PROCEDURE sp_SaveExtension
+    @MaPGH CHAR(5),
+    @PhiGiaHan DECIMAL(10,0)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    -- Kiểm tra xem MaPGH đã tồn tại chưa
+    IF EXISTS (SELECT 1 FROM PhieuGiaHan WHERE MaPGH = @MaPGH)
+    BEGIN
+        -- Cập nhật thông tin nếu MaPGH đã tồn tại
+        UPDATE PhieuGiaHan
+        SET 
+            PhiGiaHan = @PhiGiaHan,
+            TrangThai = N'Thành công'
+        WHERE MaPGH = @MaPGH;
+    END
+    ELSE
+    BEGIN
+        -- Báo lỗi nếu MaPGH không tồn tại
+        RAISERROR ('Mã phiếu gia hạn không tồn tại.', 16, 1);
+        RETURN;
+    END
+END;
+GO
