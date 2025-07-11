@@ -284,7 +284,7 @@ END;
 GO
 
 -- Cập nhật phiếu đăng ký
-CREATE PROCEDURE sp_UpdateRegistrationi
+CREATE PROCEDURE sp_UpdateRegistration
     @MaPDK CHAR(5),
     @NgayLap DATETIME = NULL,
     @TrangThai NVARCHAR(20) = NULL,
@@ -351,9 +351,6 @@ BEGIN
 END;
 GO
 -----------------------Từ này trở lên không sửa, muốn sửa thì chỉ sửa ở dưới------------------------------------
-
-
-
 -- PROCEDURE USE-CASE PHÁT HÀNH PHIẾU DỰ THI
 	-- Xem tất cả phiếu đăng ký
 CREATE  OR ALTER PROCEDURE XemTatCaPhieuDangKy 
