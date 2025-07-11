@@ -53,7 +53,8 @@ namespace exam_registration_system.MainForms.NVKT
             }
         }
 
-        private void guna2Button2_Click_1(object sender, EventArgs e)
+        private void btnLapPhieuClick
+            (object sender, EventArgs e)
         {
             try
             {
@@ -77,17 +78,18 @@ namespace exam_registration_system.MainForms.NVKT
             this.Close();
         }
 
-        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        private void checkThanhToan
+            (object sender, EventArgs e)
         {
             if (Xacnhan.Checked)
             {
-                guna2Button2.Enabled = true;
-                guna2Button2.FillColor = System.Drawing.Color.FromArgb(94, 148, 255);
+                BtnLapPhieu.Enabled = true;
+                BtnLapPhieu.FillColor = System.Drawing.Color.FromArgb(94, 148, 255);
             }
             else
             {
-                guna2Button2.Enabled = false;
-                guna2Button2.FillColor = System.Drawing.Color.DarkGray;
+                BtnLapPhieu.Enabled = false;
+                BtnLapPhieu.FillColor = System.Drawing.Color.DarkGray;
             }
         }
     }

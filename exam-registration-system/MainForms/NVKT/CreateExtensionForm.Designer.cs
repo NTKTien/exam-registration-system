@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.BtnLapPhieu = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2TextBox3 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
@@ -46,25 +46,26 @@
             this.guna2Panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // guna2Button2
+            // BtnLapPhieu
             // 
-            this.guna2Button2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.guna2Button2.BorderRadius = 5;
-            this.guna2Button2.BorderThickness = 1;
-            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.FillColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Location = new System.Drawing.Point(711, 503);
-            this.guna2Button2.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(146, 44);
-            this.guna2Button2.TabIndex = 11;
-            this.guna2Button2.Text = "Lập phiếu ";
-            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click_1);
+            this.BtnLapPhieu.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.BtnLapPhieu.BorderRadius = 5;
+            this.BtnLapPhieu.BorderThickness = 1;
+            this.BtnLapPhieu.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.BtnLapPhieu.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.BtnLapPhieu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.BtnLapPhieu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.BtnLapPhieu.FillColor = System.Drawing.Color.DarkGray;
+            this.BtnLapPhieu.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
+            this.BtnLapPhieu.ForeColor = System.Drawing.Color.White;
+            this.BtnLapPhieu.Location = new System.Drawing.Point(711, 503);
+            this.BtnLapPhieu.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnLapPhieu.Name = "BtnLapPhieu";
+            this.BtnLapPhieu.Size = new System.Drawing.Size(146, 44);
+            this.BtnLapPhieu.TabIndex = 11;
+            this.BtnLapPhieu.Text = "Lập phiếu ";
+            this.BtnLapPhieu.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SingleBitPerPixel;
+            this.BtnLapPhieu.Click += new System.EventHandler(this.btnLapPhieuClick);
             // 
             // guna2Panel2
             // 
@@ -280,7 +281,7 @@
             this.Xacnhan.TabIndex = 21;
             this.Xacnhan.Text = "Xác nhận đã thanh toán";
             this.Xacnhan.UseVisualStyleBackColor = true;
-            this.Xacnhan.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            this.Xacnhan.CheckedChanged += new System.EventHandler(this.checkThanhToan);
             // 
             // CreateExtensionForm
             // 
@@ -293,7 +294,7 @@
             this.Controls.Add(this.labelDetailReg);
             this.Controls.Add(this.butCancel);
             this.Controls.Add(this.guna2Panel2);
-            this.Controls.Add(this.guna2Button2);
+            this.Controls.Add(this.BtnLapPhieu);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -310,7 +311,7 @@
 
         #endregion
 
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2Button BtnLapPhieu;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
