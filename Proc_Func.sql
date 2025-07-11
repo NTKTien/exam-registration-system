@@ -9,16 +9,14 @@ AS
 BEGIN
     SELECT 
         P.MaPDK,
-        P.NgayLap,
+        CONVERT(varchar, P.NgayLap, 103) + ' ' + CONVERT(varchar, P.NgayLap, 108) AS NgayLap,
         P.LoaiCC,
-        L.NgayThi,
-        D.HoTen,
+        CONVERT(varchar, L.NgayThi, 103) AS NgayThi,
+        T.HoTen,
         P.LoaiPDK,
-        P.TrangThai,
-		D.Email,
-		L.PhongThi
+        P.TrangThai
     FROM PhieuDangKy P
-    JOIN ThiSinh D ON P.MaDS = D.MaDS
+    JOIN TTNguoiDangKy T ON P.MaPDK = T.MaPDK
     JOIN LichDGNL L ON P.MaLT = L.MaLT
 END;
 GO
@@ -30,8 +28,8 @@ AS
 BEGIN
     SELECT 
         P.MaPDK,
-        P.NgayLap,
-        ld.NgayThi,
+        CONVERT(varchar, P.NgayLap, 103) + ' ' + CONVERT(varchar, P.NgayLap, 108) AS NgayLap,
+        CONVERT(varchar, ld.NgayThi, 103) + ' ' + CONVERT(varchar, ld.NgayThi, 108) AS NgayThi,
         P.LoaiCC,
         P.TrangThai,
         ld.CaThi
@@ -50,7 +48,7 @@ BEGIN
     SELECT 
         ndk.HoTen,
         ndk.GioiTinh,
-        ndk.NgaySinh,
+        CONVERT(varchar, ndk.Ngaysinh, 103) AS NgaySinh,
         ndk.CCCD,
         ndk.SoDienThoai,
         ndk.Email,
@@ -155,7 +153,7 @@ BEGIN
     SELECT 
         TS.HoTen,
         TS.GioiTinh,
-        TS.Ngaysinh,
+		CONVERT(varchar, TS.Ngaysinh, 103) AS NgaySinh,
         TS.SoDienThoai,
         TS.CCCD,
         TS.Email
@@ -172,7 +170,7 @@ GO
 CREATE OR ALTER PROCEDURE sp_InsertFreeReg
     @MaPDK CHAR(5),
 	@MaDS CHAR(5),
-    @NgayDangKy DATE,
+    @NgayDangKy DATETIME,
     @LoaiDGNL NVARCHAR(50),
     @MaLichThi CHAR(5),
     @LoaiPDK NVARCHAR(4)
