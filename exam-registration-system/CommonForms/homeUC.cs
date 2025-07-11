@@ -26,7 +26,22 @@ namespace exam_registration_system.CommonForms
         private void InitializeData()
         {
             textFullName.Text = username;
-            textRole.Text = role;
+            if (role == "TN")
+            {
+                textRole.Text = "Tiếp Nhận";
+            }
+            else if (role == "KT")
+            {
+                textRole.Text = "Kế Toán";
+            }
+            else if (role == "NL")
+            {
+                textRole.Text = "Nhập Liệu";
+            }
+            else
+            {
+                textRole.Text = "Unknown";
+            }
             textLoginDate.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
         }
     }

@@ -21,7 +21,7 @@ namespace exam_registration_system.Business
             return CustomerDAO.InsertCustomer(hoTen, gioiTinh, ngaySinh, cccd, sdt, email, diaChi, maPDK);
         }
 
-        public static DataTable GetRegistorList(
+        public static DataTable SearchRegistor(
             string maNDK = null,
                 string cccd = null,
                 string hoTen = null,
@@ -32,7 +32,7 @@ namespace exam_registration_system.Business
                 string email = null,
                 string diaChi = null,
                 string maPDK = null) {
-            return CustomerDAO.TraCuuTTNguoiDangKy(maNDK, cccd, hoTen, gioiTinh, ngaySinhFrom, ngaySinhTo, soDienThoai, email, diaChi, maPDK);
+            return CustomerDAO.SearchRegistor(maNDK, cccd, hoTen, gioiTinh, ngaySinhFrom, ngaySinhTo, soDienThoai, email, diaChi, maPDK);
         }
     }
 }

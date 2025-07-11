@@ -22,11 +22,10 @@ namespace exam_registration_system.MainForms.NVKT
         private readonly Color colorSupport = Color.FromArgb(41, 128, 185);
         private readonly Color colorFinal = Color.FromArgb(231, 76, 60);
 
-        // Lưu lại thông tin hóa đơn để xuất PDF
         private string currentMaHD = "";
-        private decimal currentTongTien = 0;
-        private decimal currentTroGia = 0;
-        private decimal currentThanhTien = 0;
+        private decimal totalCost = 0;
+        private decimal subsidy = 0;
+        private decimal finalCost = 0;
 
         public OriginalPayment()
         {
@@ -73,14 +72,34 @@ namespace exam_registration_system.MainForms.NVKT
             return tbRegistrationID.Text == _placeholderText;
         }
 
+        private decimal GetFreeCusCos(string loaiCC)
+        {
+            string searchContent = "";
+            if (loaiCC == "Tin học")
+                searchContent = "Lệ phí thi Tin học của khách hàng tự do";
+            else if (loaiCC == "Ngoại ngữ")
+                searchContent = "Lệ phí thi Ngoại ngữ của khách hàng tự do";
+            else
+                return 0;
+
+            decimal? giaTri = RegulationService.GetMostRelevantGiaTri(searchContent);
+            return giaTri ?? 0;
+        }
+
+        private decimal GetFreeCusSubsidy()
+        {
+            decimal? giaTri = RegulationService.GetMostRelevantGiaTri("trợ giá lệ phí thi cho khách hàng tự do");
+            return giaTri ?? 0;
+        }
+
         private void btnSearch_Click(object sender, EventArgs e)
         {
             ClearCustomerFields();
             ClearChiPhiFields();
             currentMaHD = "";
-            currentTongTien = 0;
-            currentTroGia = 0;
-            currentThanhTien = 0;
+            totalCost = 0;
+            subsidy = 0;
+            finalCost = 0;
 
             if (IsPlaceholder() || string.IsNullOrWhiteSpace(tbRegistrationID.Text))
             {
@@ -90,7 +109,7 @@ namespace exam_registration_system.MainForms.NVKT
 
             string maPDK = tbRegistrationID.Text.Trim();
 
-            DataTable regDT = PhieuDangKyService.GetRegistrationList(maPDK: maPDK);
+            DataTable regDT = PhieuDangKyService.SearchRegistration(maPDK: maPDK);
             if (regDT == null || regDT.Rows.Count == 0)
             {
                 MessageBox.Show("Không tìm thấy phiếu đăng ký!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -138,7 +157,7 @@ namespace exam_registration_system.MainForms.NVKT
                 currentStatus = "Đã hủy";
             }
 
-            DataTable cusDT = CustomerService.GetRegistorList(maPDK: maPDK);
+            DataTable cusDT = CustomerService.SearchRegistor(maPDK: maPDK);
             string tenKH = "";
             if (cusDT != null && cusDT.Rows.Count > 0)
                 tenKH = cusDT.Rows[0]["HoTen"]?.ToString();
@@ -151,72 +170,36 @@ namespace exam_registration_system.MainForms.NVKT
 
             string loaiCC = regRow["LoaiCC"]?.ToString();
 
-            DataTable hdDT = InvoiceService.GetInvoiceList(maPDK: maPDK);
+            DataTable hdDT = InvoiceService.SearchInvoice(maPDK: maPDK);
             if (hdDT != null && hdDT.Rows.Count > 0)
             {
                 DataRow hdRow = hdDT.Rows[0];
                 currentMaHD = hdRow["MaHD"]?.ToString() ?? "";
-                currentTongTien = hdRow["TongTien"] == DBNull.Value ? 0 : Convert.ToDecimal(hdRow["TongTien"]);
-                currentTroGia = hdRow["TroGia"] == DBNull.Value ? 0 : Convert.ToDecimal(hdRow["TroGia"]);
-                currentThanhTien = hdRow["ThanhTien"] == DBNull.Value ? currentTongTien - currentTroGia : Convert.ToDecimal(hdRow["ThanhTien"]);
 
                 try
                 {
-                    if (loaiCC == "Tin học")
-                    {
-                        currentTongTien = 1500000;
-                    }
-                    else if (loaiCC == "Ngoại ngữ")
-                    {
-                        currentTongTien = 1800000;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Loại chứng chỉ không hợp lệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        ClearChiPhiFields();
-                        return;
-                    }
+                    totalCost = GetFreeCusCos(loaiCC);
+                    subsidy = GetFreeCusSubsidy();
+                    finalCost = totalCost - subsidy;
 
-                    currentTroGia = 0;
-                    currentThanhTien = currentTongTien - currentTroGia;
+                    tbTotalCost.Text = totalCost.ToString("N0");
+                    tbSupportAmount.Text = subsidy.ToString("N0");
+                    tbFinalAmount.Text = finalCost.ToString("N0");
 
-                    bool updateInvoice = InvoiceService.UpdateInvoice(
-                        maHD: currentMaHD,
-                        tongTien: currentTongTien,
-                        troGia: currentTroGia,
-                        thanhTien: currentThanhTien,
-                        maPDK: maPDK
-                    );
-
-                    if (!updateInvoice)
-                    {
-                        MessageBox.Show("Xảy ra lỗi khi tính toán hóa đơn!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-
+                    tbTotalCost.ForeColor = colorMoney;
+                    tbSupportAmount.ForeColor = colorSupport;
+                    tbFinalAmount.ForeColor = colorFinal;
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Lỗi cập nhật dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Xảy ra lỗi khi tính toán hóa đơn: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    ClearChiPhiFields();
+                    return;
                 }
-
-                tbTotalCost.Text = currentTongTien.ToString("N0");
-                tbSupportAmount.Text = currentTroGia.ToString("N0");
-                tbFinalAmount.Text = currentThanhTien.ToString("N0");
-
-                tbTotalCost.ForeColor = colorMoney;
-                tbSupportAmount.ForeColor = colorSupport;
-                tbFinalAmount.ForeColor = colorFinal;
             }
             else
             {
-                currentMaHD = "";
-                currentTongTien = 0;
-                currentTroGia = 0;
-                currentThanhTien = 0;
-                tbTotalCost.Text = "";
-                tbSupportAmount.Text = "";
-                tbFinalAmount.Text = "";
+                MessageBox.Show("Không tìm thấy hóa đơn của phiếu đăng ký", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -248,9 +231,12 @@ namespace exam_registration_system.MainForms.NVKT
             SetPlaceholder();
 
             currentMaHD = "";
-            currentTongTien = 0;
-            currentTroGia = 0;
-            currentThanhTien = 0;
+            totalCost = 0;
+            subsidy = 0;
+            finalCost = 0;
+            totalCost = 0;
+            subsidy = 0;
+            finalCost = 0;
         }
 
         private void btnConfirmPayment_Click(object sender, EventArgs e)
@@ -281,14 +267,25 @@ namespace exam_registration_system.MainForms.NVKT
                 try
                 {
                     bool updatePDK = PhieuDangKyService.UpdateRegistration(maPDK: maPDK, trangThai: "Đã thanh toán");
-                    if (updatePDK)
+                    bool updateInvoice = false;
+                    if (!string.IsNullOrEmpty(currentMaHD))
+                    {
+                        updateInvoice = InvoiceService.UpdateInvoice(
+                            maHD: currentMaHD,
+                            tongTien: totalCost,
+                            troGia: subsidy,
+                            thanhTien: finalCost,
+                            maPDK: maPDK
+                        );
+                    }
+                    if (updatePDK && (string.IsNullOrEmpty(currentMaHD) || updateInvoice))
                     {
                         tbStatus.Text = "Đã thanh toán";
                         MessageBox.Show("Thanh toán thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        MessageBox.Show("Không thể cập nhật trạng thái!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Không thể cập nhật trạng thái hoặc hóa đơn!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 catch (Exception ex)
@@ -327,9 +324,9 @@ namespace exam_registration_system.MainForms.NVKT
             ExportInvoicePDF(
                 currentMaHD,
                 tbRegistrationID.Text.Trim(),
-                currentTongTien,
-                currentTroGia,
-                currentThanhTien
+                totalCost,
+                subsidy,
+                finalCost
             );
         }
         private void ExportInvoicePDF(string maHD, string maPDK, decimal tongTien, decimal troGia, decimal thanhTien)
@@ -344,7 +341,6 @@ namespace exam_registration_system.MainForms.NVKT
             PdfPage page = doc.AddPage();
             XGraphics gfx = XGraphics.FromPdfPage(page);
 
-            // Font và màu
             XFont fontHeader = new XFont("Arial", 18, XFontStyleEx.Bold);
             XFont fontSubtitle = new XFont("Arial", 10, XFontStyleEx.Regular);
             XFont fontLabel = new XFont("Arial", 12, XFontStyleEx.Regular);
@@ -374,27 +370,22 @@ namespace exam_registration_system.MainForms.NVKT
             double rightValueX = left + 370;
             double lineSpacing = 28;
 
-            // Mã hóa đơn
             gfx.DrawString("Mã hóa đơn:", fontLabel, XBrushes.Black, labelX, y);
             gfx.DrawString(maHD, fontLabelBold, brushRed, valueX, y);
             y += lineSpacing;
 
-            // Khách hàng
             gfx.DrawString("Khách hàng:", fontLabel, XBrushes.Black, labelX, y);
             gfx.DrawString(tenKH, fontLabelBold, XBrushes.Black, valueX, y);
             y += lineSpacing - 8;
 
-            // Mã phiếu đăng ký
             gfx.DrawString("Mã phiếu đăng ký:", fontLabel, XBrushes.Black, labelX, y);
             gfx.DrawString(maPDK, fontLabelBold, XBrushes.Black, valueX, y);
             y += lineSpacing - 8;
 
-            // Nội dung thu
             gfx.DrawString("Nội dung thu:", fontLabel, XBrushes.Black, labelX, y);
             gfx.DrawString($"Lệ phí thi chứng chỉ {loaiCC}", fontLabelBold, XBrushes.Black, valueX, y);
             y += lineSpacing - 8;
 
-            // Tổng chi phí/trợ giá cùng dòng
             gfx.DrawString("Tổng chi phí:", fontLabel, XBrushes.Black, labelX, y);
             gfx.DrawString($"{tongTien:N0} VNĐ", fontBlue, brushBlue, valueX, y);
 
@@ -402,34 +393,28 @@ namespace exam_registration_system.MainForms.NVKT
             gfx.DrawString($"{troGia:N0} VNĐ", fontBlue, brushBlue, rightValueX, y);
             y += lineSpacing - 8;
 
-            // Số tiền thu
             gfx.DrawString("Số tiền thu:", fontLabel, XBrushes.Black, labelX, y);
             gfx.DrawString($"{thanhTien:N0} VNĐ", fontLabelBold, brushRed, valueX, y);
             y += lineSpacing - 8;
 
-            // Hình thức thanh toán
             gfx.DrawString("Hình thức thanh toán:", fontLabel, XBrushes.Black, labelX, y);
             gfx.DrawString("Tiền mặt hoặc chuyển khoản", fontLabel, XBrushes.Black, valueX, y);
             y += lineSpacing - 8;
 
-            // Ngày lập
             gfx.DrawString("Ngày lập: ", fontLabel, XBrushes.Black, labelX, y);
             gfx.DrawString(ngayLap, fontLabel, XBrushes.Black, valueX, y);
             y += lineSpacing + 20;
 
-            // Ký tên: dưới cùng, căn giữa hai bên
             double signBoxWidth = 180;
             double signBoxHeight = 40;
             double signY = y + 10;
             double pageCenter = page.Width / 2.0;
             double offset = 120;
 
-            // Người nộp tiền (trái)
             double signLeft = pageCenter - offset - signBoxWidth / 2;
             gfx.DrawString("Người nộp tiền", fontLabel, XBrushes.Black, new XRect(signLeft, signY, signBoxWidth, 20), XStringFormats.TopCenter);
             gfx.DrawString("(Ký, ghi rõ họ tên)", fontSmall, XBrushes.Black, new XRect(signLeft, signY + 18, signBoxWidth, 20), XStringFormats.TopCenter);
 
-            // Người thu tiền (phải)
             double signRight = pageCenter + offset - signBoxWidth / 2;
             gfx.DrawString("Người thu tiền", fontLabel, XBrushes.Black, new XRect(signRight, signY, signBoxWidth, 20), XStringFormats.TopCenter);
             gfx.DrawString("(Ký, ghi rõ họ tên)", fontSmall, XBrushes.Black, new XRect(signRight, signY + 18, signBoxWidth, 20), XStringFormats.TopCenter);
@@ -440,16 +425,6 @@ namespace exam_registration_system.MainForms.NVKT
             string filePath = Path.Combine(folder, $"HoaDon_{maHD}_{maPDK}.pdf");
             doc.Save(filePath);
             Process.Start(new ProcessStartInfo(filePath) { UseShellExecute = true });
-        }
-
-        private void grpSearch_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pnlContainer_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

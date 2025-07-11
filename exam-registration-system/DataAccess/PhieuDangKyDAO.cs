@@ -78,7 +78,7 @@ namespace exam_registration_system.DataAccess
             }
         }
 
-        public static DataTable TraCuuPDK(string maPDK = null, 
+        public static DataTable SearchRegistration(string maPDK = null, 
                                                    DateTime? ngayLapFrom = null,
                                                    DateTime? ngayLapTo = null,
                                                    string trangThai = null,
@@ -89,7 +89,7 @@ namespace exam_registration_system.DataAccess
                                                    string loaiCC = null) {
             using (SqlConnection conn = new SqlConnection(GlobalInfo.ConnectionString))
             {
-                using (SqlCommand cmd = new SqlCommand("sp_TraCuuPDK", conn))
+                using (SqlCommand cmd = new SqlCommand("sp_SearchRegistration", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
 
@@ -111,7 +111,7 @@ namespace exam_registration_system.DataAccess
             }
         }
 
-        public static bool CapNhatPDK(
+        public static bool UpdateRegistration(
             string maPDK,
             DateTime? ngayLap = null,
             string trangThai = null,
@@ -122,7 +122,7 @@ namespace exam_registration_system.DataAccess
             string loaiCC = null)
         {
             using (SqlConnection conn = new SqlConnection(GlobalInfo.ConnectionString))
-            using (SqlCommand cmd = new SqlCommand("sp_CapNhatPDK", conn))
+            using (SqlCommand cmd = new SqlCommand("sp_UpdateRegistration", conn))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
 

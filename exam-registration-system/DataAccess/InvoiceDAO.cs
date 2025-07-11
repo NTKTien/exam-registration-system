@@ -26,7 +26,7 @@ namespace exam_registration_system.DataAccess
                 return cmd.ExecuteNonQuery() > 0;
             }
         }
-        public static DataTable TraCuuHoaDon(
+        public static DataTable SearchInvoice(
         string maHD = null,
         decimal? tongTienFrom = null,
         decimal? tongTienTo = null,
@@ -38,7 +38,7 @@ namespace exam_registration_system.DataAccess
         string maNV = null)
         {
             using (SqlConnection conn = new SqlConnection(GlobalInfo.ConnectionString))
-            using (SqlCommand cmd = new SqlCommand("sp_TraCuuHoaDon", conn))
+            using (SqlCommand cmd = new SqlCommand("sp_SearchInvoice", conn))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
 
@@ -59,10 +59,10 @@ namespace exam_registration_system.DataAccess
             }
         }
 
-        public static bool CapNhatHoaDon(string maHD, decimal? tongTien = null, decimal? troGia = null, decimal? thanhTien = null, string maPDK = null, string maNV = null)
+        public static bool UpdateInvoice(string maHD, decimal? tongTien = null, decimal? troGia = null, decimal? thanhTien = null, string maPDK = null, string maNV = null)
         {
             using (SqlConnection conn = new SqlConnection(GlobalInfo.ConnectionString))
-            using (SqlCommand cmd = new SqlCommand("sp_CapNhatHoaDon", conn))
+            using (SqlCommand cmd = new SqlCommand("sp_UpdateInvoice", conn))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
 

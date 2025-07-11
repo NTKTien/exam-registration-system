@@ -63,8 +63,7 @@
             this.pnlContainer.Name = "pnlContainer";
             this.pnlContainer.Padding = new System.Windows.Forms.Padding(24, 24, 24, 24);
             this.pnlContainer.Size = new System.Drawing.Size(1320, 900);
-            this.pnlContainer.TabIndex = 0;
-            this.pnlContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlContainer_Paint);
+            this.pnlContainer.TabIndex = 0;    
             // 
             // btnCreateInvoice
             // 
@@ -427,7 +426,6 @@
             this.grpSearch.TabIndex = 0;
             this.grpSearch.TabStop = false;
             this.grpSearch.Text = "Tìm kiếm phiếu đăng ký";
-            this.grpSearch.Enter += new System.EventHandler(this.grpSearch_Enter);
             // 
             // btnSearch
             // 

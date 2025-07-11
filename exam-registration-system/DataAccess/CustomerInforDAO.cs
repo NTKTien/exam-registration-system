@@ -48,7 +48,7 @@ namespace exam_registration_system.DataAccess
             }
         }
 
-        public static DataTable TraCuuTTNguoiDangKy(
+        public static DataTable SearchRegistor(
                 string maNDK = null,
                 string cccd = null,
                 string hoTen = null,
@@ -60,7 +60,7 @@ namespace exam_registration_system.DataAccess
                 string diaChi = null,
                 string maPDK = null) {
             using (SqlConnection conn = new SqlConnection(GlobalInfo.ConnectionString))
-            using (SqlCommand cmd = new SqlCommand("sp_TraCuuTTNguoiDangKy", conn))
+            using (SqlCommand cmd = new SqlCommand("sp_SearchRegistor", conn))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
 

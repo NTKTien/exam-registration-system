@@ -16,7 +16,7 @@ namespace exam_registration_system.Business
             return InvoiceDAO.InsertHoaDon(maPDK, maNV);
         }
 
-        public static DataTable GetInvoiceList(
+        public static DataTable SearchInvoice(
         string maHD = null,
         decimal? tongTienFrom = null,
         decimal? tongTienTo = null,
@@ -26,12 +26,12 @@ namespace exam_registration_system.Business
         decimal? thanhTienTo = null,
         string maPDK = null,
         string maNV = null) {
-            return InvoiceDAO.TraCuuHoaDon(maHD, tongTienFrom, tongTienTo, troGiaFrom, troGiaTo, thanhTienFrom, thanhTienTo, maPDK, maNV);
+            return InvoiceDAO.SearchInvoice(maHD, tongTienFrom, tongTienTo, troGiaFrom, troGiaTo, thanhTienFrom, thanhTienTo, maPDK, maNV);
         }
 
         public static bool UpdateInvoice(string maHD, decimal? tongTien = null, decimal? troGia = null, decimal? thanhTien = null, string maPDK = null, string maNV = null)
         {
-            return InvoiceDAO.CapNhatHoaDon(maHD, tongTien, troGia, thanhTien, maPDK, maNV);
+            return InvoiceDAO.UpdateInvoice(maHD, tongTien, troGia, thanhTien, maPDK, maNV);
         }
 
 

@@ -1,9 +1,9 @@
 USE MASTER;
 
-DROP DATABASE QLToChucThiCC;
+--DROP DATABASE QLToChucThiCC;
 
--- Tạo database
-CREATE DATABASE QLToChucThiCC;
+---- Tạo database
+--CREATE DATABASE QLToChucThiCC;
 
 -- Sử dụng database
 USE QLToChucThiCC;
@@ -294,7 +294,9 @@ INSERT INTO BangTinh VALUES
 INSERT INTO QuyDinh (MaQD, DoiTuong, NoiDung, GiaTri) VALUES
 ('QD001', 'TT', N'Số lượng thí sinh tối thiểu để trợ giá cho đơn vị là 20', 20),
 ('QD002', 'TT', N'Đơn vị có số lượng thí sinh vượt ngưỡng tối thiểu được trợ giá 10%', 0.1),
-('QD003', 'TT', N'Thời gian đến hạn thanh toán là 3 ngày kể từ ngày đăng ký. Sau thời gian trên, các phiếu đăng ký chưa được thanh toán sẽ bị hủy.', 3);
+('QD003', 'TT', N'Thời gian đến hạn thanh toán là 3 ngày kể từ ngày đăng ký. Sau thời gian trên, các phiếu đăng ký chưa được thanh toán sẽ bị hủy.', 3),
+('QD004', 'TT', N'Lệ phí thi Ngoại ngữ của khách hàng tự do: 1.800.000', 1800000),
+('QD005', 'TT', N'Lệ phí thi Tin học của khách hàng tự do: 1.500.000', 1800000);
 
 
 

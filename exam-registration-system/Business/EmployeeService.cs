@@ -10,7 +10,7 @@ namespace exam_registration_system.Business
 {
     public class EmployeeService
     {
-        public static DataTable GetEmpInfo(
+        public static DataTable SearchEmp(
             string maNV = null,
             string hoTen = null,
             string diaChi = null,
@@ -20,12 +20,12 @@ namespace exam_registration_system.Business
             string email = null,
             string loaiNV = null)
         {
-            return EmployeeDAO.TraCuuNhanVien(maNV, hoTen, diaChi, soDienThoai, ngaySinhFrom, ngaySinhTo, email, loaiNV);
+            return EmployeeDAO.SearchEmp(maNV, hoTen, diaChi, soDienThoai, ngaySinhFrom, ngaySinhTo, email, loaiNV);
         }
 
         public static string CheckLogin(string maNV)
         {
-            DataTable dt = EmployeeDAO.TraCuuNhanVien(maNV);
+            DataTable dt = EmployeeDAO.SearchEmp(maNV);
             if (dt.Rows.Count > 0)
             {
                 return dt.Rows[0]["LoaiNV"].ToString();

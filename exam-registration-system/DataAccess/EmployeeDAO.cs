@@ -12,7 +12,7 @@ namespace exam_registration_system.DataAccess
 {
     public class EmployeeDAO
     {
-        public static DataTable TraCuuNhanVien(
+        public static DataTable SearchEmp(
             string maNV = null,
             string hoTen = null,
             string diaChi = null,
@@ -23,7 +23,7 @@ namespace exam_registration_system.DataAccess
             string loaiNV = null)
         {
             using (SqlConnection conn = new SqlConnection(GlobalInfo.ConnectionString))
-            using (SqlCommand cmd = new SqlCommand("sp_TraCuuNhanVien", conn))
+            using (SqlCommand cmd = new SqlCommand("sp_SearchEmp", conn))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
 
