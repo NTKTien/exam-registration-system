@@ -59,12 +59,12 @@
             this.pnlContainer.Controls.Add(this.grpCustomerInfo);
             this.pnlContainer.Controls.Add(this.grpSearch);
             this.pnlContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlContainer.Location = new System.Drawing.Point(0, 60);
-            this.pnlContainer.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlContainer.Location = new System.Drawing.Point(0, 90);
             this.pnlContainer.Name = "pnlContainer";
-            this.pnlContainer.Padding = new System.Windows.Forms.Padding(16);
-            this.pnlContainer.Size = new System.Drawing.Size(880, 600);
+            this.pnlContainer.Padding = new System.Windows.Forms.Padding(24, 24, 24, 24);
+            this.pnlContainer.Size = new System.Drawing.Size(1320, 900);
             this.pnlContainer.TabIndex = 0;
+            this.pnlContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlContainer_Paint);
             // 
             // btnCreateInvoice
             // 
@@ -78,10 +78,9 @@
             this.btnCreateInvoice.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.btnCreateInvoice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreateInvoice.ForeColor = System.Drawing.Color.White;
-            this.btnCreateInvoice.Location = new System.Drawing.Point(380, 500);
-            this.btnCreateInvoice.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCreateInvoice.Location = new System.Drawing.Point(570, 750);
             this.btnCreateInvoice.Name = "btnCreateInvoice";
-            this.btnCreateInvoice.Size = new System.Drawing.Size(150, 42);
+            this.btnCreateInvoice.Size = new System.Drawing.Size(225, 63);
             this.btnCreateInvoice.TabIndex = 4;
             this.btnCreateInvoice.Text = "Tạo hóa đơn";
             // 
@@ -96,9 +95,11 @@
             this.grpPaymentInfo.Controls.Add(this.btnConfirmPayment);
             this.grpPaymentInfo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.grpPaymentInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.grpPaymentInfo.Location = new System.Drawing.Point(454, 110);
+            this.grpPaymentInfo.Location = new System.Drawing.Point(681, 165);
+            this.grpPaymentInfo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.grpPaymentInfo.Name = "grpPaymentInfo";
-            this.grpPaymentInfo.Size = new System.Drawing.Size(410, 330);
+            this.grpPaymentInfo.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpPaymentInfo.Size = new System.Drawing.Size(615, 495);
             this.grpPaymentInfo.TabIndex = 2;
             this.grpPaymentInfo.TabStop = false;
             this.grpPaymentInfo.Text = "Thông tin thanh toán";
@@ -116,14 +117,14 @@
             this.tbFinalAmount.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbFinalAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
             this.tbFinalAmount.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
-            this.tbFinalAmount.Location = new System.Drawing.Point(170, 175);
-            this.tbFinalAmount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbFinalAmount.Location = new System.Drawing.Point(255, 262);
+            this.tbFinalAmount.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tbFinalAmount.Name = "tbFinalAmount";
             this.tbFinalAmount.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
             this.tbFinalAmount.PlaceholderText = "";
             this.tbFinalAmount.ReadOnly = true;
             this.tbFinalAmount.SelectedText = "";
-            this.tbFinalAmount.Size = new System.Drawing.Size(210, 33);
+            this.tbFinalAmount.Size = new System.Drawing.Size(315, 50);
             this.tbFinalAmount.TabIndex = 18;
             // 
             // lbFinalAmount
@@ -131,10 +132,9 @@
             this.lbFinalAmount.AutoSize = true;
             this.lbFinalAmount.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.lbFinalAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.lbFinalAmount.Location = new System.Drawing.Point(20, 180);
-            this.lbFinalAmount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbFinalAmount.Location = new System.Drawing.Point(30, 270);
             this.lbFinalAmount.Name = "lbFinalAmount";
-            this.lbFinalAmount.Size = new System.Drawing.Size(96, 21);
+            this.lbFinalAmount.Size = new System.Drawing.Size(142, 32);
             this.lbFinalAmount.TabIndex = 17;
             this.lbFinalAmount.Text = "Thành tiền:";
             // 
@@ -151,14 +151,14 @@
             this.tbSupportAmount.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbSupportAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.tbSupportAmount.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.tbSupportAmount.Location = new System.Drawing.Point(170, 115);
-            this.tbSupportAmount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbSupportAmount.Location = new System.Drawing.Point(255, 172);
+            this.tbSupportAmount.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tbSupportAmount.Name = "tbSupportAmount";
             this.tbSupportAmount.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.tbSupportAmount.PlaceholderText = "";
             this.tbSupportAmount.ReadOnly = true;
             this.tbSupportAmount.SelectedText = "";
-            this.tbSupportAmount.Size = new System.Drawing.Size(210, 33);
+            this.tbSupportAmount.Size = new System.Drawing.Size(315, 50);
             this.tbSupportAmount.TabIndex = 16;
             // 
             // lbSupportAmount
@@ -166,10 +166,9 @@
             this.lbSupportAmount.AutoSize = true;
             this.lbSupportAmount.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.lbSupportAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.lbSupportAmount.Location = new System.Drawing.Point(20, 120);
-            this.lbSupportAmount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbSupportAmount.Location = new System.Drawing.Point(30, 180);
             this.lbSupportAmount.Name = "lbSupportAmount";
-            this.lbSupportAmount.Size = new System.Drawing.Size(66, 21);
+            this.lbSupportAmount.Size = new System.Drawing.Size(100, 32);
             this.lbSupportAmount.TabIndex = 15;
             this.lbSupportAmount.Text = "Trợ giá:";
             // 
@@ -186,14 +185,14 @@
             this.tbTotalCost.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbTotalCost.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.tbTotalCost.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.tbTotalCost.Location = new System.Drawing.Point(170, 55);
-            this.tbTotalCost.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbTotalCost.Location = new System.Drawing.Point(255, 82);
+            this.tbTotalCost.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tbTotalCost.Name = "tbTotalCost";
             this.tbTotalCost.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.tbTotalCost.PlaceholderText = "";
             this.tbTotalCost.ReadOnly = true;
             this.tbTotalCost.SelectedText = "";
-            this.tbTotalCost.Size = new System.Drawing.Size(210, 33);
+            this.tbTotalCost.Size = new System.Drawing.Size(315, 50);
             this.tbTotalCost.TabIndex = 14;
             // 
             // lbTotalCost
@@ -201,10 +200,9 @@
             this.lbTotalCost.AutoSize = true;
             this.lbTotalCost.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.lbTotalCost.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.lbTotalCost.Location = new System.Drawing.Point(20, 60);
-            this.lbTotalCost.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbTotalCost.Location = new System.Drawing.Point(30, 90);
             this.lbTotalCost.Name = "lbTotalCost";
-            this.lbTotalCost.Size = new System.Drawing.Size(109, 21);
+            this.lbTotalCost.Size = new System.Drawing.Size(163, 32);
             this.lbTotalCost.TabIndex = 13;
             this.lbTotalCost.Text = "Tổng chi phí:";
             // 
@@ -220,10 +218,9 @@
             this.btnConfirmPayment.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.btnConfirmPayment.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnConfirmPayment.ForeColor = System.Drawing.Color.White;
-            this.btnConfirmPayment.Location = new System.Drawing.Point(110, 250);
-            this.btnConfirmPayment.Margin = new System.Windows.Forms.Padding(2);
+            this.btnConfirmPayment.Location = new System.Drawing.Point(165, 375);
             this.btnConfirmPayment.Name = "btnConfirmPayment";
-            this.btnConfirmPayment.Size = new System.Drawing.Size(190, 40);
+            this.btnConfirmPayment.Size = new System.Drawing.Size(285, 60);
             this.btnConfirmPayment.TabIndex = 2;
             this.btnConfirmPayment.Text = "Xác nhận thanh toán";
             // 
@@ -241,9 +238,11 @@
             this.grpCustomerInfo.Controls.Add(this.lbCustomerName);
             this.grpCustomerInfo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.grpCustomerInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.grpCustomerInfo.Location = new System.Drawing.Point(16, 110);
+            this.grpCustomerInfo.Location = new System.Drawing.Point(24, 165);
+            this.grpCustomerInfo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.grpCustomerInfo.Name = "grpCustomerInfo";
-            this.grpCustomerInfo.Size = new System.Drawing.Size(410, 330);
+            this.grpCustomerInfo.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpCustomerInfo.Size = new System.Drawing.Size(615, 495);
             this.grpCustomerInfo.TabIndex = 1;
             this.grpCustomerInfo.TabStop = false;
             this.grpCustomerInfo.Text = "Thông tin khách hàng";
@@ -261,12 +260,13 @@
             this.tbCertificateType.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.tbCertificateType.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.tbCertificateType.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.tbCertificateType.Location = new System.Drawing.Point(170, 270);
+            this.tbCertificateType.Location = new System.Drawing.Point(255, 405);
+            this.tbCertificateType.Margin = new System.Windows.Forms.Padding(6, 9, 6, 9);
             this.tbCertificateType.Name = "tbCertificateType";
             this.tbCertificateType.PlaceholderText = "";
             this.tbCertificateType.ReadOnly = true;
             this.tbCertificateType.SelectedText = "";
-            this.tbCertificateType.Size = new System.Drawing.Size(180, 29);
+            this.tbCertificateType.Size = new System.Drawing.Size(270, 44);
             this.tbCertificateType.TabIndex = 13;
             // 
             // tbStatus
@@ -282,12 +282,13 @@
             this.tbStatus.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.tbStatus.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.tbStatus.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.tbStatus.Location = new System.Drawing.Point(170, 215);
+            this.tbStatus.Location = new System.Drawing.Point(255, 322);
+            this.tbStatus.Margin = new System.Windows.Forms.Padding(6, 9, 6, 9);
             this.tbStatus.Name = "tbStatus";
             this.tbStatus.PlaceholderText = "";
             this.tbStatus.ReadOnly = true;
             this.tbStatus.SelectedText = "";
-            this.tbStatus.Size = new System.Drawing.Size(180, 29);
+            this.tbStatus.Size = new System.Drawing.Size(270, 44);
             this.tbStatus.TabIndex = 12;
             // 
             // tbExpiryDate
@@ -303,12 +304,13 @@
             this.tbExpiryDate.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.tbExpiryDate.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.tbExpiryDate.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.tbExpiryDate.Location = new System.Drawing.Point(170, 160);
+            this.tbExpiryDate.Location = new System.Drawing.Point(255, 240);
+            this.tbExpiryDate.Margin = new System.Windows.Forms.Padding(6, 9, 6, 9);
             this.tbExpiryDate.Name = "tbExpiryDate";
             this.tbExpiryDate.PlaceholderText = "";
             this.tbExpiryDate.ReadOnly = true;
             this.tbExpiryDate.SelectedText = "";
-            this.tbExpiryDate.Size = new System.Drawing.Size(180, 29);
+            this.tbExpiryDate.Size = new System.Drawing.Size(270, 44);
             this.tbExpiryDate.TabIndex = 11;
             // 
             // tbRegistrationDate
@@ -324,12 +326,13 @@
             this.tbRegistrationDate.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.tbRegistrationDate.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.tbRegistrationDate.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.tbRegistrationDate.Location = new System.Drawing.Point(170, 105);
+            this.tbRegistrationDate.Location = new System.Drawing.Point(255, 158);
+            this.tbRegistrationDate.Margin = new System.Windows.Forms.Padding(6, 9, 6, 9);
             this.tbRegistrationDate.Name = "tbRegistrationDate";
             this.tbRegistrationDate.PlaceholderText = "";
             this.tbRegistrationDate.ReadOnly = true;
             this.tbRegistrationDate.SelectedText = "";
-            this.tbRegistrationDate.Size = new System.Drawing.Size(180, 29);
+            this.tbRegistrationDate.Size = new System.Drawing.Size(270, 44);
             this.tbRegistrationDate.TabIndex = 10;
             // 
             // tbCustomerName
@@ -345,12 +348,13 @@
             this.tbCustomerName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.tbCustomerName.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.tbCustomerName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.tbCustomerName.Location = new System.Drawing.Point(170, 50);
+            this.tbCustomerName.Location = new System.Drawing.Point(255, 75);
+            this.tbCustomerName.Margin = new System.Windows.Forms.Padding(6, 9, 6, 9);
             this.tbCustomerName.Name = "tbCustomerName";
             this.tbCustomerName.PlaceholderText = "";
             this.tbCustomerName.ReadOnly = true;
             this.tbCustomerName.SelectedText = "";
-            this.tbCustomerName.Size = new System.Drawing.Size(180, 29);
+            this.tbCustomerName.Size = new System.Drawing.Size(270, 44);
             this.tbCustomerName.TabIndex = 9;
             // 
             // lbStatus
@@ -358,10 +362,9 @@
             this.lbStatus.AutoSize = true;
             this.lbStatus.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.lbStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.lbStatus.Location = new System.Drawing.Point(20, 220);
-            this.lbStatus.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbStatus.Location = new System.Drawing.Point(30, 330);
             this.lbStatus.Name = "lbStatus";
-            this.lbStatus.Size = new System.Drawing.Size(80, 19);
+            this.lbStatus.Size = new System.Drawing.Size(113, 28);
             this.lbStatus.TabIndex = 8;
             this.lbStatus.Text = "Trạng thái:";
             // 
@@ -370,10 +373,9 @@
             this.lbCertificateType.AutoSize = true;
             this.lbCertificateType.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.lbCertificateType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.lbCertificateType.Location = new System.Drawing.Point(20, 275);
-            this.lbCertificateType.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbCertificateType.Location = new System.Drawing.Point(30, 412);
             this.lbCertificateType.Name = "lbCertificateType";
-            this.lbCertificateType.Size = new System.Drawing.Size(109, 19);
+            this.lbCertificateType.Size = new System.Drawing.Size(155, 28);
             this.lbCertificateType.TabIndex = 7;
             this.lbCertificateType.Text = "Loại chứng chỉ:";
             // 
@@ -382,10 +384,9 @@
             this.lbExpiryDate.AutoSize = true;
             this.lbExpiryDate.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.lbExpiryDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.lbExpiryDate.Location = new System.Drawing.Point(20, 165);
-            this.lbExpiryDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbExpiryDate.Location = new System.Drawing.Point(30, 248);
             this.lbExpiryDate.Name = "lbExpiryDate";
-            this.lbExpiryDate.Size = new System.Drawing.Size(144, 19);
+            this.lbExpiryDate.Size = new System.Drawing.Size(207, 28);
             this.lbExpiryDate.TabIndex = 6;
             this.lbExpiryDate.Text = "Hạn thanh toán đến:";
             // 
@@ -394,10 +395,9 @@
             this.lbRegistrationDate.AutoSize = true;
             this.lbRegistrationDate.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.lbRegistrationDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.lbRegistrationDate.Location = new System.Drawing.Point(20, 110);
-            this.lbRegistrationDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbRegistrationDate.Location = new System.Drawing.Point(30, 165);
             this.lbRegistrationDate.Name = "lbRegistrationDate";
-            this.lbRegistrationDate.Size = new System.Drawing.Size(107, 19);
+            this.lbRegistrationDate.Size = new System.Drawing.Size(149, 28);
             this.lbRegistrationDate.TabIndex = 5;
             this.lbRegistrationDate.Text = "Ngày đăng ký:";
             // 
@@ -406,10 +406,9 @@
             this.lbCustomerName.AutoSize = true;
             this.lbCustomerName.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.lbCustomerName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.lbCustomerName.Location = new System.Drawing.Point(20, 55);
-            this.lbCustomerName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbCustomerName.Location = new System.Drawing.Point(30, 82);
             this.lbCustomerName.Name = "lbCustomerName";
-            this.lbCustomerName.Size = new System.Drawing.Size(116, 19);
+            this.lbCustomerName.Size = new System.Drawing.Size(165, 28);
             this.lbCustomerName.TabIndex = 4;
             this.lbCustomerName.Text = "Tên khách hàng:";
             // 
@@ -421,14 +420,14 @@
             this.grpSearch.Dock = System.Windows.Forms.DockStyle.Top;
             this.grpSearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.grpSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.grpSearch.Location = new System.Drawing.Point(16, 16);
-            this.grpSearch.Margin = new System.Windows.Forms.Padding(2);
+            this.grpSearch.Location = new System.Drawing.Point(24, 24);
             this.grpSearch.Name = "grpSearch";
-            this.grpSearch.Padding = new System.Windows.Forms.Padding(16);
-            this.grpSearch.Size = new System.Drawing.Size(848, 80);
+            this.grpSearch.Padding = new System.Windows.Forms.Padding(24, 24, 24, 24);
+            this.grpSearch.Size = new System.Drawing.Size(1272, 120);
             this.grpSearch.TabIndex = 0;
             this.grpSearch.TabStop = false;
             this.grpSearch.Text = "Tìm kiếm phiếu đăng ký";
+            this.grpSearch.Enter += new System.EventHandler(this.grpSearch_Enter);
             // 
             // btnSearch
             // 
@@ -442,10 +441,9 @@
             this.btnSearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(410, 32);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSearch.Location = new System.Drawing.Point(615, 48);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(110, 31);
+            this.btnSearch.Size = new System.Drawing.Size(165, 46);
             this.btnSearch.TabIndex = 1;
             this.btnSearch.Text = "Tìm kiếm";
             // 
@@ -461,11 +459,12 @@
             this.tbRegistrationID.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.tbRegistrationID.ForeColor = System.Drawing.Color.Black;
             this.tbRegistrationID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.tbRegistrationID.Location = new System.Drawing.Point(190, 33);
+            this.tbRegistrationID.Location = new System.Drawing.Point(285, 50);
+            this.tbRegistrationID.Margin = new System.Windows.Forms.Padding(6, 9, 6, 9);
             this.tbRegistrationID.Name = "tbRegistrationID";
             this.tbRegistrationID.PlaceholderText = "";
             this.tbRegistrationID.SelectedText = "";
-            this.tbRegistrationID.Size = new System.Drawing.Size(200, 29);
+            this.tbRegistrationID.Size = new System.Drawing.Size(300, 44);
             this.tbRegistrationID.TabIndex = 4;
             // 
             // lbRegistrationID
@@ -473,10 +472,9 @@
             this.lbRegistrationID.AutoSize = true;
             this.lbRegistrationID.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.lbRegistrationID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.lbRegistrationID.Location = new System.Drawing.Point(40, 35);
-            this.lbRegistrationID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbRegistrationID.Location = new System.Drawing.Point(60, 52);
             this.lbRegistrationID.Name = "lbRegistrationID";
-            this.lbRegistrationID.Size = new System.Drawing.Size(133, 19);
+            this.lbRegistrationID.Size = new System.Drawing.Size(188, 28);
             this.lbRegistrationID.TabIndex = 3;
             this.lbRegistrationID.Text = "Mã phiếu đăng ký:";
             // 
@@ -487,9 +485,9 @@
             this.lbHeader.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
             this.lbHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.lbHeader.Location = new System.Drawing.Point(0, 0);
-            this.lbHeader.Margin = new System.Windows.Forms.Padding(2);
+            this.lbHeader.Margin = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.lbHeader.Name = "lbHeader";
-            this.lbHeader.Size = new System.Drawing.Size(880, 60);
+            this.lbHeader.Size = new System.Drawing.Size(1320, 90);
             this.lbHeader.TabIndex = 0;
             this.lbHeader.Text = "THANH TOÁN";
             this.lbHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -500,22 +498,21 @@
             this.pnlHeader.Controls.Add(this.lbHeader);
             this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlHeader.Location = new System.Drawing.Point(0, 0);
-            this.pnlHeader.Margin = new System.Windows.Forms.Padding(2);
             this.pnlHeader.Name = "pnlHeader";
-            this.pnlHeader.Size = new System.Drawing.Size(880, 60);
+            this.pnlHeader.Size = new System.Drawing.Size(1320, 90);
             this.pnlHeader.TabIndex = 1;
             // 
             // OriginalPayment
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(880, 660);
+            this.ClientSize = new System.Drawing.Size(1320, 990);
             this.Controls.Add(this.pnlContainer);
             this.Controls.Add(this.pnlHeader);
             this.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "OriginalPayment";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PaymentManagementForm";

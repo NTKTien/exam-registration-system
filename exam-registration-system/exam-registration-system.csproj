@@ -139,6 +139,7 @@
     <Compile Include="Business\ExamScheduleService.cs" />
     <Compile Include="Business\InvoiceService.cs" />
     <Compile Include="Business\PhieuDangKyService.cs" />
+    <Compile Include="Business\PhieuDuThiService.cs" />
     <Compile Include="CommonForms\homeUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -162,6 +163,7 @@
     <Compile Include="DataAccess\ExamScheduleDAO.cs" />
     <Compile Include="DataAccess\InvoiceDAO.cs" />
     <Compile Include="DataAccess\PhieuDangKyDAO.cs" />
+    <Compile Include="DataAccess\PhieuDuThiDAO.cs" />
     <Compile Include="MainForms\NVKT\CreateExtensionForm.cs">
       <SubType>Form</SubType>
     </Compile>

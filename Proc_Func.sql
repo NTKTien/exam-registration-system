@@ -1,5 +1,6 @@
 ﻿USE QLToChucThiCC;
 GO
+use master
 
 -- Lấy toàn bộ danh sách phiếu đăng ký 
 CREATE OR ALTER PROCEDURE P_GetAllReg
@@ -12,9 +13,11 @@ BEGIN
         L.NgayThi,
         T.HoTen,
         P.LoaiPDK,
-        P.TrangThai
+        P.TrangThai,
+		D.Email,
+		L.PhongThi
     FROM PhieuDangKy P
-    JOIN TTNguoiDangKy T ON P.MaPDK = T.MaPDK
+    JOIN ThiSinh D ON P.MaDS = D.MaDS
     JOIN LichDGNL L ON P.MaLT = L.MaLT
 END;
 GO
@@ -310,7 +313,7 @@ BEGIN
 	WHERE MaPDK = @MaPDK;
 END;
 GO
-
+exec sp_TraCuuPDK @LoaiCC=N'Tin học'
 -- Lấy danh sách phiếu đăng ký theo điều kiện
 CREATE PROCEDURE sp_TraCuuPDK
     @MaPDK CHAR(5) = NULL,

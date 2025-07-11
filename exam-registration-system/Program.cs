@@ -21,8 +21,8 @@ namespace exam_registration_system
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            SqlServerHelper.SetConnectionWindowsAuth();
-            Application.Run(new HomeNVKTForm());
+            SqlServerHelper.SetConnection("sa","mat_khau_moi");
+            Application.Run(new HomeNVNLForm());
             Console.WriteLine(typeof(XFontStyle).FullName);
         }
     }

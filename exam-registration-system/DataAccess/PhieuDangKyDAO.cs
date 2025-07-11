@@ -140,5 +140,60 @@ namespace exam_registration_system.DataAccess
             }
         }
 
+        public static DataTable FilterRegistrations(string maPDK, string loaiKyThi, string trangThai)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(GlobalInfo.ConnectionString))
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand("LocPhieuDangKy", conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@MaPDK", string.IsNullOrWhiteSpace(maPDK) ? (object)DBNull.Value : (object)maPDK);
+                        cmd.Parameters.AddWithValue("@LoaiKyThi", string.IsNullOrEmpty(loaiKyThi) ? (object)DBNull.Value : (object)loaiKyThi);
+                        cmd.Parameters.AddWithValue("@TrangThai", string.IsNullOrEmpty(trangThai) ? (object)DBNull.Value : (object)trangThai);
+                        DataTable dt = new DataTable();
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                        {
+                            adapter.Fill(dt);
+                        }
+                        return dt;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error filtering data: {ex.Message}");
+            }
+        }
+
+        public static DataTable GetPhieuDangKy(string maPDK)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(GlobalInfo.ConnectionString))
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand("XemPhieuDangKy", conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@MaPDK", maPDK);
+
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                        {
+                            DataTable dt = new DataTable();
+                            adapter.Fill(dt);
+                            return dt;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Lỗi khi tải dữ liệu Phiếu Đăng Ký: {ex.Message}");
+            }
+        }
+
     }
 }

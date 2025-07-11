@@ -36,5 +36,10 @@ namespace exam_registration_system.MainForms.NVTN
             ViewExamSchedule frm = new ViewExamSchedule(loaiDGNL);
             frm.Show();
         }
+
+        private void panelContent_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

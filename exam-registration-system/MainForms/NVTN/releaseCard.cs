@@ -1,4 +1,6 @@
-﻿using System;
+﻿using exam_registration_system.Business;
+using exam_registration_system.CommonForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,6 +12,7 @@ using System.Threading.Tasks;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
 using exam_registration_system.Utils;
+using System.Text.RegularExpressions;
 
 
 namespace exam_registration_system.MainForms.NVTN
@@ -20,9 +23,23 @@ namespace exam_registration_system.MainForms.NVTN
         public releaseCard()
         {
             InitializeComponent();
+            InitializeComboBoxes();
             SetupDataGridView();
             LoadData();
 
+        }
+
+        private void InitializeComboBoxes()
+        {
+            // Thêm các giá trị cho cbxTypeCer (LoaiCC)
+            cbxTypeCer.Items.Clear();
+            cbxTypeCer.Items.AddRange(new string[] { "Tin học", "Ngoại ngữ" }); // Thay bằng danh sách thực tế từ cơ sở dữ liệu
+            cbxTypeCer.SelectedIndex = -1; // Không chọn mặc định
+
+            // Thêm các giá trị cho cbbStatus (TrangThai)
+            cbbStatus.Items.Clear();
+            cbbStatus.Items.AddRange(new string[] { "Chưa thanh toán", "Đã hủy", "Đã thanh toán", "Đã xuất PDT" }); // Thay bằng danh sách thực tế
+            cbbStatus.SelectedIndex = -1; // Không chọn mặc định
         }
 
         private void SetupDataGridView()
@@ -99,44 +116,27 @@ namespace exam_registration_system.MainForms.NVTN
                 DataGridViewRegList.Columns["NgayThi"].HeaderText = "Ngày Thi";
             if (DataGridViewRegList.Columns["PhongThi"] != null)
                 DataGridViewRegList.Columns["PhongThi"].HeaderText = "Phòng Thi";
-            if (DataGridViewRegList.Columns["TrangThaiThanhToan"] != null)
-                DataGridViewRegList.Columns["TrangThaiThanhToan"].HeaderText = "Thanh Toán";
-            if (DataGridViewRegList.Columns["TrangThaiXuatPDT"] != null)
-                DataGridViewRegList.Columns["TrangThaiXuatPDT"].HeaderText = "Xuất PDT";
+            if (DataGridViewRegList.Columns["TrangThai"] != null)
+                DataGridViewRegList.Columns["TrangThai"].HeaderText = "Trạng thái";
+            if (DataGridViewRegList.Columns["NgayLap"] != null)
+                DataGridViewRegList.Columns["NgayLap"].Visible = false;
         }
 
         public void LoadData()
         {
             try
             {
-
-                using (SqlConnection conn = new SqlConnection(GlobalInfo.ConnectionString))
+                DataTable dt = PhieuDangKyService.GetAllReg();
+                DataGridViewRegList.DataSource = dt;
+                
+                if (DataGridViewRegList.Columns["NgayLap"] != null)
                 {
-                    conn.Open();
-                    using (SqlCommand cmd = new SqlCommand("XemTatCaPhieuDangKy", conn))
-                    {
-                        cmd.CommandType = CommandType.StoredProcedure;
-
-                        // Create a DataTable to hold the results
-                        DataTable dt = new DataTable();
-                        using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
-                        {
-                            adapter.Fill(dt);
-                        }
-
-                        // Gán DataTable vào DataGridView
-                        DataGridViewRegList.DataSource = dt;
-
-                        // Đặt tên hiển thị cho các cột
-                        SetColumnHeaders();
-
-                        // Đảm bảo tiêu đề cột hiển thị
-                        DataGridViewRegList.ColumnHeadersVisible = true;
-
-                        // Điều chỉnh kích thước sau khi lọc dữ liệu
-                        AdjustDataGridViewSize();
-                    }
+                    DataGridViewRegList.Columns["NgayLap"].Visible = false;
                 }
+
+                SetColumnHeaders();
+                DataGridViewRegList.ColumnHeadersVisible = true;
+                AdjustDataGridViewSize();
             }
             catch (Exception ex)
             {
@@ -149,20 +149,14 @@ namespace exam_registration_system.MainForms.NVTN
 
         private void DataGridViewCardList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Kiểm tra xem có click vào hàng hợp lệ không
             if (e.RowIndex >= 0)
             {
-                // Lấy hàng được chọn
                 DataGridViewRow row = DataGridViewRegList.Rows[e.RowIndex];
-
-                // Lấy giá trị MaPDK và TrangThaiXuatPDT
                 string maPDK = row.Cells["MaPDK"].Value?.ToString();
-                string trangThaiXuatPDT = row.Cells["TrangThaiXuatPDT"].Value?.ToString();
-
-                if (!string.IsNullOrEmpty(maPDK) && !string.IsNullOrEmpty(trangThaiXuatPDT))
+                string trangThai = row.Cells["TrangThai"].Value?.ToString();
+                if (!string.IsNullOrEmpty(maPDK) && !string.IsNullOrEmpty(trangThai))
                 {
-                    // Mở form viewDetailCard và truyền MaPDK, TrangThaiXuatPDT
-                    viewDetailCard detailForm = new viewDetailCard(maPDK, trangThaiXuatPDT, this);
+                    viewDetailCard detailForm = new viewDetailCard(maPDK, trangThai, this);
                     detailForm.ShowDialog();
                 }
                 else
@@ -207,52 +201,35 @@ namespace exam_registration_system.MainForms.NVTN
         {
             try
             {
-                using (SqlConnection conn = new SqlConnection(GlobalInfo.ConnectionString))
+
+                DataTable dt = PhieuDangKyService.FilterRegistrations(
+                   tbID.Text.Trim(),
+                   cbxTypeCer.SelectedItem?.ToString(),
+                   cbbStatus.SelectedItem?.ToString()
+
+                );
+                if (dt.Rows.Count == 0)
                 {
-                    conn.Open();
-                    using (SqlCommand cmd = new SqlCommand("LocPhieuDangKy", conn))
-                    {
-                        cmd.CommandType = CommandType.StoredProcedure;
-
-                        // Add parameters (NULL if empty or not selected)
-                        cmd.Parameters.AddWithValue("@MaPDK", string.IsNullOrWhiteSpace(tbID.Text) ? (object)DBNull.Value : (object)tbID.Text);
-                        cmd.Parameters.AddWithValue("@LoaiKyThi", cbxTypeCer.SelectedItem == null ? (object)DBNull.Value : (object)cbxTypeCer.SelectedItem.ToString());
-                        cmd.Parameters.AddWithValue("@TrangThaiXuatPDT", cbbStatus.SelectedItem == null ? (object)DBNull.Value : (object)cbbStatus.SelectedItem.ToString());
-                        // Create a DataTable to hold the results
-                        DataTable dt = new DataTable();
-                        using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
-                        {
-                            adapter.Fill(dt);
-                        }
-
-                        // Kiểm tra nếu không có dữ liệu
-                        if (dt.Rows.Count == 0)
-                        {
-                            MessageBox.Show("KHÔNG CÓ DỮ LIỆU NÀO THOẢ MÃN", "Thông báo",
-                                MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            DataGridViewRegList.DataSource = null; // Xóa dữ liệu cũ trong DataGridView
-                            return;
-                        }
-
-                        // Gán DataTable vào DataGridView
-                        DataGridViewRegList.DataSource = dt;
-
-                        // Đặt tên hiển thị cho các cột
-                        SetColumnHeaders();
-
-                        // Đảm bảo tiêu đề cột hiển thị
-                        DataGridViewRegList.ColumnHeadersVisible = true;
-
-                        // Điều chỉnh kích thước sau khi lọc dữ liệu
-                        AdjustDataGridViewSize();
-                    }
+                    MessageBox.Show("KHÔNG CÓ DỮ LIỆU NÀO THOẢ MÃN", "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    DataGridViewRegList.DataSource = null;
+                    return;
                 }
+                DataGridViewRegList.DataSource = dt;
+                SetColumnHeaders();
+                DataGridViewRegList.ColumnHeadersVisible = true;
+                AdjustDataGridViewSize();
+
+                cbxTypeCer.SelectedIndex = -1;
+                cbbStatus.SelectedIndex = -1;
+                tbID.Clear();
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error filtering data: {ex.Message}", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            
         }
 
         private void labelHeader_Click(object sender, EventArgs e)
@@ -262,7 +239,7 @@ namespace exam_registration_system.MainForms.NVTN
 
         private void releaseCard_Load(object sender, EventArgs e)
         {
-
+            LoadData();
         }
 
         private void btnReload_Click(object sender, EventArgs e)

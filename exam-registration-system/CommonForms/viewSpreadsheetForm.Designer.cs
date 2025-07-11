@@ -32,9 +32,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.cbxTypeCer = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.tbID = new Guna.UI2.WinForms.Guna2TextBox();
             this.lbType = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.btnFilter = new Guna.UI2.WinForms.Guna2Button();
+            this.cbxTypeCer = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.tbName = new Guna.UI2.WinForms.Guna2TextBox();
+            this.tbID = new Guna.UI2.WinForms.Guna2TextBox();
             this.lbID = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lbName = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
@@ -43,8 +45,6 @@
             this.btnDownload = new Guna.UI2.WinForms.Guna2Button();
             this.panelHeader = new Guna.UI2.WinForms.Guna2Panel();
             this.lbTitle = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.tbName = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btnFilter = new Guna.UI2.WinForms.Guna2Button();
             this.btnReload = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
@@ -67,7 +67,7 @@
             this.guna2Panel2.Controls.Add(this.lbName);
             this.guna2Panel2.FillColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.guna2Panel2.Location = new System.Drawing.Point(22, 81);
-            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.ShadowDecoration.BorderRadius = 15;
             this.guna2Panel2.ShadowDecoration.Depth = 10;
@@ -75,6 +75,37 @@
             this.guna2Panel2.Size = new System.Drawing.Size(828, 119);
             this.guna2Panel2.TabIndex = 6;
             this.guna2Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel2_Paint);
+            // 
+            // lbType
+            // 
+            this.lbType.BackColor = System.Drawing.Color.Transparent;
+            this.lbType.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.lbType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.lbType.Location = new System.Drawing.Point(455, 19);
+            this.lbType.Margin = new System.Windows.Forms.Padding(4);
+            this.lbType.Name = "lbType";
+            this.lbType.Size = new System.Drawing.Size(98, 19);
+            this.lbType.TabIndex = 11;
+            this.lbType.Text = "Loại chứng chỉ:";
+            // 
+            // btnFilter
+            // 
+            this.btnFilter.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.btnFilter.BorderRadius = 5;
+            this.btnFilter.BorderThickness = 1;
+            this.btnFilter.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnFilter.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnFilter.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnFilter.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnFilter.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.btnFilter.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnFilter.ForeColor = System.Drawing.Color.White;
+            this.btnFilter.Location = new System.Drawing.Point(714, 59);
+            this.btnFilter.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnFilter.Name = "btnFilter";
+            this.btnFilter.Size = new System.Drawing.Size(105, 38);
+            this.btnFilter.TabIndex = 18;
+            this.btnFilter.Text = "Lọc";
             // 
             // cbxTypeCer
             // 
@@ -90,10 +121,31 @@
             "Ngoại ngữ",
             "Tin học"});
             this.cbxTypeCer.Location = new System.Drawing.Point(455, 61);
-            this.cbxTypeCer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbxTypeCer.Margin = new System.Windows.Forms.Padding(4);
             this.cbxTypeCer.Name = "cbxTypeCer";
             this.cbxTypeCer.Size = new System.Drawing.Size(215, 36);
             this.cbxTypeCer.TabIndex = 12;
+            // 
+            // tbName
+            // 
+            this.tbName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbName.DefaultText = "";
+            this.tbName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbName.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Italic);
+            this.tbName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.tbName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbName.Location = new System.Drawing.Point(218, 61);
+            this.tbName.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.tbName.Name = "tbName";
+            this.tbName.PlaceholderText = "";
+            this.tbName.SelectedText = "";
+            this.tbName.Size = new System.Drawing.Size(211, 36);
+            this.tbName.TabIndex = 10;
+            this.tbName.TextChanged += new System.EventHandler(this.tbName_TextChanged);
             // 
             // tbID
             // 
@@ -115,27 +167,15 @@
             this.tbID.Size = new System.Drawing.Size(172, 36);
             this.tbID.TabIndex = 9;
             // 
-            // lbType
-            // 
-            this.lbType.BackColor = System.Drawing.Color.Transparent;
-            this.lbType.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.lbType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.lbType.Location = new System.Drawing.Point(455, 19);
-            this.lbType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.lbType.Name = "lbType";
-            this.lbType.Size = new System.Drawing.Size(146, 30);
-            this.lbType.TabIndex = 11;
-            this.lbType.Text = "Loại chứng chỉ:";
-            // 
             // lbID
             // 
             this.lbID.BackColor = System.Drawing.Color.Transparent;
             this.lbID.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.lbID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.lbID.Location = new System.Drawing.Point(12, 19);
-            this.lbID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lbID.Margin = new System.Windows.Forms.Padding(4);
             this.lbID.Name = "lbID";
-            this.lbID.Size = new System.Drawing.Size(125, 30);
+            this.lbID.Size = new System.Drawing.Size(84, 19);
             this.lbID.TabIndex = 8;
             this.lbID.Text = "Số báo danh:";
             // 
@@ -145,9 +185,9 @@
             this.lbName.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.lbName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.lbName.Location = new System.Drawing.Point(218, 19);
-            this.lbName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lbName.Margin = new System.Windows.Forms.Padding(4);
             this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(43, 30);
+            this.lbName.Size = new System.Drawing.Size(30, 19);
             this.lbName.TabIndex = 9;
             this.lbName.Text = "Tên:";
             // 
@@ -160,7 +200,7 @@
             this.guna2Panel1.Controls.Add(this.DataGridViewInfo);
             this.guna2Panel1.FillColor = System.Drawing.Color.WhiteSmoke;
             this.guna2Panel1.Location = new System.Drawing.Point(22, 273);
-            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.ShadowDecoration.BorderRadius = 15;
             this.guna2Panel1.ShadowDecoration.Depth = 10;
@@ -193,7 +233,7 @@
             this.DataGridViewInfo.DefaultCellStyle = dataGridViewCellStyle3;
             this.DataGridViewInfo.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.DataGridViewInfo.Location = new System.Drawing.Point(23, 21);
-            this.DataGridViewInfo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DataGridViewInfo.Margin = new System.Windows.Forms.Padding(4);
             this.DataGridViewInfo.Name = "DataGridViewInfo";
             this.DataGridViewInfo.RowHeadersVisible = false;
             this.DataGridViewInfo.RowHeadersWidth = 62;
@@ -234,7 +274,7 @@
             this.btnPrint.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnPrint.ForeColor = System.Drawing.Color.White;
             this.btnPrint.Location = new System.Drawing.Point(688, 584);
-            this.btnPrint.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPrint.Margin = new System.Windows.Forms.Padding(4);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(153, 51);
             this.btnPrint.TabIndex = 8;
@@ -253,7 +293,7 @@
             this.btnDownload.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnDownload.ForeColor = System.Drawing.Color.White;
             this.btnDownload.Location = new System.Drawing.Point(435, 584);
-            this.btnDownload.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDownload.Margin = new System.Windows.Forms.Padding(4);
             this.btnDownload.Name = "btnDownload";
             this.btnDownload.Size = new System.Drawing.Size(188, 51);
             this.btnDownload.TabIndex = 9;
@@ -283,46 +323,6 @@
             this.lbTitle.TabIndex = 1;
             this.lbTitle.Text = "Bảng tính";
             // 
-            // tbName
-            // 
-            this.tbName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbName.DefaultText = "";
-            this.tbName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbName.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Italic);
-            this.tbName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.tbName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbName.Location = new System.Drawing.Point(218, 61);
-            this.tbName.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
-            this.tbName.Name = "tbName";
-            this.tbName.PlaceholderText = "";
-            this.tbName.SelectedText = "";
-            this.tbName.Size = new System.Drawing.Size(211, 36);
-            this.tbName.TabIndex = 10;
-            this.tbName.TextChanged += new System.EventHandler(this.tbName_TextChanged);
-            // 
-            // btnFilter
-            // 
-            this.btnFilter.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.btnFilter.BorderRadius = 5;
-            this.btnFilter.BorderThickness = 1;
-            this.btnFilter.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnFilter.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnFilter.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnFilter.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnFilter.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.btnFilter.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btnFilter.ForeColor = System.Drawing.Color.White;
-            this.btnFilter.Location = new System.Drawing.Point(714, 59);
-            this.btnFilter.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnFilter.Name = "btnFilter";
-            this.btnFilter.Size = new System.Drawing.Size(105, 38);
-            this.btnFilter.TabIndex = 18;
-            this.btnFilter.Text = "Lọc";
-            // 
             // btnReload
             // 
             this.btnReload.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
@@ -344,7 +344,8 @@
             // 
             // viewSpreadsheetForm
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(897, 672);
             this.Controls.Add(this.btnReload);
             this.Controls.Add(this.panelHeader);
@@ -353,7 +354,7 @@
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.guna2Panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "viewSpreadsheetForm";
             this.Text = "viewSpreadsheetForm";
             this.guna2Panel2.ResumeLayout(false);

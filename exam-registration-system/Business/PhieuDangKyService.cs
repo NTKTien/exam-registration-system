@@ -45,5 +45,29 @@ namespace exam_registration_system.Business
         {
             return PhieuDangKyDAO.CapNhatPDK(maPDK, ngayLap, trangThai, maDS, maLT, tenDonVi, loaiPDK, loaiCC);
         }
+
+        public static DataTable FilterRegistrations(string maPDK, string loaiKyThi, string trangThai)
+        {
+            try
+            {
+                return PhieuDangKyDAO.FilterRegistrations(maPDK, loaiKyThi, trangThai);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Business layer error: {ex.Message}");
+            }
+        }
+
+        public static DataTable GetPhieuDangKy(string maPDK)
+        {
+            try
+            {
+                return PhieuDangKyDAO.GetPhieuDangKy(maPDK);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Business layer error: {ex.Message}");
+            }
+        }
     }
 }
