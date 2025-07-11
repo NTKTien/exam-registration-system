@@ -432,5 +432,15 @@ namespace exam_registration_system.MainForms.NVKT
             doc.Save(filePath);
             Process.Start(new ProcessStartInfo(filePath) { UseShellExecute = true });
         }
+
+        private void grpSearch_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSearch_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

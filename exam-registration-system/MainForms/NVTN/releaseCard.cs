@@ -106,8 +106,10 @@ namespace exam_registration_system.MainForms.NVTN
             // Đặt tên hiển thị cho các cột
             if (DataGridViewRegList.Columns["MaPDK"] != null)
                 DataGridViewRegList.Columns["MaPDK"].HeaderText = "Mã PĐK";
-            if (DataGridViewRegList.Columns["HoTen"] != null)
-                DataGridViewRegList.Columns["HoTen"].HeaderText = "Họ Tên";
+            if (DataGridViewRegList.Columns["MaTS"] != null)
+                DataGridViewRegList.Columns["MaTS"].HeaderText = "Mã TS";
+            if (DataGridViewRegList.Columns["TenHienThi"] != null)
+                DataGridViewRegList.Columns["TenHienThi"].HeaderText = "Tên";
             if (DataGridViewRegList.Columns["Email"] != null)
                 DataGridViewRegList.Columns["Email"].HeaderText = "Email";
             if (DataGridViewRegList.Columns["LoaiPDK"] != null)
@@ -118,21 +120,16 @@ namespace exam_registration_system.MainForms.NVTN
                 DataGridViewRegList.Columns["PhongThi"].HeaderText = "Phòng Thi";
             if (DataGridViewRegList.Columns["TrangThai"] != null)
                 DataGridViewRegList.Columns["TrangThai"].HeaderText = "Trạng thái";
-            if (DataGridViewRegList.Columns["NgayLap"] != null)
-                DataGridViewRegList.Columns["NgayLap"].Visible = false;
+          
+
         }
 
         public void LoadData()
         {
             try
             {
-                DataTable dt = PhieuDangKyService.GetAllReg();
+                DataTable dt = PhieuDangKyService.XemPDKDeXuatPhieu();
                 DataGridViewRegList.DataSource = dt;
-                
-                if (DataGridViewRegList.Columns["NgayLap"] != null)
-                {
-                    DataGridViewRegList.Columns["NgayLap"].Visible = false;
-                }
 
                 SetColumnHeaders();
                 DataGridViewRegList.ColumnHeadersVisible = true;
@@ -153,11 +150,18 @@ namespace exam_registration_system.MainForms.NVTN
             {
                 DataGridViewRow row = DataGridViewRegList.Rows[e.RowIndex];
                 string maPDK = row.Cells["MaPDK"].Value?.ToString();
+                string maTS = row.Cells["MaTS"].Value?.ToString();
                 string trangThai = row.Cells["TrangThai"].Value?.ToString();
+                
+
                 if (!string.IsNullOrEmpty(maPDK) && !string.IsNullOrEmpty(trangThai))
                 {
-                    viewDetailCard detailForm = new viewDetailCard(maPDK, trangThai, this);
-                    detailForm.ShowDialog();
+                    if( !string.IsNullOrEmpty(maTS))
+                    {
+                        viewDetailCard detailForm = new viewDetailCard(maPDK, trangThai, maTS);
+                        detailForm.ShowDialog();
+                    }    
+                    
                 }
                 else
                 {
@@ -165,6 +169,7 @@ namespace exam_registration_system.MainForms.NVTN
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+            LoadData();
         }
 
         private void lbType_Click(object sender, EventArgs e)
@@ -199,6 +204,15 @@ namespace exam_registration_system.MainForms.NVTN
 
         private void btnFilter_Click(object sender, EventArgs e)
         {
+            string maPDK = tbID.Text.Trim();
+
+            if (maPDK.Length > 5)
+            {
+                MessageBox.Show("Mã phiếu đăng ký không hợp lệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                tbID.Clear();
+                return;
+            }
+
             try
             {
 
@@ -215,6 +229,7 @@ namespace exam_registration_system.MainForms.NVTN
                     DataGridViewRegList.DataSource = null;
                     return;
                 }
+
                 DataGridViewRegList.DataSource = dt;
                 SetColumnHeaders();
                 DataGridViewRegList.ColumnHeadersVisible = true;
@@ -223,6 +238,8 @@ namespace exam_registration_system.MainForms.NVTN
                 cbxTypeCer.SelectedIndex = -1;
                 cbbStatus.SelectedIndex = -1;
                 tbID.Clear();
+
+
             }
             catch (Exception ex)
             {
@@ -230,6 +247,8 @@ namespace exam_registration_system.MainForms.NVTN
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
+           
+
         }
 
         private void labelHeader_Click(object sender, EventArgs e)

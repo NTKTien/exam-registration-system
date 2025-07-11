@@ -19,14 +19,16 @@ namespace exam_registration_system.MainForms.NVTN
     {
         private string MaPDK;
         private string TrangThai;
-        private releaseCard parentForm;
+        private string MaTS;
+        //private releaseCard parentForm;
 
-        public viewDetailCard(string maPDK, string trangThai, releaseCard parent = null)
+        public viewDetailCard(string maPDK, string trangThai, string maTS)
         {
             InitializeComponent();
             MaPDK = maPDK;
             TrangThai = trangThai;
-            parentForm = parent;
+            MaTS = maTS;
+            //parentForm = parent;
         }
 
         private void tbLocation_TextChanged(object sender, EventArgs e)
@@ -71,7 +73,7 @@ namespace exam_registration_system.MainForms.NVTN
                 tbID.Visible = false;
                 btnIssueCard.Visible = false;
             }
-            else if (TrangThai != "Đã thanh toán")
+            else if (TrangThai == "Đã thanh toán")
             {
                 LoadPhieuDangKy();
                 lbMaPDT.Visible = false;
@@ -92,7 +94,7 @@ namespace exam_registration_system.MainForms.NVTN
         {
             try
             {
-                DataTable dt = PhieuDuThiService.GetPhieuDuThi(MaPDK);
+                DataTable dt = PhieuDuThiService.GetPhieuDuThi(MaPDK, MaTS);
                 if (dt.Rows.Count > 0)
                 {
                     DataRow row = dt.Rows[0];
@@ -208,10 +210,10 @@ namespace exam_registration_system.MainForms.NVTN
         private void btnClose_Click(object sender, EventArgs e)
         {
             // Làm mới dữ liệu trong form releaseCard nếu có
-            if (parentForm != null && !parentForm.IsDisposed)
-            {
-                parentForm.LoadData();
-            }
+            //if (parentForm != null && !parentForm.IsDisposed)
+            //{
+            //    parentForm.LoadData();
+            //}
             this.Close();
         }
 

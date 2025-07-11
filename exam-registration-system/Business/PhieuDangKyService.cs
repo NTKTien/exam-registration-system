@@ -69,5 +69,10 @@ namespace exam_registration_system.Business
                 throw new Exception($"Business layer error: {ex.Message}");
             }
         }
+
+        public static DataTable XemPDKDeXuatPhieu()
+        {
+            return PhieuDangKyDAO.XemPDKDeXuatPhieu();
+        }
     }
 }

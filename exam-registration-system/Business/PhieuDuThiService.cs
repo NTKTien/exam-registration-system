@@ -10,11 +10,11 @@ namespace exam_registration_system.Business
 {
     public class PhieuDuThiService
     {
-        public static DataTable GetPhieuDuThi(string maPDK)
+        public static DataTable GetPhieuDuThi(string maPDK, string maTS)
         {
             try
             {
-                return PhieuDuThiDAO.GetPhieuDuThi(maPDK);
+                return PhieuDuThiDAO.GetPhieuDuThi(maPDK, maTS);
             }
             catch (Exception ex)
             {

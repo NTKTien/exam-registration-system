@@ -195,5 +195,24 @@ namespace exam_registration_system.DataAccess
             }
         }
 
+        public static DataTable XemPDKDeXuatPhieu()
+        {
+            using (SqlConnection conn = new SqlConnection(GlobalInfo.ConnectionString))
+            {
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand("XemTatCaPhieuDangKy", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                    {
+                        DataTable dt = new DataTable();
+                        adapter.Fill(dt);
+                        return dt;
+                    }
+                }
+            }
+        }
+
     }
 }
