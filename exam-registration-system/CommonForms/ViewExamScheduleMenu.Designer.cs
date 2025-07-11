@@ -33,9 +33,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.btnExit = new Guna.UI2.WinForms.Guna2Button();
-            this.labelDetailReg = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.dgvExamSchedule = new Guna.UI2.WinForms.Guna2DataGridView();
             this.code = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Examdate = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,9 +43,12 @@
             this.CurrentAmout = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.butSearch = new Guna.UI2.WinForms.Guna2Button();
             this.textSearch = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnExit = new Guna.UI2.WinForms.Guna2Button();
+            this.labelDetailReg = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel3.SuspendLayout();
-            this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvExamSchedule)).BeginInit();
+            this.guna2Panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2Panel3
@@ -67,50 +67,6 @@
             this.guna2Panel3.ShadowDecoration.Enabled = true;
             this.guna2Panel3.Size = new System.Drawing.Size(897, 618);
             this.guna2Panel3.TabIndex = 7;
-            // 
-            // guna2Panel2
-            // 
-            this.guna2Panel2.BackColor = System.Drawing.SystemColors.Control;
-            this.guna2Panel2.BorderColor = System.Drawing.Color.Black;
-            this.guna2Panel2.Controls.Add(this.btnExit);
-            this.guna2Panel2.Controls.Add(this.labelDetailReg);
-            this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Panel2.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(2);
-            this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Padding = new System.Windows.Forms.Padding(15, 16, 15, 16);
-            this.guna2Panel2.Size = new System.Drawing.Size(897, 54);
-            this.guna2Panel2.TabIndex = 6;
-            // 
-            // btnExit
-            // 
-            this.btnExit.BackColor = System.Drawing.Color.Transparent;
-            this.btnExit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnExit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnExit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnExit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnExit.FillColor = System.Drawing.Color.Transparent;
-            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.ForeColor = System.Drawing.Color.White;
-            this.btnExit.ImageSize = new System.Drawing.Size(50, 50);
-            this.btnExit.Location = new System.Drawing.Point(874, 3);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(2);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(37, 30);
-            this.btnExit.TabIndex = 3;
-            this.btnExit.Text = "✕";
-            // 
-            // labelDetailReg
-            // 
-            this.labelDetailReg.AutoSize = false;
-            this.labelDetailReg.BackColor = System.Drawing.Color.Transparent;
-            this.labelDetailReg.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDetailReg.ForeColor = System.Drawing.Color.Black;
-            this.labelDetailReg.Location = new System.Drawing.Point(345, 12);
-            this.labelDetailReg.Name = "labelDetailReg";
-            this.labelDetailReg.Size = new System.Drawing.Size(189, 36);
-            this.labelDetailReg.TabIndex = 1;
-            this.labelDetailReg.Text = "Danh sách lịch thi";
             // 
             // dgvExamSchedule
             // 
@@ -278,6 +234,7 @@
             this.butSearch.Size = new System.Drawing.Size(88, 33);
             this.butSearch.TabIndex = 65;
             this.butSearch.Text = "Tra cứu ";
+            this.butSearch.Click += new System.EventHandler(this.butSearch_Click);
             // 
             // textSearch
             // 
@@ -301,6 +258,50 @@
             this.textSearch.Size = new System.Drawing.Size(267, 39);
             this.textSearch.TabIndex = 66;
             // 
+            // guna2Panel2
+            // 
+            this.guna2Panel2.BackColor = System.Drawing.SystemColors.Control;
+            this.guna2Panel2.BorderColor = System.Drawing.Color.Black;
+            this.guna2Panel2.Controls.Add(this.btnExit);
+            this.guna2Panel2.Controls.Add(this.labelDetailReg);
+            this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2Panel2.Location = new System.Drawing.Point(0, 0);
+            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2Panel2.Name = "guna2Panel2";
+            this.guna2Panel2.Padding = new System.Windows.Forms.Padding(15, 16, 15, 16);
+            this.guna2Panel2.Size = new System.Drawing.Size(897, 54);
+            this.guna2Panel2.TabIndex = 6;
+            // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.Color.Transparent;
+            this.btnExit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnExit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnExit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnExit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnExit.FillColor = System.Drawing.Color.Transparent;
+            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.ForeColor = System.Drawing.Color.White;
+            this.btnExit.ImageSize = new System.Drawing.Size(50, 50);
+            this.btnExit.Location = new System.Drawing.Point(874, 3);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(2);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(37, 30);
+            this.btnExit.TabIndex = 3;
+            this.btnExit.Text = "✕";
+            // 
+            // labelDetailReg
+            // 
+            this.labelDetailReg.AutoSize = false;
+            this.labelDetailReg.BackColor = System.Drawing.Color.Transparent;
+            this.labelDetailReg.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDetailReg.ForeColor = System.Drawing.Color.Black;
+            this.labelDetailReg.Location = new System.Drawing.Point(345, 12);
+            this.labelDetailReg.Name = "labelDetailReg";
+            this.labelDetailReg.Size = new System.Drawing.Size(189, 36);
+            this.labelDetailReg.TabIndex = 1;
+            this.labelDetailReg.Text = "Danh sách lịch thi";
+            // 
             // ViewExamScheduleMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -311,8 +312,8 @@
             this.Name = "ViewExamScheduleMenu";
             this.Size = new System.Drawing.Size(897, 672);
             this.guna2Panel3.ResumeLayout(false);
-            this.guna2Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvExamSchedule)).EndInit();
+            this.guna2Panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

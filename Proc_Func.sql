@@ -1,4 +1,4 @@
-﻿USE QLToChucThiCC;
+﻿﻿USE QLToChucThiCC;
 GO
 
 -- Lấy toàn bộ danh sách phiếu đăng ký 
@@ -10,13 +10,11 @@ BEGIN
         P.NgayLap,
         P.LoaiCC,
         L.NgayThi,
-        D.HoTen,
+        T.HoTen,
         P.LoaiPDK,
-        P.TrangThai,
-		D.Email,
-		L.PhongThi
+        P.TrangThai
     FROM PhieuDangKy P
-    JOIN ThiSinh D ON P.MaDS = D.MaDS
+    JOIN TTNguoiDangKy T ON P.MaPDK = T.MaPDK
     JOIN LichDGNL L ON P.MaLT = L.MaLT
 END;
 GO
