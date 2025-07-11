@@ -96,9 +96,9 @@ namespace exam_registration_system.CommonForms
 
             string loaiNV = EmployeeService.CheckLogin(username);
 
-            if (loaiNV == null)
+            if (loaiNV == null || username.Length > 5 || username.Length < 5)
             {
-                MessageBox.Show("Tài khoản hoặc mật khẩu sai, kiểm tra lại.", "Lỗi đăng nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Tài khoản hoặc mật khẩu không chính xác, kiểm tra lại.", "Lỗi đăng nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 

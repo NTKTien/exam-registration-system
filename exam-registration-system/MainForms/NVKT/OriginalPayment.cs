@@ -109,6 +109,12 @@ namespace exam_registration_system.MainForms.NVKT
 
             string maPDK = tbRegistrationID.Text.Trim();
 
+            if (maPDK.Length > 5)
+            {
+                MessageBox.Show("Mã phiếu đăng ký không hợp lệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             DataTable regDT = PhieuDangKyService.SearchRegistration(maPDK: maPDK);
             if (regDT == null || regDT.Rows.Count == 0)
             {
@@ -143,7 +149,7 @@ namespace exam_registration_system.MainForms.NVKT
                     if (updateStatus)
                     {
                         tbStatus.Text = "Đã hủy";
-                        MessageBox.Show("Phiếu đăng ký này đã quá hạn thanh toán (quá 3 ngày kể từ ngày lập) nên đã được tự động chuyển sang trạng thái 'Đã hủy'.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Phiếu đăng ký này đã quá hạn thanh toán (quá 3 ngày kể từ ngày lập) nên đã được tự động chuyển sang trạng thái 'Đã hủy'.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
