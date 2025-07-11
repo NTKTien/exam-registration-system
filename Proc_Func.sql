@@ -109,9 +109,69 @@ BEGIN
 END;
 GO
 
+CREATE OR ALTER PROCEDURE sp_InsertCandidate
+    @HoTen NVARCHAR(100),
+    @GioiTinh NVARCHAR(3),
+    @Ngaysinh DATE,
+    @SoDienThoai CHAR(10),
+    @CCCD CHAR(12),
+    @Email NVARCHAR(100),
+    @OutMaDS CHAR(5) OUTPUT                
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    DECLARE @NewMaDS CHAR(5), @NewMaTS CHAR(5);
+
+    -- Sinh MaDS mới
+    SELECT @NewMaDS = 
+        'DS' + RIGHT('000' + CAST(ISNULL(MAX(CAST(SUBSTRING(MaDS, 3, 3) AS INT)), 0) + 1 AS VARCHAR), 3)
+    FROM ThiSinh;
+
+    -- Sinh MaTS mới
+    SELECT @NewMaTS = 
+        'TS' + RIGHT('000' + CAST(ISNULL(MAX(CAST(SUBSTRING(MaTS, 3, 3) AS INT)), 0) + 1 AS VARCHAR), 3)
+    FROM ThiSinh;
+
+    -- Thêm bản ghi mới
+    INSERT INTO ThiSinh (
+        MaDS, MaTS, HoTen, GioiTinh, Ngaysinh, SoDienThoai, CCCD, Email
+    )
+    VALUES (
+        @NewMaDS, @NewMaTS, @HoTen, @GioiTinh, @Ngaysinh, @SoDienThoai, @CCCD, @Email
+    );
+
+    -- Gán mã DS ra tham số output
+    SET @OutMaDS = @NewMaDS;
+END;
+GO
+
+CREATE OR ALTER PROCEDURE sp_GetCandidateByMaPDK
+    @MaPDK CHAR(5)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT 
+        TS.HoTen,
+        TS.GioiTinh,
+        TS.Ngaysinh,
+        TS.SoDienThoai,
+        TS.CCCD,
+        TS.Email
+    FROM PhieuDangKy PDK
+    JOIN ThiSinh TS ON PDK.MaDS = TS.MaDS
+    WHERE PDK.MaPDK = @MaPDK;
+END;
+GO
+
+
+
+
 -- Thêm phiếu đăng ký và cập nhật SLTSHienTai của lịch thi
 CREATE OR ALTER PROCEDURE sp_InsertFreeReg
     @MaPDK CHAR(5),
+	@MaDS CHAR(5),
     @NgayDangKy DATE,
     @LoaiDGNL NVARCHAR(50),
     @MaLichThi CHAR(5),
@@ -122,8 +182,8 @@ BEGIN
 
     BEGIN TRY
         -- Thêm phiếu đăng ký
-        INSERT INTO PhieuDangKy(MaPDK, NgayLap, TrangThai, LoaiCC, LoaiPDK, MaLT)
-        VALUES (@MaPDK, @NgayDangKy, N'Chưa thanh toán', @LoaiDGNL, @LoaiPDK, @MaLichThi);
+        INSERT INTO PhieuDangKy(MaPDK, MaDS, NgayLap, TrangThai, LoaiCC, LoaiPDK, MaLT)
+        VALUES (@MaPDK, @MaDS, @NgayDangKy, N'Chưa thanh toán', @LoaiDGNL, @LoaiPDK, @MaLichThi);
 
         -- Cập nhật số lượng thí sinh hiện tại trong LichDGNL
         UPDATE LichDGNL

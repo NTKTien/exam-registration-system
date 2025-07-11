@@ -20,9 +20,9 @@ namespace exam_registration_system.Business
             return PhieuDangKyDAO.GetDetailRegByID(registrationId);
         }
 
-        public static bool InsertFreeReg(string maPDK, DateTime ngayDangKy, string loaiDGNL, string LoaiPDK, string maLichThi)
+        public static bool InsertFreeReg(string maPDK, string maDS, DateTime ngayDangKy, string loaiDGNL, string LoaiPDK, string maLichThi)
         {
-            return PhieuDangKyDAO.InsertFreeReg(maPDK, ngayDangKy, loaiDGNL, LoaiPDK, maLichThi);
+            return PhieuDangKyDAO.InsertFreeReg(maPDK, maDS, ngayDangKy, loaiDGNL, LoaiPDK, maLichThi);
         }
         public static string GetNextMaPhieuDK()
         {

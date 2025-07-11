@@ -46,7 +46,7 @@ namespace exam_registration_system.DataAccess
             }
         }
 
-        public static bool InsertFreeReg(string maPDK, DateTime ngayDangKy, string loaiDGNL, string LoaiPDK, string maLichThi)
+        public static bool InsertFreeReg(string maPDK, string maDS, DateTime ngayDangKy, string loaiDGNL, string LoaiPDK, string maLichThi)
         {
             using (SqlConnection conn = new SqlConnection(GlobalInfo.ConnectionString))
             {
@@ -54,6 +54,7 @@ namespace exam_registration_system.DataAccess
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Parameters.AddWithValue("@MaPDK", maPDK);
+                cmd.Parameters.AddWithValue("@MaDS", maDS);
                 cmd.Parameters.AddWithValue("@NgayDangKy", ngayDangKy);
                 cmd.Parameters.AddWithValue("@LoaiDGNL", loaiDGNL);
                 cmd.Parameters.AddWithValue("@MaLichThi", maLichThi);

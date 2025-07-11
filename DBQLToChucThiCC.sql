@@ -27,6 +27,7 @@ CREATE TABLE ThiSinh (
 	GioiTinh NVARCHAR(3) CHECK (GioiTinh IN (N'Nam', N'Nữ')),
 	Ngaysinh DATE,
 	SoDienThoai CHAR(10),
+	CCCD CHAR(12),
 	Email NVARCHAR(100),
 	TGDuThiMongMuon TEXT,
 	PRIMARY KEY (MaDS, MaTS)
@@ -189,16 +190,16 @@ INSERT INTO LichDGNL VALUES
 
 -- Dữ liệu cho bảng ThiSinh
 INSERT INTO ThiSinh VALUES
-('DS001', 'TS001', N'Lê Minh Tuấn', N'Nam', '2003-01-01', '0911000001', 'tuanlm@gmail.com', N'Sáng 1/8/2025'),
-('DS001', 'TS002', N'Nguyễn Thị Hồng', N'Nữ', '2002-03-21', '0911000002', 'hongnt@gmail.com', N'Sáng 1/8/2025'),
-('DS002', 'TS003', N'Phạm Văn Hùng', N'Nam', '2001-12-03', '0911000003', 'hungpv@gmail.com', N'Chiều 1/8/2025'),
-('DS002', 'TS004', N'Vũ Thị Mai', N'Nữ', '2000-08-15', '0911000004', 'maivt@gmail.com', N'Chiều 1/8/2025'),
-('DS003', 'TS005', N'Ngô Minh Khoa', N'Nam', '2004-06-19', '0911000005', 'khoanm@gmail.com', N'Sáng 2/8/2025'),
-('DS003', 'TS006', N'Trần Đức Lộc', N'Nam', '2003-11-11', '0911000006', 'loctd@gmail.com', N'Sáng 2/8/2025'),
-('DS004', 'TS007', N'Hoàng Thị Lan', N'Nữ', '2002-05-22', '0911000007', 'lanht@gmail.com', N'Chiều 2/8/2025'),
-('DS004', 'TS008', N'Phan Thị Hoa', N'Nữ', '2001-07-07', '0911000008', 'hoapt@gmail.com', N'Chiều 2/8/2025'),
-('DS005', 'TS009', N'Lý Văn Hưng', N'Nam', '2000-09-09', '0911000009', 'hunglv@gmail.com', N'Sáng 3/8/2025'),
-('DS005', 'TS010', N'Đỗ Thị Ngọc', N'Nữ', '2003-10-10', '0911000010', 'ngocdt@gmail.com', N'Sáng 3/8/2025');
+('DS001', 'TS001', N'Lê Minh Tuấn', N'Nam', '2003-01-01', '0911000001', '052204011036', 'tuanlm@gmail.com', N'Sáng 1/8/2025'),
+('DS001', 'TS002', N'Nguyễn Thị Hồng', N'Nữ', '2002-03-21', '0911000002', '054704011036', 'hongnt@gmail.com', N'Sáng 1/8/2025'),
+('DS002', 'TS003', N'Phạm Văn Hùng', N'Nam', '2001-12-03', '0911000003', '099904011036', 'hungpv@gmail.com', N'Chiều 1/8/2025'),
+('DS002', 'TS004', N'Vũ Thị Mai', N'Nữ', '2000-08-15', '0911000004', '011204011098', 'maivt@gmail.com', N'Chiều 1/8/2025'),
+('DS003', 'TS005', N'Ngô Minh Khoa', N'Nam', '2004-06-19', '0911000005', '052204022077', 'khoanm@gmail.com', N'Sáng 2/8/2025'),
+('DS003', 'TS006', N'Trần Đức Lộc', N'Nam', '2003-11-11', '0911000006','052554099036',  'loctd@gmail.com', N'Sáng 2/8/2025'),
+('DS004', 'TS007', N'Hoàng Thị Lan', N'Nữ', '2002-05-22', '0911000007', '052874011013', 'lanht@gmail.com', N'Chiều 2/8/2025'),
+('DS004', 'TS008', N'Phan Thị Hoa', N'Nữ', '2001-07-07', '0911000008', '052204011039', 'hoapt@gmail.com', N'Chiều 2/8/2025'),
+('DS005', 'TS009', N'Lý Văn Hưng', N'Nam', '2000-09-09', '0911000009', '052204011040', 'hunglv@gmail.com', N'Sáng 3/8/2025'),
+('DS005', 'TS010', N'Đỗ Thị Ngọc', N'Nữ', '2003-10-10', '0911000010', '052204088836', 'ngocdt@gmail.com', N'Sáng 3/8/2025');
 
 -- Dữ liệu cho bảng LichThi_NhanVien
 INSERT INTO LichThi_NhanVien VALUES

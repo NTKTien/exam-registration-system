@@ -46,6 +46,7 @@ namespace exam_registration_system.MainForms.NVTN
 
         private void butCreateReg_Click(object sender, EventArgs e)
         {
+            // Biến lưu thông tin người đăng kí 
             string hoTen = tbFullName.Text;
             string gioiTinh = radioButMale.Checked ? "Nam" : "Nữ";
             DateTime ngaySinh = dtpNgaySinh.Value;
@@ -54,6 +55,15 @@ namespace exam_registration_system.MainForms.NVTN
             string email = tbEmail.Text;
             string diaChi = tbAddress.Text;
 
+            //Biến lưu Thông tin thí sinh
+            string hoTenTS = tbNameTS.Text;
+            string gioiTinhTS = radioButMaleTS.Checked ? "Nam" : "Nữ";
+            DateTime ngaySinhTS = dtpBirthTS.Value;
+            string cccdTS = tbCCCDTS.Text;
+            string sdtTS = tbSDTTS.Text;
+            string emailTS = tbEmailTS.Text;
+
+            //Biến lưu thông tin phiếu đăng ký
             string maPDK = tbRegCode.Text;
             DateTime ngayDangKy = dtpNgayDangKy.Value;
             string loaiDGNL = cmbTypeDGNL.SelectedItem.ToString();
@@ -66,6 +76,11 @@ namespace exam_registration_system.MainForms.NVTN
                 string.IsNullOrWhiteSpace(sdt) ||
                 string.IsNullOrWhiteSpace(email) ||
                 string.IsNullOrWhiteSpace(diaChi) ||
+                string.IsNullOrWhiteSpace(hoTenTS) ||
+                string.IsNullOrWhiteSpace(gioiTinhTS) ||
+                string.IsNullOrWhiteSpace(cccdTS) ||
+                string.IsNullOrWhiteSpace(sdtTS) ||
+                string.IsNullOrWhiteSpace(emailTS) ||
                 string.IsNullOrWhiteSpace(maPDK) ||
                 string.IsNullOrWhiteSpace(loaiDGNL) ||
                 string.IsNullOrWhiteSpace(maLichThi) ||
@@ -75,8 +90,11 @@ namespace exam_registration_system.MainForms.NVTN
                 return;
             }
 
+            //Thêm thí sinh
+            string maDS = CandidateService.AddCandidate(hoTenTS, gioiTinhTS, ngaySinhTS, sdtTS, cccdTS, emailTS);
+
             // Thêm phiếu đăng ký
-            bool isRegOk = isRegOk = PhieuDangKyService.InsertFreeReg(maPDK, ngayDangKy, loaiDGNL, "KHTD", maLichThi);
+            bool isRegOk = PhieuDangKyService.InsertFreeReg(maPDK, maDS, ngayDangKy, loaiDGNL, "KHTD", maLichThi);
 
             // Thêm khách hàng
             bool isCustomerOk = CustomerService.InsertCustomer(hoTen, gioiTinh, ngaySinh, cccd, sdt, email, diaChi, maPDK);
