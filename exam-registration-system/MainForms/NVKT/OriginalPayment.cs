@@ -280,7 +280,8 @@ namespace exam_registration_system.MainForms.NVKT
                             tongTien: totalCost,
                             troGia: subsidy,
                             thanhTien: finalCost,
-                            maPDK: maPDK
+                            maPDK: maPDK,
+                            maNV: GlobalInfo.CurrentUsername
                         );
                     }
                     bool updatePDK = PhieuDangKyService.UpdateRegistration(maPDK: maPDK, trangThai: "Đã thanh toán");

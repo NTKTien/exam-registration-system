@@ -7,34 +7,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using exam_registration_system.Utils;
 
 namespace exam_registration_system.CommonForms
 {
     public partial class homeUC : UserControl
     {
-        private string username;
-        private string role;
-        public homeUC(string username, string role)
+        public homeUC()
         {
             InitializeComponent();
-            this.username = username;
-            this.role = role;
 
             InitializeData();
         }
 
         private void InitializeData()
         {
-            textFullName.Text = username;
-            if (role == "TN")
+            textFullName.Text = GlobalInfo.CurrentUsername;
+            if (GlobalInfo.Role == "TN")
             {
                 textRole.Text = "Tiếp Nhận";
             }
-            else if (role == "KT")
+            else if (GlobalInfo.Role == "KT")
             {
                 textRole.Text = "Kế Toán";
             }
-            else if (role == "NL")
+            else if (GlobalInfo.Role == "NL")
             {
                 textRole.Text = "Nhập Liệu";
             }

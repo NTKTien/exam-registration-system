@@ -11,6 +11,7 @@ using System.Drawing.Drawing2D;
 using exam_registration_system.MainForms.NVKT;
 using exam_registration_system.MainForms.NVNL;
 using exam_registration_system.MainForms.NVTN;
+using exam_registration_system.Utils;
 using System.Data.SqlClient;
 using exam_registration_system.Business;
 
@@ -80,10 +81,10 @@ namespace exam_registration_system.CommonForms
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string username = tbUsername.Text.Trim();
+            GlobalInfo.CurrentUsername = tbUsername.Text.Trim();
             string password = tbPassword.Text;
 
-            if (string.IsNullOrEmpty(username))
+            if (string.IsNullOrEmpty(GlobalInfo.CurrentUsername))
             {
                 MessageBox.Show("Vui lòng nhập tên đăng nhập.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -94,25 +95,25 @@ namespace exam_registration_system.CommonForms
                 return;
             }
 
-            string loaiNV = EmployeeService.CheckLogin(username);
+            GlobalInfo.Role = EmployeeService.CheckLogin(GlobalInfo.CurrentUsername);
 
-            if (loaiNV == null || username.Length > 5 || username.Length < 5)
+            if (GlobalInfo.Role == null || GlobalInfo.CurrentUsername.Length > 5)
             {
                 MessageBox.Show("Tài khoản hoặc mật khẩu không chính xác, kiểm tra lại.", "Lỗi đăng nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             Form nextForm = null;
-            switch (loaiNV)
+            switch (GlobalInfo.Role)
             {
                 case "TN":
-                    nextForm = new HomeNVTNForm(username, loaiNV);
+                    nextForm = new HomeNVTNForm();
                     break;
                 case "KT":
-                    nextForm = new HomeNVKTForm(username, loaiNV);
+                    nextForm = new HomeNVKTForm();
                     break;
                 case "NL":
-                    nextForm = new HomeNVNLForm(username, loaiNV);
+                    nextForm = new HomeNVNLForm();
                     break;
                 default:
                     MessageBox.Show("Đăng nhập thất bại, kiểm tra lại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
