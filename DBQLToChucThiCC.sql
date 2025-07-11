@@ -239,30 +239,87 @@ INSERT INTO TTNguoiDangKy VALUES
 ('NDK10', '012345678910', N'Đỗ Thị Ngọc', N'Nữ', '2003-10-10', '0911000010', 'ngocdt@gmail.com', N'1010 Nguyễn Đình Chiểu', 'PDK10');
 
 -- Dữ liệu cho bảng PhieuDuThi
-INSERT INTO PhieuDuThi VALUES
-('PDT01', '2025-08-01 08:00:00', N'Phòng 101, Toà A', 'SBD01', 'PDK01'),
-('PDT02', '2025-08-01 08:00:00', N'Phòng 101, Toà A', 'SBD02', 'PDK02'),
-('PDT03', '2025-08-01 14:00:00', N'Phòng 202, Toà B', 'SBD03', 'PDK03'),
-('PDT04', '2025-08-01 14:00:00', N'Phòng 202, Toà B', 'SBD04', 'PDK04'),
-('PDT05', '2025-08-02 08:00:00', N'Phòng 301, Toà C', 'SBD05', 'PDK05'),
-('PDT06', '2025-08-02 08:00:00', N'Phòng 301, Toà C', 'SBD06', 'PDK06'),
-('PDT07', '2025-08-02 14:00:00', N'Phòng 402, Toà D', 'SBD07', 'PDK07'),
-('PDT08', '2025-08-02 14:00:00', N'Phòng 402, Toà D', 'SBD08', 'PDK08'),
-('PDT09', '2025-08-03 08:00:00', N'Phòng 501, Toà E', 'SBD09', 'PDK09'),
-('PDT10', '2025-08-03 08:00:00', N'Phòng 501, Toà E', 'SBD10', 'PDK10');
+-- INSERT INTO PhieuDuThi VALUES
+-- ('PDT01', '2025-08-01 08:00:00', N'Phòng 101, Toà A', 'SBD01', 'PDK01'),
+-- ('PDT02', '2025-08-01 08:00:00', N'Phòng 101, Toà A', 'SBD02', 'PDK02'),
+-- ('PDT03', '2025-08-01 14:00:00', N'Phòng 202, Toà B', 'SBD03', 'PDK03'),
+-- ('PDT04', '2025-08-01 14:00:00', N'Phòng 202, Toà B', 'SBD04', 'PDK04'),
+-- ('PDT05', '2025-08-02 08:00:00', N'Phòng 301, Toà C', 'SBD05', 'PDK05'),
+-- ('PDT06', '2025-08-02 08:00:00', N'Phòng 301, Toà C', 'SBD06', 'PDK06'),
+-- ('PDT07', '2025-08-02 14:00:00', N'Phòng 402, Toà D', 'SBD07', 'PDK07'),
+-- ('PDT08', '2025-08-02 14:00:00', N'Phòng 402, Toà D', 'SBD08', 'PDK08'),
+-- ('PDT09', '2025-08-03 08:00:00', N'Phòng 501, Toà E', 'SBD09', 'PDK09'),
+-- ('PDT10', '2025-08-03 08:00:00', N'Phòng 501, Toà E', 'SBD10', 'PDK10');
+-- Xóa dữ liệu cũ trong PhieuDuThi
+DELETE FROM PhieuDuThi;
+
+-- Chèn dữ liệu mới, đồng bộ với LichDGNL và PhongThi
+INSERT INTO PhieuDuThi (MaPDT, ThoiGian, DiaDiem, SBD, MaPDK)
+SELECT 
+    pdt.MaPDT,
+    l.NgayThi AS ThoiGian,
+    CONCAT(N'Phòng ', l.PhongThi, N', Tòa ', pt.Toa) AS DiaDiem,
+    pdt.SBD,
+    pdt.MaPDK
+FROM 
+    (VALUES 
+        ('PDT01', 'SBD01', 'PDK01'),
+        ('PDT02', 'SBD02', 'PDK02'),
+        ('PDT03', 'SBD03', 'PDK03'),
+        ('PDT04', 'SBD04', 'PDK04'),
+        ('PDT05', 'SBD05', 'PDK05'),
+        ('PDT06', 'SBD06', 'PDK06'),
+        ('PDT07', 'SBD07', 'PDK07'),
+        ('PDT08', 'SBD08', 'PDK08'),
+        ('PDT09', 'SBD09', 'PDK09'),
+        ('PDT10', 'SBD10', 'PDK10')
+    ) AS pdt(MaPDT, SBD, MaPDK)
+    JOIN PhieuDangKy pdk ON pdt.MaPDK = pdk.MaPDK
+    JOIN LichDGNL l ON pdk.MaLT = l.MaLT
+    JOIN PhongThi pt ON l.PhongThi = pt.MaPT;
 
 -- Dữ liệu cho bảng PhieuGiaHan
-INSERT INTO PhieuGiaHan VALUES
-('PGH01', '2025-09-01 09:00:00', N'Phòng 101, Toà A', 'SBD01', 500000, N'Thành công', 'PDK01', N'Đặc biệt'),
-('PGH02', '2025-09-01 09:10:00', N'Phòng 101, Toà A', 'SBD02', 400000, N'Đang đợi', 'PDK02', N'Không đặc biệt'),
-('PGH03', '2025-09-02 10:00:00', N'Phòng 202, Toà B', 'SBD03', 500000, N'Thành công', 'PDK03', N'Đặc biệt'),
-('PGH04', '2025-09-02 10:20:00', N'Phòng 202, Toà B', 'SBD04', 400000, N'Đang đợi', 'PDK04', N'Không đặc biệt'),
-('PGH05', '2025-09-03 11:00:00', N'Phòng 301, Toà C', 'SBD05', 500000, N'Thành công', 'PDK05', N'Đặc biệt'),
-('PGH06', '2025-09-03 11:30:00', N'Phòng 301, Toà C', 'SBD06', 400000, N'Đang đợi', 'PDK06', N'Không đặc biệt'),
-('PGH07', '2025-09-04 12:00:00', N'Phòng 402, Toà D', 'SBD07', 500000, N'Thành công', 'PDK07', N'Đặc biệt'),
-('PGH08', '2025-09-04 12:15:00', N'Phòng 402, Toà D', 'SBD08', 400000, N'Đang đợi', 'PDK08', N'Không đặc biệt'),
-('PGH09', '2025-09-05 15:00:00', N'Phòng 501, Toà E', 'SBD09', 500000, N'Thành công', 'PDK09', N'Đặc biệt'),
-('PGH10', '2025-09-05 15:30:00', N'Phòng 501, Toà E', 'SBD10', 400000, N'Đang đợi', 'PDK10', N'Không đặc biệt');
+-- INSERT INTO PhieuGiaHan VALUES
+-- ('PGH01', '2025-09-01 09:00:00', N'Phòng 101, Toà A', 'SBD01', 500000, N'Thành công', 'PDK01', N'Đặc biệt'),
+-- ('PGH02', '2025-09-01 09:10:00', N'Phòng 101, Toà A', 'SBD02', 400000, N'Đang đợi', 'PDK02', N'Không đặc biệt'),
+-- ('PGH03', '2025-09-02 10:00:00', N'Phòng 202, Toà B', 'SBD03', 500000, N'Thành công', 'PDK03', N'Đặc biệt'),
+-- ('PGH04', '2025-09-02 10:20:00', N'Phòng 202, Toà B', 'SBD04', 400000, N'Đang đợi', 'PDK04', N'Không đặc biệt'),
+-- ('PGH05', '2025-09-03 11:00:00', N'Phòng 301, Toà C', 'SBD05', 500000, N'Thành công', 'PDK05', N'Đặc biệt'),
+-- ('PGH06', '2025-09-03 11:30:00', N'Phòng 301, Toà C', 'SBD06', 400000, N'Đang đợi', 'PDK06', N'Không đặc biệt'),
+-- ('PGH07', '2025-09-04 12:00:00', N'Phòng 402, Toà D', 'SBD07', 500000, N'Thành công', 'PDK07', N'Đặc biệt'),
+-- ('PGH08', '2025-09-04 12:15:00', N'Phòng 402, Toà D', 'SBD08', 400000, N'Đang đợi', 'PDK08', N'Không đặc biệt'),
+-- ('PGH09', '2025-09-05 15:00:00', N'Phòng 501, Toà E', 'SBD09', 500000, N'Thành công', 'PDK09', N'Đặc biệt'),
+-- ('PGH10', '2025-09-05 15:30:00', N'Phòng 501, Toà E', 'SBD10', 400000, N'Đang đợi', 'PDK10', N'Không đặc biệt');
+-- Xóa dữ liệu cũ trong PhieuGiaHan
+DELETE FROM PhieuGiaHan;
+
+-- Chèn dữ liệu mới, đồng bộ với LichDGNL và PhongThi
+INSERT INTO PhieuGiaHan (MaPGH, ThoiGian, DiaDiem, SBD, PhiGiaHan, TrangThai, MaPDK, LoaiGH)
+SELECT 
+    pgh.MaPGH,
+    l.NgayThi AS ThoiGian,
+    CONCAT(N'Phòng ', l.PhongThi, N', Tòa ', pt.Toa) AS DiaDiem,
+    pgh.SBD,
+    pgh.PhiGiaHan,
+    pgh.TrangThai,
+    pgh.MaPDK,
+    pgh.LoaiGH
+FROM 
+    (VALUES 
+        ('PGH01', 'SBD01', 500000, N'Thành công', 'PDK01', N'Đặc biệt'),
+        ('PGH02', 'SBD02', 400000, N'Đang đợi', 'PDK02', N'Không đặc biệt'),
+        ('PGH03', 'SBD03', 500000, N'Thành công', 'PDK03', N'Đặc biệt'),
+        ('PGH04', 'SBD04', 400000, N'Đang đợi', 'PDK04', N'Không đặc biệt'),
+        ('PGH05', 'SBD05', 500000, N'Thành công', 'PDK05', N'Đặc biệt'),
+        ('PGH06', 'SBD06', 400000, N'Đang đợi', 'PDK06', N'Không đặc biệt'),
+        ('PGH07', 'SBD07', 500000, N'Thành công', 'PDK07', N'Đặc biệt'),
+        ('PGH08', 'SBD08', 400000, N'Đang đợi', 'PDK08', N'Không đặc biệt'),
+        ('PGH09', 'SBD09', 500000, N'Thành công', 'PDK09', N'Đặc biệt'),
+        ('PGH10', 'SBD10', 400000, N'Đang đợi', 'PDK10', N'Không đặc biệt')
+    ) AS pgh(MaPGH, SBD, PhiGiaHan, TrangThai, MaPDK, LoaiGH)
+    JOIN PhieuDangKy pdk ON pgh.MaPDK = pdk.MaPDK
+    JOIN LichDGNL l ON pdk.MaLT = l.MaLT
+    JOIN PhongThi pt ON l.PhongThi = pt.MaPT;
 
 -- Dữ liệu cho bảng HoaDonThanhToan
 INSERT INTO HoaDonThanhToan VALUES

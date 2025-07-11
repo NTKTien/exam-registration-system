@@ -272,7 +272,6 @@ namespace exam_registration_system.MainForms.NVKT
             {
                 try
                 {
-                    bool updatePDK = PhieuDangKyService.UpdateRegistration(maPDK: maPDK, trangThai: "Đã thanh toán");
                     bool updateInvoice = false;
                     if (!string.IsNullOrEmpty(currentMaHD))
                     {
@@ -284,6 +283,7 @@ namespace exam_registration_system.MainForms.NVKT
                             maPDK: maPDK
                         );
                     }
+                    bool updatePDK = PhieuDangKyService.UpdateRegistration(maPDK: maPDK, trangThai: "Đã thanh toán");
                     if (updatePDK && (string.IsNullOrEmpty(currentMaHD) || updateInvoice))
                     {
                         tbStatus.Text = "Đã thanh toán";

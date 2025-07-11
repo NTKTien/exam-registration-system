@@ -60,11 +60,9 @@
             this.panelContent.Controls.Add(this.dgvRegList);
             this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContent.Location = new System.Drawing.Point(0, 0);
-            this.panelContent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(1346, 1008);
+            this.panelContent.Size = new System.Drawing.Size(897, 672);
             this.panelContent.TabIndex = 2;
-            this.panelContent.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContent_Paint);
             // 
             // butDetailReg
             // 
@@ -78,10 +76,9 @@
             this.butDetailReg.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(117)))), ((int)(((byte)(185)))));
             this.butDetailReg.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butDetailReg.ForeColor = System.Drawing.Color.White;
-            this.butDetailReg.Location = new System.Drawing.Point(1148, 926);
-            this.butDetailReg.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.butDetailReg.Location = new System.Drawing.Point(765, 617);
             this.butDetailReg.Name = "butDetailReg";
-            this.butDetailReg.Size = new System.Drawing.Size(172, 50);
+            this.butDetailReg.Size = new System.Drawing.Size(115, 33);
             this.butDetailReg.TabIndex = 63;
             this.butDetailReg.Text = "Xem chi tiết";
             this.butDetailReg.Click += new System.EventHandler(this.butDetailReg_Click);
@@ -98,10 +95,9 @@
             this.butSearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(117)))), ((int)(((byte)(185)))));
             this.butSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butSearch.ForeColor = System.Drawing.Color.White;
-            this.butSearch.Location = new System.Drawing.Point(518, 117);
-            this.butSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.butSearch.Location = new System.Drawing.Point(345, 78);
             this.butSearch.Name = "butSearch";
-            this.butSearch.Size = new System.Drawing.Size(132, 50);
+            this.butSearch.Size = new System.Drawing.Size(88, 33);
             this.butSearch.TabIndex = 23;
             this.butSearch.Text = "Tra cứu ";
             this.butSearch.Click += new System.EventHandler(this.butSearch_Click);
@@ -111,10 +107,9 @@
             this.labelDetailReg.AutoSize = false;
             this.labelDetailReg.BackColor = System.Drawing.Color.Transparent;
             this.labelDetailReg.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDetailReg.Location = new System.Drawing.Point(346, 18);
-            this.labelDetailReg.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelDetailReg.Location = new System.Drawing.Point(231, 12);
             this.labelDetailReg.Name = "labelDetailReg";
-            this.labelDetailReg.Size = new System.Drawing.Size(669, 48);
+            this.labelDetailReg.Size = new System.Drawing.Size(446, 32);
             this.labelDetailReg.TabIndex = 62;
             this.labelDetailReg.Text = "Danh sách phiếu đăng ký đánh giá năng lực";
             // 
@@ -132,12 +127,12 @@
             this.textSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.textSearch.ForeColor = System.Drawing.Color.Black;
             this.textSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textSearch.Location = new System.Drawing.Point(26, 114);
-            this.textSearch.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.textSearch.Location = new System.Drawing.Point(17, 76);
+            this.textSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textSearch.Name = "textSearch";
             this.textSearch.PlaceholderText = "Nhập thông tin phiếu đăng kí để tìm kiếm";
             this.textSearch.SelectedText = "";
-            this.textSearch.Size = new System.Drawing.Size(480, 58);
+            this.textSearch.Size = new System.Drawing.Size(320, 39);
             this.textSearch.TabIndex = 60;
             // 
             // dgvRegList
@@ -178,7 +173,8 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvRegList.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvRegList.GridColor = System.Drawing.Color.Black;
-            this.dgvRegList.Location = new System.Drawing.Point(26, 188);
+            this.dgvRegList.Location = new System.Drawing.Point(17, 125);
+            this.dgvRegList.Margin = new System.Windows.Forms.Padding(2);
             this.dgvRegList.Name = "dgvRegList";
             this.dgvRegList.ReadOnly = true;
             this.dgvRegList.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -193,7 +189,7 @@
             this.dgvRegList.RowHeadersVisible = false;
             this.dgvRegList.RowHeadersWidth = 51;
             this.dgvRegList.RowTemplate.Height = 32;
-            this.dgvRegList.Size = new System.Drawing.Size(1294, 716);
+            this.dgvRegList.Size = new System.Drawing.Size(863, 477);
             this.dgvRegList.TabIndex = 59;
             this.dgvRegList.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvRegList.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -225,7 +221,6 @@
             this.codeReg.MinimumWidth = 100;
             this.codeReg.Name = "codeReg";
             this.codeReg.ReadOnly = true;
-            this.codeReg.Width = 150;
             // 
             // dateCreated
             // 
@@ -246,7 +241,6 @@
             this.typeDGNL.MinimumWidth = 100;
             this.typeDGNL.Name = "typeDGNL";
             this.typeDGNL.ReadOnly = true;
-            this.typeDGNL.Width = 150;
             // 
             // dateExame
             // 
@@ -278,7 +272,6 @@
             this.TypeCustomer.MinimumWidth = 100;
             this.TypeCustomer.Name = "TypeCustomer";
             this.TypeCustomer.ReadOnly = true;
-            this.TypeCustomer.Width = 150;
             // 
             // Status
             // 
@@ -293,14 +286,14 @@
             // 
             // RegListForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(247)))), ((int)(((byte)(250)))));
-            this.ClientSize = new System.Drawing.Size(1346, 1008);
+            this.ClientSize = new System.Drawing.Size(897, 672);
             this.Controls.Add(this.panelContent);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "RegListForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegListForm";

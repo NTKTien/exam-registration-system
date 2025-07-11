@@ -93,10 +93,5 @@ namespace exam_registration_system.CommonForms
 
             dgvRegList.DataSource = filteredTable;
         }
-
-        private void panelContent_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }

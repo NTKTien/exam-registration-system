@@ -1,5 +1,6 @@
 ﻿using exam_registration_system.Business;
 using exam_registration_system.CommonForms;
+using exam_registration_system.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -81,7 +82,7 @@ namespace exam_registration_system.MainForms.NVTN
             bool isCustomerOk = CustomerService.InsertCustomer(hoTen, gioiTinh, ngaySinh, cccd, sdt, email, diaChi, maPDK);
 
             // Thêm hóa đơn với mã nhân viên hardcode
-            bool isInvoiceOk = InvoiceService.InsertInvoice(maPDK, "NV001");
+            bool isInvoiceOk = InvoiceService.InsertInvoice(maPDK, GlobalInfo.CurrentUsername);
 
             if (isCustomerOk && isRegOk && isInvoiceOk)
             {
