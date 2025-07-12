@@ -224,9 +224,9 @@ INSERT INTO PhieuDangKy VALUES
 ('PDK03', '2025-07-10 11:00:00', N'Chưa thanh toán', 'DS003', 'LT003', N'Trường THPT C', N'KHĐV', N'Tin học'),
 ('PDK04', '2025-07-10 12:00:00', N'Đã xuất PDT', 'DS004', 'LT004', N'Trường THPT D', N'KHĐV', N'Ngoại ngữ'),
 ('PDK05', '2025-07-10 15:00:00', N'Chưa thanh toán', 'DS005', 'LT005', N'Trường THPT E', N'KHĐV', N'Tin học'),
-('PDK06', '2025-07-10 12:15:00', N'Đã thanh toán', 'DS006', 'LT004', N'Trường THPT D', N'KHTD', N'Ngoại ngữ'),
-('PDK07', '2025-07-10 15:00:00', N'Chưa thanh toán', 'DS007', 'LT005', N'Trường THPT E', N'KHTD', N'Tin học'),
-('PDK08', '2025-07-10 15:30:00', N'Đã thanh toán', 'DS008', 'LT005', N'Trường THPT E', N'KHTD', N'Tin học');
+('PDK06', '2025-07-10 12:15:00', N'Đã thanh toán', 'DS006', 'LT004', NULL, N'KHTD', N'Ngoại ngữ'),
+('PDK07', '2025-07-10 15:00:00', N'Chưa thanh toán', 'DS007', 'LT005', NULL, N'KHTD', N'Tin học'),
+('PDK08', '2025-07-10 15:30:00', N'Đã thanh toán', 'DS008', 'LT005', NULL, N'KHTD', N'Tin học');
 
 -- Dữ liệu cho bảng TTNguoiDangKy
 INSERT INTO TTNguoiDangKy VALUES
@@ -238,31 +238,6 @@ INSERT INTO TTNguoiDangKy VALUES
 ('NDK06', '012345678906', N'Trần Đức Lộc', N'Nam', '2003-11-11', '0911000006', 'loctd@gmail.com', N'678 Phan Đình Phùng', 'PDK06'),
 ('NDK07', '012345678907', N'Hoàng Thị Lan', N'Nữ', '2002-05-22', '0911000007', 'lanht@gmail.com', N'789 Võ Văn Tần', 'PDK07'),
 ('NDK08', '012345678908', N'Phan Thị Hoa', N'Nữ', '2001-07-07', '0911000008', 'hoapt@gmail.com', N'890 Cách Mạng Tháng 8', 'PDK08');
-
----- Chèn dữ liệu mới, đồng bộ với LichDGNL và PhongThi
---INSERT INTO PhieuDuThi (MaPDT, ThoiGian, DiaDiem, SBD, MaPDK)
---SELECT 
---    pdt.MaPDT,
---    l.NgayThi AS ThoiGian,
---    CONCAT(N'Phòng ', l.PhongThi, N', Tòa ', pt.Toa) AS DiaDiem,
---    pdt.SBD,
---    pdt.MaPDK
---FROM 
---    (VALUES 
---        ('PDT01', 'SBD01', 'PDK01'),
---        ('PDT02', 'SBD02', 'PDK02'),
---        ('PDT03', 'SBD03', 'PDK03'),
---        ('PDT04', 'SBD04', 'PDK04'),
---        ('PDT05', 'SBD05', 'PDK05'),
---        ('PDT06', 'SBD06', 'PDK06'),
---        ('PDT07', 'SBD07', 'PDK07'),
---        ('PDT08', 'SBD08', 'PDK08'),
---        ('PDT09', 'SBD09', 'PDK09'),
---        ('PDT10', 'SBD10', 'PDK10')
---    ) AS pdt(MaPDT, SBD, MaPDK)
---    JOIN PhieuDangKy pdk ON pdt.MaPDK = pdk.MaPDK
---    JOIN LichDGNL l ON pdk.MaLT = l.MaLT
---    JOIN PhongThi pt ON l.PhongThi = pt.MaPT;
 
 INSERT INTO PhieuDuThi VALUES
 ('PDT01', '2025-08-01 08:00:00', N'Phòng 101, Toà A', 'SBD01', 'PDK04','TS007'),
