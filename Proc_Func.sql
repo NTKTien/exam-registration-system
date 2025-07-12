@@ -1,4 +1,6 @@
-﻿﻿USE QLToChucThiCC;
+﻿﻿
+
+USE QLToChucThiCC;
 GO
 
 -- Lấy toàn bộ danh sách phiếu đăng ký 
@@ -7,9 +9,9 @@ AS
 BEGIN
     SELECT 
         P.MaPDK,
-        P.NgayLap,
+        CONVERT(varchar, P.NgayLap, 103) + ' ' + CONVERT(varchar, P.NgayLap, 108) AS NgayLap,
         P.LoaiCC,
-        L.NgayThi,
+        CONVERT(varchar, L.NgayThi, 103) AS NgayThi,
         T.HoTen,
         P.LoaiPDK,
         P.TrangThai
@@ -26,8 +28,8 @@ AS
 BEGIN
     SELECT 
         P.MaPDK,
-        P.NgayLap,
-        ld.NgayThi,
+        CONVERT(varchar, P.NgayLap, 103) + ' ' + CONVERT(varchar, P.NgayLap, 108) AS NgayLap,
+        CONVERT(varchar, ld.NgayThi, 103) + ' ' + CONVERT(varchar, ld.NgayThi, 108) AS NgayThi,
         P.LoaiCC,
         P.TrangThai,
         ld.CaThi
@@ -46,7 +48,7 @@ BEGIN
     SELECT 
         ndk.HoTen,
         ndk.GioiTinh,
-        ndk.NgaySinh,
+        CONVERT(varchar, ndk.Ngaysinh, 103) AS NgaySinh,
         ndk.CCCD,
         ndk.SoDienThoai,
         ndk.Email,
@@ -105,10 +107,70 @@ BEGIN
 END;
 GO
 
+CREATE OR ALTER PROCEDURE sp_InsertCandidate
+    @HoTen NVARCHAR(100),
+    @GioiTinh NVARCHAR(3),
+    @Ngaysinh DATE,
+    @SoDienThoai CHAR(10),
+    @CCCD CHAR(12),
+    @Email NVARCHAR(100),
+    @OutMaDS CHAR(5) OUTPUT                
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    DECLARE @NewMaDS CHAR(5), @NewMaTS CHAR(5);
+
+    -- Sinh MaDS mới
+    SELECT @NewMaDS = 
+        'DS' + RIGHT('000' + CAST(ISNULL(MAX(CAST(SUBSTRING(MaDS, 3, 3) AS INT)), 0) + 1 AS VARCHAR), 3)
+    FROM ThiSinh;
+
+    -- Sinh MaTS mới
+    SELECT @NewMaTS = 
+        'TS' + RIGHT('000' + CAST(ISNULL(MAX(CAST(SUBSTRING(MaTS, 3, 3) AS INT)), 0) + 1 AS VARCHAR), 3)
+    FROM ThiSinh;
+
+    -- Thêm bản ghi mới
+    INSERT INTO ThiSinh (
+        MaDS, MaTS, HoTen, GioiTinh, Ngaysinh, SoDienThoai, CCCD, Email
+    )
+    VALUES (
+        @NewMaDS, @NewMaTS, @HoTen, @GioiTinh, @Ngaysinh, @SoDienThoai, @CCCD, @Email
+    );
+
+    -- Gán mã DS ra tham số output
+    SET @OutMaDS = @NewMaDS;
+END;
+GO
+
+CREATE OR ALTER PROCEDURE sp_GetCandidateByMaPDK
+    @MaPDK CHAR(5)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT 
+        TS.HoTen,
+        TS.GioiTinh,
+		CONVERT(varchar, TS.Ngaysinh, 103) AS NgaySinh,
+        TS.SoDienThoai,
+        TS.CCCD,
+        TS.Email
+    FROM PhieuDangKy PDK
+    JOIN ThiSinh TS ON PDK.MaDS = TS.MaDS
+    WHERE PDK.MaPDK = @MaPDK;
+END;
+GO
+
+
+
+
 -- Thêm phiếu đăng ký và cập nhật SLTSHienTai của lịch thi
 CREATE OR ALTER PROCEDURE sp_InsertFreeReg
     @MaPDK CHAR(5),
-    @NgayDangKy DATE,
+	@MaDS CHAR(5),
+    @NgayDangKy DATETIME,
     @LoaiDGNL NVARCHAR(50),
     @MaLichThi CHAR(5),
     @LoaiPDK NVARCHAR(4)
@@ -118,8 +180,8 @@ BEGIN
 
     BEGIN TRY
         -- Thêm phiếu đăng ký
-        INSERT INTO PhieuDangKy(MaPDK, NgayLap, TrangThai, LoaiCC, LoaiPDK, MaLT)
-        VALUES (@MaPDK, @NgayDangKy, N'Chưa thanh toán', @LoaiDGNL, @LoaiPDK, @MaLichThi);
+        INSERT INTO PhieuDangKy(MaPDK, MaDS, NgayLap, TrangThai, LoaiCC, LoaiPDK, MaLT)
+        VALUES (@MaPDK, @MaDS, @NgayDangKy, N'Chưa thanh toán', @LoaiDGNL, @LoaiPDK, @MaLichThi);
 
         -- Cập nhật số lượng thí sinh hiện tại trong LichDGNL
         UPDATE LichDGNL
@@ -354,8 +416,12 @@ GO
 CREATE  OR ALTER PROCEDURE XemTatCaPhieuDangKy 
 AS
 BEGIN
-	SELECT pdk.MaPDK, dsts.HoTen, dsts.Email, pdk.LoaiPDK, ldgnl.NgayThi, ldgnl.PhongThi, pdk.TrangThai, pdk.TrangThai
-	FROM PhieuDangKy pdk JOIN DSThiSinh dsts ON pdk.MaDS = dsts.MaDS
+	SELECT pdk.MaPDK, dsts.MaTS, dsts.Email, pdk.LoaiPDK, ldgnl.NgayThi, ldgnl.PhongThi, pdk.TrangThai,
+	CASE 
+			WHEN pdk.TenDonVi IS NULL THEN dsts.HoTen
+			ELSE pdk.TenDonVi
+		END AS TenHienThi
+	FROM PhieuDangKy pdk JOIN ThiSinh dsts ON pdk.MaDS = dsts.MaDS
 	JOIN LichDGNL ldgnl ON pdk.MaLT = ldgnl.MaLT
 END;
 
@@ -369,16 +435,19 @@ AS
 BEGIN
 	SELECT 
 		pdk.MaPDK, 
-		dsts.HoTen, 
 		dsts.Email, 
+		dsts.MaTS,
 		pdk.LoaiPDK, 
 		ldgnl.NgayThi, 
 		ldgnl.PhongThi, 
-		pdk.TrangThai, 
-		pdk.TrangThai
+		pdk.TrangThai,
+		CASE 
+			WHEN pdk.TenDonVi IS NULL THEN dsts.HoTen
+			ELSE pdk.TenDonVi
+		END AS TenHienThi
 	FROM 
 		PhieuDangKy pdk 
-		JOIN DSThiSinh dsts ON pdk.MaDS = dsts.MaDS
+		JOIN ThiSinh dsts ON pdk.MaDS = dsts.MaDS
 		JOIN LichDGNL ldgnl ON pdk.MaLT = ldgnl.MaLT
 	WHERE 
 		(@MaPDK IS NULL OR pdk.MaPDK = @MaPDK)
@@ -402,9 +471,9 @@ BEGIN
 		END AS TenHienThi
 	FROM 
 		PhieuDangKy pdk
-		JOIN DSThiSinh dsts ON dsts.MaDS = pdk.MaDS
+		JOIN ThiSinh dsts ON dsts.MaDS = pdk.MaDS
 		JOIN LichDGNL ldgnl ON pdk.MaLT = ldgnl.MaLT
-		JOIN DSPhongThi pt ON pt.MaPT = ldgnl.PhongThi 
+		JOIN PhongThi pt ON pt.MaPT = ldgnl.PhongThi 
      
 	WHERE 
 		pdk.MaPDK = @MaPDK
@@ -413,7 +482,8 @@ GO
 
 -- Xem Phiếu dự thi
 CREATE OR ALTER PROCEDURE XemPhieuDuThi
-	@MaPDK CHAR(5)
+	@MaPDK CHAR(5),
+	@MaTS CHAR(5)
 AS
 BEGIN
 	SELECT 
@@ -429,56 +499,75 @@ BEGIN
 	FROM 
 		PhieuDuThi pdt
 		JOIN PhieuDangKy pdk ON pdt.MaPDK = pdk.MaPDK
-		JOIN DSThiSinh dsts ON pdk.MaDS = dsts.MaDS
 		JOIN LichDGNL ldgnl ON ldgnl.MaLT = pdk.MaLT
-		JOIN DSPhongThi pt ON pt.MaPT = ldgnl.PhongThi
+		JOIN PhongThi pt ON pt.MaPT = ldgnl.PhongThi
+		Join ThiSinh dsts ON dsts.MaDS = pdk.MaDS AND dsts.MaTS= pdt.MaTS
 	WHERE 
-		pdk.MaPDK = @MaPDK
+		pdk.MaPDK = @MaPDK and pdt.MaTS = @MaTS
 END;
 GO
 -- Xuất Phiếu dự thi
 CREATE OR ALTER PROCEDURE XuatPhieuDuThi
-	@MaPDK CHAR(5)
+    @MaPDK CHAR(5)
 AS
 BEGIN
+    DECLARE @MaPDT CHAR(5);
+    DECLARE @SBD CHAR(5);
+    DECLARE @NewID INT;
+	DECLARE @MaDS CHAR(5);
+    
+	SELECT @MaDS = MaDS FROM PhieuDangKy WHERE MaPDK = @MaPDK;
+    -- Tạo phiếu dự thi cho từng thí sinh trong danh sách
+    DECLARE ts_cursor CURSOR FOR
+    SELECT MaTS 
+    FROM ThiSinh 
+    WHERE MaDS =@MaDS;
 
-	DECLARE @MaPDT CHAR(5);
-	DECLARE @SBD CHAR(5);
-	DECLARE @NewID INT;
+    DECLARE @MaTS CHAR(5);
+    
+    OPEN ts_cursor;
+    FETCH NEXT FROM ts_cursor INTO @MaTS;
 
-	-- Tạo MaPDT tự động (PDT01, PDT02, ...)
-	SELECT @NewID = ISNULL(MAX(CAST(SUBSTRING(MaPDT, 4, 2) AS INT)), 0) + 1
-	FROM PhieuDuThi;
-	SET @MaPDT = 'PDT' + RIGHT('0' + CAST(@NewID AS VARCHAR(2)), 2);
+    WHILE @@FETCH_STATUS = 0
+    BEGIN
+        -- Tạo MaPDT tự động
+        SELECT @NewID = ISNULL(MAX(CAST(SUBSTRING(MaPDT, 4, 2) AS INT)), 0) + 1
+        FROM PhieuDuThi;
+        SET @MaPDT = 'PDT' + RIGHT('0' + CAST(@NewID AS VARCHAR(2)), 2);
 
-	-- Tạo SBD tự động (SBD01, SBD02, ...)
-	SELECT @NewID = ISNULL(MAX(CAST(SUBSTRING(SBD, 4, 2) AS INT)), 0) + 1
-	FROM PhieuDuThi;
-	SET @SBD = 'SBD' + RIGHT('0' + CAST(@NewID AS VARCHAR(2)), 2);
+        -- Tạo SBD tự động (đảm bảo mỗi MaTS có SBD khác nhau)
+        SELECT @NewID = ISNULL(MAX(CAST(SUBSTRING(SBD, 4, 2) AS INT)), 0) + 1
+        FROM PhieuDuThi;
+        SET @SBD = 'SBD' + RIGHT('0' + CAST(@NewID AS VARCHAR(2)), 2);
 
-	-- Thêm hàng vào PhieuDuThi
-	INSERT INTO PhieuDuThi (MaPDT, ThoiGian, DiaDiem, SBD, MaPDK)
-	SELECT 
-		@MaPDT,
-		ldgnl.NgayThi,
-		ldgnl.PhongThi,
-		@SBD,
-		pdk.MaPDK
-	FROM 
-		PhieuDangKy pdk
-		JOIN LichDGNL ldgnl ON pdk.MaLT = ldgnl.MaLT
-		JOIN DSPhongThi pt ON ldgnl.PhongThi = pt.MaPT
-	WHERE 
-		pdk.MaPDK = @MaPDK;
+        -- Thêm hàng vào PhieuDuThi
+        INSERT INTO PhieuDuThi (MaPDT, ThoiGian, DiaDiem, SBD, MaPDK, MaTS)
+        SELECT 
+            @MaPDT,
+            ldgnl.NgayThi,
+            ldgnl.PhongThi,
+            @SBD,
+            pdk.MaPDK, 
+			@MaTS
+        FROM 
+            PhieuDangKy pdk
+            JOIN LichDGNL ldgnl ON pdk.MaLT = ldgnl.MaLT
+            JOIN PhongThi pt ON ldgnl.PhongThi = pt.MaPT
+        WHERE 
+            pdk.MaPDK = @MaPDK;
 
-	-- Cập nhật TrangThaiXuatPDT trong PhieuDangKy (nếu có)
-	UPDATE PhieuDangKy
-	SET TrangThai = N'Đã xuất PDT'
-	WHERE MaPDK = @MaPDK;
+        FETCH NEXT FROM ts_cursor INTO @MaTS;
+    END;
+
+    CLOSE ts_cursor;
+    DEALLOCATE ts_cursor;
+
+    -- Cập nhật TrangThai trong PhieuDangKy
+    UPDATE PhieuDangKy
+    SET TrangThai = N'Đã xuất PDT'
+    WHERE MaPDK = @MaPDK;
 END;
 GO
-
-
 ---------- gia han 
 -- Xoá nếu đã tồn tại
 DROP PROCEDURE IF EXISTS sp_GetPendingExtends;

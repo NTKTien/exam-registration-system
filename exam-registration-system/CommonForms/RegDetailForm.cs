@@ -41,6 +41,19 @@ namespace exam_registration_system.CommonForms
                 tbAddress.Text = row["DiaChi"].ToString();
             }
 
+            // Lấy thông tin thí sinh theo mã PDK
+            DataTable dtCandidate = CandidateService.GetCandidateByMaPDK(RegistrationId);
+            if (dtCandidate.Rows.Count > 0)
+            {
+                DataRow row = dtCandidate.Rows[0];
+                tbNameTS.Text = row["HoTen"].ToString();
+                tbSexTS.Text = row["GioiTinh"].ToString();
+                tbBirthTS.Text = row["Ngaysinh"].ToString();
+                tbCCCDTS.Text = row["CCCD"].ToString();
+                tbSDTTS.Text = row["SoDienThoai"].ToString();
+                tbEmailTS.Text = row["Email"].ToString();
+            }
+
             // Lấy thông tin phiếu đăng ký
             DataTable dtReg = PhieuDangKyService.GetDetailRegByID(RegistrationId);
             if (dtReg.Rows.Count > 0)
@@ -58,6 +71,21 @@ namespace exam_registration_system.CommonForms
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void tbCCCD_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelEmail_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbEmail_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

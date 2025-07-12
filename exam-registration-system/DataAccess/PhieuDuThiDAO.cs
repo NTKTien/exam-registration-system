@@ -12,7 +12,7 @@ namespace exam_registration_system.DataAccess
 {
     public class PhieuDuThiDAO
     {
-        public static DataTable GetPhieuDuThi(string maPDK)
+        public static DataTable GetPhieuDuThi(string maPDK, string maTS)
         {
             try
             {
@@ -23,6 +23,7 @@ namespace exam_registration_system.DataAccess
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@MaPDK", maPDK);
+                        cmd.Parameters.AddWithValue("@MaTS", maTS);
 
                         using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
                         {
