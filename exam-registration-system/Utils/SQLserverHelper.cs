@@ -20,13 +20,17 @@ public static class SqlServerHelper
     }
     public static void SetConnectionWindowsAuth()
     {
+        ConnectionString = "Server=localhost\\SQLEXPRESS;Database=QLToChucThiCC;Integrated Security=true;";
+        GlobalInfo.ConnectionString = ConnectionString;
+        GlobalInfo.CurrentUsername = Environment.UserName;
+
         //ConnectionString = "Server=MSI\\MSSQLSERVER01;Database=QLToChucThiCC;Integrated Security=true;";
         //GlobalInfo.ConnectionString = ConnectionString;
         //GlobalInfo.CurrentUsername = Environment.UserName;
 
-        ConnectionString = "Server=localhost;Database=QLToChucThiCC;Integrated Security=true;";
-        GlobalInfo.ConnectionString = ConnectionString;
-        GlobalInfo.CurrentUsername = Environment.UserName;
+        //ConnectionString = "Server=localhost;Database=QLToChucThiCC;Integrated Security=true;";
+        //GlobalInfo.ConnectionString = ConnectionString;
+        //GlobalInfo.CurrentUsername = Environment.UserName;
     }
     public static DataTable ExecuteQuery(string sql, params SqlParameter[] parameters)
     {
