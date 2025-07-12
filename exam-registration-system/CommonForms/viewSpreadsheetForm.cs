@@ -31,5 +31,13 @@ namespace exam_registration_system.CommonForms
         {
 
         }
+
+        private void viewSpreadsheetForm_Load(object sender, EventArgs e)
+        {
+            lbID.Padding = new Padding(2);
+            lbName.Padding = new Padding(2);
+            lbTitle.Padding = new Padding(2);
+            lbType.Padding = new Padding(2);
+        }
     }
 }

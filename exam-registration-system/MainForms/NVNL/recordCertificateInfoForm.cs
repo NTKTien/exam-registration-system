@@ -20,7 +20,8 @@ namespace exam_registration_system.MainForms.NVNL
 
         private void recordCertificateInfoForm_Load(object sender, EventArgs e)
         {
-
+            lbTypeCer.Padding = new Padding(2);
+            labelHeader.Padding = new Padding(2);
         }
 
         private void dataGridViewCandidates_CellContentClick(object sender, DataGridViewCellEventArgs e)
