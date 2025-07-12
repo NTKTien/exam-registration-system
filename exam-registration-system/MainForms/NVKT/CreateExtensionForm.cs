@@ -92,5 +92,10 @@ namespace exam_registration_system.MainForms.NVKT
                 BtnLapPhieu.FillColor = System.Drawing.Color.DarkGray;
             }
         }
+
+        private void labelFullName_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
