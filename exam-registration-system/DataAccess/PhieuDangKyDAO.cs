@@ -46,7 +46,7 @@ namespace exam_registration_system.DataAccess
             }
         }
 
-        public static bool InsertFreeReg(string maPDK, DateTime ngayDangKy, string loaiDGNL, string LoaiPDK, string maLichThi)
+        public static bool InsertFreeReg(string maPDK, string maDS, DateTime ngayDangKy, string loaiDGNL, string LoaiPDK, string maLichThi)
         {
             using (SqlConnection conn = new SqlConnection(GlobalInfo.ConnectionString))
             {
@@ -54,6 +54,7 @@ namespace exam_registration_system.DataAccess
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Parameters.AddWithValue("@MaPDK", maPDK);
+                cmd.Parameters.AddWithValue("@MaDS", maDS);
                 cmd.Parameters.AddWithValue("@NgayDangKy", ngayDangKy);
                 cmd.Parameters.AddWithValue("@LoaiDGNL", loaiDGNL);
                 cmd.Parameters.AddWithValue("@MaLichThi", maLichThi);
@@ -192,6 +193,25 @@ namespace exam_registration_system.DataAccess
             catch (Exception ex)
             {
                 throw new Exception($"Lỗi khi tải dữ liệu Phiếu Đăng Ký: {ex.Message}");
+            }
+        }
+
+        public static DataTable XemPDKDeXuatPhieu()
+        {
+            using (SqlConnection conn = new SqlConnection(GlobalInfo.ConnectionString))
+            {
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand("XemTatCaPhieuDangKy", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                    {
+                        DataTable dt = new DataTable();
+                        adapter.Fill(dt);
+                        return dt;
+                    }
+                }
             }
         }
 

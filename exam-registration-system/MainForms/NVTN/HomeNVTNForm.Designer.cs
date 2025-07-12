@@ -345,7 +345,7 @@
             this.sidebar.Dock = System.Windows.Forms.DockStyle.Left;
             this.sidebar.Location = new System.Drawing.Point(0, 51);
             this.sidebar.Name = "sidebar";
-            this.sidebar.Size = new System.Drawing.Size(143, 639);
+            this.sidebar.Size = new System.Drawing.Size(143, 670);
             this.sidebar.TabIndex = 36;
             // 
             // panel1
@@ -450,14 +450,14 @@
             this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContent.Location = new System.Drawing.Point(143, 51);
             this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(897, 639);
+            this.panelContent.Size = new System.Drawing.Size(897, 670);
             this.panelContent.TabIndex = 37;
             // 
             // HomeNVTNForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1040, 690);
+            this.ClientSize = new System.Drawing.Size(1040, 721);
             this.Controls.Add(this.panelContent);
             this.Controls.Add(this.sidebar);
             this.Controls.Add(this.panelHeader);

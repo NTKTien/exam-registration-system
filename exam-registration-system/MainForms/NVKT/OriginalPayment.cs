@@ -272,7 +272,6 @@ namespace exam_registration_system.MainForms.NVKT
             {
                 try
                 {
-                    bool updatePDK = PhieuDangKyService.UpdateRegistration(maPDK: maPDK, trangThai: "Đã thanh toán");
                     bool updateInvoice = false;
                     if (!string.IsNullOrEmpty(currentMaHD))
                     {
@@ -281,9 +280,11 @@ namespace exam_registration_system.MainForms.NVKT
                             tongTien: totalCost,
                             troGia: subsidy,
                             thanhTien: finalCost,
-                            maPDK: maPDK
+                            maPDK: maPDK,
+                            maNV: GlobalInfo.CurrentUsername
                         );
                     }
+                    bool updatePDK = PhieuDangKyService.UpdateRegistration(maPDK: maPDK, trangThai: "Đã thanh toán");
                     if (updatePDK && (string.IsNullOrEmpty(currentMaHD) || updateInvoice))
                     {
                         tbStatus.Text = "Đã thanh toán";
@@ -431,6 +432,16 @@ namespace exam_registration_system.MainForms.NVKT
             string filePath = Path.Combine(folder, $"HoaDon_{maHD}_{maPDK}.pdf");
             doc.Save(filePath);
             Process.Start(new ProcessStartInfo(filePath) { UseShellExecute = true });
+        }
+
+        private void grpSearch_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSearch_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

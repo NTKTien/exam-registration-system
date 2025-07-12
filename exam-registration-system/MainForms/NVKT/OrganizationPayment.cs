@@ -16,5 +16,10 @@ namespace exam_registration_system.MainForms.NVKT
         {
             InitializeComponent();
         }
+
+        private void pnlContainer_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

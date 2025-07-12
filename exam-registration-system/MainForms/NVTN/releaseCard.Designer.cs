@@ -92,7 +92,7 @@
             this.guna2Panel2.ShadowDecoration.BorderRadius = 15;
             this.guna2Panel2.ShadowDecoration.Depth = 10;
             this.guna2Panel2.ShadowDecoration.Enabled = true;
-            this.guna2Panel2.Size = new System.Drawing.Size(825, 388);
+            this.guna2Panel2.Size = new System.Drawing.Size(825, 351);
             this.guna2Panel2.TabIndex = 7;
             // 
             // DataGridViewRegList
@@ -118,12 +118,13 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DataGridViewRegList.DefaultCellStyle = dataGridViewCellStyle3;
             this.DataGridViewRegList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.DataGridViewRegList.Location = new System.Drawing.Point(41, 31);
+            this.DataGridViewRegList.Location = new System.Drawing.Point(37, 16);
             this.DataGridViewRegList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.DataGridViewRegList.Name = "DataGridViewRegList";
+            this.DataGridViewRegList.ReadOnly = true;
             this.DataGridViewRegList.RowHeadersVisible = false;
             this.DataGridViewRegList.RowHeadersWidth = 62;
-            this.DataGridViewRegList.Size = new System.Drawing.Size(748, 326);
+            this.DataGridViewRegList.Size = new System.Drawing.Size(764, 267);
             this.DataGridViewRegList.TabIndex = 0;
             this.DataGridViewRegList.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.DataGridViewRegList.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -138,7 +139,7 @@
             this.DataGridViewRegList.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.DataGridViewRegList.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.DataGridViewRegList.ThemeStyle.HeaderStyle.Height = 4;
-            this.DataGridViewRegList.ThemeStyle.ReadOnly = false;
+            this.DataGridViewRegList.ThemeStyle.ReadOnly = true;
             this.DataGridViewRegList.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.DataGridViewRegList.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.DataGridViewRegList.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -203,7 +204,7 @@
             this.cbxTypeCer.Location = new System.Drawing.Point(233, 39);
             this.cbxTypeCer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbxTypeCer.Name = "cbxTypeCer";
-            this.cbxTypeCer.Size = new System.Drawing.Size(155, 36);
+            this.cbxTypeCer.Size = new System.Drawing.Size(184, 36);
             this.cbxTypeCer.TabIndex = 14;
             this.cbxTypeCer.SelectedIndexChanged += new System.EventHandler(this.cbxTypeCer_SelectedIndexChanged);
             // 
@@ -220,7 +221,7 @@
             this.cbbStatus.Location = new System.Drawing.Point(457, 39);
             this.cbbStatus.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbbStatus.Name = "cbbStatus";
-            this.cbbStatus.Size = new System.Drawing.Size(137, 36);
+            this.cbbStatus.Size = new System.Drawing.Size(191, 36);
             this.cbbStatus.TabIndex = 13;
             this.cbbStatus.SelectedIndexChanged += new System.EventHandler(this.cbbStatus_SelectedIndexChanged);
             // 
@@ -237,10 +238,11 @@
             this.tbID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.tbID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbID.Location = new System.Drawing.Point(25, 39);
+            this.tbID.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.tbID.Name = "tbID";
             this.tbID.PlaceholderText = "";
             this.tbID.SelectedText = "";
-            this.tbID.Size = new System.Drawing.Size(131, 36);
+            this.tbID.Size = new System.Drawing.Size(151, 36);
             this.tbID.TabIndex = 9;
             this.tbID.TextChanged += new System.EventHandler(this.tbID_TextChanged);
             // 

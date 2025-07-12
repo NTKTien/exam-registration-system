@@ -5,6 +5,7 @@ using exam_registration_system.MainForms.NVTN;
 using PdfSharp.Drawing;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -21,6 +22,7 @@ namespace exam_registration_system
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            //SqlServerHelper.SetConnection("sa", "mat_khau_moi");
             SqlServerHelper.SetConnectionWindowsAuth();
             Application.Run(new Login());
             Console.WriteLine(typeof(XFontStyle).FullName);
