@@ -39,13 +39,13 @@
             this.ButHome = new Guna.UI2.WinForms.Guna2Button();
             this.menuContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.menu = new Guna.UI2.WinForms.Guna2Button();
-            this.butViewSheet = new Guna.UI2.WinForms.Guna2Button();
             this.butHandleExtend = new Guna.UI2.WinForms.Guna2Button();
             this.butRecordCertificate = new Guna.UI2.WinForms.Guna2Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.butLogout = new Guna.UI2.WinForms.Guna2Button();
             this.panelContent = new Guna.UI2.WinForms.Guna2Panel();
             this.menuTransaction = new System.Windows.Forms.Timer(this.components);
+            this.butViewSheet = new Guna.UI2.WinForms.Guna2Button();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
@@ -201,25 +201,6 @@
             this.menu.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.menu.Click += new System.EventHandler(this.menu_Click);
             // 
-            // butViewSheet
-            // 
-            this.butViewSheet.BackColor = System.Drawing.Color.Transparent;
-            this.butViewSheet.CheckedState.FillColor = System.Drawing.Color.Gainsboro;
-            this.butViewSheet.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.butViewSheet.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.butViewSheet.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.butViewSheet.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.butViewSheet.FillColor = System.Drawing.Color.Transparent;
-            this.butViewSheet.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butViewSheet.ForeColor = System.Drawing.Color.White;
-            this.butViewSheet.Location = new System.Drawing.Point(3, 54);
-            this.butViewSheet.Name = "butViewSheet";
-            this.butViewSheet.Size = new System.Drawing.Size(134, 40);
-            this.butViewSheet.TabIndex = 4;
-            this.butViewSheet.Text = "Xem bảng tính";
-            this.butViewSheet.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.butViewSheet.Click += new System.EventHandler(this.butViewSheet_Click);
-            // 
             // butHandleExtend
             // 
             this.butHandleExtend.BackColor = System.Drawing.Color.Transparent;
@@ -302,6 +283,25 @@
             this.menuTransaction.Interval = 5;
             this.menuTransaction.Tick += new System.EventHandler(this.menuTransaction_Tick);
             // 
+            // butViewSheet
+            // 
+            this.butViewSheet.BackColor = System.Drawing.Color.Transparent;
+            this.butViewSheet.CheckedState.FillColor = System.Drawing.Color.Gainsboro;
+            this.butViewSheet.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.butViewSheet.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.butViewSheet.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.butViewSheet.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.butViewSheet.FillColor = System.Drawing.Color.Transparent;
+            this.butViewSheet.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butViewSheet.ForeColor = System.Drawing.Color.White;
+            this.butViewSheet.Location = new System.Drawing.Point(3, 54);
+            this.butViewSheet.Name = "butViewSheet";
+            this.butViewSheet.Size = new System.Drawing.Size(134, 40);
+            this.butViewSheet.TabIndex = 4;
+            this.butViewSheet.Text = "Xem bảng tính";
+            this.butViewSheet.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.butViewSheet.Click += new System.EventHandler(this.butViewSheet_Click);
+            // 
             // HomeNVNLForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -339,12 +339,12 @@
         private Guna.UI2.WinForms.Guna2Button ButHome;
         private System.Windows.Forms.FlowLayoutPanel menuContainer;
         private Guna.UI2.WinForms.Guna2Button menu;
-        private Guna.UI2.WinForms.Guna2Button butViewSheet;
         private Guna.UI2.WinForms.Guna2Button butHandleExtend;
         private Guna.UI2.WinForms.Guna2Button butRecordCertificate;
         private System.Windows.Forms.Panel panel1;
         private Guna.UI2.WinForms.Guna2Button butLogout;
         private Guna.UI2.WinForms.Guna2Panel panelContent;
         private System.Windows.Forms.Timer menuTransaction;
+        private Guna.UI2.WinForms.Guna2Button butViewSheet;
     }
 }

@@ -28,7 +28,7 @@ namespace exam_registration_system.MainForms.NVTN
             if (menuExpand == false)
             {
                 menuContainer.Height += 10;
-                if (menuContainer.Height >= 505)
+                if (menuContainer.Height >= 327)
                 {
                     menuTransaction.Stop();
                     menuExpand = true;
@@ -128,11 +128,6 @@ namespace exam_registration_system.MainForms.NVTN
             frm.Dock = DockStyle.Fill;
             panelContent.Controls.Add(frm);
             frm.Show();
-        }
-
-        private void butViewPDT_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void butViewBT_Click(object sender, EventArgs e)

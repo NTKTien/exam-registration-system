@@ -58,7 +58,7 @@
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHeader.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
-            this.panelHeader.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelHeader.Margin = new System.Windows.Forms.Padding(2);
             this.panelHeader.Name = "panelHeader";
             this.panelHeader.Size = new System.Drawing.Size(897, 40);
             this.panelHeader.TabIndex = 6;
@@ -71,7 +71,7 @@
             this.labelHeader.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
             this.labelHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.labelHeader.Location = new System.Drawing.Point(309, 3);
-            this.labelHeader.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.labelHeader.Margin = new System.Windows.Forms.Padding(2);
             this.labelHeader.Name = "labelHeader";
             this.labelHeader.Size = new System.Drawing.Size(301, 35);
             this.labelHeader.TabIndex = 1;
@@ -87,12 +87,12 @@
             this.guna2Panel2.Controls.Add(this.DataGridViewRegList);
             this.guna2Panel2.FillColor = System.Drawing.Color.WhiteSmoke;
             this.guna2Panel2.Location = new System.Drawing.Point(36, 206);
-            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.ShadowDecoration.BorderRadius = 15;
             this.guna2Panel2.ShadowDecoration.Depth = 10;
             this.guna2Panel2.ShadowDecoration.Enabled = true;
-            this.guna2Panel2.Size = new System.Drawing.Size(825, 351);
+            this.guna2Panel2.Size = new System.Drawing.Size(825, 426);
             this.guna2Panel2.TabIndex = 7;
             // 
             // DataGridViewRegList
@@ -118,13 +118,13 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DataGridViewRegList.DefaultCellStyle = dataGridViewCellStyle3;
             this.DataGridViewRegList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.DataGridViewRegList.Location = new System.Drawing.Point(37, 16);
-            this.DataGridViewRegList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DataGridViewRegList.Location = new System.Drawing.Point(25, 16);
+            this.DataGridViewRegList.Margin = new System.Windows.Forms.Padding(2);
             this.DataGridViewRegList.Name = "DataGridViewRegList";
             this.DataGridViewRegList.ReadOnly = true;
             this.DataGridViewRegList.RowHeadersVisible = false;
             this.DataGridViewRegList.RowHeadersWidth = 62;
-            this.DataGridViewRegList.Size = new System.Drawing.Size(764, 267);
+            this.DataGridViewRegList.Size = new System.Drawing.Size(776, 368);
             this.DataGridViewRegList.TabIndex = 0;
             this.DataGridViewRegList.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.DataGridViewRegList.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -164,7 +164,7 @@
             this.guna2Panel1.Controls.Add(this.lbID);
             this.guna2Panel1.FillColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.guna2Panel1.Location = new System.Drawing.Point(36, 55);
-            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.ShadowDecoration.BorderRadius = 15;
             this.guna2Panel1.ShadowDecoration.Depth = 10;
@@ -202,7 +202,7 @@
             this.cbxTypeCer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.cbxTypeCer.ItemHeight = 30;
             this.cbxTypeCer.Location = new System.Drawing.Point(233, 39);
-            this.cbxTypeCer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbxTypeCer.Margin = new System.Windows.Forms.Padding(2);
             this.cbxTypeCer.Name = "cbxTypeCer";
             this.cbxTypeCer.Size = new System.Drawing.Size(184, 36);
             this.cbxTypeCer.TabIndex = 14;
@@ -219,7 +219,7 @@
             this.cbbStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.cbbStatus.ItemHeight = 30;
             this.cbbStatus.Location = new System.Drawing.Point(457, 39);
-            this.cbbStatus.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbbStatus.Margin = new System.Windows.Forms.Padding(2);
             this.cbbStatus.Name = "cbbStatus";
             this.cbbStatus.Size = new System.Drawing.Size(191, 36);
             this.cbbStatus.TabIndex = 13;
@@ -252,7 +252,7 @@
             this.lbType.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.lbType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.lbType.Location = new System.Drawing.Point(233, 11);
-            this.lbType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lbType.Margin = new System.Windows.Forms.Padding(2);
             this.lbType.Name = "lbType";
             this.lbType.Size = new System.Drawing.Size(98, 19);
             this.lbType.TabIndex = 11;
@@ -265,7 +265,7 @@
             this.lbStatus.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.lbStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.lbStatus.Location = new System.Drawing.Point(457, 11);
-            this.lbStatus.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lbStatus.Margin = new System.Windows.Forms.Padding(2);
             this.lbStatus.Name = "lbStatus";
             this.lbStatus.Size = new System.Drawing.Size(71, 19);
             this.lbStatus.TabIndex = 9;
@@ -277,7 +277,7 @@
             this.lbID.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.lbID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.lbID.Location = new System.Drawing.Point(25, 11);
-            this.lbID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lbID.Margin = new System.Windows.Forms.Padding(2);
             this.lbID.Name = "lbID";
             this.lbID.Size = new System.Drawing.Size(118, 19);
             this.lbID.TabIndex = 8;
@@ -312,7 +312,7 @@
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.panelHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "releaseCard";
             this.Text = "releaseCard";
             this.Load += new System.EventHandler(this.releaseCard_Load);

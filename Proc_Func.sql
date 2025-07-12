@@ -1,8 +1,7 @@
-﻿﻿
-
-USE QLToChucThiCC;
+﻿USE QLToChucThiCC;
 GO
 
+--------------------------------PROC CHO LẬP PHIẾU ĐĂNG KÝ TỰ DO------------------------------
 -- Lấy toàn bộ danh sách phiếu đăng ký 
 CREATE OR ALTER PROCEDURE P_GetAllReg
 AS
@@ -38,7 +37,6 @@ BEGIN
     WHERE P.MaPDK = @RegistrationId
 END;
 GO
-
 
 --Lấy thông tin khách hàng theo mã KH
 CREATE OR ALTER PROCEDURE sp_GetFreeCustomerInforByRegId
@@ -107,6 +105,7 @@ BEGIN
 END;
 GO
 
+--Thêm một thí sinh
 CREATE OR ALTER PROCEDURE sp_InsertCandidate
     @HoTen NVARCHAR(100),
     @GioiTinh NVARCHAR(3),
@@ -144,6 +143,7 @@ BEGIN
 END;
 GO
 
+--Lấy thông tin thí sinh theo mã phiếu đăng kí 
 CREATE OR ALTER PROCEDURE sp_GetCandidateByMaPDK
     @MaPDK CHAR(5)
 AS
@@ -162,9 +162,6 @@ BEGIN
     WHERE PDK.MaPDK = @MaPDK;
 END;
 GO
-
-
-
 
 -- Thêm phiếu đăng ký và cập nhật SLTSHienTai của lịch thi
 CREATE OR ALTER PROCEDURE sp_InsertFreeReg
@@ -217,6 +214,7 @@ BEGIN
 END;
 GO
 
+--Thêm một hóa đơn 
 CREATE OR ALTER PROCEDURE sp_InsertInvoice
     @MaPDK CHAR(5),
     @MaNV CHAR(5)
@@ -240,6 +238,7 @@ BEGIN
 END;
 GO
 
+-----------------------------------PROC CHO THANH TOÁN TỰ DO 
 -- Lấy danh sách phiếu đăng ký theo điều kiện
 CREATE PROCEDURE sp_SearchRegistration
     @MaPDK CHAR(5) = NULL,
@@ -410,8 +409,8 @@ BEGIN
       AND (@LoaiNV IS NULL OR LoaiNV = @LoaiNV)
 END;
 GO
------------------------Từ này trở lên không sửa, muốn sửa thì chỉ sửa ở dưới------------------------------------
--- PROCEDURE USE-CASE PHÁT HÀNH PHIẾU DỰ THI
+
+----------------------------------------- PROC PHÁT HÀNH PHIẾU DỰ THI-------------------------------------
 	-- Xem tất cả phiếu đăng ký
 CREATE  OR ALTER PROCEDURE XemTatCaPhieuDangKy 
 AS
@@ -568,7 +567,7 @@ BEGIN
     WHERE MaPDK = @MaPDK;
 END;
 GO
----------- gia han 
+---------------------------------------- PROC GIA HẠN ---------------------------------------------------------
 -- Xoá nếu đã tồn tại
 DROP PROCEDURE IF EXISTS sp_GetPendingExtends;
 GO

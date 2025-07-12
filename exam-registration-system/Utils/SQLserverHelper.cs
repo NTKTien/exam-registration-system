@@ -20,7 +20,11 @@ public static class SqlServerHelper
     }
     public static void SetConnectionWindowsAuth()
     {
-        ConnectionString = "Server=MSI\\MSSQLSERVER01;Database=QLToChucThiCC;Integrated Security=true;";
+        //ConnectionString = "Server=MSI\\MSSQLSERVER01;Database=QLToChucThiCC;Integrated Security=true;";
+        //GlobalInfo.ConnectionString = ConnectionString;
+        //GlobalInfo.CurrentUsername = Environment.UserName;
+
+        ConnectionString = "Server=localhost;Database=QLToChucThiCC;Integrated Security=true;";
         GlobalInfo.ConnectionString = ConnectionString;
         GlobalInfo.CurrentUsername = Environment.UserName;
     }

@@ -41,14 +41,13 @@
             this.ButHome = new Guna.UI2.WinForms.Guna2Button();
             this.menuContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.menu = new Guna.UI2.WinForms.Guna2Button();
-            this.butViewReg = new Guna.UI2.WinForms.Guna2Button();
             this.butExtend = new Guna.UI2.WinForms.Guna2Button();
             this.butPayment = new Guna.UI2.WinForms.Guna2Button();
-            this.butPaymentUnit = new Guna.UI2.WinForms.Guna2Button();
             this.butViewRegulation = new Guna.UI2.WinForms.Guna2Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.butLogout = new Guna.UI2.WinForms.Guna2Button();
             this.panelContent = new Guna.UI2.WinForms.Guna2Panel();
+            this.butViewReg = new Guna.UI2.WinForms.Guna2Button();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
@@ -183,10 +182,9 @@
             // 
             this.menuContainer.BackColor = System.Drawing.Color.Transparent;
             this.menuContainer.Controls.Add(this.menu);
-            this.menuContainer.Controls.Add(this.butViewReg);
-            this.menuContainer.Controls.Add(this.butExtend);
             this.menuContainer.Controls.Add(this.butPayment);
-            this.menuContainer.Controls.Add(this.butPaymentUnit);
+            this.menuContainer.Controls.Add(this.butExtend);
+            this.menuContainer.Controls.Add(this.butViewReg);
             this.menuContainer.Controls.Add(this.butViewRegulation);
             this.menuContainer.Location = new System.Drawing.Point(3, 52);
             this.menuContainer.Name = "menuContainer";
@@ -214,25 +212,6 @@
             this.menu.Text = " Menu";
             this.menu.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.menu.Click += new System.EventHandler(this.menu_Click);
-            // 
-            // butViewReg
-            // 
-            this.butViewReg.BackColor = System.Drawing.Color.Transparent;
-            this.butViewReg.CheckedState.FillColor = System.Drawing.Color.Gainsboro;
-            this.butViewReg.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.butViewReg.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.butViewReg.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.butViewReg.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.butViewReg.FillColor = System.Drawing.Color.Transparent;
-            this.butViewReg.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butViewReg.ForeColor = System.Drawing.Color.White;
-            this.butViewReg.Location = new System.Drawing.Point(3, 54);
-            this.butViewReg.Name = "butViewReg";
-            this.butViewReg.Size = new System.Drawing.Size(134, 40);
-            this.butViewReg.TabIndex = 4;
-            this.butViewReg.Text = "Xem phiếu đăng kí ";
-            this.butViewReg.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.butViewReg.Click += new System.EventHandler(this.butViewReg_Click);
             // 
             // butExtend
             // 
@@ -264,32 +243,13 @@
             this.butPayment.FillColor = System.Drawing.Color.Transparent;
             this.butPayment.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butPayment.ForeColor = System.Drawing.Color.White;
-            this.butPayment.Location = new System.Drawing.Point(3, 146);
+            this.butPayment.Location = new System.Drawing.Point(3, 54);
             this.butPayment.Name = "butPayment";
             this.butPayment.Size = new System.Drawing.Size(134, 40);
             this.butPayment.TabIndex = 10;
             this.butPayment.Text = "Thanh toán cá nhân";
             this.butPayment.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.butPayment.Click += new System.EventHandler(this.butPayment_Click);
-            // 
-            // butPaymentUnit
-            // 
-            this.butPaymentUnit.BackColor = System.Drawing.Color.Transparent;
-            this.butPaymentUnit.CheckedState.FillColor = System.Drawing.Color.Gainsboro;
-            this.butPaymentUnit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.butPaymentUnit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.butPaymentUnit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.butPaymentUnit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.butPaymentUnit.FillColor = System.Drawing.Color.Transparent;
-            this.butPaymentUnit.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butPaymentUnit.ForeColor = System.Drawing.Color.White;
-            this.butPaymentUnit.Location = new System.Drawing.Point(3, 192);
-            this.butPaymentUnit.Name = "butPaymentUnit";
-            this.butPaymentUnit.Size = new System.Drawing.Size(134, 40);
-            this.butPaymentUnit.TabIndex = 11;
-            this.butPaymentUnit.Text = "Thanh toán đơn vị";
-            this.butPaymentUnit.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.butPaymentUnit.Click += new System.EventHandler(this.butPaymentUnit_Click);
             // 
             // butViewRegulation
             // 
@@ -302,7 +262,7 @@
             this.butViewRegulation.FillColor = System.Drawing.Color.Transparent;
             this.butViewRegulation.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butViewRegulation.ForeColor = System.Drawing.Color.White;
-            this.butViewRegulation.Location = new System.Drawing.Point(3, 238);
+            this.butViewRegulation.Location = new System.Drawing.Point(3, 192);
             this.butViewRegulation.Name = "butViewRegulation";
             this.butViewRegulation.Size = new System.Drawing.Size(134, 40);
             this.butViewRegulation.TabIndex = 8;
@@ -348,6 +308,25 @@
             this.panelContent.Size = new System.Drawing.Size(897, 672);
             this.panelContent.TabIndex = 42;
             // 
+            // butViewReg
+            // 
+            this.butViewReg.BackColor = System.Drawing.Color.Transparent;
+            this.butViewReg.CheckedState.FillColor = System.Drawing.Color.Gainsboro;
+            this.butViewReg.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.butViewReg.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.butViewReg.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.butViewReg.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.butViewReg.FillColor = System.Drawing.Color.Transparent;
+            this.butViewReg.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butViewReg.ForeColor = System.Drawing.Color.White;
+            this.butViewReg.Location = new System.Drawing.Point(3, 146);
+            this.butViewReg.Name = "butViewReg";
+            this.butViewReg.Size = new System.Drawing.Size(134, 40);
+            this.butViewReg.TabIndex = 11;
+            this.butViewReg.Text = "Xem phiếu đăng ký";
+            this.butViewReg.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.butViewReg.Click += new System.EventHandler(this.butViewReg_Click);
+            // 
             // HomeNVKTForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -386,13 +365,12 @@
         private Guna.UI2.WinForms.Guna2Button ButHome;
         private System.Windows.Forms.FlowLayoutPanel menuContainer;
         private Guna.UI2.WinForms.Guna2Button menu;
-        private Guna.UI2.WinForms.Guna2Button butViewReg;
         private Guna.UI2.WinForms.Guna2Button butExtend;
         private Guna.UI2.WinForms.Guna2Button butPayment;
         private Guna.UI2.WinForms.Guna2Button butViewRegulation;
         private System.Windows.Forms.Panel panel1;
         private Guna.UI2.WinForms.Guna2Button butLogout;
         private Guna.UI2.WinForms.Guna2Panel panelContent;
-        private Guna.UI2.WinForms.Guna2Button butPaymentUnit;
+        private Guna.UI2.WinForms.Guna2Button butViewReg;
     }
 }

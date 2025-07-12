@@ -43,7 +43,7 @@ namespace exam_registration_system.MainForms.NVKT
             if (menuExpand == false)
             {
                 menuContainer.Height += 10;
-                if (menuContainer.Height >= 270)
+                if (menuContainer.Height >= 237)
                 {
                     menuTransaction.Stop();
                     menuExpand = true;
@@ -70,17 +70,6 @@ namespace exam_registration_system.MainForms.NVKT
             panelContent.Controls.Clear();
             homeUC home = new homeUC();
             panelContent.Controls.Add(home);
-        }
-
-        private void butViewReg_Click(object sender, EventArgs e)
-        {
-            panelContent.Controls.Clear();
-            RegListForm frm = new RegListForm();
-            frm.TopLevel = false;
-            frm.FormBorderStyle = FormBorderStyle.None;
-            frm.Dock = DockStyle.Fill;
-            panelContent.Controls.Add(frm);
-            frm.Show();
         }
 
         private void butExtend_Click(object sender, EventArgs e)
@@ -132,6 +121,17 @@ namespace exam_registration_system.MainForms.NVKT
             Login LoginForm = new Login();
             this.Hide();
             LoginForm.Show();
+        }
+
+        private void butViewReg_Click(object sender, EventArgs e)
+        {
+            panelContent.Controls.Clear();
+            RegListForm frm = new RegListForm();
+            frm.TopLevel = false;
+            frm.FormBorderStyle = FormBorderStyle.None;
+            frm.Dock = DockStyle.Fill;
+            panelContent.Controls.Add(frm);
+            frm.Show();
         }
     }
 }
