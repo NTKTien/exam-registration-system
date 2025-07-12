@@ -2,6 +2,53 @@
 GO
 
 --------------------------------PROC CHO LẬP PHIẾU ĐĂNG KÝ TỰ DO------------------------------
+CREATE PROCEDURE sp_GetCertificateInfo
+    @MaPDK CHAR(5)
+AS
+BEGIN
+    SELECT 
+        ts.HoTen,
+        pd.LoaiPDK,
+        pd.LoaiCC,
+        bt.KetQua,
+        ld.NgayThi,
+        bt.TrangThai
+    FROM PhieuDangKy pd
+    JOIN ThiSinh ts ON ts.MaDS = pd.MaDS
+    JOIN PhieuDuThi pdt ON pdt.MaPDK = pd.MaPDK
+    JOIN BangTinh bt ON bt.MaPDT = pdt.MaPDT
+    JOIN LichDGNL ld ON ld.MaLT = pd.MaLT
+    WHERE pd.MaPDK = @MaPDK;
+END;
+Go
+
+CREATE PROCEDURE sp_ConfirmCertificateDelivery
+    @MaTS CHAR(5)
+AS
+BEGIN
+    DECLARE @MaBT CHAR(5);
+
+    SELECT TOP 1 @MaBT = bt.MaBT
+    FROM ThiSinh ts
+    JOIN PhieuDangKy pdk ON ts.MaDS = pdk.MaDS
+    JOIN PhieuDuThi pdt ON pdk.MaPDK = pdt.MaPDK
+    JOIN BangTinh bt ON bt.MaPDT = pdt.MaPDT
+    WHERE ts.MaTS = @MaTS;
+
+    IF @MaBT IS NOT NULL
+    BEGIN
+        UPDATE BangTinh
+        SET TrangThai = N'Đã giao', ThoiGianGiaoCC = GETDATE()
+        WHERE MaBT = @MaBT;
+
+        SELECT 'Updated' AS Result;
+    END
+    ELSE
+    BEGIN
+        SELECT 'NotFound' AS Result;
+    END
+END;
+Go
 -- Lấy toàn bộ danh sách phiếu đăng ký 
 CREATE OR ALTER PROCEDURE P_GetAllReg
 AS

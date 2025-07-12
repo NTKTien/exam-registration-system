@@ -349,7 +349,7 @@
             this.tbFullName.SelectedText = "";
             this.tbFullName.Size = new System.Drawing.Size(201, 29);
             this.tbFullName.TabIndex = 19;
-            this.tbFullName.TextChanged += new System.EventHandler(this.tbFullName_TextChanged);
+
             // 
             // CertificatesForm
             // 

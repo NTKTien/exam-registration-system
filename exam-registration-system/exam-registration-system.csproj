@@ -135,6 +135,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Business\CandidateService.cs" />
+    <Compile Include="Business\CertificatesFormService.cs" />
     <Compile Include="Business\ExtensionFormService.cs" />
     <Compile Include="Business\CustomerService.cs" />
     <Compile Include="Business\EmployeeService.cs" />
@@ -162,6 +163,7 @@
       <DependentUpon>ViewExamScheduleMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="DataAccess\CandidateDAO.cs" />
+    <Compile Include="DataAccess\CertificatesFormDAO.cs" />
     <Compile Include="DataAccess\ExtensionFormDAO.cs" />
     <Compile Include="DataAccess\CustomerInforDAO.cs" />
     <Compile Include="DataAccess\EmployeeDAO.cs" />
