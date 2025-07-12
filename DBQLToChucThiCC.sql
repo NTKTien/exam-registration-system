@@ -315,7 +315,11 @@ INSERT INTO QuyDinh (MaQD, DoiTuong, NoiDung, GiaTri) VALUES
 ('QD003', 'TT', N'Thời gian đến hạn thanh toán là 3 ngày kể từ ngày đăng ký. Sau thời gian trên, các phiếu đăng ký chưa được thanh toán sẽ bị hủy.', 3),
 ('QD004', 'TT', N'Lệ phí thi Ngoại ngữ của khách hàng tự do: 1.800.000', 1800000),
 ('QD005', 'TT', N'Lệ phí thi Tin học của khách hàng tự do: 1.500.000', 1500000),
-('QD006', 'TT', N'Trung tâm không trợ giá lệ phí thi cho khách hàng tự do.', 0);
+('QD006', 'TT', N'Trung tâm không trợ giá lệ phí thi cho khách hàng tự do.', 0),
+('QD007', 'DK', N'Trung tâm hỗ trợ đăng ký cho hai loại khách hàng gồm khách hàng tự do và khách hàng đơn vị.', 2),
+('QD008', 'GH', N'Mỗi khách hàng được gia hạn tối đa 2 lần trên một phiếu dự thi.', 2),
+('QD009', 'DB', N'Khách hàng có lý do đặc biệt như bệnh tật, tai nạn, tang sự sẽ được hỗ trợ gia hạn miễn phí.', 0),
+('QD010', 'HT', N'Trung tâm không hoàn phí sau khi khách hàng đã hoàn tất thanh toán và nhận phiếu dự thi.', 0);
 
 
 

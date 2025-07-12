@@ -238,7 +238,7 @@ BEGIN
 END;
 GO
 
------------------------------------PROC CHO THANH TOÁN TỰ DO 
+----------------------------------------- PROC THANH TOÁN TỰ DO-------------------------------------
 -- Lấy danh sách phiếu đăng ký theo điều kiện
 CREATE PROCEDURE sp_SearchRegistration
     @MaPDK CHAR(5) = NULL,
@@ -384,7 +384,7 @@ BEGIN
       AND (@GiaTriTo IS NULL OR GiaTri <= @GiaTriTo)
 END;
 GO
-
+----------------------------------------- PROC ĐĂNG NHẬP -------------------------------------
 -- Tra cứu nhân viên
 CREATE PROCEDURE sp_SearchEmp
     @MaNV CHAR(5) = NULL,
