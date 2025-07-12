@@ -193,9 +193,9 @@
             this.labelFullName.Location = new System.Drawing.Point(23, 89);
             this.labelFullName.Margin = new System.Windows.Forms.Padding(4);
             this.labelFullName.Name = "labelFullName";
-            this.labelFullName.Size = new System.Drawing.Size(202, 34);
+            this.labelFullName.Size = new System.Drawing.Size(180, 34);
             this.labelFullName.TabIndex = 2;
-            this.labelFullName.Text = "Mã phiếu đăng ký:";
+            this.labelFullName.Text = "Mã phiếu dự thi:";
             this.labelFullName.Click += new System.EventHandler(this.labelFullName_Click);
             // 
             // tbFullName
