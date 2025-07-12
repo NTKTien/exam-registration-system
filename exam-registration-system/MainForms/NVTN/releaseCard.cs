@@ -182,10 +182,6 @@ namespace exam_registration_system.MainForms.NVTN
 
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            
-        }
 
         private void tbID_TextChanged(object sender, EventArgs e)
         {
