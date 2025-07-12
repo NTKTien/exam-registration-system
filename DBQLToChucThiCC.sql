@@ -239,30 +239,34 @@ INSERT INTO TTNguoiDangKy VALUES
 ('NDK07', '012345678907', N'Hoàng Thị Lan', N'Nữ', '2002-05-22', '0911000007', 'lanht@gmail.com', N'789 Võ Văn Tần', 'PDK07'),
 ('NDK08', '012345678908', N'Phan Thị Hoa', N'Nữ', '2001-07-07', '0911000008', 'hoapt@gmail.com', N'890 Cách Mạng Tháng 8', 'PDK08');
 
--- Chèn dữ liệu mới, đồng bộ với LichDGNL và PhongThi
-INSERT INTO PhieuDuThi (MaPDT, ThoiGian, DiaDiem, SBD, MaPDK)
-SELECT 
-    pdt.MaPDT,
-    l.NgayThi AS ThoiGian,
-    CONCAT(N'Phòng ', l.PhongThi, N', Tòa ', pt.Toa) AS DiaDiem,
-    pdt.SBD,
-    pdt.MaPDK
-FROM 
-    (VALUES 
-        ('PDT01', 'SBD01', 'PDK01'),
-        ('PDT02', 'SBD02', 'PDK02'),
-        ('PDT03', 'SBD03', 'PDK03'),
-        ('PDT04', 'SBD04', 'PDK04'),
-        ('PDT05', 'SBD05', 'PDK05'),
-        ('PDT06', 'SBD06', 'PDK06'),
-        ('PDT07', 'SBD07', 'PDK07'),
-        ('PDT08', 'SBD08', 'PDK08'),
-        ('PDT09', 'SBD09', 'PDK09'),
-        ('PDT10', 'SBD10', 'PDK10')
-    ) AS pdt(MaPDT, SBD, MaPDK)
-    JOIN PhieuDangKy pdk ON pdt.MaPDK = pdk.MaPDK
-    JOIN LichDGNL l ON pdk.MaLT = l.MaLT
-    JOIN PhongThi pt ON l.PhongThi = pt.MaPT;
+---- Chèn dữ liệu mới, đồng bộ với LichDGNL và PhongThi
+--INSERT INTO PhieuDuThi (MaPDT, ThoiGian, DiaDiem, SBD, MaPDK)
+--SELECT 
+--    pdt.MaPDT,
+--    l.NgayThi AS ThoiGian,
+--    CONCAT(N'Phòng ', l.PhongThi, N', Tòa ', pt.Toa) AS DiaDiem,
+--    pdt.SBD,
+--    pdt.MaPDK
+--FROM 
+--    (VALUES 
+--        ('PDT01', 'SBD01', 'PDK01'),
+--        ('PDT02', 'SBD02', 'PDK02'),
+--        ('PDT03', 'SBD03', 'PDK03'),
+--        ('PDT04', 'SBD04', 'PDK04'),
+--        ('PDT05', 'SBD05', 'PDK05'),
+--        ('PDT06', 'SBD06', 'PDK06'),
+--        ('PDT07', 'SBD07', 'PDK07'),
+--        ('PDT08', 'SBD08', 'PDK08'),
+--        ('PDT09', 'SBD09', 'PDK09'),
+--        ('PDT10', 'SBD10', 'PDK10')
+--    ) AS pdt(MaPDT, SBD, MaPDK)
+--    JOIN PhieuDangKy pdk ON pdt.MaPDK = pdk.MaPDK
+--    JOIN LichDGNL l ON pdk.MaLT = l.MaLT
+--    JOIN PhongThi pt ON l.PhongThi = pt.MaPT;
+
+INSERT INTO PhieuDuThi VALUES
+('PDT01', '2025-08-01 08:00:00', N'Phòng 101, Toà A', 'SBD01', 'PDK04','TS007'),
+('PDT02', '2025-08-01 08:00:00', N'Phòng 101, Toà A', 'SBD02', 'PDK04','TS008');
 
 -- Chèn dữ liệu mới, đồng bộ với LichDGNL và PhongThi
 INSERT INTO PhieuGiaHan (MaPGH, ThoiGian, DiaDiem, SBD, PhiGiaHan, TrangThai, MaPDK, LoaiGH)
