@@ -256,15 +256,15 @@ SELECT
     pgh.LoaiGH
 FROM 
     (VALUES 
-        ('PGH01', 'SBD01', 500000, N'Đang đợi', 'PDK01', N'Đặc biệt'),
+        ('PGH01', 'SBD01', 500000, N'Thành công', 'PDK01', N'Đặc biệt'),
         ('PGH02', 'SBD02', 400000, N'Đang đợi', 'PDK02', N'Không đặc biệt'),
         ('PGH03', 'SBD03', 500000, N'Thành công', 'PDK03', N'Đặc biệt'),
         ('PGH04', 'SBD04', 400000, N'Đang đợi', 'PDK04', N'Không đặc biệt'),
-        ('PGH05', 'SBD05', 500000, N'Đang đợi', 'PDK05', N'Đặc biệt'),
+        ('PGH05', 'SBD05', 500000, N'Thành công', 'PDK05', N'Đặc biệt'),
         ('PGH06', 'SBD06', 400000, N'Đang đợi', 'PDK06', N'Không đặc biệt'),
         ('PGH07', 'SBD07', 500000, N'Thành công', 'PDK07', N'Đặc biệt'),
         ('PGH08', 'SBD08', 400000, N'Đang đợi', 'PDK08', N'Không đặc biệt'),
-        ('PGH09', 'SBD09', 500000, N'Đang đợi', 'PDK09', N'Đặc biệt'),
+        ('PGH09', 'SBD09', 500000, N'Thành công', 'PDK09', N'Đặc biệt'),
         ('PGH10', 'SBD10', 400000, N'Đang đợi', 'PDK10', N'Không đặc biệt')
     ) AS pgh(MaPGH, SBD, PhiGiaHan, TrangThai, MaPDK, LoaiGH)
     JOIN PhieuDangKy pdk ON pgh.MaPDK = pdk.MaPDK
@@ -298,7 +298,9 @@ INSERT INTO QuyDinh (MaQD, DoiTuong, NoiDung, GiaTri) VALUES
 ('QD007', 'DK', N'Trung tâm hỗ trợ đăng ký cho hai loại khách hàng gồm khách hàng tự do và khách hàng đơn vị.', 2),
 ('QD008', 'GH', N'Mỗi khách hàng được gia hạn tối đa 2 lần trên một phiếu dự thi.', 2),
 ('QD009', 'DB', N'Khách hàng có lý do đặc biệt như bệnh tật, tai nạn, tang sự sẽ được hỗ trợ gia hạn miễn phí.', 0),
-('QD010', 'GH', N'Khách hàng khi có nhu cầu gia hạn thi với lý do ngoài các trường hợp đặc biệt, phí gia hạn thi: 50.000', 50000),
-('QD011', 'HT', N'Trung tâm không hoàn phí sau khi khách hàng đã hoàn tất thanh toán và nhận phiếu dự thi.', 0);
+('QD010', 'HT', N'Trung tâm không hoàn phí sau khi khách hàng đã hoàn tất thanh toán và nhận phiếu dự thi.', 0);
+
+
+
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
