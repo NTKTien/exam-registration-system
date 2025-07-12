@@ -41,6 +41,7 @@ namespace exam_registration_system.MainForms.NVKT
                         ReadOnly = true
                     });
                 }
+                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
                 dataGridView1.DataSource = dt;
 
@@ -163,6 +164,7 @@ namespace exam_registration_system.MainForms.NVKT
         {
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = dataTable;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
             if (dataGridView1.Columns["ThoiGian"] != null)
             {
@@ -233,10 +235,5 @@ namespace exam_registration_system.MainForms.NVKT
                 MessageBox.Show("Lỗi khi mở form tạo phiếu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        private void cbxMonthi_SelectedIndexChanged(object sender, EventArgs e) { }
-        private void comboboxdiadiem_SelectedIndexChanged(object sender, EventArgs e) { }
-        private void labelDetailReg_Click(object sender, EventArgs e) { }
-        private void label2_Click(object sender, EventArgs e) { }
     }
 }

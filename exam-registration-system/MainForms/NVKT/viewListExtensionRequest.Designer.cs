@@ -89,6 +89,7 @@ namespace exam_registration_system.MainForms.NVKT
             this.dataGridView1.TabIndex = 20;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.DataGridView1_SelectionChanged);
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             // 
             // labelInforHeader
             // 
@@ -165,7 +166,7 @@ namespace exam_registration_system.MainForms.NVKT
             this.comboboxdiadiem.Name = "comboboxdiadiem";
             this.comboboxdiadiem.Size = new System.Drawing.Size(195, 36);
             this.comboboxdiadiem.TabIndex = 22;
-            this.comboboxdiadiem.SelectedIndexChanged += new System.EventHandler(this.comboboxdiadiem_SelectedIndexChanged);
+           // this.comboboxdiadiem.SelectedIndexChanged += new System.EventHandler(this.comboboxdiadiem_SelectedIndexChanged);
             // 
             // cbxMonthi
             // 
@@ -186,7 +187,7 @@ namespace exam_registration_system.MainForms.NVKT
             this.cbxMonthi.Name = "cbxMonthi";
             this.cbxMonthi.Size = new System.Drawing.Size(170, 36);
             this.cbxMonthi.TabIndex = 21;
-            this.cbxMonthi.SelectedIndexChanged += new System.EventHandler(this.cbxMonthi_SelectedIndexChanged);
+          //  this.cbxMonthi.SelectedIndexChanged += new System.EventHandler(this.cbxMonthi_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -225,7 +226,7 @@ namespace exam_registration_system.MainForms.NVKT
             this.label2.Size = new System.Drawing.Size(83, 30);
             this.label2.TabIndex = 18;
             this.label2.Text = "LoạiGH";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+          //  this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // chkFilterDate
             // 
@@ -263,7 +264,7 @@ namespace exam_registration_system.MainForms.NVKT
             this.labelDetailReg.TabIndex = 1;
             this.labelDetailReg.Text = "Yêu cầu gia hạn";
             this.labelDetailReg.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.labelDetailReg.Click += new System.EventHandler(this.labelDetailReg_Click);
+           // this.labelDetailReg.Click += new System.EventHandler(this.labelDetailReg_Click);
             // 
             // viewListExtensionRequest
             // 
