@@ -298,46 +298,6 @@ INSERT INTO QuyDinh (MaQD, DoiTuong, NoiDung, GiaTri) VALUES
 ('QD007', 'DK', N'Trung tâm hỗ trợ đăng ký cho hai loại khách hàng gồm khách hàng tự do và khách hàng đơn vị.', 2),
 ('QD008', 'GH', N'Mỗi khách hàng được gia hạn tối đa 2 lần trên một phiếu dự thi.', 2),
 ('QD009', 'DB', N'Khách hàng có lý do đặc biệt như bệnh tật, tai nạn, tang sự sẽ được hỗ trợ gia hạn miễn phí.', 0),
-('QD010', 'DB', N'Khách hàng khi có nhu cầu gia hạn thi, phí gia hạn thi: 50.000     ('PGH03', 'SBD03', 500000, N'Thành công', 'PDK03', N'Đặc biệt'),
-        ('PGH04', 'SBD04', 400000, N'Đang đợi', 'PDK04', N'Không đặc biệt'),
-        ('PGH05', 'SBD05', 500000, N'Thành công', 'PDK05', N'Đặc biệt'),
-        ('PGH06', 'SBD06', 400000, N'Đang đợi', 'PDK06', N'Không đặc biệt'),
-        ('PGH07', 'SBD07', 500000, N'Thành công', 'PDK07', N'Đặc biệt'),
-        ('PGH08', 'SBD08', 400000, N'Đang đợi', 'PDK08', N'Không đặc biệt'),
-        ('PGH09', 'SBD09', 500000, N'Thành công', 'PDK09', N'Đặc biệt'),
-        ('PGH10', 'SBD10', 400000, N'Đang đợi', 'PDK10', N'Không đặc biệt')
-    ) AS pgh(MaPGH, SBD, PhiGiaHan, TrangThai, MaPDK, LoaiGH)
-    JOIN PhieuDangKy pdk ON pgh.MaPDK = pdk.MaPDK
-    JOIN LichDGNL l ON pdk.MaLT = l.MaLT
-    JOIN PhongThi pt ON l.PhongThi = pt.MaPT;
-
--- Dữ liệu cho bảng HoaDonThanhToan
-INSERT INTO HoaDonThanhToan VALUES
-('HD001', 1000000, 200000, 800000, 'PDK01', 'NV001'),
-('HD002', 1000000, 0, 1000000, 'PDK02', 'NV002'),
-('HD003', 1000000, 100000, 900000, 'PDK03', 'NV003'),
-('HD004', 950000, 0, 950000, 'PDK04', 'NV004'),
-('HD005', 900000, 0, 900000, 'PDK05', 'NV005'),
-('HD006', 950000, 50000, 900000, 'PDK06', 'NV006'),
-('HD007', 1100000, 100000, 1000000, 'PDK07', 'NV007'),
-('HD008', 1200000, 0, 1200000, 'PDK08', 'NV008');
-
--- Dữ liệu cho bảng BangTinh
-INSERT INTO BangTinh VALUES
-('BT001', N'Đạt', '2025-08-10 10:00:00', '2025-08-15 15:00:00', N'Đã giao', 'PDT01', 'NV001'),
-('BT002', N'Không đạt', '2025-08-10 10:20:00', '2025-08-15 15:20:00', N'Chưa giao', 'PDT02', 'NV002');
-
--- Insert into QuyDinh (10 rows)
-INSERT INTO QuyDinh (MaQD, DoiTuong, NoiDung, GiaTri) VALUES
-('QD001', 'TT', N'Số lượng thí sinh tối thiểu để trợ giá cho đơn vị là 20', 20),
-('QD002', 'TT', N'Đơn vị có số lượng thí sinh vượt ngưỡng tối thiểu được trợ giá 10%', 0.1),
-('QD003', 'TT', N'Thời gian đến hạn thanh toán là 3 ngày kể từ ngày đăng ký. Sau thời gian trên, các phiếu đăng ký chưa được thanh toán sẽ bị hủy.', 3),
-('QD004', 'TT', N'Lệ phí thi Ngoại ngữ của khách hàng tự do: 1.800.000', 1800000),
-('QD005', 'TT', N'Lệ phí thi Tin học của khách hàng tự do: 1.500.000', 1500000),
-('QD006', 'TT', N'Trung tâm không trợ giá lệ phí thi cho khách hàng tự do.', 0),
-('QD007', 'DK', N'Trung tâm hỗ trợ đăng ký cho hai loại khách hàng gồm khách hàng tự do và khách hàng đơn vị.', 2),
-('QD008', 'GH', N'Mỗi khách hàng được gia hạn tối đa 2 lần trên một phiếu dự thi.', 2),
-('QD009', 'DB', N'Khách hàng có lý do đặc biệt như bệnh tật, tai nạn, tang sự sẽ được hỗ trợ gia hạn miễn phí.', 0),
 ('QD010', 'GH', N'Khách hàng khi có nhu cầu gia hạn thi với lý do ngoài các trường hợp đặc biệt, phí gia hạn thi: 50.000', 50000),
 ('QD011', 'HT', N'Trung tâm không hoàn phí sau khi khách hàng đã hoàn tất thanh toán và nhận phiếu dự thi.', 0);
 
