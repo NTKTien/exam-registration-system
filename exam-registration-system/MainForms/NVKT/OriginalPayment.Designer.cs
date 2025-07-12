@@ -60,9 +60,9 @@
             this.pnlContainer.Controls.Add(this.grpSearch);
             this.pnlContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlContainer.Location = new System.Drawing.Point(0, 60);
-            this.pnlContainer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlContainer.Margin = new System.Windows.Forms.Padding(2);
             this.pnlContainer.Name = "pnlContainer";
-            this.pnlContainer.Padding = new System.Windows.Forms.Padding(16, 16, 16, 16);
+            this.pnlContainer.Padding = new System.Windows.Forms.Padding(16);
             this.pnlContainer.Size = new System.Drawing.Size(856, 407);
             this.pnlContainer.TabIndex = 0;
             // 
@@ -79,11 +79,12 @@
             this.btnCreateInvoice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreateInvoice.ForeColor = System.Drawing.Color.White;
             this.btnCreateInvoice.Location = new System.Drawing.Point(380, 500);
-            this.btnCreateInvoice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCreateInvoice.Margin = new System.Windows.Forms.Padding(2);
             this.btnCreateInvoice.Name = "btnCreateInvoice";
             this.btnCreateInvoice.Size = new System.Drawing.Size(150, 42);
             this.btnCreateInvoice.TabIndex = 4;
             this.btnCreateInvoice.Text = "Tạo hóa đơn";
+            this.btnCreateInvoice.Click += new System.EventHandler(this.btnCreateInvoice_Click);
             // 
             // grpPaymentInfo
             // 
@@ -221,11 +222,12 @@
             this.btnConfirmPayment.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnConfirmPayment.ForeColor = System.Drawing.Color.White;
             this.btnConfirmPayment.Location = new System.Drawing.Point(110, 250);
-            this.btnConfirmPayment.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnConfirmPayment.Margin = new System.Windows.Forms.Padding(2);
             this.btnConfirmPayment.Name = "btnConfirmPayment";
             this.btnConfirmPayment.Size = new System.Drawing.Size(190, 40);
             this.btnConfirmPayment.TabIndex = 2;
             this.btnConfirmPayment.Text = "Xác nhận thanh toán";
+            this.btnConfirmPayment.Click += new System.EventHandler(this.btnConfirmPayment_Click);
             // 
             // grpCustomerInfo
             // 
@@ -427,14 +429,13 @@
             this.grpSearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.grpSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.grpSearch.Location = new System.Drawing.Point(16, 16);
-            this.grpSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpSearch.Margin = new System.Windows.Forms.Padding(2);
             this.grpSearch.Name = "grpSearch";
-            this.grpSearch.Padding = new System.Windows.Forms.Padding(16, 16, 16, 16);
+            this.grpSearch.Padding = new System.Windows.Forms.Padding(16);
             this.grpSearch.Size = new System.Drawing.Size(824, 80);
             this.grpSearch.TabIndex = 0;
             this.grpSearch.TabStop = false;
             this.grpSearch.Text = "Tìm kiếm phiếu đăng ký";
-            this.grpSearch.Enter += new System.EventHandler(this.grpSearch_Enter);
             // 
             // btnSearch
             // 
@@ -449,12 +450,12 @@
             this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.btnSearch.ForeColor = System.Drawing.Color.White;
             this.btnSearch.Location = new System.Drawing.Point(410, 32);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(110, 31);
             this.btnSearch.TabIndex = 1;
             this.btnSearch.Text = "Tìm kiếm";
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click_1);
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // tbRegistrationID
             // 
@@ -466,12 +467,13 @@
             this.tbRegistrationID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tbRegistrationID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.tbRegistrationID.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.tbRegistrationID.ForeColor = System.Drawing.Color.Black;
+            this.tbRegistrationID.ForeColor = System.Drawing.SystemColors.WindowText;
             this.tbRegistrationID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.tbRegistrationID.Location = new System.Drawing.Point(190, 33);
             this.tbRegistrationID.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.tbRegistrationID.Name = "tbRegistrationID";
-            this.tbRegistrationID.PlaceholderText = "";
+            this.tbRegistrationID.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
+            this.tbRegistrationID.PlaceholderText = "Nhập tìm phiếu đăng ký";
             this.tbRegistrationID.SelectedText = "";
             this.tbRegistrationID.Size = new System.Drawing.Size(200, 29);
             this.tbRegistrationID.TabIndex = 4;
@@ -495,7 +497,7 @@
             this.lbHeader.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
             this.lbHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.lbHeader.Location = new System.Drawing.Point(0, 0);
-            this.lbHeader.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lbHeader.Margin = new System.Windows.Forms.Padding(2);
             this.lbHeader.Name = "lbHeader";
             this.lbHeader.Size = new System.Drawing.Size(856, 60);
             this.lbHeader.TabIndex = 0;
@@ -508,7 +510,7 @@
             this.pnlHeader.Controls.Add(this.lbHeader);
             this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlHeader.Location = new System.Drawing.Point(0, 0);
-            this.pnlHeader.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlHeader.Margin = new System.Windows.Forms.Padding(2);
             this.pnlHeader.Name = "pnlHeader";
             this.pnlHeader.Size = new System.Drawing.Size(856, 60);
             this.pnlHeader.TabIndex = 1;

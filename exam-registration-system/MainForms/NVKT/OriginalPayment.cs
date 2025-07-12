@@ -14,62 +14,23 @@ namespace exam_registration_system.MainForms.NVKT
 {
     public partial class OriginalPayment : Form
     {
-        private readonly string _placeholderText = "Nhập tìm phiếu đăng ký";
-        private Color _placeholderColor = SystemColors.GrayText;
-        private Color _defaultForeColor;
-
-        private readonly Color colorMoney = Color.FromArgb(41, 128, 185);
-        private readonly Color colorSupport = Color.FromArgb(41, 128, 185);
-        private readonly Color colorFinal = Color.FromArgb(231, 76, 60);
-
-        private string currentMaHD = "";
+        private string maHD = "";
         private decimal totalCost = 0;
         private decimal subsidy = 0;
         private decimal finalCost = 0;
+
+        private readonly string _placeholderText = "Nhập tìm phiếu đăng ký";
+        private Color _placeholderColor = SystemColors.GrayText;
 
         public OriginalPayment()
         {
             InitializeComponent();
 
-            _defaultForeColor = tbRegistrationID.ForeColor;
-
             tbRegistrationID.GotFocus += TbRegistrationID_GotFocus;
             tbRegistrationID.LostFocus += TbRegistrationID_LostFocus;
 
-            btnSearch.Click += btnSearch_Click;
-            btnConfirmPayment.Click += btnConfirmPayment_Click;
-            btnCreateInvoice.Click += btnCreateInvoice_Click;
-
             ClearForm();
             SetPlaceholder();
-        }
-
-        private void TbRegistrationID_GotFocus(object sender, EventArgs e)
-        {
-            if (tbRegistrationID.Text == _placeholderText)
-            {
-                tbRegistrationID.Text = "";
-                tbRegistrationID.ForeColor = _defaultForeColor;
-            }
-        }
-
-        private void TbRegistrationID_LostFocus(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(tbRegistrationID.Text))
-            {
-                SetPlaceholder();
-            }
-        }
-
-        private void SetPlaceholder()
-        {
-            tbRegistrationID.Text = _placeholderText;
-            tbRegistrationID.ForeColor = _placeholderColor;
-        }
-
-        private bool IsPlaceholder()
-        {
-            return tbRegistrationID.Text == _placeholderText;
         }
 
         private decimal GetFreeCusCos(string loaiCC)
@@ -96,7 +57,7 @@ namespace exam_registration_system.MainForms.NVKT
         {
             ClearCustomerFields();
             ClearChiPhiFields();
-            currentMaHD = "";
+            maHD = "";
             totalCost = 0;
             subsidy = 0;
             finalCost = 0;
@@ -180,7 +141,7 @@ namespace exam_registration_system.MainForms.NVKT
             if (hdDT != null && hdDT.Rows.Count > 0)
             {
                 DataRow hdRow = hdDT.Rows[0];
-                currentMaHD = hdRow["MaHD"]?.ToString() ?? "";
+                maHD = hdRow["MaHD"]?.ToString() ?? "";
 
                 try
                 {
@@ -191,10 +152,6 @@ namespace exam_registration_system.MainForms.NVKT
                     tbTotalCost.Text = totalCost.ToString("N0");
                     tbSupportAmount.Text = subsidy.ToString("N0");
                     tbFinalAmount.Text = finalCost.ToString("N0");
-
-                    tbTotalCost.ForeColor = colorMoney;
-                    tbSupportAmount.ForeColor = colorSupport;
-                    tbFinalAmount.ForeColor = colorFinal;
                 }
                 catch (Exception ex)
                 {
@@ -222,10 +179,6 @@ namespace exam_registration_system.MainForms.NVKT
             tbTotalCost.Text = "";
             tbSupportAmount.Text = "";
             tbFinalAmount.Text = "";
-
-            tbTotalCost.ForeColor = colorMoney;
-            tbSupportAmount.ForeColor = colorSupport;
-            tbFinalAmount.ForeColor = colorFinal;
         }
 
         private void ClearForm()
@@ -236,7 +189,7 @@ namespace exam_registration_system.MainForms.NVKT
             tbRegistrationID.Text = "";
             SetPlaceholder();
 
-            currentMaHD = "";
+            maHD = "";
             totalCost = 0;
             subsidy = 0;
             finalCost = 0;
@@ -263,7 +216,7 @@ namespace exam_registration_system.MainForms.NVKT
             }
             if (trangThai != "Chưa thanh toán")
             {
-                MessageBox.Show($"Không thể xác nhận thanh toán!\nTrạng thái hiện tại của phiếu: {trangThai}", "Không hợp lệ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Không thể xác nhận thanh toán!\nTrạng thái hiện tại của phiếu: {trangThai}", "Không hợp lệ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -273,10 +226,10 @@ namespace exam_registration_system.MainForms.NVKT
                 try
                 {
                     bool updateInvoice = false;
-                    if (!string.IsNullOrEmpty(currentMaHD))
+                    if (!string.IsNullOrEmpty(maHD))
                     {
                         updateInvoice = InvoiceService.UpdateInvoice(
-                            maHD: currentMaHD,
+                            maHD: maHD,
                             tongTien: totalCost,
                             troGia: subsidy,
                             thanhTien: finalCost,
@@ -285,7 +238,7 @@ namespace exam_registration_system.MainForms.NVKT
                         );
                     }
                     bool updatePDK = PhieuDangKyService.UpdateRegistration(maPDK: maPDK, trangThai: "Đã thanh toán");
-                    if (updatePDK && (string.IsNullOrEmpty(currentMaHD) || updateInvoice))
+                    if (updatePDK && (string.IsNullOrEmpty(maHD) || updateInvoice))
                     {
                         tbStatus.Text = "Đã thanh toán";
                         MessageBox.Show("Thanh toán thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -322,14 +275,14 @@ namespace exam_registration_system.MainForms.NVKT
                 return;
             }
 
-            if (string.IsNullOrEmpty(currentMaHD))
+            if (string.IsNullOrEmpty(maHD))
             {
                 MessageBox.Show("Không tìm thấy hóa đơn để xuất cho phiếu này!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             ExportInvoicePDF(
-                currentMaHD,
+                maHD,
                 tbRegistrationID.Text.Trim(),
                 totalCost,
                 subsidy,
@@ -434,14 +387,31 @@ namespace exam_registration_system.MainForms.NVKT
             Process.Start(new ProcessStartInfo(filePath) { UseShellExecute = true });
         }
 
-        private void grpSearch_Enter(object sender, EventArgs e)
+        private void TbRegistrationID_GotFocus(object sender, EventArgs e)
         {
-
+            if (tbRegistrationID.Text == _placeholderText)
+            {
+                tbRegistrationID.Text = "";
+            }
         }
 
-        private void btnSearch_Click_1(object sender, EventArgs e)
+        private void TbRegistrationID_LostFocus(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(tbRegistrationID.Text))
+            {
+                SetPlaceholder();
+            }
+        }
 
+        private void SetPlaceholder()
+        {
+            tbRegistrationID.Text = _placeholderText;
+            tbRegistrationID.ForeColor = _placeholderColor;
+        }
+
+        private bool IsPlaceholder()
+        {
+            return tbRegistrationID.Text == _placeholderText;
         }
     }
 }
