@@ -256,15 +256,15 @@ SELECT
     pgh.LoaiGH
 FROM 
     (VALUES 
-        ('PGH01', 'SBD01', 500000, N'Thành công', 'PDK01', N'Đặc biệt'),
+        ('PGH01', 'SBD01', 500000, N'Đang đợi', 'PDK01', N'Đặc biệt'),
         ('PGH02', 'SBD02', 400000, N'Đang đợi', 'PDK02', N'Không đặc biệt'),
         ('PGH03', 'SBD03', 500000, N'Thành công', 'PDK03', N'Đặc biệt'),
         ('PGH04', 'SBD04', 400000, N'Đang đợi', 'PDK04', N'Không đặc biệt'),
-        ('PGH05', 'SBD05', 500000, N'Thành công', 'PDK05', N'Đặc biệt'),
+        ('PGH05', 'SBD05', 500000, N'Đang đợi', 'PDK05', N'Đặc biệt'),
         ('PGH06', 'SBD06', 400000, N'Đang đợi', 'PDK06', N'Không đặc biệt'),
         ('PGH07', 'SBD07', 500000, N'Thành công', 'PDK07', N'Đặc biệt'),
         ('PGH08', 'SBD08', 400000, N'Đang đợi', 'PDK08', N'Không đặc biệt'),
-        ('PGH09', 'SBD09', 500000, N'Thành công', 'PDK09', N'Đặc biệt'),
+        ('PGH09', 'SBD09', 500000, N'Đang đợi', 'PDK09', N'Đặc biệt'),
         ('PGH10', 'SBD10', 400000, N'Đang đợi', 'PDK10', N'Không đặc biệt')
     ) AS pgh(MaPGH, SBD, PhiGiaHan, TrangThai, MaPDK, LoaiGH)
     JOIN PhieuDangKy pdk ON pgh.MaPDK = pdk.MaPDK
