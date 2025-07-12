@@ -424,7 +424,6 @@
             this.tbCCCD.SelectedText = "";
             this.tbCCCD.Size = new System.Drawing.Size(200, 27);
             this.tbCCCD.TabIndex = 3;
-            this.tbCCCD.TextChanged += new System.EventHandler(this.tbCCCD_TextChanged);
             // 
             // labelFullName
             // 
@@ -474,7 +473,6 @@
             this.tbEmail.SelectedText = "";
             this.tbEmail.Size = new System.Drawing.Size(200, 27);
             this.tbEmail.TabIndex = 3;
-            this.tbEmail.TextChanged += new System.EventHandler(this.tbEmail_TextChanged);
             // 
             // tbSDT
             // 
@@ -545,7 +543,6 @@
             this.labelEmail.Size = new System.Drawing.Size(48, 25);
             this.labelEmail.TabIndex = 2;
             this.labelEmail.Text = "Email:";
-            this.labelEmail.Click += new System.EventHandler(this.labelEmail_Click);
             // 
             // labelAddress
             // 

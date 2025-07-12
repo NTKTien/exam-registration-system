@@ -16,12 +16,35 @@ namespace exam_registration_system.MainForms.NVTN
 {
     public partial class createdRegForm : Form
     {
+        // ===== Thuộc tính người đăng ký =====
+        private string HoTen => tbFullName.Text.Trim();
+        private string GioiTinh => radioButMale.Checked ? "Nam" : "Nữ";
+        private DateTime NgaySinh => dtpNgaySinh.Value;
+        private string CCCD => tbCCCD.Text.Trim();
+        private string SDT => tbSDT.Text.Trim();
+        private string Email => tbEmail.Text.Trim();
+        private string DiaChi => tbAddress.Text.Trim();
+
+        // ===== Thuộc tính thí sinh =====
+        private string HoTenTS => tbNameTS.Text.Trim();
+        private string GioiTinhTS => radioButMaleTS.Checked ? "Nam" : "Nữ";
+        private DateTime NgaySinhTS => dtpBirthTS.Value;
+        private string CCCDTS => tbCCCDTS.Text.Trim();
+        private string SDTTS => tbSDTTS.Text.Trim();
+        private string EmailTS => tbEmailTS.Text.Trim();
+
+        // ===== Phiếu đăng ký =====
+        private string MaPDK => tbRegCode.Text.Trim();
+        private DateTime NgayDangKy => dtpNgayDangKy.Value;
+        private string LoaiDGNL => cmbTypeDGNL.SelectedItem?.ToString();
         private string selectedMaLT = null;
         public createdRegForm()
         {
             InitializeComponent();
         }
 
+
+        // ===== Phương thức  =====
         private void butSelectCalenderEx_Click(object sender, EventArgs e)
         {
             if (cmbTypeDGNL.SelectedItem == null)
@@ -30,139 +53,124 @@ namespace exam_registration_system.MainForms.NVTN
                 return;
             }
 
-            string loaiDGNL = cmbTypeDGNL.SelectedItem.ToString();
-            ViewExamSchedule form = new ViewExamSchedule(loaiDGNL);
+            ViewExamSchedule form = new ViewExamSchedule(LoaiDGNL);
             if (form.ShowDialog() == DialogResult.OK)
             {
-                string ngayThiStr = form.SelectedNgayThi.ToString();
-                string caThi = form.SelectedCaThi;
-                string phongThi = form.SelectedPhongThi;
                 selectedMaLT = form.SelectedMaLT;
-
-                tbCalenderEx.Text = $"{ngayThiStr} - Ca {caThi} - {phongThi}";
+                tbCalenderEx.Text = $"{form.SelectedNgayThi} - Ca {form.SelectedCaThi} - {form.SelectedPhongThi}";
             }
         }
 
         private void butCreateReg_Click(object sender, EventArgs e)
         {
-            // Biến lưu thông tin người đăng kí 
-            string hoTen = tbFullName.Text;
-            string gioiTinh = radioButMale.Checked ? "Nam" : "Nữ";
-            DateTime ngaySinh = dtpNgaySinh.Value;
-            string cccd = tbCCCD.Text;
-            string sdt = tbSDT.Text;
-            string email = tbEmail.Text;
-            string diaChi = tbAddress.Text;
-
-            //Biến lưu Thông tin thí sinh
-            string hoTenTS = tbNameTS.Text;
-            string gioiTinhTS = radioButMaleTS.Checked ? "Nam" : "Nữ";
-            DateTime ngaySinhTS = dtpBirthTS.Value;
-            string cccdTS = tbCCCDTS.Text;
-            string sdtTS = tbSDTTS.Text;
-            string emailTS = tbEmailTS.Text;
-
-            //Biến lưu thông tin phiếu đăng ký
-            string maPDK = tbRegCode.Text;
-            DateTime ngayDangKy = dtpNgayDangKy.Value;
-            string maLichThi = selectedMaLT;
-
-            // Kiểm tra thiếu thông tin
-            bool isMissing =
-                string.IsNullOrWhiteSpace(hoTen) ||
-                string.IsNullOrWhiteSpace(gioiTinh) ||
-                string.IsNullOrWhiteSpace(cccd) ||
-                string.IsNullOrWhiteSpace(sdt) ||
-                string.IsNullOrWhiteSpace(email) ||
-                string.IsNullOrWhiteSpace(diaChi) ||
-                string.IsNullOrWhiteSpace(hoTenTS) ||
-                string.IsNullOrWhiteSpace(gioiTinhTS) ||
-                string.IsNullOrWhiteSpace(cccdTS) ||
-                string.IsNullOrWhiteSpace(sdtTS) ||
-                string.IsNullOrWhiteSpace(emailTS) ||
-                string.IsNullOrWhiteSpace(maPDK) ||
-                cmbTypeDGNL.SelectedItem == null ||   
-                string.IsNullOrWhiteSpace(maLichThi);
-
-            if (isMissing)
+            if (IsMissingInformation())
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin đăng ký!", "Thiếu thông tin", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // Kiểm tra hợp lệ ngày sinh người đăng ký
-            int tuoiNguoiDK = DateTime.Now.Year - ngaySinh.Year;
-            if (ngaySinh >= DateTime.Today || tuoiNguoiDK < 18)
+            if (!IsValidDateOfBirth())
             {
-                MessageBox.Show("Người đăng ký phải đủ 18 tuổi trở lên!", "Lỗi ngày sinh", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
-            // Kiểm tra hợp lệ ngày sinh thí sinh
-            int tuoiTS = DateTime.Now.Year - ngaySinhTS.Year;
-            if (ngaySinhTS >= DateTime.Today || tuoiTS < 6 || tuoiTS > 100)
-            {
-                MessageBox.Show("Thí sinh phải từ 6 đến 100 tuổi!", "Lỗi ngày sinh", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            // Sau khi kiểm tra xong mới gọi ToString
-            string loaiDGNL = cmbTypeDGNL.SelectedItem.ToString();
 
             //Thêm thí sinh
-            string maDS = CandidateService.AddCandidate(hoTenTS, gioiTinhTS, ngaySinhTS, sdtTS, cccdTS, emailTS);
+            string maDS = CandidateService.AddCandidate(HoTenTS, GioiTinhTS, NgaySinhTS, SDTTS, CCCDTS, EmailTS);
 
             // Thêm phiếu đăng ký
-            bool isRegOk = PhieuDangKyService.InsertFreeReg(maPDK, maDS, ngayDangKy, loaiDGNL, "KHTD", maLichThi);
+            bool isRegOk = PhieuDangKyService.InsertFreeReg(MaPDK, maDS, NgayDangKy, LoaiDGNL, "KHTD", selectedMaLT);
 
             // Thêm khách hàng
-            bool isCustomerOk = CustomerService.InsertCustomer(hoTen, gioiTinh, ngaySinh, cccd, sdt, email, diaChi, maPDK);
+            bool isCustomerOk = CustomerService.InsertCustomer(HoTen, GioiTinh, NgaySinh, CCCD, SDT, Email, DiaChi, MaPDK);
 
             // Thêm hóa đơn với mã nhân viên hardcode
-            bool isInvoiceOk = InvoiceService.InsertInvoice(maPDK, GlobalInfo.CurrentUsername);
+            bool isInvoiceOk = InvoiceService.InsertInvoice(MaPDK, GlobalInfo.CurrentUsername);
 
             if (isCustomerOk && isRegOk && isInvoiceOk)
             {
                 MessageBox.Show("Tạo phiếu đăng ký thành công!", "Thành công");
-
-
-                // Xóa toàn bộ dữ liệu người dùng đã nhập
-                tbFullName.Clear();
-                radioButMale.Checked = true; // hoặc false, tùy mặc định
-                dtpNgaySinh.Value = DateTime.Today;
-                tbCCCD.Clear();
-                tbSDT.Clear();
-                tbEmail.Clear();
-                tbAddress.Clear();
-
-                // Xóa toàn bộ dữ liệu thí sinh
-                tbNameTS.Clear();
-                tbEmailTS.Clear();
-                radioButMaleTS.Checked = true; // hoặc false, tùy mặc định
-                dtpBirthTS.Value = DateTime.Today;
-                tbCCCDTS.Clear();
-                tbSDTTS.Clear();
-
-                // Xóa toàn bộ dữ liệu phiếu đăng ký
-                tbRegCode.Text = PhieuDangKyService.GetNextMaPhieuDK();
-                dtpNgayDangKy.Value = DateTime.Today;
-                cmbTypeDGNL.SelectedIndex = -1;
-
-                tbCalenderEx.Text = string.Empty;
-                selectedMaLT = null;
+                ClearForm();
             }
             else
             {
                 MessageBox.Show("Tạo phiếu thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void createdRegForm_Load(object sender, EventArgs e)
         {
             tbRegCode.Text = PhieuDangKyService.GetNextMaPhieuDK();
 
             //Thiết lập ngày lập phiếu mặc định là ngày hiện tại
             dtpNgayDangKy.Value = DateTime.Now;
+        }
+
+        private void butCancel_Click(object sender, EventArgs e)
+        {
+            ClearForm();
+        }
+
+        //Xóa  các thông tin đã nhập trong form
+        private void ClearForm()
+        {
+            tbFullName.Clear();
+            radioButMale.Checked = true;
+            dtpNgaySinh.Value = DateTime.Today;
+            tbCCCD.Clear();
+            tbSDT.Clear();
+            tbEmail.Clear();
+            tbAddress.Clear();
+
+            tbNameTS.Clear();
+            radioButMaleTS.Checked = true;
+            dtpBirthTS.Value = DateTime.Today;
+            tbCCCDTS.Clear();
+            tbSDTTS.Clear();
+            tbEmailTS.Clear();
+
+            tbRegCode.Text = PhieuDangKyService.GetNextMaPhieuDK();
+            dtpNgayDangKy.Value = DateTime.Today;
+            cmbTypeDGNL.SelectedIndex = -1;
+
+            tbCalenderEx.Text = string.Empty;
+            selectedMaLT = null;
+        }
+
+        //Validate
+        private bool IsMissingInformation()
+        {
+            return string.IsNullOrWhiteSpace(HoTen) ||
+                   string.IsNullOrWhiteSpace(GioiTinh) ||
+                   string.IsNullOrWhiteSpace(CCCD) ||
+                   string.IsNullOrWhiteSpace(SDT) ||
+                   string.IsNullOrWhiteSpace(Email) ||
+                   string.IsNullOrWhiteSpace(DiaChi) ||
+                   string.IsNullOrWhiteSpace(HoTenTS) ||
+                   string.IsNullOrWhiteSpace(GioiTinhTS) ||
+                   string.IsNullOrWhiteSpace(CCCDTS) ||
+                   string.IsNullOrWhiteSpace(SDTTS) ||
+                   string.IsNullOrWhiteSpace(EmailTS) ||
+                   string.IsNullOrWhiteSpace(MaPDK) ||
+                   LoaiDGNL == null ||
+                   string.IsNullOrWhiteSpace(selectedMaLT);
+        }
+
+        private bool IsValidDateOfBirth()
+        {
+            int tuoiNguoiDK = DateTime.Now.Year - NgaySinh.Year;
+            if (NgaySinh >= DateTime.Today || tuoiNguoiDK < 18)
+            {
+                MessageBox.Show("Người đăng ký phải đủ 18 tuổi trở lên!", "Lỗi ngày sinh", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            int tuoiTS = DateTime.Now.Year - NgaySinhTS.Year;
+            if (NgaySinhTS >= DateTime.Today || tuoiTS < 6 || tuoiTS > 100)
+            {
+                MessageBox.Show("Thí sinh phải từ 6 đến 100 tuổi!", "Lỗi ngày sinh", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            return true;
         }
 
         private void tbSDT_Leave(object sender, EventArgs e)
@@ -181,34 +189,6 @@ namespace exam_registration_system.MainForms.NVTN
                 MessageBox.Show("CCCD phải gồm đúng 12 chữ số!", "Lỗi định dạng", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 tbCCCD.Focus(); // đưa con trỏ về lại ô này
             }
-        }
-
-        private void butCancel_Click(object sender, EventArgs e)
-        {
-            // Xóa toàn bộ dữ liệu người dùng đã nhập
-            tbFullName.Clear();
-            radioButMale.Checked = true; // hoặc false, tùy mặc định
-            dtpNgaySinh.Value = DateTime.Today;
-            tbCCCD.Clear();
-            tbSDT.Clear();
-            tbEmail.Clear();
-            tbAddress.Clear();
-
-            // Xóa toàn bộ dữ liệu thí sinh
-            tbNameTS.Clear();
-            tbEmailTS.Clear();
-            radioButMaleTS.Checked = true; // hoặc false, tùy mặc định
-            dtpBirthTS.Value = DateTime.Today;
-            tbCCCDTS.Clear();
-            tbSDTTS.Clear();
-
-            // Xóa toàn bộ dữ liệu phiếu đăng ký
-            tbRegCode.Text = PhieuDangKyService.GetNextMaPhieuDK();
-            dtpNgayDangKy.Value = DateTime.Today;
-            cmbTypeDGNL.SelectedIndex = -1;
-
-            tbCalenderEx.Text = string.Empty;
-            selectedMaLT = null;
         }
 
         private void tbEmail_Leave(object sender, EventArgs e)
@@ -253,5 +233,5 @@ namespace exam_registration_system.MainForms.NVTN
             }
         }
     }
-    
+
 }
